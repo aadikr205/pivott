@@ -33,7 +33,8 @@ export class AuthError extends Error {
   }
 }
 
-const BASE_URL = ''; // Relative path, handled by Vite proxy or production host
+// Uses VITE_API_URL if deployed separately (e.g. Vercel/Netlify), otherwise falls back to relative path (unified host)
+const BASE_URL = (import.meta.env?.VITE_API_URL as string) || '';
 const DEFAULT_TIMEOUT_MS = 12000;
 
 let inMemoryToken: string | null = null;

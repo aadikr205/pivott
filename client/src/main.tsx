@@ -8,12 +8,14 @@ import { registerServiceWorker } from './registerServiceWorker';
 // Register PWA service worker with update listeners
 registerServiceWorker();
 
+const API_BASE = (import.meta.env?.VITE_API_URL as string) || '';
+
 // Global uncaught error listener to report unexpected asynchronous crashes
 if (typeof window !== 'undefined') {
   window.addEventListener('error', (event) => {
     console.error('[Pivott Global Window Error]:', event.error || event.message);
     try {
-      fetch('/api/logs/client-error', {
+      fetch(`${API_BASE}/api/logs/client-error`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -35,7 +37,7 @@ if (typeof window !== 'undefined') {
     try {
       const reasonMsg = event.reason instanceof Error ? event.reason.message : String(event.reason);
       const stack = event.reason instanceof Error ? event.reason.stack : undefined;
-      fetch('/api/logs/client-error', {
+      fetch(`${API_BASE}/api/logs/client-error`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

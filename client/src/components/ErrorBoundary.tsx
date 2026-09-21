@@ -36,7 +36,8 @@ export class ErrorBoundary extends Component<Props, State> {
 
     // Report error to backend telemetry endpoint if reachable
     try {
-      fetch('/api/logs/client-error', {
+      const apiBase = (import.meta.env?.VITE_API_URL as string) || '';
+      fetch(`${apiBase}/api/logs/client-error`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
