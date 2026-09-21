@@ -37,6 +37,9 @@ server/data/*.log
 server/tunnel_info.json
 tunnel_info.json
 
+# Scratch scripts
+scratch/
+
 # OS files
 .DS_Store
 Thumbs.db
