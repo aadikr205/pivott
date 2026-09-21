@@ -1,0 +1,65 @@
+{
+  "id": "com.pivott.app",
+  "name": "Pivott — AI Study Planner & Syllabus Allocator",
+  "short_name": "Pivott",
+  "description": "Your syllabus, re-balanced daily — never overwhelmed, always on track. Protects high-weightage topics and caps daily hours.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#0d9488",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/pivott-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pivott-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pivott-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pivott-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's Study Plan",
+      "short_name": "Today",
+      "description": "View today's allocated topics and timer",
+      "url": "/?tab=today",
+      "icons": [{ "src": "/pivott-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Full Timetable",
+      "short_name": "Timetable",
+      "description": "Inspect dynamic multi-week schedule",
+      "url": "/?tab=schedule",
+      "icons": [{ "src": "/pivott-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Progress & Analytics",
+      "short_name": "Progress",
+      "description": "Track syllabus burn-down and mastery",
+      "url": "/?tab=dashboard",
+      "icons": [{ "src": "/pivott-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

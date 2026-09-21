@@ -1,0 +1,17 @@
+{
+  "name": "pivott",
+  "version": "1.0.0",
+  "description": "PIVOTT — AI-Powered Syllabus Backlog & Realistic Time Allocator",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
+    "build:client": "npm --prefix client run build",
+    "dev": "node server/supervisor.js",
+    "dev:server": "node server/supervisor.js",
+    "dev:client": "npm --prefix client run dev",
+    "test": "node server/test-8-features.js"
+  },
+  "author": "Pivott Team",
+  "license": "ISC"
+}
