@@ -52,7 +52,6 @@ export const ConceptVideoModal: React.FC<ConceptVideoModalProps> = ({
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [autoAdvance, setAutoAdvance] = useState(true);
 
   // Continuous playback & seek time states
   const [currentTime, setCurrentTime] = useState(0);
@@ -70,7 +69,7 @@ export const ConceptVideoModal: React.FC<ConceptVideoModalProps> = ({
   // Speech synthesis & playback references
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const playbackTimerRef = useRef<any>(null);
-  const lastTickTimeRef = useRef<number>(Date.now());
+  const lastTickTimeRef = useRef<number>(0);
 
   // Determine effective visual style (either prop or videoData flag)
   const isCartoonStyle = videoStyle === 'cartoon' || videoData?.video_style === 'cartoon';

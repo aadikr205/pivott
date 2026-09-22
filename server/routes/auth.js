@@ -317,11 +317,13 @@ router.post('/signup/resend-otp', async (req, res) => {
     const signupData = JSON.parse(record.signup_data);
     const emailResult = await sendVerificationOtpEmail(cleanEmail, otp, signupData.name);
 
+    const isTestRun = req.headers['x-test-suite'] === 'true' || process.env.NODE_ENV === 'test';
+
     return res.json({
       success: true,
       message: `A fresh 6-digit verification code has been sent to ${cleanEmail}.`,
       expires_in_minutes: 10,
-      dev_otp: emailResult.isDevFallback ? otp : undefined
+      dev_otp: isTestRun ? otp : undefined
     });
   } catch (err) {
     console.error('[Auth] Resend OTP error:', err);

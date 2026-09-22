@@ -229,6 +229,7 @@ app.use(express.static(clientDistPath, {
 
 app.use((req, res, next) => {
   if (
+    req.method !== 'GET' ||
     req.path.startsWith('/api') ||
     req.path.startsWith('/uploads') ||
     req.path.startsWith('/public') ||
@@ -243,9 +244,12 @@ app.use((req, res, next) => {
     req.path.startsWith('/pyq') ||
     req.path.startsWith('/notes') ||
     req.path.startsWith('/doubt-solver') ||
+    req.path.startsWith('/chat') ||
     req.path.startsWith('/activity') ||
     req.path.startsWith('/self-timetable') ||
-    req.path.startsWith('/notifications')
+    req.path.startsWith('/notifications') ||
+    req.path === '/mobile-login' ||
+    req.path === '/auto-login'
   ) {
     return next();
   }
@@ -255,6 +259,14 @@ app.use((req, res, next) => {
   res.sendFile(path.join(clientDistPath, 'index.html'), err => {
     if (err) next();
   });
+});
+
+// JSON 404 handler for unknown API routes
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api') || req.headers.accept?.includes('application/json')) {
+    return res.status(404).json({ error: `Route not found: ${req.method} ${req.path}` });
+  }
+  return res.status(404).send('Page not found');
 });
 
 // Global error handler
