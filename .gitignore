@@ -40,6 +40,10 @@ tunnel_info.json
 # Scratch scripts
 scratch/
 
+# User uploads
+server/public/uploads/profiles/*
+!server/public/uploads/profiles/.gitkeep
+
 # OS files
 .DS_Store
 Thumbs.db
