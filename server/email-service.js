@@ -1,27 +1,97 @@
 /**
  * Pivott Email & Transactional OTP Service
- * Sends clean transactional verification emails via Nodemailer with SMTP config or dev fallback.
+ * Sends clean transactional verification emails via Nodemailer with Gmail SMTP / custom SMTP config or dev fallback.
  */
 
 const nodemailer = require('nodemailer');
 
-// Initialize transporter if SMTP credentials provided
-let transporter = null;
-if (process.env.SMTP_HOST && process.env.SMTP_USER) {
+// Ensure environment variables are loaded if dotenv was not called yet
+if (!process.env.EMAIL_USER && !process.env.SMTP_USER) {
   try {
-    transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: Number(process.env.SMTP_PORT) === 465,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    });
-    console.log('[EmailService] Configured live SMTP transport with host:', process.env.SMTP_HOST);
-  } catch (err) {
-    console.warn('[EmailService] SMTP initialization failed:', err.message);
+    require('dotenv').config();
+  } catch (_) {}
+}
+
+let transporter = null;
+
+/**
+ * Initializes the Nodemailer transporter using EMAIL_USER / EMAIL_PASS (Gmail)
+ * or SMTP_HOST / SMTP_USER / SMTP_PASS (generic SMTP).
+ */
+function initializeTransporter() {
+  const emailUser = (process.env.EMAIL_USER || process.env.SMTP_USER || '').trim();
+  let emailPass = (process.env.EMAIL_PASS || process.env.SMTP_PASS || '').trim().replace(/^["']|["']$/g, '');
+
+  if (!emailUser || !emailPass) {
+    return null;
   }
+
+  // Google displays App Passwords in 4x4 format ("abcd efgh ijkl mnop") - auto-strip spaces
+  if (/^[a-zA-Z]{4}\s+[a-zA-Z]{4}\s+[a-zA-Z]{4}\s+[a-zA-Z]{4}$/.test(emailPass)) {
+    emailPass = emailPass.replace(/\s+/g, '');
+  }
+
+  const host = (process.env.SMTP_HOST || process.env.EMAIL_HOST || '').trim();
+  const port = Number(process.env.SMTP_PORT || process.env.EMAIL_PORT);
+
+  try {
+    let transportConfig;
+    if (host) {
+      transportConfig = {
+        host,
+        port: port || 587,
+        secure: (port || 587) === 465,
+        auth: {
+          user: emailUser,
+          pass: emailPass
+        }
+      };
+      console.log(`[EmailService] Configured live SMTP transport (Host: ${host}:${port || 587}, User: ${emailUser})`);
+    } else {
+      // Default to Gmail service when EMAIL_USER and EMAIL_PASS are provided without custom host
+      transportConfig = {
+        service: (process.env.EMAIL_SERVICE || 'gmail').trim(),
+        auth: {
+          user: emailUser,
+          pass: emailPass
+        }
+      };
+      console.log(`[EmailService] Configured live Gmail transport for: ${emailUser}`);
+    }
+
+    return nodemailer.createTransport(transportConfig);
+  } catch (err) {
+    console.warn('[EmailService] Transporter initialization failed:', err.message);
+    return null;
+  }
+}
+
+// Initial transporter setup
+transporter = initializeTransporter();
+
+/**
+ * Get active transporter or attempt re-initialization if environment variables were set late
+ */
+function getTransporter() {
+  if (!transporter) {
+    transporter = initializeTransporter();
+  }
+  return transporter;
+}
+
+/**
+ * Formats the From header. For Gmail SMTP, sender must match authenticated user unless an alias is configured.
+ */
+function getSenderAddress(type = 'Verification') {
+  const emailUser = (process.env.EMAIL_USER || process.env.SMTP_USER || '').trim();
+  const customFrom = (process.env.EMAIL_FROM || process.env.SMTP_FROM || '').trim();
+  if (customFrom) {
+    return customFrom;
+  }
+  if (emailUser) {
+    return `"Pivott ${type}" <${emailUser}>`;
+  }
+  return `"Pivott ${type}" <noreply@pivott.app>`;
 }
 
 /**
@@ -30,16 +100,19 @@ if (process.env.SMTP_HOST && process.env.SMTP_USER) {
  * @param {string} toEmail 
  * @param {string} otp 
  * @param {string} studentName 
- * @returns {Promise<{ delivered: boolean, previewUrl?: string }>}
+ * @returns {Promise<{ delivered: boolean, messageId?: string, isDevFallback?: boolean, error?: string }>}
  */
 async function sendVerificationOtpEmail(toEmail, otp, studentName = 'Student') {
-  console.log(`\n==================================================`);
-  console.log(`[Pivott Auth] 📧 6-Digit Email Verification Code`);
-  console.log(`Recipient: ${toEmail} (${studentName})`);
-  console.log(`OTP Code:  >>> ${otp} <<< (Valid for 10 minutes)`);
-  console.log(`==================================================\n`);
+  const activeTransporter = getTransporter();
 
-  if (!transporter) {
+  // If no email credentials configured, fall back to console logging for local dev/testing
+  if (!activeTransporter) {
+    console.log(`\n==================================================`);
+    console.log(`[Pivott Auth] 📧 6-Digit Email Verification Code (Dev Fallback)`);
+    console.log(`Recipient: ${toEmail} (${studentName})`);
+    console.log(`OTP Code:  >>> ${otp} <<< (Valid for 10 minutes)`);
+    console.log(`[Notice] To send real emails, ensure EMAIL_USER and EMAIL_PASS are set.`);
+    console.log(`==================================================\n`);
     return { delivered: true, isDevFallback: true };
   }
 
@@ -68,19 +141,21 @@ async function sendVerificationOtpEmail(toEmail, otp, studentName = 'Student') {
   `;
 
   try {
-    const info = await transporter.sendMail({
-      from: process.env.SMTP_FROM || '"Pivott Verification" <noreply@pivott.app>',
+    console.log(`[EmailService] Sending verification OTP email to ${toEmail}...`);
+    const fromAddress = getSenderAddress('Verification');
+    const info = await activeTransporter.sendMail({
+      from: fromAddress,
       to: toEmail,
       subject: `Your Pivott Verification Code: ${otp}`,
       text: `Welcome to Pivott! Your 6-digit verification code is: ${otp}. It expires in 10 minutes.`,
       html: htmlContent
     });
 
-    console.log(`[EmailService] OTP email dispatched successfully: ${info.messageId}`);
+    console.log(`[EmailService] OTP email dispatched successfully to ${toEmail}: ${info.messageId}`);
     return { delivered: true, messageId: info.messageId };
   } catch (error) {
-    console.error(`[EmailService] Failed to send email via SMTP:`, error.message);
-    // Return true for test robustness so dev flow is not blocked
+    console.error(`[EmailService] Failed to send email via Gmail/SMTP to ${toEmail}:`, error.message);
+    // Return error information; fallback true ensures dev/test pipeline isn't completely blocked
     return { delivered: false, error: error.message, isDevFallback: true };
   }
 }
@@ -91,16 +166,18 @@ async function sendVerificationOtpEmail(toEmail, otp, studentName = 'Student') {
  * @param {string} toEmail 
  * @param {string} otp 
  * @param {string} studentName 
- * @returns {Promise<{ delivered: boolean, messageId?: string, isDevFallback?: boolean }>}
+ * @returns {Promise<{ delivered: boolean, messageId?: string, isDevFallback?: boolean, error?: string }>}
  */
 async function sendPasswordResetOtpEmail(toEmail, otp, studentName = 'Student') {
-  console.log(`\n==================================================`);
-  console.log(`[Pivott Auth] 🔑 6-Digit Password Reset Code`);
-  console.log(`Recipient: ${toEmail} (${studentName})`);
-  console.log(`OTP Code:  >>> ${otp} <<< (Valid for 10 minutes)`);
-  console.log(`==================================================\n`);
+  const activeTransporter = getTransporter();
 
-  if (!transporter) {
+  if (!activeTransporter) {
+    console.log(`\n==================================================`);
+    console.log(`[Pivott Auth] 🔑 6-Digit Password Reset Code (Dev Fallback)`);
+    console.log(`Recipient: ${toEmail} (${studentName})`);
+    console.log(`OTP Code:  >>> ${otp} <<< (Valid for 10 minutes)`);
+    console.log(`[Notice] To send real emails, ensure EMAIL_USER and EMAIL_PASS are set.`);
+    console.log(`==================================================\n`);
     return { delivered: true, isDevFallback: true };
   }
 
@@ -129,23 +206,27 @@ async function sendPasswordResetOtpEmail(toEmail, otp, studentName = 'Student') 
   `;
 
   try {
-    const info = await transporter.sendMail({
-      from: process.env.SMTP_FROM || '"Pivott Security" <noreply@pivott.app>',
+    console.log(`[EmailService] Sending password reset email to ${toEmail}...`);
+    const fromAddress = getSenderAddress('Security');
+    const info = await activeTransporter.sendMail({
+      from: fromAddress,
       to: toEmail,
       subject: `Your Pivott Password Reset Code: ${otp}`,
       text: `Hello ${studentName}! Your 6-digit password reset code is: ${otp}. It expires in 10 minutes.`,
       html: htmlContent
     });
 
-    console.log(`[EmailService] Password reset email dispatched: ${info.messageId}`);
+    console.log(`[EmailService] Password reset email dispatched to ${toEmail}: ${info.messageId}`);
     return { delivered: true, messageId: info.messageId };
   } catch (error) {
-    console.error(`[EmailService] Failed to send password reset email:`, error.message);
+    console.error(`[EmailService] Failed to send password reset email to ${toEmail}:`, error.message);
     return { delivered: false, error: error.message, isDevFallback: true };
   }
 }
 
 module.exports = {
   sendVerificationOtpEmail,
-  sendPasswordResetOtpEmail
+  sendPasswordResetOtpEmail,
+  getTransporter,
+  initializeTransporter
 };
