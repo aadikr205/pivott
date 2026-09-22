@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Compass, Sparkles, ArrowRight, Lock, Mail, User as UserIcon, Eye, EyeOff, Check, X, ShieldCheck, RefreshCw, KeyRound, ArrowLeft, HelpCircle } from 'lucide-react';
 import { api, setToken, User } from '../api/client';
+import { safeStorage } from '../utils/safeStorage';
 
 interface AuthModalProps {
   onSuccess: (user: User) => void;
@@ -13,7 +14,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
 
   // Form fields
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(() => safeStorage.getItem('pivott_last_email') || '');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -126,6 +127,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
       try {
         const res = await api.login({ email, password });
         setToken(res.token);
+        safeStorage.setItem('pivott_last_email', email.trim().toLowerCase());
         onSuccess(res.user);
       } catch (err: any) {
         setError(err.message || 'Login failed. Please check your credentials.');
@@ -163,7 +165,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
         setOtpDigits(['', '', '', '', '', '']);
         setSuccessMsg(`A 6-digit verification code has been sent to ${email}. Please check your email inbox.`);
       } catch (err: any) {
-        setError(err.message || 'Failed to send verification email. Please try again.');
+        const msg = err.message || 'Failed to send verification email. Please try again.';
+        if (msg.toLowerCase().includes('already exists') || msg.toLowerCase().includes('already registered')) {
+          setViewMode('login');
+          setSuccessMsg('Your account is already verified and saved in the database! Please sign in with your password.');
+          setError(null);
+        } else {
+          setError(msg);
+        }
       } finally {
         setLoading(false);
       }
@@ -184,6 +193,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
     try {
       const res = await api.verifySignupOtp({ email, otp: fullOtp });
       setToken(res.token);
+      safeStorage.setItem('pivott_last_email', email.trim().toLowerCase());
       onSuccess(res.user);
     } catch (err: any) {
       setError(err.message || 'Invalid or expired code.');
@@ -668,25 +678,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
               </div>
             )}
 
-            {/* Quick Demo Button */}
-            <div className="mb-5">
-              <button
-                type="button"
-                onClick={handleQuickDemo}
-                disabled={loading}
-                className="w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-600 hover:to-indigo-700 text-white text-xs sm:text-sm font-bold shadow-md shadow-teal-500/25 transition-all flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
-              >
-                <Sparkles className="w-4 h-4 text-teal-200" />
-                <span>1-Click Instant Access (Explore All Features)</span>
-              </button>
-              <div className="relative flex py-3 items-center">
-                <div className="flex-grow border-t border-slate-200"></div>
-                <span className="flex-shrink mx-3 text-[11px] text-slate-400 font-medium">
-                  or {viewMode === 'login' ? 'sign in' : 'register'} with email
-                </span>
-                <div className="flex-grow border-t border-slate-200"></div>
+            {/* Welcome Back Notice if Remembered Email is present */}
+            {viewMode === 'login' && email && (
+              <div className="mb-4 p-2.5 rounded-xl bg-teal-50 border border-teal-200 text-[11px] text-teal-800 flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
+                <span>Welcome back! Enter your password to access your saved study data.</span>
               </div>
-            </div>
+            )}
 
             <form onSubmit={handleFormSubmit} className="space-y-4">
               {viewMode === 'signup' && (
@@ -821,7 +819,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
               </button>
             </form>
 
-            <div className="text-center mt-5 pt-4 border-t border-slate-100">
+            <div className="text-center mt-5 pt-4 border-t border-slate-100 space-y-3">
               <button
                 type="button"
                 onClick={() => {
@@ -829,9 +827,20 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess }) => {
                   setError(null);
                   setSuccessMsg(null);
                 }}
-                className="text-xs text-slate-600 hover:text-indigo-600 font-semibold cursor-pointer"
+                className="text-xs text-slate-600 hover:text-indigo-600 font-semibold cursor-pointer block w-full text-center"
               >
-                {viewMode === 'login' ? "Don't have an account? Sign up with verification" : 'Already have an account? Sign in'}
+                {viewMode === 'login' ? "Don't have an account? Sign up with verification" : 'Already have an account? Sign in with email & password'}
+              </button>
+
+              {/* Subtle Quick Demo Link */}
+              <button
+                type="button"
+                onClick={handleQuickDemo}
+                disabled={loading}
+                className="inline-flex items-center text-[11px] text-slate-400 hover:text-teal-600 transition-colors cursor-pointer gap-1"
+              >
+                <Sparkles className="w-3 h-3 text-teal-500" />
+                <span>Or explore with 1-Click Instant Demo</span>
               </button>
             </div>
           </div>

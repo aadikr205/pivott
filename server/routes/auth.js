@@ -253,6 +253,20 @@ router.post('/signup/verify-otp', (req, res) => {
     // Clean up verification record
     db.prepare('DELETE FROM signup_verifications WHERE email = ?').run(cleanEmail);
 
+    // Automatically seed initial curriculum and schedule so the student's study plan is immediately ready in the database
+    try {
+      const { seedUserInitialCurriculum } = require('./onboarding');
+      seedUserInitialCurriculum(
+        userId,
+        signupData.exam_name,
+        signupData.exam_date,
+        signupData.max_daily_hours,
+        signupData.off_days
+      );
+    } catch (err) {
+      console.warn('[Auth] Seeding curriculum warning:', err.message);
+    }
+
     // Feature 7: Log permanent activity
     logActivity(userId, 'auth', `Account created & email verified (${cleanEmail})`, {
       exam_name: signupData.exam_name
@@ -387,6 +401,20 @@ router.post('/signup', (req, res) => {
       now
     );
 
+    // Automatically seed initial curriculum and schedule so the student's study plan is immediately ready in the database
+    try {
+      const { seedUserInitialCurriculum } = require('./onboarding');
+      seedUserInitialCurriculum(
+        userId,
+        exam_name || 'Competitive Exam',
+        exam_date,
+        Number(max_daily_hours) || 6.0,
+        off_days || [0]
+      );
+    } catch (err) {
+      console.warn('[Auth] Direct signup seeding curriculum warning:', err.message);
+    }
+
     // Feature 7: Log permanent activity
     logActivity(userId, 'auth', `Account created via instant signup (${cleanEmail})`);
 
@@ -427,6 +455,14 @@ router.post('/login', (req, res) => {
 
     // Feature 7: Log permanent activity
     logActivity(user.id, 'auth', `Student logged in (${user.email})`);
+
+    // Ensure student has their curriculum and schedule ready in database if they have 0 subjects
+    try {
+      const { seedUserInitialCurriculum } = require('./onboarding');
+      seedUserInitialCurriculum(user.id, user.exam_name, user.exam_date, user.max_daily_hours, user.off_days);
+    } catch (e) {
+      console.warn('[Auth] Auto-seeding check error on login:', e.message);
+    }
 
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '30d' });
 

@@ -30,10 +30,16 @@ import { Sparkles, Calendar, BookOpen, Compass, AlertCircle, RotateCcw } from 'l
 
 export function App() {
   // Optimistic state hydration from safeStorage for 0ms launch time
-  const [user, setUser] = useState<User | null>(() => safeStorage.getJSON<User>('pivott_cached_user'));
+  const [user, setUser] = useState<User | null>(() => {
+    if (safeStorage.getItem('pivott_logged_out') === 'true' || !safeStorage.getItem('pivott_token')) {
+      return null;
+    }
+    return safeStorage.getJSON<User>('pivott_cached_user');
+  });
   const [authLoading, setAuthLoading] = useState<boolean>(() => {
-    // If we have both cached user and token, don't show blocking loading screen
+    if (safeStorage.getItem('pivott_logged_out') === 'true') return false;
     const hasToken = !!safeStorage.getItem('pivott_token');
+    if (!hasToken) return false;
     const hasCachedUser = !!safeStorage.getJSON<User>('pivott_cached_user');
     return !(hasToken && hasCachedUser);
   });
@@ -119,12 +125,21 @@ export function App() {
 
   const [hasExplicitlyLoggedOut, setHasExplicitlyLoggedOut] = useState(false);
   const lastActiveDateRef = useRef<string>(new Date().toISOString().split('T')[0]);
+  const userRef = useRef<User | null>(user);
+
+  useEffect(() => {
+    userRef.current = user;
+  }, [user]);
 
   // Keep safeStorage in sync with active user
   const updateUser = useCallback((newUser: User | null) => {
     setUser(newUser);
+    userRef.current = newUser;
     if (newUser) {
       safeStorage.setJSON('pivott_cached_user', newUser);
+      if (newUser.email) {
+        safeStorage.setItem('pivott_last_email', newUser.email.trim().toLowerCase());
+      }
     } else {
       safeStorage.removeItem('pivott_cached_user');
     }
@@ -141,8 +156,9 @@ export function App() {
   }, []);
 
   // Fetch today's schedule
-  const fetchToday = useCallback(async () => {
-    if (!user) return;
+  const fetchToday = useCallback(async (explicitUser?: User | null) => {
+    const activeUser = explicitUser !== undefined ? explicitUser : userRef.current;
+    if (!activeUser) return;
     setTodayLoading(true);
     try {
       const data = await api.getTodaySchedule();
@@ -159,7 +175,7 @@ export function App() {
     } finally {
       setTodayLoading(false);
     }
-  }, [user, updateTodayData]);
+  }, [updateTodayData]);
 
   // Initial Auth Loader with 4s hard fallback timeout
   const initAuth = useCallback(() => {
@@ -169,9 +185,18 @@ export function App() {
 
     if (tokenFromUrl) {
       setToken(tokenFromUrl);
+      safeStorage.removeItem('pivott_logged_out');
     }
 
     setAuthTimeoutTriggered(false);
+
+    // If no token exists and auto_login is not requested, immediately stay on login screen
+    const token = safeStorage.getItem('pivott_token');
+    if (!token && !autoLoginRequested && !tokenFromUrl) {
+      updateUser(null);
+      setAuthLoading(false);
+      return;
+    }
 
     // Safety timeout: Never leave the user stuck on loading spinner for more than 4 seconds
     const safetyTimer = setTimeout(() => {
@@ -187,34 +212,30 @@ export function App() {
     api.me()
       .then(res => {
         clearTimeout(safetyTimer);
+        safeStorage.removeItem('pivott_logged_out');
         updateUser(res.user);
         setAuthLoading(false);
         setSessionExpiredNotice(null);
       })
       .catch(async () => {
         clearTimeout(safetyTimer);
-        // If user explicitly clicked logout, only skip auto-login if NOT explicitly requested via QR code
-        if (hasExplicitlyLoggedOut && !autoLoginRequested && !tokenFromUrl) {
-          updateUser(null);
-          setAuthLoading(false);
-          return;
+        // Only auto-login if explicitly requested via QR code scan
+        if (autoLoginRequested) {
+          try {
+            const res = await api.login({ email: 'student@pivott.app', password: 'password123' });
+            setToken(res.token);
+            safeStorage.removeItem('pivott_logged_out');
+            updateUser(res.user);
+            return;
+          } catch {}
         }
 
-        // Automatic seamless login with default student demo account
-        try {
-          const res = await api.login({ email: 'student@pivott.app', password: 'password123' });
-          setToken(res.token);
-          updateUser(res.user);
-        } catch {
-          // If offline or login fails, retain cached user if present
-          if (!safeStorage.getJSON('pivott_cached_user')) {
-            updateUser(null);
-          }
-        } finally {
-          setAuthLoading(false);
-        }
+        // Token expired or invalid: cleanly prompt user to sign in
+        clearToken();
+        updateUser(null);
+        setAuthLoading(false);
       });
-  }, [hasExplicitlyLoggedOut, updateUser]);
+  }, [updateUser]);
 
   useEffect(() => {
     initAuth();
@@ -312,6 +333,7 @@ export function App() {
 
   const handleLogout = () => {
     clearToken();
+    safeStorage.setItem('pivott_logged_out', 'true');
     setHasExplicitlyLoggedOut(true);
     updateUser(null);
     updateTodayData(null);
@@ -372,10 +394,11 @@ export function App() {
 
         <AuthModal
           onSuccess={(u) => {
+            safeStorage.removeItem('pivott_logged_out');
             setHasExplicitlyLoggedOut(false);
             setSessionExpiredNotice(null);
             updateUser(u);
-            fetchToday();
+            fetchToday(u);
           }}
         />
         <InstallBanner

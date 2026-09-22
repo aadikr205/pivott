@@ -786,4 +786,122 @@ router.post('/setup', authMiddleware, async (req, res) => {
   }
 });
 
+/**
+ * Automatically seeds initial subjects, topics, and schedule for newly verified students
+ * Ensures student's account is permanently ready in the database from the moment of signup verification.
+ */
+function seedUserInitialCurriculum(userId, examName = 'NEET 2026', examDate = null, maxDailyHours = 6.0, offDays = [0]) {
+  try {
+    if (!userId) return false;
+
+    // Check if user already has subjects (idempotent)
+    const existing = db.prepare('SELECT COUNT(*) as count FROM subjects WHERE user_id = ?').get(userId);
+    if (existing && existing.count > 0) {
+      return false;
+    }
+
+    let presetKey = 'neet';
+    if (examName) {
+      const lower = examName.toLowerCase();
+      if (lower.includes('jee main') || lower.includes('jee_main')) presetKey = 'jee_main';
+      else if (lower.includes('jee') || lower.includes('advanced')) presetKey = 'jee';
+      else if (lower.includes('pcb') && lower.includes('cbse')) presetKey = 'cbse12_pcb';
+      else if (lower.includes('pcmb') && lower.includes('cbse')) presetKey = 'cbse12_pcmb';
+      else if (lower.includes('cbse') || lower.includes('12th')) presetKey = 'cbse12';
+      else if (lower.includes('10th') || lower.includes('class 10')) presetKey = 'class10';
+      else if (lower.includes('bseb') && lower.includes('10')) presetKey = 'bseb10';
+      else if (lower.includes('bseb')) presetKey = 'bseb12';
+      else if (lower.includes('iso')) presetKey = 'olympiad_iso';
+      else if (lower.includes('imo')) presetKey = 'olympiad_imo';
+      else if (lower.includes('eio')) presetKey = 'olympiad_eio';
+      else if (lower.includes('gkio')) presetKey = 'olympiad_gkio';
+      else if (lower.includes('ico')) presetKey = 'olympiad_ico';
+      else if (lower.includes('ido')) presetKey = 'olympiad_ido';
+      else if (lower.includes('neso')) presetKey = 'olympiad_neso';
+      else if (lower.includes('nsso')) presetKey = 'olympiad_nsso';
+    }
+
+    const preset = SYLLABUS_PRESETS[presetKey] || SYLLABUS_PRESETS.neet;
+    if (!preset || !Array.isArray(preset.subjects)) return false;
+
+    const safeMaxHours = Math.max(1, Math.min(14, Number(maxDailyHours) || 6.0));
+    const safeOffDays = Array.isArray(offDays) ? offDays : [0];
+    const targetExamDate = examDate || new Date(Date.now() + 60 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const now = new Date().toISOString();
+
+    const insertedTopics = [];
+    const seedTx = db.transaction(() => {
+      for (const subj of preset.subjects) {
+        if (!subj.name || !subj.name.trim()) continue;
+        const subjectId = uuidv4();
+        db.prepare('INSERT INTO subjects (id, user_id, name, created_at) VALUES (?, ?, ?, ?)').run(
+          subjectId,
+          userId,
+          subj.name.trim(),
+          now
+        );
+
+        if (Array.isArray(subj.topics)) {
+          for (const top of subj.topics) {
+            if (!top.name || !top.name.trim()) continue;
+            const topicId = uuidv4();
+            const weightage = Math.min(5, Math.max(1, Number(top.weightage) || 3));
+            const estMinutes = Math.max(15, Number(top.estimated_minutes) || 60);
+
+            db.prepare(`
+              INSERT INTO topics (id, subject_id, name, weightage, estimated_minutes, status, mastery_score, created_at)
+              VALUES (?, ?, ?, ?, ?, 'not_started', 0, ?)
+            `).run(topicId, subjectId, top.name.trim(), weightage, estMinutes, now);
+
+            insertedTopics.push({
+              id: topicId,
+              subject_id: subjectId,
+              name: top.name.trim(),
+              weightage,
+              estimated_minutes: estMinutes,
+              status: 'not_started',
+              mastery_score: 0
+            });
+          }
+        }
+      }
+
+      if (insertedTopics.length > 0) {
+        const todayStr = formatDate(new Date());
+        const userObj = {
+          id: userId,
+          max_daily_hours: safeMaxHours,
+          off_days: safeOffDays,
+          buffer_days_percent: 0.10
+        };
+
+        const { scheduleDays } = replanSchedule(userObj, insertedTopics, todayStr, targetExamDate);
+        const insertSchedule = db.prepare(`
+          INSERT INTO schedule_days (id, user_id, date, planned_items, actual_completed, is_backlog_day)
+          VALUES (?, ?, ?, ?, '[]', 0)
+        `);
+
+        for (const day of scheduleDays) {
+          insertSchedule.run(
+            uuidv4(),
+            userId,
+            day.date,
+            JSON.stringify(day.planned_items || [])
+          );
+        }
+      }
+    });
+
+    seedTx();
+    console.log(`[Curriculum] Initial curriculum seeded for user ${userId} (${presetKey}) with ${insertedTopics.length} topics.`);
+    return true;
+  } catch (err) {
+    console.error('[Curriculum] Error seeding initial curriculum:', err);
+    return false;
+  }
+}
+
+router.SYLLABUS_PRESETS = SYLLABUS_PRESETS;
+router.seedUserInitialCurriculum = seedUserInitialCurriculum;
+
 module.exports = router;
