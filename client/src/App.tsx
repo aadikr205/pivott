@@ -471,7 +471,7 @@ export function App() {
               )}
 
               {activeTab === 'dashboard' && (
-                <DashboardView />
+                <DashboardView onBackToToday={() => setActiveTab('today')} />
               )}
 
               {activeTab === 'deferred' && (

@@ -16,7 +16,11 @@ import {
 import { BarChart3, TrendingUp, ShieldAlert, Award, Clock, CheckCircle2, Flame, Calendar, Sparkles } from 'lucide-react';
 import { api, DashboardResponse } from '../api/client';
 
-export const DashboardView: React.FC = () => {
+interface DashboardViewProps {
+  onBackToToday?: () => void;
+}
+
+export const DashboardView: React.FC<DashboardViewProps> = ({ onBackToToday }) => {
   const [data, setData] = useState<DashboardResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -64,6 +68,15 @@ export const DashboardView: React.FC = () => {
         </div>
 
         <div className="flex items-center space-x-3">
+          {onBackToToday && (
+            <button
+              type="button"
+              onClick={onBackToToday}
+              className="px-3.5 py-2 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-xs active:scale-95"
+            >
+              ← Back to Today
+            </button>
+          )}
           <div className="px-4 py-2 rounded-2xl bg-indigo-50 border border-indigo-100 text-center">
             <div className="text-[11px] text-indigo-600 font-medium">Exam Date</div>
             <div className="text-sm font-bold text-indigo-900">{summary.exam_date}</div>

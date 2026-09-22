@@ -151,15 +151,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                 <button
                   type="button"
-                  onClick={() => setActiveTab('dashboard')}
+                  onClick={() => setActiveTab('self-timetable')}
                   className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all cursor-pointer ${
-                    activeTab === 'dashboard'
-                      ? 'bg-emerald-50 text-emerald-900 font-bold border border-emerald-200/70 shadow-xs'
+                    activeTab === 'self-timetable'
+                      ? 'bg-teal-50 text-teal-900 font-bold border border-teal-200/70 shadow-xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >
-                  <BarChart3 className="w-4 h-4 text-emerald-600" />
-                  <span>Progress</span>
+                  <Layers className="w-4 h-4 text-teal-600" />
+                  <span>Self Timetable</span>
                 </button>
 
                 <button
@@ -355,28 +355,28 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Menu Actions */}
             <div className="space-y-2">
-              {/* Feature 2: New Self Timetable (Non-Exam, Self-Study) */}
+              {/* Study Progress & Performance Dashboard (Moved to Account Menu) */}
               <button
                 type="button"
                 onClick={() => {
                   setIsProfileOpen(false);
-                  setActiveTab('self-timetable');
+                  setActiveTab('dashboard');
                 }}
-                className="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-teal-50 to-emerald-50 hover:from-teal-100 hover:to-emerald-100 text-teal-950 border border-teal-200 transition-all cursor-pointer text-left active:scale-98 group shadow-xs"
+                className="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 text-emerald-950 border border-emerald-200 transition-all cursor-pointer text-left active:scale-98 group shadow-xs"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Layers className="w-4 h-4" />
+                  <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <BarChart3 className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="flex items-center space-x-1.5">
-                      <p className="text-xs font-black text-teal-950">Self Timetable</p>
-                      <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-teal-600 text-white font-black">Class 1–12</span>
+                      <p className="text-xs font-black text-emerald-950">Study Progress</p>
+                      <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-emerald-600 text-white font-black">Analytics</span>
                     </div>
-                    <p className="text-[11px] text-teal-700">General self-study • Verified notes & cartoon videos</p>
+                    <p className="text-[11px] text-emerald-700">Completion stats, fatigue tracking & charts</p>
                   </div>
                 </div>
-                <ChevronRight className="w-4 h-4 text-teal-600 group-hover:translate-x-0.5 transition-transform" />
+                <ChevronRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-0.5 transition-transform" />
               </button>
 
               <button
@@ -582,15 +582,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         <button
           type="button"
-          onClick={() => setActiveTab('dashboard')}
+          onClick={() => setActiveTab('self-timetable')}
           className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-            activeTab === 'dashboard'
-              ? 'text-emerald-700 font-bold bg-emerald-50/90'
+            activeTab === 'self-timetable'
+              ? 'text-teal-700 font-bold bg-teal-50/90'
               : 'text-slate-500 hover:text-slate-800'
           }`}
         >
-          <BarChart3 className="w-4 h-4 mb-0.5" />
-          <span className="text-[9px] sm:text-[10px]">Progress</span>
+          <Layers className="w-4 h-4 mb-0.5" />
+          <span className="text-[9px] sm:text-[10px]">Self Timetable</span>
         </button>
 
         {user && (
