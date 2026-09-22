@@ -142,8 +142,12 @@ router.get('/alerts', (req, res) => {
       });
     }
 
+    const userPref = db.prepare('SELECT notifications_enabled FROM users WHERE id = ?').get(userId);
+    const notificationsEnabled = userPref ? (userPref.notifications_enabled !== 0 ? 1 : 0) : 1;
+
     res.json({
       success: true,
+      notifications_enabled: notificationsEnabled,
       current_time: now.toISOString(),
       remaining_hours: remainingHoursToday,
       remaining_minutes: remainingMinutesToday,

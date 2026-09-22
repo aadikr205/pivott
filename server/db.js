@@ -121,6 +121,14 @@ db.exec(`
     created_at TEXT NOT NULL
   );
 
+  CREATE TABLE IF NOT EXISTS password_resets (
+    email TEXT PRIMARY KEY,
+    otp_hash TEXT NOT NULL,
+    expires_at TEXT NOT NULL,
+    attempt_count INTEGER DEFAULT 0,
+    created_at TEXT NOT NULL
+  );
+
   CREATE TABLE IF NOT EXISTS activity_logs (
     id TEXT PRIMARY KEY,
     user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -208,6 +216,8 @@ function addColumnIfNotExists(table, column, typeDef) {
 
 addColumnIfNotExists('users', 'is_verified', 'INTEGER DEFAULT 1');
 addColumnIfNotExists('users', 'profile_photo_url', 'TEXT');
+addColumnIfNotExists('users', 'password_sha256', 'TEXT');
+addColumnIfNotExists('users', 'notifications_enabled', 'INTEGER DEFAULT 1');
 addColumnIfNotExists('pyq_questions', 'type', "TEXT DEFAULT 'mcq'");
 addColumnIfNotExists('pyq_questions', 'correct_numeric_answer', 'REAL');
 addColumnIfNotExists('pyq_questions', 'tolerance', 'REAL DEFAULT 0.01');

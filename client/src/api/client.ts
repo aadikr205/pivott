@@ -158,6 +158,7 @@ export interface User {
   created_at: string;
   is_verified?: number;
   profile_photo_url?: string | null;
+  notifications_enabled?: boolean | number;
 }
 
 export interface TopicItem {
@@ -352,6 +353,22 @@ export const api = {
     request<{ success: boolean; profile_photo_url: string; user: User }>('/auth/default-avatar', { method: 'POST', body: JSON.stringify(data) }),
   login: (data: any) => request<{ token: string; user: User }>('/auth/login', { method: 'POST', body: JSON.stringify(data) }),
   me: () => request<{ user: User }>('/auth/me'),
+  forgotPasswordSendOtp: (data: { email: string }) =>
+    request<{ success: boolean; message: string; email: string; dev_otp?: string }>('/auth/forgot-password/send-otp', { method: 'POST', body: JSON.stringify(data) }),
+  forgotPasswordVerifyAndReset: (data: { email: string; otp: string; new_password: string; confirm_password?: string }) =>
+    request<{ success: boolean; message: string }>('/auth/forgot-password/verify-and-reset', { method: 'POST', body: JSON.stringify(data) }),
+  changePassword: (
+    dataOrCurrent: { current_password: string; new_password: string; confirm_password?: string } | string,
+    newPassword?: string,
+    confirmPassword?: string
+  ) => {
+    const payload = typeof dataOrCurrent === 'string'
+      ? { current_password: dataOrCurrent, new_password: newPassword!, confirm_password: confirmPassword }
+      : dataOrCurrent;
+    return request<{ success: boolean; message: string }>('/auth/change-password', { method: 'POST', body: JSON.stringify(payload) });
+  },
+  updateNotificationPreference: (enabled: boolean) =>
+    request<{ success: boolean; notifications_enabled: boolean; user: User }>('/auth/notifications-preference', { method: 'PUT', body: JSON.stringify({ enabled }) }),
 
   // Onboarding
   getPresets: () => request<{ presets: Record<string, any> }>('/onboarding/presets'),
@@ -814,6 +831,7 @@ export interface NotificationResponse {
   alerts_count: number;
   critical_count: number;
   alerts: NotificationAlert[];
+  notifications_enabled?: number;
 }
 
 export interface SelfTimetableEntry {

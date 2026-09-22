@@ -85,6 +85,67 @@ async function sendVerificationOtpEmail(toEmail, otp, studentName = 'Student') {
   }
 }
 
+/**
+ * Send 6-digit password reset code to student's email
+ * 
+ * @param {string} toEmail 
+ * @param {string} otp 
+ * @param {string} studentName 
+ * @returns {Promise<{ delivered: boolean, messageId?: string, isDevFallback?: boolean }>}
+ */
+async function sendPasswordResetOtpEmail(toEmail, otp, studentName = 'Student') {
+  console.log(`\n==================================================`);
+  console.log(`[Pivott Auth] 🔑 6-Digit Password Reset Code`);
+  console.log(`Recipient: ${toEmail} (${studentName})`);
+  console.log(`OTP Code:  >>> ${otp} <<< (Valid for 10 minutes)`);
+  console.log(`==================================================\n`);
+
+  if (!transporter) {
+    return { delivered: true, isDevFallback: true };
+  }
+
+  const htmlContent = `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #0b0f19; color: #f8fafc; padding: 32px 16px; min-height: 100%; border-radius: 16px;">
+      <div style="max-width: 500px; margin: 0 auto; background-color: #131d2e; border: 1px solid #1e293b; border-radius: 20px; padding: 32px 24px; text-align: center;">
+        <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); border-radius: 16px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 28px; line-height: 56px;">🔑</span>
+        </div>
+        <h1 style="color: #ffffff; font-size: 22px; font-weight: 800; margin-bottom: 8px;">Password Reset Request</h1>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 24px;">Hello <strong>${studentName}</strong>, use the 6-digit code below to securely reset your Pivott account password.</p>
+        
+        <div style="background-color: #0b0f19; border: 2px dashed #f59e0b; border-radius: 16px; padding: 20px; margin-bottom: 24px;">
+          <span style="font-family: monospace; font-size: 36px; font-weight: 800; letter-spacing: 8px; color: #fbbf24; display: block;">${otp}</span>
+        </div>
+
+        <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin-bottom: 8px;">
+          ⏱️ This reset code is valid for <strong>10 minutes</strong>.<br>
+          If you did not request this password reset, please ignore this email.
+        </p>
+      </div>
+      <div style="text-align: center; margin-top: 24px; color: #475569; font-size: 12px;">
+        &copy; ${new Date().getFullYear()} Pivott Learning Technologies. All rights reserved.
+      </div>
+    </div>
+  `;
+
+  try {
+    const info = await transporter.sendMail({
+      from: process.env.SMTP_FROM || '"Pivott Security" <noreply@pivott.app>',
+      to: toEmail,
+      subject: `Your Pivott Password Reset Code: ${otp}`,
+      text: `Hello ${studentName}! Your 6-digit password reset code is: ${otp}. It expires in 10 minutes.`,
+      html: htmlContent
+    });
+
+    console.log(`[EmailService] Password reset email dispatched: ${info.messageId}`);
+    return { delivered: true, messageId: info.messageId };
+  } catch (error) {
+    console.error(`[EmailService] Failed to send password reset email:`, error.message);
+    return { delivered: false, error: error.message, isDevFallback: true };
+  }
+}
+
 module.exports = {
-  sendVerificationOtpEmail
+  sendVerificationOtpEmail,
+  sendPasswordResetOtpEmail
 };

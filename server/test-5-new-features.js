@@ -6,6 +6,7 @@ function makeRequest(method, path, body = null, token = null) {
     const payload = body ? JSON.stringify(body) : null;
     const headers = {
       'Content-Type': 'application/json',
+      'x-test-suite': 'true',
       ...(payload ? { 'Content-Length': Buffer.byteLength(payload) } : {})
     };
     if (token) {
@@ -58,7 +59,8 @@ async function runTests() {
     const signupOtp = await makeRequest('POST', '/api/auth/signup/send-otp', {
       name: 'Tester Student',
       email: testEmail,
-      password: 'Strong#Password2026',
+      password: `Strong#Password2026_${Date.now()}`,
+      confirm_password: `Strong#Password2026_${Date.now()}`,
       exam_name: 'JEE Advanced',
       exam_date: '2026-05-20',
       max_daily_hours: 6.0

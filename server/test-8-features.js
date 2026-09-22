@@ -12,7 +12,8 @@ function makeRequest(urlPath, method = 'GET', body = null, token = null) {
       path: url.pathname + url.search,
       method: method,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-test-suite': 'true'
       }
     };
 
@@ -78,17 +79,18 @@ async function runTests() {
 
   // Valid password & send OTP
   const testEmail = `student_${Date.now()}@gmail.com`;
-  const validPass = 'Pivott#2026';
+  const validPass = `Pivott#2026_${Date.now()}`;
   const otpRes = await makeRequest('/api/auth/signup/send-otp', 'POST', {
     name: 'Verified Student',
     email: testEmail,
     password: validPass,
+    confirm_password: validPass,
     exam_name: 'JEE Advanced',
     exam_date: '2026-05-20',
     max_daily_hours: 6.0
   });
 
-  assert(otpRes.status === 200 && otpRes.body.success, `OTP sent to ${testEmail}`);
+  assert(otpRes.status === 200 && otpRes.body?.success, `OTP sent to ${testEmail}`, otpRes.body);
   const devOtp = otpRes.body.dev_otp;
   assert(!!devOtp && /^\d{6}$/.test(devOtp), `Received 6-digit numeric OTP in dev mode: ${devOtp}`);
 

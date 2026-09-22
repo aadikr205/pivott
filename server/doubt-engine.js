@@ -311,18 +311,22 @@ The rate of change of momentum of a body is directly proportional to the applied
     id: 'newton_third_law',
     keywords: ['newton third law', 'newton ka teesra niyam', 'action reaction', 'क्रिया प्रतिक्रिया', 'न्यूटन का तीसरा नियम', 'newton 3rd'],
     subject: 'Physics',
-    en: `**Newton's Third Law of Motion**:
+    en: `**Newton's Third Law of Motion (Core Concept)**:
 To every action, there is always an equal and opposite reaction.
 
-👉 **Key Principles**:
+👉 **Core Concept & Key Principles**:
 1. Action and reaction forces are equal in magnitude and opposite in direction ($F_{AB} = -F_{BA}$).
-2. They always act on two **different** bodies simultaneously, so they never cancel each other out.`,
+2. They always act on two **different** bodies simultaneously, so they never cancel each other out.
+
+👉 **Formula**: $F_{AB} = -F_{BA}$`,
     hi: `**न्यूटन का तीसरा गति नियम (क्रिया-प्रतिक्रिया का नियम)**:
 प्रत्येक क्रिया (Action) के बराबर और विपरीत दिशा में प्रतिक्रिया (Reaction) होती है।
 
 👉 **मुख्य बिंदु**:
 1. क्रिया और प्रतिक्रिया बल हमेशा परिमाण में बराबर और दिशा में उल्टे होते हैं ($F_{AB} = -F_{BA}$)।
-2. ये दोनों बल हमेशा दो **अलग-अलग** वस्तुओं पर एक ही समय में लगते हैं।`
+2. ये दोनों बल हमेशा दो **अलग-अलग** वस्तुओं पर एक ही समय में लगते हैं।
+
+👉 **सूत्र (Formula)**: $F_{AB} = -F_{BA}$`
   },
   {
     id: 'gravitation_law',
@@ -969,6 +973,7 @@ function buildChatGPTSolution({ doubt, classLevel, topicName, subjectName, examN
   }
 
   // 3. Highlighted Formulas & Scientific Laws Box
+  let formulaOrRule = chapter?.matchedFormulas?.[0]?.formula || '';
   if (chapter && chapter.matchedFormulas && chapter.matchedFormulas.length > 0) {
     const formulaLines = chapter.matchedFormulas.map(f => {
       let line = `Formula: ${f.formula}`;
@@ -981,8 +986,19 @@ function buildChatGPTSolution({ doubt, classLevel, topicName, subjectName, examN
   }
 
   // 4. Common Exam Traps & High-Scoring Tips
+  let proTip = '';
   if (chapter && chapter.matchedTraps && chapter.matchedTraps.length > 0) {
+    proTip = chapter.matchedTraps[0];
     sections.push(`### ⚠️ Exam Traps & Examiner Pitfalls (${examName || 'Board & Entrance'})\n` + chapter.matchedTraps.map(t => `• ${t}`).join('\n'));
+  } else {
+    proTip = 'Always establish standard reference signs and verify consistent SI units before calculating.';
+  }
+
+  if (!formulaOrRule && theoryMatch) {
+    const formulaMatch = theoryMatch.match(/(?:Formula|सूत्र)[:\s*]+([^\n\r*]+)/i);
+    if (formulaMatch) {
+      formulaOrRule = formulaMatch[1].trim();
+    }
   }
 
   // 5. Recent Previous Year Exam Connection
@@ -1003,6 +1019,9 @@ function buildChatGPTSolution({ doubt, classLevel, topicName, subjectName, examN
 
   return {
     formattedReply,
+    conceptSummary: (theoryMatch || chapter?.summary || formattedReply).slice(0, 200),
+    formulaOrRule,
+    proTip,
     followUpSuggestions
   };
 }
@@ -1015,6 +1034,8 @@ async function solveStudentDoubtSmart({ doubt, examName = '', subjectName = '', 
       doubt: '',
       formatted_reply: 'Hello! I am your AI Doubt Solver. Please ask any question or problem from Physics, Chemistry, Biology, or Mathematics.',
       concept_summary: 'No question provided.',
+      formula_or_rule: '',
+      pro_tip: 'Ask any specific topic or numerical problem to begin.',
       is_direct_answer: true,
       follow_up_suggestions: [
         'What is Photosynthesis?',
@@ -1032,8 +1053,10 @@ async function solveStudentDoubtSmart({ doubt, examName = '', subjectName = '', 
       topic: topicName || 'Mathematics',
       subject: subjectName || 'Mathematics',
       exam: examName || 'Exam',
-      formatted_reply: `**Result:**\n\`\`\`text\n${mathResult.formatted_reply}\n\`\`\``,
+      formatted_reply: mathResult.formatted_reply,
       concept_summary: mathResult.answer,
+      formula_or_rule: cleanDoubt,
+      pro_tip: 'Arithmetic calculation evaluated directly with zero rounding error.',
       is_direct_answer: true,
       search_grounding: null,
       follow_up_suggestions: [
@@ -1167,7 +1190,9 @@ ${searchRes.combinedContext || 'Standard NCERT & Competitive Exam Syllabus'}`;
     subject: resolvedSubject,
     exam: examName || 'Exam',
     formatted_reply: builtIn.formattedReply,
-    concept_summary: builtIn.formattedReply.slice(0, 160),
+    concept_summary: builtIn.conceptSummary || builtIn.formattedReply.slice(0, 160),
+    formula_or_rule: builtIn.formulaOrRule || '',
+    pro_tip: builtIn.proTip || 'Always verify standard SI units before calculating.',
     is_direct_answer: false,
     search_grounding: {
       chapter_title: groundingChapter?.chapter_title || null,

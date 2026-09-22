@@ -24,7 +24,8 @@ async function runE2ETest() {
     body: JSON.stringify({
       name: 'Pivott Test Student',
       email: testEmail,
-      password: 'testPassword123',
+      password: `Pivott#E2E_${Date.now()}!`,
+      confirm_password: `Pivott#E2E_${Date.now()}!`,
       exam_name: 'NEET 2026',
       exam_date: '2026-11-15',
       max_daily_hours: 5.0,

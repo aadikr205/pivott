@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Bell, AlertTriangle, Clock, CheckCircle2, X, ChevronRight, Volume2, VolumeX, ShieldAlert, Sparkles } from 'lucide-react';
+import { Bell, BellOff, AlertTriangle, Clock, CheckCircle2, X, ChevronRight, Volume2, VolumeX, ShieldAlert, Sparkles, Moon } from 'lucide-react';
 import { api, NotificationAlert, NotificationResponse } from '../api/client';
 
 interface NotificationCenterProps {
   onNavigateToTab?: (tab: any) => void;
+  notificationsEnabled?: boolean;
+  onToggleNotifications?: (enabled: boolean) => void;
 }
 
-export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNavigateToTab }) => {
+export const NotificationCenter: React.FC<NotificationCenterProps> = ({
+  onNavigateToTab,
+  notificationsEnabled,
+  onToggleNotifications
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [alertData, setAlertData] = useState<NotificationResponse | null>(null);
   const [permission, setPermission] = useState<NotificationPermission>(
@@ -16,9 +22,15 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
   const audioContextRef = useRef<AudioContext | null>(null);
   const lastAlertIdsRef = useRef<Set<string>>(new Set());
 
+  // Determine effective notification state (prop takes precedence, fallback to API response)
+  const isEffectiveEnabled = notificationsEnabled !== undefined
+    ? notificationsEnabled
+    : (alertData ? alertData.notifications_enabled !== 0 : true);
+
   // Gentle audio chime synthesizer using Web Audio API (Zero external audio file dependency)
   const playAlertChime = (urgency: 'critical' | 'high' | 'medium' | 'low') => {
-    if (!soundEnabled) return;
+    // If user has silenced sounds OR study DND is active, do not play any sound!
+    if (!soundEnabled || !isEffectiveEnabled) return;
     try {
       const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
       if (!AudioCtx) return;
@@ -64,8 +76,13 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
       const res = await api.notifications.getAlerts();
       setAlertData(res);
 
+      const isSilenced = notificationsEnabled !== undefined
+        ? !notificationsEnabled
+        : res.notifications_enabled === 0;
+
       // Check for new critical/urgent alerts to trigger phone push and audio
-      if (res.alerts && res.alerts.length > 0) {
+      // SILENCED COMPLETELY when Study DND is active
+      if (!isSilenced && res.alerts && res.alerts.length > 0) {
         for (const alert of res.alerts) {
           if (!lastAlertIdsRef.current.has(alert.id)) {
             lastAlertIdsRef.current.add(alert.id);
@@ -115,7 +132,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
     loadAlerts();
     const interval = setInterval(loadAlerts, 45000);
     return () => clearInterval(interval);
-  }, []);
+  }, [notificationsEnabled]);
 
   const alerts = alertData?.alerts || [];
   const criticalCount = alertData?.critical_count || 0;
@@ -128,18 +145,36 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
     }
   };
 
+  const handleEnableNotifications = async () => {
+    try {
+      await api.updateNotificationPreference(true);
+      if (onToggleNotifications) {
+        onToggleNotifications(true);
+      }
+      setAlertData(prev => prev ? { ...prev, notifications_enabled: 1 } : null);
+    } catch (e) {}
+  };
+
   return (
     <div className="relative">
       {/* Bell Icon Trigger with Pulse Badge */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Open Study Notifications"
-        className="relative p-2 sm:p-2.5 rounded-2xl bg-slate-800/80 hover:bg-slate-700/90 text-slate-300 hover:text-white border border-slate-700/80 transition-all cursor-pointer flex items-center justify-center"
+        aria-label={isEffectiveEnabled ? 'Open Study Notifications' : 'Study Do Not Disturb Active'}
+        className={`relative p-2 sm:p-2.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-center ${
+          !isEffectiveEnabled
+            ? 'bg-slate-800/60 text-slate-400 border-slate-700/60 hover:text-white'
+            : 'bg-slate-800/80 hover:bg-slate-700/90 text-slate-300 hover:text-white border border-slate-700/80'
+        }`}
       >
-        <Bell className="w-4 h-4 sm:w-5 sm:h-5" />
+        {!isEffectiveEnabled ? (
+          <BellOff className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
+        ) : (
+          <Bell className="w-4 h-4 sm:w-5 sm:h-5" />
+        )}
         
-        {totalCount > 0 && (
+        {totalCount > 0 && isEffectiveEnabled && (
           <span
             className={`absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[10px] font-black rounded-full text-white shadow-lg ${
               criticalCount > 0
@@ -149,6 +184,10 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
           >
             {totalCount}
           </span>
+        )}
+
+        {!isEffectiveEnabled && (
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 ring-2 ring-slate-900" />
         )}
       </button>
 
@@ -164,12 +203,18 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
             {/* Header */}
             <div className="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/80">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
-                  <Bell className="w-4 h-4" />
+                <div className={`w-8 h-8 rounded-xl border flex items-center justify-center ${
+                  !isEffectiveEnabled 
+                    ? 'bg-amber-500/20 border-amber-500/30 text-amber-400' 
+                    : 'bg-teal-500/20 border-teal-500/30 text-teal-400'
+                }`}>
+                  {!isEffectiveEnabled ? <BellOff className="w-4 h-4" /> : <Bell className="w-4 h-4" />}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">Study Nudge & Reminders</h4>
-                  <p className="text-[11px] text-slate-400">Live Deadlines & Delay Alerts</p>
+                  <h4 className="text-sm font-bold text-white">Study Reminders & Alerts</h4>
+                  <p className="text-[11px] text-slate-400">
+                    {!isEffectiveEnabled ? 'Do Not Disturb Active' : 'Live Deadlines & Delay Alerts'}
+                  </p>
                 </div>
               </div>
 
@@ -180,7 +225,11 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
                   title={soundEnabled ? 'Mute Alert Sound' : 'Enable Alert Sound'}
                   className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
                 >
-                  {soundEnabled ? <Volume2 className="w-3.5 h-3.5 text-teal-400" /> : <VolumeX className="w-3.5 h-3.5 text-slate-500" />}
+                  {soundEnabled && isEffectiveEnabled ? (
+                    <Volume2 className="w-3.5 h-3.5 text-teal-400" />
+                  ) : (
+                    <VolumeX className="w-3.5 h-3.5 text-slate-500" />
+                  )}
                 </button>
                 <button
                   type="button"
@@ -192,8 +241,28 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onNaviga
               </div>
             </div>
 
-            {/* Push Permission Prompt if not granted */}
-            {permission !== 'granted' && (
+            {/* Study DND Status Ribbon if muted */}
+            {!isEffectiveEnabled && (
+              <div className="p-3.5 bg-gradient-to-r from-amber-950/70 to-slate-900 border-b border-amber-500/30 flex items-center justify-between gap-3">
+                <div className="flex items-start space-x-2.5">
+                  <Moon className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div className="text-[11px] text-amber-200">
+                    <span className="font-bold block">Study DND Mode Active</span>
+                    <span className="text-slate-300">Audible chimes & alert popups are silenced during focus.</span>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleEnableNotifications}
+                  className="px-2.5 py-1 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-900 text-xs font-bold shrink-0 transition-colors cursor-pointer"
+                >
+                  Turn On
+                </button>
+              </div>
+            )}
+
+            {/* Push Permission Prompt if not granted and notifications enabled */}
+            {isEffectiveEnabled && permission !== 'granted' && (
               <div className="p-3.5 bg-gradient-to-r from-teal-950/60 to-slate-900 border-b border-teal-500/30 flex items-center justify-between gap-3">
                 <div className="text-[11px] text-teal-200">
                   <span className="font-bold block">📱 Phone Push Alerts</span>

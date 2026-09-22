@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Compass, Calendar, CheckCircle2, BarChart3, AlertCircle, History, LogOut, User as UserIcon, Download, Sparkles, X, ChevronRight, BookOpen, Bot, FileText, Activity, Camera, Layers } from 'lucide-react';
-import { User } from '../api/client';
+import { Compass, Calendar, CheckCircle2, BarChart3, AlertCircle, History, LogOut, User as UserIcon, Download, Sparkles, X, ChevronRight, BookOpen, Bot, FileText, Activity, Camera, Layers, Bell, BellOff, KeyRound } from 'lucide-react';
+import { User, api } from '../api/client';
 import { NotificationCenter } from './NotificationCenter';
 
 interface NavbarProps {
@@ -16,6 +16,8 @@ interface NavbarProps {
   onOpenInstallModal?: () => void;
   onOpenDoubtBot?: () => void;
   onOpenProfilePhoto?: () => void;
+  onOpenChangePassword?: () => void;
+  onToggleNotifications?: (enabled: boolean) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -30,11 +32,29 @@ export const Navbar: React.FC<NavbarProps> = ({
   isInstalled = false,
   onOpenInstallModal,
   onOpenDoubtBot,
-  onOpenProfilePhoto
+  onOpenProfilePhoto,
+  onOpenChangePassword,
+  onToggleNotifications
 }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const todayHours = (todayMinutes / 60).toFixed(1);
   const isOverCap = Number(todayHours) > maxDailyHours;
+
+  const isNotificationsOn = user?.notifications_enabled !== undefined
+    ? Number(user.notifications_enabled) !== 0
+    : true;
+
+  const handleToggleNotifications = async () => {
+    const nextVal = !isNotificationsOn;
+    try {
+      await api.updateNotificationPreference(nextVal);
+      if (onToggleNotifications) {
+        onToggleNotifications(nextVal);
+      }
+    } catch (e) {
+      console.error('Failed to update notification preference:', e);
+    }
+  };
 
   const renderUserAvatar = (sizeClass = 'w-7 h-7', textClass = 'text-xs') => {
     if (!user) return null;
@@ -242,7 +262,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
 
               {/* Notification Center (Nudges, Delay & Approaching Deadline Alerts) */}
-              <NotificationCenter onNavigateToTab={(tab: any) => setActiveTab(tab)} />
+              <NotificationCenter
+                onNavigateToTab={(tab: any) => setActiveTab(tab)}
+                notificationsEnabled={isNotificationsOn}
+                onToggleNotifications={onToggleNotifications}
+              />
 
               {/* Profile / Account Toggle Button (100% Clickable on Mobile & Desktop) */}
               {user && (
@@ -351,6 +375,41 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <span>Active (No Overload)</span>
                 </span>
               </div>
+            </div>
+
+            {/* Study Do Not Disturb Mode Switch (Feature 6) */}
+            <div className="mb-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 flex items-center justify-between shadow-2xs">
+              <div className="flex items-center space-x-2.5 min-w-0 pr-2">
+                <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
+                  isNotificationsOn ? 'bg-teal-100 text-teal-700' : 'bg-amber-100 text-amber-700'
+                }`}>
+                  {isNotificationsOn ? <Bell className="w-4 h-4" /> : <BellOff className="w-4 h-4" />}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold text-slate-900 truncate">
+                    {isNotificationsOn ? 'Study Alerts & Chimes' : 'Study Do Not Disturb'}
+                  </p>
+                  <p className="text-[10px] text-slate-500 truncate">
+                    {isNotificationsOn ? 'Live deadline chimes active' : 'Muted during study (Zero popups)'}
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={isNotificationsOn}
+                onClick={handleToggleNotifications}
+                className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                  isNotificationsOn ? 'bg-teal-600' : 'bg-slate-300'
+                }`}
+                title={isNotificationsOn ? 'Turn ON Do Not Disturb' : 'Enable Study Alerts'}
+              >
+                <span
+                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out ${
+                    isNotificationsOn ? 'translate-x-5' : 'translate-x-0'
+                  }`}
+                />
+              </button>
             </div>
 
             {/* Menu Actions */}
@@ -503,6 +562,29 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <Download className="w-4 h-4 shrink-0" />
                   <span>Install Pivott App on Phone</span>
+                </button>
+              )}
+
+              {/* Change Password (Feature 4) */}
+              {onOpenChangePassword && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    onOpenChangePassword();
+                  }}
+                  className="w-full flex items-center justify-between p-3 rounded-2xl bg-indigo-50/70 hover:bg-indigo-100/70 text-indigo-950 border border-indigo-200 transition-all cursor-pointer text-left active:scale-98 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
+                      <KeyRound className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-indigo-950">Change Password</p>
+                      <p className="text-[11px] text-indigo-700">Update current password & security key</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-indigo-600 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               )}
 
