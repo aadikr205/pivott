@@ -218,6 +218,8 @@ addColumnIfNotExists('users', 'is_verified', 'INTEGER DEFAULT 1');
 addColumnIfNotExists('users', 'profile_photo_url', 'TEXT');
 addColumnIfNotExists('users', 'password_sha256', 'TEXT');
 addColumnIfNotExists('users', 'notifications_enabled', 'INTEGER DEFAULT 1');
+addColumnIfNotExists('users', 'auth_provider', "TEXT DEFAULT 'email'");
+addColumnIfNotExists('users', 'social_id', 'TEXT');
 addColumnIfNotExists('pyq_questions', 'type', "TEXT DEFAULT 'mcq'");
 addColumnIfNotExists('pyq_questions', 'correct_numeric_answer', 'REAL');
 addColumnIfNotExists('pyq_questions', 'tolerance', 'REAL DEFAULT 0.01');

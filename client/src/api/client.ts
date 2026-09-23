@@ -159,6 +159,7 @@ export interface User {
   is_verified?: number;
   profile_photo_url?: string | null;
   notifications_enabled?: boolean | number;
+  auth_provider?: string;
 }
 
 export interface TopicItem {
@@ -339,20 +340,20 @@ export interface RevisionSuggestionsResponse {
 }
 
 export const api = {
-  // Auth
+  // Auth - Native Social Sign-In
+  loginWithGoogle: (data: { credential: string }) =>
+    request<{ token: string; user: User }>('/auth/google', { method: 'POST', body: JSON.stringify(data) }),
+  loginWithApple: (data: { id_token: string; user?: any }) =>
+    request<{ token: string; user: User }>('/auth/apple', { method: 'POST', body: JSON.stringify(data) }),
+
+  // Legacy/Fallback Auth
   signup: (data: any) => request<{ token: string; user: User }>('/auth/signup', { method: 'POST', body: JSON.stringify(data) }),
-  sendSignupOtp: (data: { name: string; email: string; password: string; exam_name: string; exam_date: string; max_daily_hours?: number; off_days?: number[] }) =>
-    request<{ success: boolean; message: string; email: string; expires_in_seconds: number; dev_otp?: string }>('/auth/signup/send-otp', { method: 'POST', body: JSON.stringify(data) }),
-  verifySignupOtp: (data: { email: string; otp: string }) =>
-    request<{ token: string; user: User }>('/auth/signup/verify-otp', { method: 'POST', body: JSON.stringify(data) }),
-  resendSignupOtp: (data: { email: string }) =>
-    request<{ success: boolean; message: string; expires_in_seconds: number; dev_otp?: string }>('/auth/signup/resend-otp', { method: 'POST', body: JSON.stringify(data) }),
+  login: (data: any) => request<{ token: string; user: User }>('/auth/login', { method: 'POST', body: JSON.stringify(data) }),
+  me: () => request<{ user: User }>('/auth/me'),
   uploadProfilePhoto: (data: { photo_base64: string }) =>
     request<{ success: boolean; profile_photo_url: string; user: User }>('/auth/profile-photo', { method: 'POST', body: JSON.stringify(data) }),
   setDefaultAvatar: (data: { avatar_id: string }) =>
     request<{ success: boolean; profile_photo_url: string; user: User }>('/auth/default-avatar', { method: 'POST', body: JSON.stringify(data) }),
-  login: (data: any) => request<{ token: string; user: User }>('/auth/login', { method: 'POST', body: JSON.stringify(data) }),
-  me: () => request<{ user: User }>('/auth/me'),
   forgotPasswordSendOtp: (data: { email: string }) =>
     request<{ success: boolean; message: string; email: string; dev_otp?: string }>('/auth/forgot-password/send-otp', { method: 'POST', body: JSON.stringify(data) }),
   forgotPasswordVerifyAndReset: (data: { email: string; otp: string; new_password: string; confirm_password?: string }) =>
