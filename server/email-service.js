@@ -41,22 +41,33 @@ function initializeTransporter() {
         host,
         port: port || 587,
         secure: (port || 587) === 465,
+        family: 4, // Force IPv4
+        connectionTimeout: 15000,
+        greetingTimeout: 15000,
+        socketTimeout: 20000,
         auth: {
           user: emailUser,
           pass: emailPass
         }
       };
-      console.log(`[EmailService] Configured live SMTP transport (Host: ${host}:${port || 587}, User: ${emailUser})`);
+      console.log(`[EmailService] Configured live SMTP transport (Host: ${host}:${port || 587}, IPv4, User: ${emailUser})`);
     } else {
-      // Default to Gmail service when EMAIL_USER and EMAIL_PASS are provided without custom host
+      // Explicitly configure smtp.gmail.com with IPv4 and port 465 SSL
+      // Avoids 'service: gmail' shortcut which can resolve to IPv6 causing connect ENETUNREACH on Render/cloud hosts
       transportConfig = {
-        service: (process.env.EMAIL_SERVICE || 'gmail').trim(),
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        family: 4, // Force IPv4 (A record) to resolve IPv6 routing failure on cloud hosts (e.g. Render)
+        connectionTimeout: 15000,
+        greetingTimeout: 15000,
+        socketTimeout: 20000,
         auth: {
           user: emailUser,
           pass: emailPass
         }
       };
-      console.log(`[EmailService] Configured live Gmail transport for: ${emailUser}`);
+      console.log(`[EmailService] Configured live Gmail transport (smtp.gmail.com:465, IPv4) for: ${emailUser}`);
     }
 
     return nodemailer.createTransport(transportConfig);
