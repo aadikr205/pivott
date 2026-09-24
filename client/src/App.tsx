@@ -25,7 +25,6 @@ import { ProfilePhotoModal } from './components/ProfilePhotoModal';
 import { ConceptVideoModal } from './components/ConceptVideoModal';
 import { ActivityHistoryView } from './components/ActivityHistoryView';
 import { SelfTimetableView } from './components/SelfTimetableView';
-import { ChangePasswordModal } from './components/ChangePasswordModal';
 import { Sparkles, Calendar, BookOpen, Compass, AlertCircle, RotateCcw } from 'lucide-react';
 
 export function App() {
@@ -54,9 +53,6 @@ export function App() {
 
   // Profile photo modal state
   const [isProfilePhotoOpen, setIsProfilePhotoOpen] = useState(false);
-
-  // Change password modal state
-  const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
 
   // Concept video modal state
   const [conceptVideoState, setConceptVideoState] = useState<{
@@ -108,7 +104,6 @@ export function App() {
   // Back Navigation & Modal Stack Manager
   const openModals = [
     ...(isProfilePhotoOpen ? [{ name: 'profilePhoto', close: () => setIsProfilePhotoOpen(false) }] : []),
-    ...(isChangePasswordOpen ? [{ name: 'changePassword', close: () => setIsChangePasswordOpen(false) }] : []),
     ...(conceptVideoState.isOpen ? [{ name: 'conceptVideo', close: () => setConceptVideoState(prev => ({ ...prev, isOpen: false })) }] : []),
     ...(isDoubtBotOpen ? [{ name: 'doubtBot', close: () => setIsDoubtBotOpen(false) }] : []),
     ...(isReplanModalOpen ? [{ name: 'replanModal', close: () => setIsReplanModalOpen(false) }] : []),
@@ -435,7 +430,6 @@ export function App() {
         onOpenInstallModal={() => setIsInstallModalOpen(true)}
         onOpenDoubtBot={() => handleOpenDoubtBot()}
         onOpenProfilePhoto={() => setIsProfilePhotoOpen(true)}
-        onOpenChangePassword={() => setIsChangePasswordOpen(true)}
         onToggleNotifications={(enabled) => {
           if (user) {
             updateUser({ ...user, notifications_enabled: enabled ? 1 : 0 });
@@ -598,12 +592,6 @@ export function App() {
         topicName={conceptVideoState.topicName}
         subjectName={conceptVideoState.subjectName}
         onCompleted={() => fetchToday()}
-      />
-
-      {/* Change Password Modal (Feature 4) */}
-      <ChangePasswordModal
-        isOpen={isChangePasswordOpen}
-        onClose={() => setIsChangePasswordOpen(false)}
       />
 
       {/* Android/PWA In-App Double Back Exit Toast (Feature 3) */}

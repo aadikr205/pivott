@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Compass, Calendar, CheckCircle2, BarChart3, AlertCircle, History, LogOut, User as UserIcon, Download, Sparkles, X, ChevronRight, BookOpen, Bot, FileText, Activity, Camera, Layers, Bell, BellOff, KeyRound } from 'lucide-react';
+import { Compass, Calendar, CheckCircle2, BarChart3, AlertCircle, History, LogOut, User as UserIcon, Download, Sparkles, X, ChevronRight, BookOpen, Bot, FileText, Activity, Camera, Layers, Bell, BellOff } from 'lucide-react';
 import { User, api } from '../api/client';
 import { NotificationCenter } from './NotificationCenter';
 
@@ -16,7 +16,6 @@ interface NavbarProps {
   onOpenInstallModal?: () => void;
   onOpenDoubtBot?: () => void;
   onOpenProfilePhoto?: () => void;
-  onOpenChangePassword?: () => void;
   onToggleNotifications?: (enabled: boolean) => void;
 }
 
@@ -33,7 +32,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenInstallModal,
   onOpenDoubtBot,
   onOpenProfilePhoto,
-  onOpenChangePassword,
   onToggleNotifications
 }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -562,29 +560,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <Download className="w-4 h-4 shrink-0" />
                   <span>Install Pivott App on Phone</span>
-                </button>
-              )}
-
-              {/* Change Password (Feature 4) */}
-              {onOpenChangePassword && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsProfileOpen(false);
-                    onOpenChangePassword();
-                  }}
-                  className="w-full flex items-center justify-between p-3 rounded-2xl bg-indigo-50/70 hover:bg-indigo-100/70 text-indigo-950 border border-indigo-200 transition-all cursor-pointer text-left active:scale-98 group"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
-                      <KeyRound className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-indigo-950">Change Password</p>
-                      <p className="text-[11px] text-indigo-700">Update current password & security key</p>
-                    </div>
-                  </div>
-                  <ChevronRight className="w-4 h-4 text-indigo-600 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               )}
 
