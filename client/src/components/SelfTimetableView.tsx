@@ -370,7 +370,15 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
               ) : (
                 <select
                   value={selectedSubject}
-                  onChange={(e) => setSelectedSubject(e.target.value)}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (val === 'Additional Subject' || val.toLowerCase().includes('additional')) {
+                      setIsAddingCustomSubject(true);
+                      setCustomSubjectInput('');
+                    } else {
+                      setSelectedSubject(val);
+                    }
+                  }}
                   className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-hidden focus:border-teal-500 transition-colors"
                 >
                   {BASE_SUBJECTS.map(s => (

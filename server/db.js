@@ -33,6 +33,8 @@ db.exec(`
     id TEXT PRIMARY KEY,
     user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
+    custom_subject_name TEXT,
+    is_additional INTEGER DEFAULT 0,
     created_at TEXT NOT NULL
   );
 
@@ -220,6 +222,8 @@ addColumnIfNotExists('users', 'password_sha256', 'TEXT');
 addColumnIfNotExists('users', 'notifications_enabled', 'INTEGER DEFAULT 1');
 addColumnIfNotExists('users', 'auth_provider', "TEXT DEFAULT 'email'");
 addColumnIfNotExists('users', 'social_id', 'TEXT');
+addColumnIfNotExists('subjects', 'custom_subject_name', 'TEXT');
+addColumnIfNotExists('subjects', 'is_additional', 'INTEGER DEFAULT 0');
 addColumnIfNotExists('pyq_questions', 'type', "TEXT DEFAULT 'mcq'");
 addColumnIfNotExists('pyq_questions', 'correct_numeric_answer', 'REAL');
 addColumnIfNotExists('pyq_questions', 'tolerance', 'REAL DEFAULT 0.01');

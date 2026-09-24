@@ -40,6 +40,16 @@ const SYLLABUS_PRESETS = {
           { name: 'Ecology & Biodiversity', weightage: 4, estimated_minutes: 110 },
           { name: 'Living World & Taxonomy', weightage: 2, estimated_minutes: 50 }
         ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Core Fundamentals & Principles', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: Applied Theory & Problem Solving', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 3: Revision & Practice Tests', weightage: 4, estimated_minutes: 90 }
+        ]
       }
     ]
   },
@@ -86,6 +96,16 @@ const SYLLABUS_PRESETS = {
           { name: 'Probability & Statistics', weightage: 4, estimated_minutes: 100 },
           { name: 'Differential Equations', weightage: 4, estimated_minutes: 100 }
         ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Core Fundamentals & Principles', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: Applied Theory & Problem Solving', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 3: Revision & Practice Tests', weightage: 4, estimated_minutes: 90 }
+        ]
       }
     ]
   },
@@ -122,6 +142,16 @@ const SYLLABUS_PRESETS = {
           { name: 'Complex Numbers & Conic Sections', weightage: 5, estimated_minutes: 150 },
           { name: 'Matrices, Determinants & Probability', weightage: 4, estimated_minutes: 130 }
         ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Core Fundamentals & Principles', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: Applied Theory & Problem Solving', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 3: Revision & Practice Tests', weightage: 4, estimated_minutes: 90 }
+        ]
       }
     ]
   },
@@ -153,6 +183,35 @@ const SYLLABUS_PRESETS = {
           { name: 'Relations & Functions', weightage: 3, estimated_minutes: 90 },
           { name: 'Vectors & 3D Geometry', weightage: 4, estimated_minutes: 120 },
           { name: 'Linear Programming', weightage: 3, estimated_minutes: 70 }
+        ]
+      },
+      {
+        name: 'English Core',
+        topics: [
+          { name: 'Reading Comprehension & Note-Making Skills', weightage: 4, estimated_minutes: 90 },
+          { name: 'Flamingo Prose & Poetry (The Last Lesson, My Mother at Sixty-Six)', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vistas Supplementary Reader (The Third Level, The Tiger King)', weightage: 4, estimated_minutes: 100 },
+          { name: 'Creative Writing: Notice, Letters, Invitations, Article & Report', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Hindi Core / Elective',
+        topics: [
+          { name: 'अपठित बोध (गद्यांश एवं काव्यांश)', weightage: 4, estimated_minutes: 80 },
+          { name: 'आरोह भाग 2: काव्य खंड एवं गद्य खंड', weightage: 5, estimated_minutes: 120 },
+          { name: 'वितान भाग 2: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
+          { name: 'अभिव्यक्ति और माध्यम: रचनात्मक लेखन, पत्र व जनसंचार', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Fundamentals, Core Principles & Concepts', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 2: In-Depth Applied Concepts & Analysis', weightage: 5, estimated_minutes: 120 },
+          { name: 'Unit 3: Practical Experiments, Projects & Numerical Work', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 4: Board Exam Revision & Sample Question Papers', weightage: 4, estimated_minutes: 90 }
         ]
       }
     ]
@@ -187,6 +246,35 @@ const SYLLABUS_PRESETS = {
           { name: 'Human Health and Diseases', weightage: 4, estimated_minutes: 100 },
           { name: 'Biotechnology: Principles & Applications', weightage: 5, estimated_minutes: 120 },
           { name: 'Ecosystem, Biodiversity & Conservation', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'English Core',
+        topics: [
+          { name: 'Reading Comprehension & Note-Making Skills', weightage: 4, estimated_minutes: 90 },
+          { name: 'Flamingo Prose & Poetry (The Last Lesson, My Mother at Sixty-Six)', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vistas Supplementary Reader (The Third Level, The Tiger King)', weightage: 4, estimated_minutes: 100 },
+          { name: 'Creative Writing: Notice, Letters, Invitations, Article & Report', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Hindi Core / Elective',
+        topics: [
+          { name: 'अपठित बोध (गद्यांश एवं काव्यांश)', weightage: 4, estimated_minutes: 80 },
+          { name: 'आरोह भाग 2: काव्य खंड एवं गद्य खंड', weightage: 5, estimated_minutes: 120 },
+          { name: 'वितान भाग 2: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
+          { name: 'अभिव्यक्ति और माध्यम: रचनात्मक लेखन, पत्र व जनसंचार', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Fundamentals, Core Principles & Concepts', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 2: In-Depth Applied Concepts & Analysis', weightage: 5, estimated_minutes: 120 },
+          { name: 'Unit 3: Practical Experiments, Projects & Numerical Work', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 4: Board Exam Revision & Sample Question Papers', weightage: 4, estimated_minutes: 90 }
         ]
       }
     ]
@@ -226,6 +314,35 @@ const SYLLABUS_PRESETS = {
           { name: 'Genetics & Molecular Basis of Inheritance', weightage: 5, estimated_minutes: 160 },
           { name: 'Biotechnology & Human Health', weightage: 5, estimated_minutes: 120 },
           { name: 'Ecology & Environment', weightage: 3, estimated_minutes: 80 }
+        ]
+      },
+      {
+        name: 'English Core',
+        topics: [
+          { name: 'Reading Comprehension & Note-Making Skills', weightage: 4, estimated_minutes: 90 },
+          { name: 'Flamingo Prose & Poetry (The Last Lesson, My Mother at Sixty-Six)', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vistas Supplementary Reader (The Third Level, The Tiger King)', weightage: 4, estimated_minutes: 100 },
+          { name: 'Creative Writing: Notice, Letters, Invitations, Article & Report', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Hindi Core / Elective',
+        topics: [
+          { name: 'अपठित बोध (गद्यांश एवं काव्यांश)', weightage: 4, estimated_minutes: 80 },
+          { name: 'आरोह भाग 2: काव्य खंड एवं गद्य खंड', weightage: 5, estimated_minutes: 120 },
+          { name: 'वितान भाग 2: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
+          { name: 'अभिव्यक्ति और माध्यम: रचनात्मक लेखन, पत्र व जनसंचार', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Fundamentals, Core Principles & Concepts', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 2: In-Depth Applied Concepts & Analysis', weightage: 5, estimated_minutes: 120 },
+          { name: 'Unit 3: Practical Experiments, Projects & Numerical Work', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 4: Board Exam Revision & Sample Question Papers', weightage: 4, estimated_minutes: 90 }
         ]
       }
     ]
@@ -272,6 +389,171 @@ const SYLLABUS_PRESETS = {
           { name: 'Reading Comprehension & Writing Skills', weightage: 4, estimated_minutes: 80 },
           { name: 'Grammar: Tenses, Modals & Determiners', weightage: 3, estimated_minutes: 70 },
           { name: 'Literature: First Flight & Footprints Prose/Poems', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Hindi (हिंदी)',
+        topics: [
+          { name: 'अपठित गद्यांश व काव्यांश बोध', weightage: 4, estimated_minutes: 80 },
+          { name: 'क्षितिज / स्पर्श: गद्य एवं काव्य खंड', weightage: 5, estimated_minutes: 120 },
+          { name: 'कृतिका / संचयन: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
+          { name: 'व्याकरण: पदबंध, वाच्य, समास, वाक्य रूपांतरण व मुहावरे', weightage: 5, estimated_minutes: 100 },
+          { name: 'रचनात्मक लेखन: अनुच्छेद, पत्र, संदेश व विज्ञापन लेखन', weightage: 4, estimated_minutes: 80 }
+        ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Foundations & Core Principles', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: Applied Theory & Conceptual Understanding', weightage: 5, estimated_minutes: 110 },
+          { name: 'Unit 3: Practical, Projects & Numerical Problem Solving', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 4: Board Exam Model Papers & Topic Revision', weightage: 4, estimated_minutes: 90 }
+        ]
+      }
+    ]
+  },
+  icse10: {
+    name: 'ICSE 10th Board Exam (Class 10)',
+    subjects: [
+      {
+        name: 'Physics',
+        topics: [
+          { name: 'Force, Work, Power & Energy', weightage: 5, estimated_minutes: 120 },
+          { name: 'Light: Refraction at Plane Surfaces & Lenses', weightage: 5, estimated_minutes: 130 },
+          { name: 'Sound, Electricity & Magnetism', weightage: 5, estimated_minutes: 140 },
+          { name: 'Heat & Modern Radioactivity', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Chemistry',
+        topics: [
+          { name: 'Periodic Properties & Chemical Bonding', weightage: 4, estimated_minutes: 100 },
+          { name: 'Study of Acids, Bases and Salts & Analytical Chemistry', weightage: 4, estimated_minutes: 110 },
+          { name: 'Mole Concept & Stoichiometry', weightage: 5, estimated_minutes: 130 },
+          { name: 'Metallurgy & Organic Chemistry', weightage: 5, estimated_minutes: 140 }
+        ]
+      },
+      {
+        name: 'Biology',
+        topics: [
+          { name: 'Basic Biology: Cell Cycle & Genetics', weightage: 5, estimated_minutes: 130 },
+          { name: 'Plant Physiology: Absorption, Transpiration & Photosynthesis', weightage: 5, estimated_minutes: 140 },
+          { name: 'Human Anatomy & Physiology (Circulatory, Excretory, Nervous)', weightage: 5, estimated_minutes: 150 },
+          { name: 'Population & Human Immune System', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Mathematics',
+        topics: [
+          { name: 'Commercial Mathematics (GST & Banking)', weightage: 4, estimated_minutes: 90 },
+          { name: 'Algebra: Linear Inequations, Quadratics, Matrices & AP', weightage: 5, estimated_minutes: 140 },
+          { name: 'Coordinate Geometry & Trigonometry', weightage: 5, estimated_minutes: 140 },
+          { name: 'Mensuration, Circles & Probability/Statistics', weightage: 5, estimated_minutes: 130 }
+        ]
+      },
+      {
+        name: 'History & Civics',
+        topics: [
+          { name: 'Civics: Union Parliament, President, Prime Minister & Supreme Court', weightage: 5, estimated_minutes: 110 },
+          { name: 'History: Indian National Movement & Mass Phase under Mahatma Gandhi', weightage: 5, estimated_minutes: 120 },
+          { name: 'Contemporary World: First World War, Rise of Dictatorships & UN', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Geography',
+        topics: [
+          { name: 'Topographical Map Interpretation & Climate of India', weightage: 5, estimated_minutes: 120 },
+          { name: 'Soils, Natural Vegetation & Water Resources', weightage: 4, estimated_minutes: 100 },
+          { name: 'Mineral, Energy, Agriculture & Manufacturing Industries', weightage: 5, estimated_minutes: 110 }
+        ]
+      },
+      {
+        name: 'English (Language & Literature)',
+        topics: [
+          { name: 'English Language: Composition, Letter, Notice & Email, Grammar', weightage: 5, estimated_minutes: 110 },
+          { name: 'Drama: Julius Caesar (Selected Acts & Scenes)', weightage: 5, estimated_minutes: 130 },
+          { name: 'Treasure Chest: Short Stories & Poems Selection', weightage: 5, estimated_minutes: 120 }
+        ]
+      },
+      {
+        name: 'Hindi (Second Language)',
+        topics: [
+          { name: 'हिंदी व्याकरण, अपठित गद्यांश, निबंध व पत्र लेखन', weightage: 5, estimated_minutes: 100 },
+          { name: 'साहित्य सागर: संक्षिप्त कहानियाँ', weightage: 4, estimated_minutes: 100 },
+          { name: 'साहित्य सागर: पद्य भाग (कविताएँ)', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Fundamentals, Definitions & Principles', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: Applied Concepts, Case Studies & Applications', weightage: 5, estimated_minutes: 110 },
+          { name: 'Unit 3: Practical Experiments, Projects & Field Work', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 4: ICSE Board Model Question Papers & Revision', weightage: 4, estimated_minutes: 90 }
+        ]
+      }
+    ]
+  },
+  isc12: {
+    name: 'ISC 12th Board Exam (Class 12)',
+    subjects: [
+      {
+        name: 'Physics',
+        topics: [
+          { name: 'Electrostatics, Current Electricity & Magnetic Effects', weightage: 5, estimated_minutes: 140 },
+          { name: 'Electromagnetic Induction, AC & EM Waves', weightage: 4, estimated_minutes: 110 },
+          { name: 'Optics: Wave Optics & Ray Optics', weightage: 5, estimated_minutes: 140 },
+          { name: 'Dual Nature of Radiation, Atoms, Nuclei & Semiconductor Devices', weightage: 5, estimated_minutes: 120 }
+        ]
+      },
+      {
+        name: 'Chemistry',
+        topics: [
+          { name: 'Solutions, Electrochemistry & Chemical Kinetics', weightage: 5, estimated_minutes: 130 },
+          { name: 'd-and f-Block Elements & Coordination Compounds', weightage: 4, estimated_minutes: 110 },
+          { name: 'Organic Chemistry: Haloalkanes, Alcohols, Aldehydes, Ketones & Amines', weightage: 5, estimated_minutes: 160 },
+          { name: 'Biomolecules & Practical Chemistry Foundations', weightage: 4, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Mathematics',
+        topics: [
+          { name: 'Relations, Functions & Matrices and Determinants', weightage: 4, estimated_minutes: 100 },
+          { name: 'Calculus: Continuity, Differentiation & Integrals', weightage: 5, estimated_minutes: 170 },
+          { name: 'Differential Equations & Probability', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vectors & 3D Geometry (or Section B/C Applied Math)', weightage: 4, estimated_minutes: 110 }
+        ]
+      },
+      {
+        name: 'English (Compulsory)',
+        topics: [
+          { name: 'English Language: Directed Writing, Proposal & Functional Grammar', weightage: 5, estimated_minutes: 110 },
+          { name: 'Literature in English: Drama (The Tempest)', weightage: 5, estimated_minutes: 140 },
+          { name: 'Prism: Short Stories Collection', weightage: 4, estimated_minutes: 100 },
+          { name: 'Rhapsody: Poems Selection', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Hindi',
+        topics: [
+          { name: 'अपठित बोध, व्यावहारिक व्याकरण व निबंध/रचनात्मक लेखन', weightage: 5, estimated_minutes: 100 },
+          { name: 'गद्य संकलन: प्रमुख निबंध एवं कहानियाँ', weightage: 4, estimated_minutes: 110 },
+          { name: 'काव्य मंजरी: प्रमुख कवियों की कविताएँ', weightage: 4, estimated_minutes: 100 }
+        ]
+      },
+      {
+        name: 'Additional Subject',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: Advanced Theoretical Principles & Frameworks', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 2: Applied Studies, Analysis & Core Topics', weightage: 5, estimated_minutes: 120 },
+          { name: 'Unit 3: Practical Experiments, Projects & Case Analysis', weightage: 4, estimated_minutes: 100 },
+          { name: 'Unit 4: ISC Board Exam Sample Papers & Comprehensive Revision', weightage: 4, estimated_minutes: 100 }
         ]
       }
     ]
@@ -323,6 +605,17 @@ const SYLLABUS_PRESETS = {
           { name: 'Poetry: Sweetest Love, Song of Myself, Now the Leaves are Falling Fast', weightage: 4, estimated_minutes: 80 },
           { name: 'Grammar & Composition: Tenses, Voice, Narration, Essay & Letter Writing', weightage: 5, estimated_minutes: 100 }
         ]
+      },
+      {
+        name: 'Additional Subject (अतिरिक्त / ऐच्छिक विषय)',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: सैद्धांतिक अवधारणाएँ एवं मूल सिद्धांत', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: मुख्य विषयवस्तु एवं विश्लेषणात्मक प्रश्न', weightage: 5, estimated_minutes: 110 },
+          { name: 'Unit 3: प्रायोगिक कार्य, प्रोजेक्ट एवं आंकिक प्रश्न', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 4: बिहार बोर्ड मॉडल पेपर एवं रिवीजन', weightage: 4, estimated_minutes: 90 }
+        ]
       }
     ]
   },
@@ -369,10 +662,29 @@ const SYLLABUS_PRESETS = {
         ]
       },
       {
+        name: 'English (अंग्रेजी - 100 Marks Compulsory)',
+        topics: [
+          { name: 'Panorama Part 2 Prose: The Pace for Living, Me and the Ecology Bit, Gillu', weightage: 4, estimated_minutes: 90 },
+          { name: 'Panorama Poetry: God Made the Country, Ode on Solitude, Polythene Bag', weightage: 4, estimated_minutes: 80 },
+          { name: 'English Grammar & Composition: Paragraph, Letter Writing, Notice & Active/Passive', weightage: 5, estimated_minutes: 100 }
+        ]
+      },
+      {
         name: 'Sanskrit / Non-Hindi (संस्कृत / अहिन्दी)',
         topics: [
           { name: 'पियूषम्: मंगलम्, पाटलिपुत्रवैभवम्, आलसकथा', weightage: 4, estimated_minutes: 80 },
           { name: 'संस्कृत व्याकरण: संधि, कारक विभक्ति, प्रत्यय, अनुवाद एवं पत्र लेखन', weightage: 5, estimated_minutes: 90 }
+        ]
+      },
+      {
+        name: 'Additional Subject (अतिरिक्त / ऐच्छिक विषय)',
+        is_additional: true,
+        custom_subject_name: '',
+        topics: [
+          { name: 'Unit 1: मूलभूत संकल्पनाएँ एवं सिद्धांत', weightage: 4, estimated_minutes: 80 },
+          { name: 'Unit 2: अनुप्रयोग एवं विश्लेषणात्मक प्रश्न', weightage: 5, estimated_minutes: 100 },
+          { name: 'Unit 3: प्रायोगिक एवं प्रोजेक्ट कार्य', weightage: 4, estimated_minutes: 80 },
+          { name: 'Unit 4: मैट्रिक बोर्ड मॉडल पेपर एवं रिवीजन', weightage: 4, estimated_minutes: 90 }
         ]
       }
     ]
@@ -672,10 +984,19 @@ router.post('/setup', authMiddleware, async (req, res) => {
       for (const subj of subjects) {
         if (!subj.name || !subj.name.trim()) continue;
         const subjectId = uuidv4();
-        db.prepare('INSERT INTO subjects (id, user_id, name, created_at) VALUES (?, ?, ?, ?)').run(
+        const customSubjectName = subj.custom_subject_name ? subj.custom_subject_name.trim() : null;
+        const isAdditional = subj.is_additional ? 1 : (subj.name === 'Additional Subject' || customSubjectName ? 1 : 0);
+        const displayName = (customSubjectName || subj.name).trim();
+
+        db.prepare(`
+          INSERT INTO subjects (id, user_id, name, custom_subject_name, is_additional, created_at)
+          VALUES (?, ?, ?, ?, ?, ?)
+        `).run(
           subjectId,
           userId,
-          subj.name.trim(),
+          displayName,
+          customSubjectName,
+          isAdditional,
           now
         );
 
@@ -811,6 +1132,7 @@ function seedUserInitialCurriculum(userId, examName = 'NEET 2026', examDate = nu
       else if (lower.includes('10th') || lower.includes('class 10')) presetKey = 'class10';
       else if (lower.includes('bseb') && lower.includes('10')) presetKey = 'bseb10';
       else if (lower.includes('bseb')) presetKey = 'bseb12';
+      else if (lower.includes('icse') || lower.includes('isc')) presetKey = lower.includes('12') ? 'isc12' : 'icse10';
       else if (lower.includes('iso')) presetKey = 'olympiad_iso';
       else if (lower.includes('imo')) presetKey = 'olympiad_imo';
       else if (lower.includes('eio')) presetKey = 'olympiad_eio';
@@ -834,10 +1156,19 @@ function seedUserInitialCurriculum(userId, examName = 'NEET 2026', examDate = nu
       for (const subj of preset.subjects) {
         if (!subj.name || !subj.name.trim()) continue;
         const subjectId = uuidv4();
-        db.prepare('INSERT INTO subjects (id, user_id, name, created_at) VALUES (?, ?, ?, ?)').run(
+        const customSubjectName = subj.custom_subject_name ? subj.custom_subject_name.trim() : null;
+        const isAdditional = subj.is_additional ? 1 : (subj.name === 'Additional Subject' || customSubjectName ? 1 : 0);
+        const displayName = (customSubjectName || subj.name).trim();
+
+        db.prepare(`
+          INSERT INTO subjects (id, user_id, name, custom_subject_name, is_additional, created_at)
+          VALUES (?, ?, ?, ?, ?, ?)
+        `).run(
           subjectId,
           userId,
-          subj.name.trim(),
+          displayName,
+          customSubjectName,
+          isAdditional,
           now
         );
 

@@ -13,6 +13,21 @@
  * - Sanskrit
  */
 
+const BASE_SUBJECTS = [
+  'Biology',
+  'Physics',
+  'Chemistry',
+  'Maths',
+  'Science',
+  'Social Science',
+  'English',
+  'Hindi',
+  'Sanskrit',
+  'EVS',
+  'Computer Science',
+  'Additional Subject'
+];
+
 const CURRICULUM_CATALOG = {
   1: {
     'Biology': [
@@ -66,6 +81,12 @@ const CURRICULUM_CATALOG = {
       'आ, इ, ई की मात्राएं',
       'हमारे मददगार और परिवार',
       'बाल कविताएं और कहानियां'
+    ],
+    'Additional Subject': [
+      'Creative Expression & Foundational Concepts',
+      'Observation, Drawing & Environmental Exploration',
+      'Practical Activities & Everyday Projects',
+      'Fun Problem Solving & Activity Sheets'
     ]
   },
 
@@ -120,6 +141,12 @@ const CURRICULUM_CATALOG = {
       'वचन (एक-अनेक)',
       'विलोम शब्द और पर्यायवाची',
       'सरल वाक्य रचना और चित्र वर्णन'
+    ],
+    'Additional Subject': [
+      'Creative Expression & Foundational Concepts',
+      'Observation, Drawing & Environmental Exploration',
+      'Practical Activities & Everyday Projects',
+      'Fun Problem Solving & Activity Sheets'
     ]
   },
 
@@ -178,6 +205,12 @@ const CURRICULUM_CATALOG = {
       'मुहावरे और लोकोक्तियाँ',
       'अनुच्छेद लेखन और पत्र लेखन',
       'साहित्यिक कहानियां और कविताएं'
+    ],
+    'Additional Subject': [
+      'Creative Expression & Foundational Concepts',
+      'Observation, Drawing & Environmental Exploration',
+      'Practical Activities & Everyday Projects',
+      'Fun Problem Solving & Activity Sheets'
     ]
   },
 
@@ -249,6 +282,12 @@ const CURRICULUM_CATALOG = {
       'क्रिया और वाच्य',
       'विराम चिह्न (Punctuation in Hindi)',
       'पत्र लेखन (अनौपचारिक) और निबंध'
+    ],
+    'Additional Subject': [
+      'Creative Expression & Foundational Concepts',
+      'Observation, Drawing & Environmental Exploration',
+      'Practical Activities & Everyday Projects',
+      'Fun Problem Solving & Activity Sheets'
     ]
   },
 
@@ -328,6 +367,12 @@ const CURRICULUM_CATALOG = {
       'उपसर्ग और प्रत्यय',
       'शुद्ध-अशुद्ध वर्तनी',
       'संवाद लेखन और औपचारिक पत्र'
+    ],
+    'Additional Subject': [
+      'Creative Expression & Foundational Concepts',
+      'Observation, Drawing & Environmental Exploration',
+      'Practical Activities & Everyday Projects',
+      'Fun Problem Solving & Activity Sheets'
     ]
   },
 
@@ -414,6 +459,13 @@ const CURRICULUM_CATALOG = {
       'संधि (स्वर संधि)',
       'पर्यायवाची, विलोम, अनेकार्थी शब्द',
       'अपठित गद्यांश और निबंध लेखन'
+    ],
+    'Additional Subject': [
+      'Unit 1: Fundamentals & Essential Concepts',
+      'Unit 2: Applied Theory & Conceptual Understanding',
+      'Unit 3: Practical Projects, Activities & Research',
+      'Unit 4: Advanced Problem Solving & Analysis',
+      'Unit 5: Syllabus Revision & Sample Question Practice'
     ]
   },
 
@@ -499,6 +551,13 @@ const CURRICULUM_CATALOG = {
       'संज्ञा, सर्वनाम, विशेषण, क्रिया और उनके रूपांतरण',
       'अव्यय / अविकारी शब्द',
       'पत्र लेखन, निबंध, और संवाद लेखन'
+    ],
+    'Additional Subject': [
+      'Unit 1: Fundamentals & Essential Concepts',
+      'Unit 2: Applied Theory & Conceptual Understanding',
+      'Unit 3: Practical Projects, Activities & Research',
+      'Unit 4: Advanced Problem Solving & Analysis',
+      'Unit 5: Syllabus Revision & Sample Question Practice'
     ]
   },
 
@@ -594,6 +653,13 @@ const CURRICULUM_CATALOG = {
       'वाक्य विचार: रचना की दृष्टि से वाक्य भेद (सरल, संयुक्त, मिश्र)',
       'अलंकार: अनुप्रास, यमक, उपमा, रूपक',
       'निबंध, पत्र (औपचारिक/अनौपचारिक), और विज्ञापन लेखन'
+    ],
+    'Additional Subject': [
+      'Unit 1: Fundamentals & Essential Concepts',
+      'Unit 2: Applied Theory & Conceptual Understanding',
+      'Unit 3: Practical Projects, Activities & Research',
+      'Unit 4: Advanced Problem Solving & Analysis',
+      'Unit 5: Syllabus Revision & Sample Question Practice'
     ]
   },
 
@@ -692,6 +758,13 @@ const CURRICULUM_CATALOG = {
       'अलंकार: अनुप्रास, यमक, श्लेष, उपमा, रूपक, उत्प्रेक्षा, अतिशयोक्ति',
       'लघुकथा लेखन, संदेश लेखन, ईमेल लेखन',
       'गद्य और पद्य साहित्य का विस्तृत अध्ययन'
+    ],
+    'Additional Subject': [
+      'Unit 1: Fundamentals & Essential Concepts',
+      'Unit 2: Applied Theory & Conceptual Understanding',
+      'Unit 3: Practical Projects, Activities & Research',
+      'Unit 4: Advanced Problem Solving & Analysis',
+      'Unit 5: Syllabus Revision & Sample Question Practice'
     ]
   },
 
@@ -793,6 +866,13 @@ const CURRICULUM_CATALOG = {
       'समास (अव्ययीभाव, तत्पुरुष, कर्मधारय, द्विगु, द्वंद्व, बहुव्रीहि)',
       'मुहावरे (पाठ्यपुस्तक पर आधारित)',
       'अनुच्छेद लेखन, पत्र लेखन, सूचना लेखन, विज्ञापन लेखन, ई-मेल लेखन'
+    ],
+    'Additional Subject': [
+      'Unit 1: Fundamentals & Essential Concepts',
+      'Unit 2: Applied Theory & Conceptual Understanding',
+      'Unit 3: Practical Projects, Activities & Research',
+      'Unit 4: Advanced Problem Solving & Analysis',
+      'Unit 5: Syllabus Revision & Sample Question Practice'
     ]
   },
 
@@ -877,6 +957,26 @@ const CURRICULUM_CATALOG = {
       'Strings, Lists, Tuples, and Dictionaries in Python (Indexing, Slicing, Built-in Functions, List Comprehension, Dictionary Operations)',
       'Python Functions and Modules (User-Defined Functions, Parameters, Return Values, Scope of Variables, Standard Modules: math, random, statistics)',
       'Society, Law and Ethics (Digital Footprint, Cyber Safety, Cybercrime, Intellectual Property Rights, Plagiarism, Open Source Licences)'
+    ],
+    'English': [
+      'Hornbill Prose: The Portrait of a Lady, We\'re Not Afraid to Die, Discovering Tut, The Adventure, Silk Road',
+      'Hornbill Poetry: A Photograph, The Laburnum Top, The Voice of the Rain, Childhood, Father to Son',
+      'Snapshots Supplementary Reader: The Summer of the Beautiful White Horse, The Address, Mother\'s Day, Birth, The Tale of Melon City',
+      'Reading Comprehension & Note-Making and Summarization Skills',
+      'Creative Writing Skills: Classified Advertisements, Posters, Speech and Debate Writing'
+    ],
+    'Hindi': [
+      'आरोह भाग 1: काव्य खंड (कबीर के पद, मीरा के पद, घर की याद, चंपा काले काले अच्छर, गजल)',
+      'आरोह भाग 1: गद्य खंड (नमक का दारोगा, मियाँ नसीरुद्दीन, अपू के साथ ढाई साल, विदाई-संभाषण, गलता लोहा, रजनी, जामुन का पेड़)',
+      'वितान भाग 1: भारतीय गायिकाओं में बेजोड़: लता मंगेशकर, राजस्थान की रजत बूंदें, आलो-आँधारि',
+      'अभिव्यक्ति और माध्यम: जनसंचार माध्यम, पत्रकारिता के विविध आयाम, डायरी लिखने की कला, कथा-पटकथा'
+    ],
+    'Additional Subject': [
+      'Unit 1: Fundamentals, Core Principles & Theories',
+      'Unit 2: Applied Concepts, Case Studies & Analysis',
+      'Unit 3: Practical Experiments, Projects & Field Work',
+      'Unit 4: High-Yield Conceptual Questions & Numerical Practice',
+      'Unit 5: Syllabus Revision & Model Question Papers'
     ]
   },
 
@@ -955,6 +1055,26 @@ const CURRICULUM_CATALOG = {
       'Computer Networks (Network Types: LAN, MAN, WAN, Topologies: Star, Bus, Tree, Network Devices, Protocols: HTTP, FTP, TCP/IP, DNS)',
       'Database Management (Relational Data Model, Keys, SQL Commands: DDL and DML, Table Creation, Joins, Group By, Having, Aggregate Functions)',
       'Interface Python with SQL Database (Connecting Python with MySQL, Cursor, Executing SQL Queries from Python, Fetching Results)'
+    ],
+    'English': [
+      'Flamingo Prose: The Last Lesson, Lost Spring, Deep Water, The Rattrap, Indigo, Poets and Pancakes, The Interview, Going Places',
+      'Flamingo Poetry: My Mother at Sixty-Six, Keeping Quiet, A Thing of Beauty, A Roadside Stand, Aunt Jennifer\'s Tigers',
+      'Vistas Supplementary Reader: The Third Level, The Tiger King, Journey to the End of the Earth, The Enemy, On the Face of It, Memories of Childhood',
+      'Reading Comprehension & Critical Analysis Passages',
+      'Creative Writing Skills: Notice, Invitations & Replies, Letters to Editor, Job Applications with Bio-data, Article & Report Writing'
+    ],
+    'Hindi': [
+      'आरोह भाग 2: काव्य खंड (आत्मपरिचय, दिन जल्दी-जल्दी ढलता है, पतंग, कविता के बहाने, बात सीधी थी पर, कैमरे में बंद अपाहिज, उषा, बादल राग, कवितावली, लक्ष्मण-मूर्छा और राम का विलाप, रुबाइयाँ)',
+      'आरोह भाग 2: गद्य खंड (भक्तिन, बाज़ार दर्शन, काले मेघा पानी दे, पहलवान की ढोलक, चार्ली चैप्लिन यानी हम सब, नमक, शिरीष के फूल, श्रम विभाजन और जाति-प्रथा)',
+      'वितान भाग 2: सिल्वर वैडिंग (मनोहर श्याम जोशी), जूझ (आनंद यादव), अतीत में दबे पाँव (ओम थानवी), डायरी के पन्ने (ऐन फ्रैंक)',
+      'अभिव्यक्ति और माध्यम: विभिन्न माध्यमों के लिए लेखन, पत्रकारीय लेखन के विभिन्न रूप, विशेष लेखन, कैसे बनती है कविता, नाटक लिखने का व्याकरण'
+    ],
+    'Additional Subject': [
+      'Unit 1: Foundational Frameworks & Theoretical Principles',
+      'Unit 2: Advanced Analysis, Case Studies & Applications',
+      'Unit 3: Practical Experiments, Viva & Numerical Problems',
+      'Unit 4: High-Yield Previous Year Board Questions',
+      'Unit 5: Comprehensive Revision & Model Test Papers'
     ]
   }
 };
@@ -1012,6 +1132,9 @@ function getCurriculumChapters(classLevel, subject) {
   if (normSubj.includes('comp') || normSubj.includes('code') || normSubj.includes('it')) {
     if (gradeData['Computer Science']) return gradeData['Computer Science'];
   }
+  if (normSubj.includes('addition') || normSubj.includes('other') || normSubj.includes('vocat') || normSubj.includes('custom') || normSubj.includes('extra')) {
+    if (gradeData['Additional Subject']) return gradeData['Additional Subject'];
+  }
 
   // Default fallback: return first subject's chapters
   const firstKey = Object.keys(gradeData)[0];
@@ -1028,6 +1151,7 @@ function getAvailableSubjectsForClass(classLevel) {
 }
 
 module.exports = {
+  BASE_SUBJECTS,
   CURRICULUM_CATALOG,
   getCurriculumChapters,
   getAvailableSubjectsForClass

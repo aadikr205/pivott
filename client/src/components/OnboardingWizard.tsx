@@ -10,12 +10,14 @@ const COURSE_OPTIONS = [
   { id: 'neet', name: 'NEET 2026', desc: 'Medical (Physics, Chem, Biology)', icon: '🩺', defaultName: 'NEET 2026', presetKey: 'neet' },
   { id: 'jee_main', name: 'JEE Main 2026', desc: 'Engineering (Physics, Chem, Math)', icon: '⚡', defaultName: 'JEE Main 2026', presetKey: 'jee_main' },
   { id: 'jee', name: 'JEE Advanced', desc: 'IIT Entrance (Advanced PCM)', icon: '🎯', defaultName: 'JEE Advanced', presetKey: 'jee' },
-  { id: 'cbse12', name: 'CBSE 12th Board PCM', desc: 'Physics, Chemistry, Math', icon: '📐', defaultName: 'CBSE 12th Board PCM', presetKey: 'cbse12' },
-  { id: 'cbse12_pcb', name: 'CBSE 12th Board PCB', desc: 'Physics, Chemistry, Biology', icon: '🧬', defaultName: 'CBSE 12th Board PCB', presetKey: 'cbse12_pcb' },
-  { id: 'cbse12_pcmb', name: 'CBSE 12th Board PCMB', desc: 'Math, Physics, Chem & Biology', icon: '🔬', defaultName: 'CBSE 12th Board PCMB', presetKey: 'cbse12_pcmb' },
-  { id: 'class10', name: 'Class 10th Board', desc: 'Science, Math, Social Science', icon: '📚', defaultName: 'Class 10th Board Exam', presetKey: 'class10' },
-  { id: 'bseb12', name: 'Bihar Board 12th', desc: 'BSEB Inter Science (PCM/B)', icon: '🌟', defaultName: 'Bihar Board 12th (Inter)', presetKey: 'bseb12' },
-  { id: 'bseb10', name: 'Bihar Board 10th', desc: 'BSEB Matric (Science, Math, SST)', icon: '📖', defaultName: 'Bihar Board 10th (Matric)', presetKey: 'bseb10' },
+  { id: 'cbse12', name: 'CBSE 12th Board PCM', desc: 'Physics, Chemistry, Math, English, Hindi', icon: '📐', defaultName: 'CBSE 12th Board PCM', presetKey: 'cbse12' },
+  { id: 'cbse12_pcb', name: 'CBSE 12th Board PCB', desc: 'Physics, Chemistry, Biology, English, Hindi', icon: '🧬', defaultName: 'CBSE 12th Board PCB', presetKey: 'cbse12_pcb' },
+  { id: 'cbse12_pcmb', name: 'CBSE 12th Board PCMB', desc: 'Math, Physics, Chem, Bio, English, Hindi', icon: '🔬', defaultName: 'CBSE 12th Board PCMB', presetKey: 'cbse12_pcmb' },
+  { id: 'class10', name: 'Class 10th Board', desc: 'Science, Math, Social Science, Hindi, English', icon: '📚', defaultName: 'Class 10th Board Exam', presetKey: 'class10' },
+  { id: 'icse10', name: 'ICSE 10th Board', desc: 'English, Hindi, Math, Science, Hist/Civics, Geo', icon: '🏛️', defaultName: 'ICSE 10th Board Exam', presetKey: 'icse10' },
+  { id: 'isc12', name: 'ISC 12th Board', desc: 'English, Hindi, Physics, Chem, Math/Bio', icon: '🎓', defaultName: 'ISC 12th Board Exam', presetKey: 'isc12' },
+  { id: 'bseb12', name: 'Bihar Board 12th', desc: 'BSEB Inter Science (PCM/B, Hindi, English)', icon: '🌟', defaultName: 'Bihar Board 12th (Inter)', presetKey: 'bseb12' },
+  { id: 'bseb10', name: 'Bihar Board 10th', desc: 'BSEB Matric (Science, Math, SST, Hindi, Eng)', icon: '📖', defaultName: 'Bihar Board 10th (Matric)', presetKey: 'bseb10' },
 
   // 8 New Olympiad Exams with Verified Official Class Ranges
   { id: 'olympiad_iso', name: 'International Science Olympiad (ISO)', desc: 'Science & Reasoning (Class 1–12)', icon: '🔬', defaultName: 'International Science Olympiad (ISO)', presetKey: 'olympiad_iso', minClass: 1, maxClass: 12, isOlympiad: true },
@@ -28,6 +30,17 @@ const COURSE_OPTIONS = [
   { id: 'olympiad_nsso', name: 'National Social Studies Olympiad (NSSO)', desc: 'History, Civics & Geography (Class 1–10)', icon: '🏛️', defaultName: 'National Social Studies Olympiad (NSSO)', presetKey: 'olympiad_nsso', minClass: 1, maxClass: 10, isOlympiad: true },
 
   { id: 'custom', name: 'Other / Custom Exam', desc: 'Type custom exam (CUET, NDA, etc.)', icon: '📝', defaultName: '', presetKey: '' }
+];
+
+const COMMON_ADDITIONAL_SUBJECTS = [
+  'Physical Education',
+  'Computer Science / IP',
+  'Economics',
+  'Psychology',
+  'Fine Arts',
+  'Informatics Practices',
+  'Sociology',
+  'Sanskrit / Regional'
 ];
 
 export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onCompleted }) => {
@@ -49,6 +62,8 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onCompleted 
   // Subjects list
   const [subjects, setSubjects] = useState<Array<{
     name: string;
+    custom_subject_name?: string;
+    is_additional?: boolean;
     topics: Array<{ name: string; weightage: number; estimated_minutes: number }>;
   }>>([]);
 
@@ -123,6 +138,20 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onCompleted 
     }]);
   };
 
+  const handleAddAdditionalSubject = () => {
+    setSubjects([...subjects, {
+      name: 'Additional Subject',
+      custom_subject_name: '',
+      is_additional: true,
+      topics: [
+        { name: 'Unit 1: Fundamentals, Core Principles & Concepts', weightage: 4, estimated_minutes: 100 },
+        { name: 'Unit 2: In-Depth Applied Concepts & Analysis', weightage: 5, estimated_minutes: 120 },
+        { name: 'Unit 3: Practical Experiments, Projects & Numerical Work', weightage: 4, estimated_minutes: 100 },
+        { name: 'Unit 4: Board Exam Revision & Sample Question Papers', weightage: 4, estimated_minutes: 90 }
+      ]
+    }]);
+  };
+
   const handleRemoveSubject = (sIdx: number) => {
     setSubjects(subjects.filter((_, idx) => idx !== sIdx));
   };
@@ -184,7 +213,17 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onCompleted 
         exam_date: examDate,
         max_daily_hours: Number(maxDailyHours) || 6.0,
         off_days: offDays,
-        subjects
+        subjects: subjects.map(s => {
+          const isAdd = !!s.is_additional || s.name.toLowerCase().includes('additional');
+          const customName = (s.custom_subject_name && s.custom_subject_name.trim()) || '';
+          const finalName = customName || s.name;
+          return {
+            name: finalName,
+            custom_subject_name: customName || (isAdd ? finalName : undefined),
+            is_additional: isAdd,
+            topics: s.topics
+          };
+        })
       });
       onCompleted();
     } catch (err: any) {
@@ -574,6 +613,24 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onCompleted 
                 </button>
                 <button
                   type="button"
+                  onClick={() => handleSelectPreset('icse10')}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                    selectedPresetKey === 'icse10' ? 'bg-teal-600 text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  ICSE 10th
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleSelectPreset('isc12')}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                    selectedPresetKey === 'isc12' ? 'bg-teal-600 text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  ISC 12th
+                </button>
+                <button
+                  type="button"
                   onClick={() => handleSelectPreset('bseb12')}
                   className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
                     selectedPresetKey === 'bseb12' ? 'bg-teal-600 text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
@@ -595,117 +652,200 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onCompleted 
 
             {/* Subjects and Topics List */}
             <div className="space-y-4 max-h-[50vh] overflow-y-auto pr-1">
-              {subjects.map((subj, sIdx) => (
-                <div key={sIdx} className="p-4 rounded-2xl border border-slate-200 bg-white shadow-xs">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
-                    <input
-                      type="text"
-                      value={subj.name}
-                      onChange={e => {
-                        const copy = [...subjects];
-                        copy[sIdx].name = e.target.value;
-                        setSubjects(copy);
-                      }}
-                      className="font-bold text-sm text-slate-900 border-b border-dashed border-slate-300 outline-none pb-0.5 focus:border-teal-500"
-                    />
-                    <button
-                      onClick={() => handleRemoveSubject(sIdx)}
-                      className="text-slate-400 hover:text-rose-500 p-1"
-                      title="Remove subject"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
+              {subjects.map((subj, sIdx) => {
+                const isAdditionalSubj = !!subj.is_additional || subj.name.toLowerCase().includes('additional');
 
-                  {/* Topics under this subject */}
-                  <div className="space-y-2">
-                    {subj.topics.map((top, tIdx) => {
-                      const isSuggesting = suggestingTopicKey === `${sIdx}-${tIdx}`;
-
-                      return (
-                        <div key={tIdx} className="flex flex-col sm:flex-row sm:items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-100">
-                          <input
-                            type="text"
-                            value={top.name}
-                            onChange={e => handleUpdateTopic(sIdx, tIdx, 'name', e.target.value)}
-                            className="flex-1 text-xs text-slate-800 bg-transparent outline-none font-medium"
-                            placeholder="Topic title"
-                          />
-
-                          <div className="flex items-center space-x-2 shrink-0">
-                            {/* Minutes */}
-                            <div className="flex items-center space-x-1 text-xs text-slate-500">
-                              <input
-                                type="number"
-                                step="15"
-                                min="30"
-                                max="300"
-                                value={top.estimated_minutes}
-                                onChange={e => handleUpdateTopic(sIdx, tIdx, 'estimated_minutes', Number(e.target.value))}
-                                className="w-14 px-1.5 py-0.5 rounded border border-slate-200 text-xs text-center bg-white"
-                              />
-                              <span>min</span>
+                return (
+                  <div
+                    key={sIdx}
+                    className={`p-4 rounded-2xl border shadow-xs transition-all ${
+                      isAdditionalSubj
+                        ? 'border-indigo-300 bg-gradient-to-br from-indigo-50/40 via-white to-purple-50/30 ring-1 ring-indigo-500/20'
+                        : 'border-slate-200 bg-white'
+                    }`}
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 mb-3 gap-2">
+                      <div className="flex-1">
+                        {isAdditionalSubj ? (
+                          <div className="space-y-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 text-[10px] font-bold uppercase tracking-wider flex items-center space-x-1">
+                                <Sparkles className="w-3 h-3 text-indigo-600 mr-1" />
+                                <span>Additional / Vocational Subject</span>
+                              </span>
+                              <span className="text-[11px] text-slate-500">
+                                (Self-chosen / Extra subject for your board exam)
+                              </span>
                             </div>
 
-                            {/* Weightage (1-5) */}
-                            <select
-                              value={top.weightage}
-                              onChange={e => handleUpdateTopic(sIdx, tIdx, 'weightage', Number(e.target.value))}
-                              className="px-2 py-0.5 rounded border border-slate-200 text-xs bg-white text-slate-700"
-                              title="Focus Level (1-5)"
-                            >
-                              <option value="5">5 - High</option>
-                              <option value="4">4 - High/Med</option>
-                              <option value="3">3 - Medium</option>
-                              <option value="2">2 - Low</option>
-                              <option value="1">1 - Foundational</option>
-                            </select>
+                            <div className="flex items-center space-x-2">
+                              <input
+                                type="text"
+                                value={subj.custom_subject_name !== undefined ? subj.custom_subject_name : (subj.name !== 'Additional Subject' ? subj.name : '')}
+                                onChange={e => {
+                                  const copy = [...subjects];
+                                  const val = e.target.value;
+                                  copy[sIdx].custom_subject_name = val;
+                                  copy[sIdx].name = val.trim() ? val : 'Additional Subject';
+                                  copy[sIdx].is_additional = true;
+                                  setSubjects(copy);
+                                }}
+                                placeholder="Type your subject name (e.g. Physical Education, Computer Science, Economics...)"
+                                className="w-full font-bold text-sm text-indigo-950 bg-white px-3.5 py-2 rounded-xl border border-indigo-200 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 shadow-xs"
+                              />
+                            </div>
 
-                            {/* AI Suggest Button */}
-                            <button
-                              type="button"
-                              onClick={() => handleAISuggestWeightage(sIdx, tIdx)}
-                              disabled={isSuggesting}
-                              className="px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-[10px] font-medium transition-colors flex items-center space-x-1"
-                              title="AI suggests weightage based on exam importance"
-                            >
-                              <Sparkles className={`w-3 h-3 ${isSuggesting ? 'animate-spin' : ''}`} />
-                              <span>{isSuggesting ? '...' : 'AI'}</span>
-                            </button>
-
-                            <button
-                              type="button"
-                              onClick={() => handleRemoveTopic(sIdx, tIdx)}
-                              className="text-slate-400 hover:text-rose-500 p-1"
-                            >
-                              <Trash2 className="w-3 h-3" />
-                            </button>
+                            {/* Quick selection chips */}
+                            <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+                              <span className="text-[10px] text-slate-400 font-semibold mr-1">Quick Select:</span>
+                              {COMMON_ADDITIONAL_SUBJECTS.map(quickName => {
+                                const isCurrent = (subj.custom_subject_name || subj.name) === quickName;
+                                return (
+                                  <button
+                                    key={quickName}
+                                    type="button"
+                                    onClick={() => {
+                                      const copy = [...subjects];
+                                      copy[sIdx].custom_subject_name = quickName;
+                                      copy[sIdx].name = quickName;
+                                      copy[sIdx].is_additional = true;
+                                      setSubjects(copy);
+                                    }}
+                                    className={`text-[10px] px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
+                                      isCurrent
+                                        ? 'bg-indigo-600 text-white border-indigo-600 font-bold shadow-xs'
+                                        : 'bg-white hover:bg-indigo-50 text-slate-700 border-slate-200 hover:border-indigo-300'
+                                    }`}
+                                  >
+                                    + {quickName}
+                                  </button>
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                        ) : (
+                          <input
+                            type="text"
+                            value={subj.name}
+                            onChange={e => {
+                              const copy = [...subjects];
+                              copy[sIdx].name = e.target.value;
+                              setSubjects(copy);
+                            }}
+                            className="font-bold text-sm text-slate-900 border-b border-dashed border-slate-300 outline-none pb-0.5 focus:border-teal-500"
+                          />
+                        )}
+                      </div>
 
-                  <button
-                    type="button"
-                    onClick={() => handleAddTopic(sIdx)}
-                    className="mt-3 text-xs font-medium text-teal-700 hover:text-teal-800 flex items-center space-x-1"
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                    <span>Add Topic to {subj.name}</span>
-                  </button>
-                </div>
-              ))}
+                      <button
+                        onClick={() => handleRemoveSubject(sIdx)}
+                        className="text-slate-400 hover:text-rose-500 p-1 self-end sm:self-center cursor-pointer"
+                        title="Remove subject"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    {/* Topics under this subject */}
+                    <div className="space-y-2">
+                      {subj.topics.map((top, tIdx) => {
+                        const isSuggesting = suggestingTopicKey === `${sIdx}-${tIdx}`;
+
+                        return (
+                          <div key={tIdx} className="flex flex-col sm:flex-row sm:items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-100">
+                            <input
+                              type="text"
+                              value={top.name}
+                              onChange={e => handleUpdateTopic(sIdx, tIdx, 'name', e.target.value)}
+                              className="flex-1 text-xs text-slate-800 bg-transparent outline-none font-medium"
+                              placeholder="Topic title"
+                            />
+
+                            <div className="flex items-center space-x-2 shrink-0">
+                              {/* Minutes */}
+                              <div className="flex items-center space-x-1 text-xs text-slate-500">
+                                <input
+                                  type="number"
+                                  step="15"
+                                  min="30"
+                                  max="300"
+                                  value={top.estimated_minutes}
+                                  onChange={e => handleUpdateTopic(sIdx, tIdx, 'estimated_minutes', Number(e.target.value))}
+                                  className="w-14 px-1.5 py-0.5 rounded border border-slate-200 text-xs text-center bg-white"
+                                />
+                                <span>min</span>
+                              </div>
+
+                              {/* Weightage (1-5) */}
+                              <select
+                                value={top.weightage}
+                                onChange={e => handleUpdateTopic(sIdx, tIdx, 'weightage', Number(e.target.value))}
+                                className="px-2 py-0.5 rounded border border-slate-200 text-xs bg-white text-slate-700"
+                                title="Focus Level (1-5)"
+                              >
+                                <option value="5">5 - High</option>
+                                <option value="4">4 - High/Med</option>
+                                <option value="3">3 - Medium</option>
+                                <option value="2">2 - Low</option>
+                                <option value="1">1 - Foundational</option>
+                              </select>
+
+                              {/* AI Suggest Button */}
+                              <button
+                                type="button"
+                                onClick={() => handleAISuggestWeightage(sIdx, tIdx)}
+                                disabled={isSuggesting}
+                                className="px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-[10px] font-medium transition-colors flex items-center space-x-1"
+                                title="AI suggests weightage based on exam importance"
+                              >
+                                <Sparkles className={`w-3 h-3 ${isSuggesting ? 'animate-spin' : ''}`} />
+                                <span>{isSuggesting ? '...' : 'AI'}</span>
+                              </button>
+
+                              <button
+                                type="button"
+                                onClick={() => handleRemoveTopic(sIdx, tIdx)}
+                                className="text-slate-400 hover:text-rose-500 p-1"
+                              >
+                                <Trash2 className="w-3 h-3" />
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => handleAddTopic(sIdx)}
+                      className="mt-3 text-xs font-medium text-teal-700 hover:text-teal-800 flex items-center space-x-1 cursor-pointer"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      <span>Add Topic to {subj.name}</span>
+                    </button>
+                  </div>
+                );
+              })}
             </div>
 
-            <button
-              type="button"
-              onClick={handleAddSubject}
-              className="w-full py-2.5 rounded-2xl border border-dashed border-slate-300 hover:border-teal-400 text-xs font-medium text-slate-600 hover:text-teal-700 transition-colors flex items-center justify-center space-x-1"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Add Another Subject</span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <button
+                type="button"
+                onClick={handleAddSubject}
+                className="flex-1 py-2.5 rounded-2xl border border-dashed border-slate-300 hover:border-teal-400 text-xs font-medium text-slate-600 hover:text-teal-700 transition-colors flex items-center justify-center space-x-1 cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Add Another Subject</span>
+              </button>
+              <button
+                type="button"
+                onClick={handleAddAdditionalSubject}
+                className="flex-1 py-2.5 rounded-2xl border border-dashed border-indigo-300 hover:border-indigo-500 bg-indigo-50/50 hover:bg-indigo-50 text-xs font-bold text-indigo-700 transition-colors flex items-center justify-center space-x-1 shadow-xs cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4 text-indigo-600" />
+                <span>+ Add Additional / Vocational Subject</span>
+              </button>
+            </div>
 
             <div className="pt-4 flex items-center justify-between border-t border-slate-100">
               <button
