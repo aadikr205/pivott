@@ -9,11 +9,20 @@ const { streamDoubtSolverResponse, generateSessionTitle } = require('../ai-strea
 // Create new chat session with target_exam
 router.post('/sessions', authMiddleware, (req, res) => {
   try {
-    const userId = req.user.id;
+    let userId = req.user.id;
     const { target_exam, title } = req.body;
 
-    const user = db.prepare('SELECT exam_name FROM users WHERE id = ?').get(userId);
-    const finalExam = target_exam || user?.exam_name || 'NEET';
+    let user = db.prepare('SELECT id, exam_name FROM users WHERE id = ?').get(userId);
+    if (!user && req.user?.email) {
+      user = db.prepare('SELECT id, exam_name FROM users WHERE lower(email) = lower(?)').get(req.user.email);
+      if (user) userId = user.id;
+    }
+
+    if (!user) {
+      return res.status(401).json({ error: 'User not found in database. Please log in again.' });
+    }
+
+    const finalExam = target_exam || user.exam_name || 'NEET';
     const finalTitle = title || 'New Doubt Discussion';
     const now = new Date().toISOString();
     const sessionId = uuidv4();
