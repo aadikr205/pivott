@@ -47,19 +47,19 @@ router.get('/questions', (req, res) => {
     const questions = rows.map(r => {
       let parsedOptions = [];
       try {
-        parsedOptions = JSON.parse(r.options);
+        parsedOptions = typeof r.options === 'string' ? JSON.parse(r.options) : r.options;
       } catch {
         parsedOptions = [r.options];
       }
 
-      const qObj = {
+      return {
         id: r.id,
         exam_key: r.exam_key,
         subject: r.subject,
         topic: r.topic,
         year: r.year,
         question: r.question,
-        options: parsedOptions,
+        options: Array.isArray(parsedOptions) ? [...parsedOptions] : [],
         correct_index: r.correct_index,
         explanation: r.explanation,
         weightage: r.weightage,
@@ -68,10 +68,26 @@ router.get('/questions', (req, res) => {
         type: r.type || 'mcq',
         tolerance: r.tolerance !== undefined && r.tolerance !== null ? r.tolerance : 0.01
       };
-
-      // Shuffled options for practice mode so answer isn't predictable (MCQ only)
-      return qObj.type === 'numerical' ? qObj : shuffleQuestionOptions(qObj);
     });
+
+    // Anti-repetition guarantee: ensure no two consecutive MCQs share the same correct option index
+    let prevCorrectIndex = -1;
+    for (const q of questions) {
+      if (q.type !== 'numerical' && Array.isArray(q.options) && q.options.length >= 2) {
+        if (q.correct_index === prevCorrectIndex) {
+          const oldIdx = q.correct_index;
+          let newIdx = (oldIdx + 1) % q.options.length;
+          if (newIdx === prevCorrectIndex) {
+            newIdx = (newIdx + 1) % q.options.length;
+          }
+          const correctText = q.options[oldIdx];
+          q.options[oldIdx] = q.options[newIdx];
+          q.options[newIdx] = correctText;
+          q.correct_index = newIdx;
+        }
+        prevCorrectIndex = q.correct_index;
+      }
+    }
 
     return res.json({
       count: questions.length,
@@ -142,20 +158,47 @@ router.get('/high-yield-topic', (req, res) => {
     query += ' ORDER BY weightage DESC, year DESC LIMIT 10';
     const rows = db.prepare(query).all(...params);
 
-    const questions = rows.map(r => ({
-      id: r.id,
-      exam_key: r.exam_key,
-      subject: r.subject,
-      topic: r.topic,
-      year: r.year,
-      question: r.question,
-      options: JSON.parse(r.options || '[]'),
-      correct_index: r.correct_index,
-      explanation: r.explanation,
-      weightage: r.weightage,
-      difficulty: r.difficulty,
-      frequency_score: r.frequency_score
-    }));
+    const questions = rows.map(r => {
+      let parsedOptions = [];
+      try {
+        parsedOptions = typeof r.options === 'string' ? JSON.parse(r.options) : r.options;
+      } catch {
+        parsedOptions = [r.options];
+      }
+      return {
+        id: r.id,
+        exam_key: r.exam_key,
+        subject: r.subject,
+        topic: r.topic,
+        year: r.year,
+        question: r.question,
+        options: Array.isArray(parsedOptions) ? [...parsedOptions] : [],
+        correct_index: r.correct_index,
+        explanation: r.explanation,
+        weightage: r.weightage,
+        difficulty: r.difficulty,
+        frequency_score: r.frequency_score
+      };
+    });
+
+    // Anti-repetition guarantee for high-yield topics
+    let prevHighYieldIndex = -1;
+    for (const q of questions) {
+      if (Array.isArray(q.options) && q.options.length >= 2) {
+        if (q.correct_index === prevHighYieldIndex) {
+          const oldIdx = q.correct_index;
+          let newIdx = (oldIdx + 1) % q.options.length;
+          if (newIdx === prevHighYieldIndex) {
+            newIdx = (newIdx + 1) % q.options.length;
+          }
+          const correctText = q.options[oldIdx];
+          q.options[oldIdx] = q.options[newIdx];
+          q.options[newIdx] = correctText;
+          q.correct_index = newIdx;
+        }
+        prevHighYieldIndex = q.correct_index;
+      }
+    }
 
     return res.json({ topic, questions });
   } catch (err) {
@@ -168,7 +211,7 @@ router.get('/high-yield-topic', (req, res) => {
 // Records student practice on an MCQ PYQ and returns verified feedback
 router.post('/submit-practice', authMiddleware, (req, res) => {
   try {
-    const { question_id, selected_index } = req.body;
+    const { question_id, selected_index, selected_option } = req.body;
     if (!question_id || selected_index === undefined) {
       return res.status(400).json({ error: 'question_id and selected_index are required.' });
     }
@@ -178,7 +221,15 @@ router.post('/submit-practice', authMiddleware, (req, res) => {
       return res.status(404).json({ error: 'Question not found.' });
     }
 
-    const isCorrect = Number(selected_index) === question.correct_index;
+    let isCorrect = Number(selected_index) === question.correct_index;
+    if (!isCorrect && selected_option !== undefined) {
+      let dbOptions = [];
+      try { dbOptions = JSON.parse(question.options); } catch {}
+      const correctText = dbOptions[question.correct_index];
+      if (correctText && String(selected_option).trim() === correctText.trim()) {
+        isCorrect = true;
+      }
+    }
 
     logActivity(req.user.id, 'pyq_practice', `Practiced PYQ on ${question.topic}`, {
       question_id,
@@ -206,7 +257,7 @@ router.post('/submit-practice', authMiddleware, (req, res) => {
 // Checks answer for both MCQ and Numerical questions with ±tolerance check and logs activity
 router.post('/check-answer', authMiddleware, (req, res) => {
   try {
-    const { question_id, answer, selected_index } = req.body;
+    const { question_id, answer, selected_index, selected_option } = req.body;
     if (!question_id) {
       return res.status(400).json({ error: 'question_id is required.' });
     }
@@ -250,7 +301,16 @@ router.post('/check-answer', authMiddleware, (req, res) => {
     } else {
       // MCQ
       const idx = selected_index !== undefined ? Number(selected_index) : -1;
-      const isCorrect = idx === question.correct_index;
+      let isCorrect = idx === question.correct_index;
+
+      if (!isCorrect && selected_option !== undefined) {
+        let dbOptions = [];
+        try { dbOptions = JSON.parse(question.options); } catch {}
+        const correctText = dbOptions[question.correct_index];
+        if (correctText && String(selected_option).trim() === correctText.trim()) {
+          isCorrect = true;
+        }
+      }
 
       logActivity(req.user.id, 'pyq_practice', `Attempted PYQ MCQ on ${question.topic}`, {
         question_id,

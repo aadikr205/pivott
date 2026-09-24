@@ -385,6 +385,29 @@ function generateExamQuestions(spec) {
         const optionC = `Magnitude remains invariant and independent of system state`;
         const optionD = `System reaches equilibrium without energy dissipation`;
 
+        const PATTERN = [0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 2, 1];
+        if (!global.__extendedCounter) {
+          global.__extendedCounter = 0;
+          global.__prevExtendedIndex = -1;
+        }
+        let targetIndex = PATTERN[global.__extendedCounter % PATTERN.length];
+        if (targetIndex === global.__prevExtendedIndex) {
+          targetIndex = (targetIndex + 1) % 4;
+        }
+        global.__prevExtendedIndex = targetIndex;
+        global.__extendedCounter++;
+
+        const rawOpts = [optionA, optionB, optionC, optionD];
+        const rotatedOpts = [];
+        const distractors = [optionB, optionC, optionD];
+        let dPtr = 0;
+        for (let i = 0; i < 4; i++) {
+          if (i === targetIndex) rotatedOpts.push(optionA);
+          else rotatedOpts.push(distractors[dPtr++]);
+        }
+
+        const optionLetters = ['Option A', 'Option B', 'Option C', 'Option D'];
+
         questions.push({
           id: qId,
           exam_key: spec.examKey,
@@ -393,11 +416,11 @@ function generateExamQuestions(spec) {
           year,
           type: 'mcq',
           question: `[${spec.examName} ${year}] In the study of "${topic}" in ${subject}, which of the following statements represents the fundamental scientific principle tested by the board?`,
-          options: [optionA, optionB, optionC, optionD],
-          correct_index: 0,
+          options: rotatedOpts,
+          correct_index: targetIndex,
           correct_numeric_answer: null,
           tolerance: 0.01,
-          explanation: `Option A is correct. Under canonical syllabus principles for ${topic} in ${spec.examName}, the primary verified governing law dictates that the designated mechanism directly governs the observed physical or chemical property.`,
+          explanation: `${optionLetters[targetIndex]} is correct. Under canonical syllabus principles for ${topic} in ${spec.examName}, the primary verified governing law dictates that the designated mechanism directly governs the observed physical or chemical property.`,
           weightage,
           difficulty,
           frequency_score: freqScore

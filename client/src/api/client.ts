@@ -414,12 +414,12 @@ export const api = {
     return request<{ count: number; questions: PYQQuestion[] }>(`/pyq/questions${qs}`);
   },
   getPYQStats: () => request<PYQStatsResponse>('/pyq/stats'),
-  submitPYQPractice: (data: { question_id: string; selected_index: number }) =>
+  submitPYQPractice: (data: { question_id: string; selected_index: number; selected_option?: string }) =>
     request<{ is_correct: boolean; correct_index: number; explanation: string; frequency_score: string; year: number }>(
       '/pyq/submit-practice',
       { method: 'POST', body: JSON.stringify(data) }
     ),
-  checkPyqAnswer: (data: { question_id: string; answer?: number | string; selected_index?: number }) =>
+  checkPyqAnswer: (data: { question_id: string; answer?: number | string; selected_index?: number; selected_option?: string }) =>
     request<{ is_correct: boolean; correct_answer?: number; correct_index?: number; tolerance?: number; difference?: number; explanation: string; frequency_score: string; year: number }>(
       '/pyq/check-answer',
       { method: 'POST', body: JSON.stringify(data) }

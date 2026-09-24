@@ -209,6 +209,23 @@ function generateOlympiadQuestions() {
             explanationText = `Parliamentary democracies operate under the rule of law, constitutional checks and balances, and ministerial accountability to the elected legislature.`;
           }
 
+          const PATTERN = [0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 2, 1];
+          if (!global.__olympiadCounter) {
+            global.__olympiadCounter = 0;
+            global.__prevOlympiadIndex = -1;
+          }
+          let targetIndex = PATTERN[global.__olympiadCounter % PATTERN.length];
+          if (targetIndex === global.__prevOlympiadIndex) {
+            targetIndex = (targetIndex + 1) % 4;
+          }
+          global.__prevOlympiadIndex = targetIndex;
+          global.__olympiadCounter++;
+
+          const rotatedOptions = [...options];
+          const correctText = rotatedOptions[0];
+          rotatedOptions[0] = rotatedOptions[targetIndex];
+          rotatedOptions[targetIndex] = correctText;
+
           allQuestions.push({
             id: qId,
             exam_key: exam.key,
@@ -217,8 +234,8 @@ function generateOlympiadQuestions() {
             year: year,
             type: 'mcq',
             question: questionText,
-            options: options,
-            correct_index: 0,
+            options: rotatedOptions,
+            correct_index: targetIndex,
             correct_numeric_answer: null,
             tolerance: 0.01,
             explanation: explanationText,

@@ -72,6 +72,45 @@ const BIOLOGY_TOPICS = [
 
 const EXAMS = ['neet', 'jee_main', 'cbse_12_pcm', 'cbse_12_pcb'];
 
+const PATTERN = [0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 2, 1];
+let mcqCounter = 0;
+let prevMcqCorrectIndex = -1;
+
+function makeRotatedMcq({ id, exam_key, subject, topic, year, question, correctOption, distractors, explanation, weightage, difficulty, frequency_score }) {
+  let targetIndex = PATTERN[mcqCounter % PATTERN.length];
+  if (targetIndex === prevMcqCorrectIndex) {
+    targetIndex = (targetIndex + 1) % 4;
+  }
+  prevMcqCorrectIndex = targetIndex;
+  mcqCounter++;
+
+  const options = [];
+  let distPointer = 0;
+  for (let i = 0; i < 4; i++) {
+    if (i === targetIndex) {
+      options.push(correctOption);
+    } else {
+      options.push(distractors[distPointer++]);
+    }
+  }
+
+  return {
+    id,
+    exam_key,
+    subject,
+    topic,
+    year,
+    type: 'mcq',
+    question,
+    options,
+    correct_index: targetIndex,
+    explanation,
+    weightage,
+    difficulty,
+    frequency_score
+  };
+}
+
 const questions = [];
 
 YEARS.forEach((year) => {
@@ -107,26 +146,24 @@ YEARS.forEach((year) => {
         frequency_score: `Repeated ${Math.min(10, 5 + (year % 5))}/10 years`
       });
     } else {
-      questions.push({
+      questions.push(makeRotatedMcq({
         id: `pyq-${year}-${qNumInYear}`,
         exam_key: examKey,
         subject: 'Physics',
         topic: t.topic,
         year,
-        type: 'mcq',
         question: `In the context of ${t.topic}, if the key governing relation is ${t.formula}, what is the effect on the primary output variable when the governing parameter is doubled?`,
-        options: [
-          'It increases by a factor of 4',
+        correctOption: 'It increases by a factor of 4',
+        distractors: [
           'It doubles linearly',
           'It is halved',
           'It remains invariant and constant'
         ],
-        correct_index: 0,
         explanation: `Based on standard physical principles in ${t.topic} and relation ${t.formula}, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.`,
         weightage: 4,
         difficulty: 'Medium',
         frequency_score: `Repeated ${Math.min(10, 6 + (year % 4))}/10 years`
-      });
+      }));
     }
     qNumInYear++;
   }
@@ -159,26 +196,24 @@ YEARS.forEach((year) => {
         frequency_score: `Repeated ${Math.min(10, 7 + (year % 4))}/10 years`
       });
     } else {
-      questions.push({
+      questions.push(makeRotatedMcq({
         id: `pyq-${year}-${qNumInYear}`,
         exam_key: examKey,
         subject: 'Chemistry',
         topic: t.topic,
         year,
-        type: 'mcq',
         question: `Regarding ${t.topic}, which of the following statements represents the correct thermodynamic and mechanistic behavior?`,
-        options: [
-          `The process conforms to ${t.formula}, exhibiting maximum stability at equilibrium.`,
+        correctOption: `The process conforms to ${t.formula}, exhibiting maximum stability at equilibrium.`,
+        distractors: [
           'The activation energy is completely eliminated by temperature alone.',
           'The standard free energy change ΔG° is always positive for spontaneous reactions.',
           'Entropy decreases monotonically for all gas phase expansions.'
         ],
-        correct_index: 0,
         explanation: `In ${t.topic}, the fundamental principle states that ${t.formula}. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.`,
         weightage: 4,
         difficulty: 'Medium',
         frequency_score: `Repeated ${Math.min(10, 8 + (year % 3))}/10 years`
-      });
+      }));
     }
     qNumInYear++;
   }
@@ -212,26 +247,24 @@ YEARS.forEach((year) => {
         frequency_score: `Repeated ${Math.min(10, 7 + (year % 4))}/10 years`
       });
     } else {
-      questions.push({
+      questions.push(makeRotatedMcq({
         id: `pyq-${year}-${qNumInYear}`,
         exam_key: examKey,
         subject: 'Mathematics',
         topic: t.topic,
         year,
-        type: 'mcq',
         question: `For the concept of ${t.topic}, what is the exact analytical value or condition governed by ${t.formula}?`,
-        options: [
-          'The relation holds identically for all real values within the domain.',
+        correctOption: 'The relation holds identically for all real values within the domain.',
+        distractors: [
           'The discriminant must be strictly negative for real roots.',
           'The limit diverges to infinity for all bounded continuous functions.',
           'The derivative fails to exist at all stationary points.'
         ],
-        correct_index: 0,
         explanation: `Under standard mathematical theorems for ${t.topic}, the fundamental identity ${t.formula} is valid across its specified natural domain.`,
         weightage: 5,
         difficulty: 'Hard',
         frequency_score: `Repeated ${Math.min(10, 9 + (year % 2))}/10 years`
-      });
+      }));
     }
     qNumInYear++;
   }
@@ -241,26 +274,24 @@ YEARS.forEach((year) => {
     const t = BIOLOGY_TOPICS[i % BIOLOGY_TOPICS.length];
     const examKey = (i % 2 === 0) ? 'neet' : 'cbse_12_pcb';
 
-    questions.push({
+    questions.push(makeRotatedMcq({
       id: `pyq-${year}-${qNumInYear}`,
       exam_key: examKey,
       subject: 'Biology',
       topic: t.topic,
       year,
-      type: 'mcq',
       question: `In NCERT biological curriculum for ${t.topic}, which of the following statements is biologically accurate regarding ${t.formula}?`,
-      options: [
-        `It accurately describes the physiological mechanism: ${t.formula}.`,
+      correctOption: `It accurately describes the physiological mechanism: ${t.formula}.`,
+      distractors: [
         'Crossing over occurs exclusively during Anaphase II of Meiosis.',
         'Cardiac output decreases when sympathetic stimulation increases.',
         'Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.'
       ],
-      correct_index: 0,
       explanation: `According to NCERT Biology textbook guidelines for ${t.topic}: ${t.formula}. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.`,
       weightage: 4,
       difficulty: 'Easy',
       frequency_score: `Repeated ${Math.min(10, 8 + (year % 3))}/10 years`
-    });
+    }));
     qNumInYear++;
   }
 });

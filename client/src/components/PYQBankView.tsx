@@ -102,7 +102,8 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
     try {
       await api.checkPyqAnswer({
         question_id: question.id,
-        selected_index: optionIdx
+        selected_index: optionIdx,
+        selected_option: question.options[optionIdx]
       });
     } catch (e) {
       console.warn('Failed to record practice in background:', e);

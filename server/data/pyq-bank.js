@@ -52,12 +52,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -89,12 +89,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -109,12 +109,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -146,12 +146,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -203,12 +203,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Ray Optics & Optical Instruments, if the key governing relation is 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Ray Optics & Optical Instruments and relation 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -223,12 +223,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -260,12 +260,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -317,12 +317,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -337,12 +337,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -394,12 +394,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -431,12 +431,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -451,12 +451,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -488,12 +488,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -545,12 +545,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -582,12 +582,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -602,12 +602,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -659,12 +659,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -696,12 +696,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -753,12 +753,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -773,12 +773,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -810,12 +810,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -830,12 +830,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -887,12 +887,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -924,12 +924,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -944,12 +944,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -984,12 +984,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1021,12 +1021,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1078,12 +1078,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1098,12 +1098,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1135,12 +1135,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Vectors & 3D Geometry, what is the exact analytical value or condition governed by a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Vectors & 3D Geometry, the fundamental identity a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1155,12 +1155,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1212,12 +1212,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1249,12 +1249,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1269,12 +1269,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1326,12 +1326,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1363,12 +1363,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1420,12 +1420,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -1440,12 +1440,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1460,12 +1460,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1480,12 +1480,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1520,12 +1520,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1540,12 +1540,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1560,12 +1560,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1600,12 +1600,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1620,12 +1620,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1660,12 +1660,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1680,12 +1680,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1700,12 +1700,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1720,12 +1720,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1760,12 +1760,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1780,12 +1780,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1800,12 +1800,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1840,12 +1840,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1860,12 +1860,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1900,12 +1900,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1920,12 +1920,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -1957,12 +1957,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -1977,12 +1977,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2034,12 +2034,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2071,12 +2071,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2091,12 +2091,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2148,12 +2148,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2185,12 +2185,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2242,12 +2242,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2262,12 +2262,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2299,12 +2299,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2319,12 +2319,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2376,12 +2376,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2413,12 +2413,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2450,12 +2450,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2507,12 +2507,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2527,12 +2527,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2584,12 +2584,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2621,12 +2621,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2641,12 +2641,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Alcohols, Phenols & Ethers, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Alcohols, Phenols & Ethers, the fundamental principle states that Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2678,12 +2678,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2735,12 +2735,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2755,12 +2755,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2792,12 +2792,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2849,12 +2849,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2869,12 +2869,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -2909,12 +2909,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -2946,12 +2946,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -2966,12 +2966,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3003,12 +3003,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3060,12 +3060,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Vectors & 3D Geometry, what is the exact analytical value or condition governed by a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Vectors & 3D Geometry, the fundamental identity a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3080,12 +3080,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3117,12 +3117,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3174,12 +3174,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3194,12 +3194,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3251,12 +3251,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3288,12 +3288,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3308,12 +3308,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3345,12 +3345,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -3385,12 +3385,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3405,12 +3405,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3425,12 +3425,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3465,12 +3465,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3485,12 +3485,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3525,12 +3525,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3545,12 +3545,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3565,12 +3565,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3585,12 +3585,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3625,12 +3625,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3645,12 +3645,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3665,12 +3665,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3705,12 +3705,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3725,12 +3725,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3765,12 +3765,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3785,12 +3785,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3805,12 +3805,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3825,12 +3825,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -3882,12 +3882,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -3902,12 +3902,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -3939,12 +3939,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -3996,12 +3996,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4016,12 +4016,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4073,12 +4073,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4110,12 +4110,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4130,12 +4130,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Semiconductor Electronics & Logic Gates, if the key governing relation is I_E = I_B + I_C, β = I_C / I_B, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Semiconductor Electronics & Logic Gates and relation I_E = I_B + I_C, β = I_C / I_B, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4167,12 +4167,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4224,12 +4224,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4244,12 +4244,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4281,12 +4281,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4338,12 +4338,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4375,12 +4375,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4432,12 +4432,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4452,12 +4452,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4489,12 +4489,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4509,12 +4509,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4566,12 +4566,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Alcohols, Phenols & Ethers, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Alcohols, Phenols & Ethers, the fundamental principle states that Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4603,12 +4603,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4623,12 +4623,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4680,12 +4680,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4717,12 +4717,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4774,12 +4774,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4794,12 +4794,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -4814,12 +4814,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -4834,12 +4834,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -4891,12 +4891,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -4928,12 +4928,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -4948,12 +4948,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5005,12 +5005,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5042,12 +5042,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5099,12 +5099,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5119,12 +5119,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5156,12 +5156,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5176,12 +5176,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5233,12 +5233,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5270,12 +5270,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -5290,12 +5290,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5330,12 +5330,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5350,12 +5350,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5390,12 +5390,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5410,12 +5410,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5430,12 +5430,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5450,12 +5450,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5490,12 +5490,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5510,12 +5510,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5530,12 +5530,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5570,12 +5570,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5590,12 +5590,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5630,12 +5630,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5650,12 +5650,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5670,12 +5670,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5690,12 +5690,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5730,12 +5730,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5750,12 +5750,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5770,12 +5770,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -5827,12 +5827,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -5864,12 +5864,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -5921,12 +5921,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -5941,12 +5941,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -5978,12 +5978,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Ray Optics & Optical Instruments, if the key governing relation is 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Ray Optics & Optical Instruments and relation 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -5998,12 +5998,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6055,12 +6055,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Semiconductor Electronics & Logic Gates, if the key governing relation is I_E = I_B + I_C, β = I_C / I_B, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Semiconductor Electronics & Logic Gates and relation I_E = I_B + I_C, β = I_C / I_B, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6092,12 +6092,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6112,12 +6112,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6169,12 +6169,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6206,12 +6206,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6263,12 +6263,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6300,12 +6300,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6320,12 +6320,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6357,12 +6357,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6414,12 +6414,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6434,12 +6434,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6471,12 +6471,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6528,12 +6528,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6548,12 +6548,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6605,12 +6605,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6642,12 +6642,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6662,12 +6662,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6699,12 +6699,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -6739,12 +6739,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6759,12 +6759,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6796,12 +6796,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6853,12 +6853,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6873,12 +6873,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6930,12 +6930,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6967,12 +6967,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -6987,12 +6987,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -7024,12 +7024,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -7081,12 +7081,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -7101,12 +7101,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -7138,12 +7138,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -7195,12 +7195,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -7215,12 +7215,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7255,12 +7255,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7275,12 +7275,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7295,12 +7295,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7315,12 +7315,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7355,12 +7355,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7375,12 +7375,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7395,12 +7395,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7435,12 +7435,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7455,12 +7455,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7495,12 +7495,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7515,12 +7515,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7535,12 +7535,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7555,12 +7555,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7595,12 +7595,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7615,12 +7615,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7635,12 +7635,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7675,12 +7675,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7695,12 +7695,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -7752,12 +7752,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -7789,12 +7789,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -7809,12 +7809,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -7846,12 +7846,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -7903,12 +7903,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Ray Optics & Optical Instruments, if the key governing relation is 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Ray Optics & Optical Instruments and relation 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -7923,12 +7923,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -7960,12 +7960,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8017,12 +8017,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8037,12 +8037,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8094,12 +8094,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8131,12 +8131,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8151,12 +8151,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8188,12 +8188,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8245,12 +8245,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8282,12 +8282,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8302,12 +8302,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8359,12 +8359,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8396,12 +8396,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8453,12 +8453,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8473,12 +8473,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8510,12 +8510,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8530,12 +8530,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8587,12 +8587,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8624,12 +8624,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8644,12 +8644,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -8684,12 +8684,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8721,12 +8721,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8778,12 +8778,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8798,12 +8798,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8835,12 +8835,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Vectors & 3D Geometry, what is the exact analytical value or condition governed by a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Vectors & 3D Geometry, the fundamental identity a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8855,12 +8855,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8912,12 +8912,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8949,12 +8949,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -8969,12 +8969,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -9026,12 +9026,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -9063,12 +9063,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -9120,12 +9120,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -9140,12 +9140,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9160,12 +9160,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9180,12 +9180,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9220,12 +9220,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9240,12 +9240,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9260,12 +9260,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9300,12 +9300,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9320,12 +9320,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9360,12 +9360,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9380,12 +9380,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9400,12 +9400,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9420,12 +9420,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9460,12 +9460,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9480,12 +9480,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9500,12 +9500,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9540,12 +9540,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9560,12 +9560,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9600,12 +9600,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9620,12 +9620,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -9657,12 +9657,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9677,12 +9677,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9734,12 +9734,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9771,12 +9771,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9791,12 +9791,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9848,12 +9848,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9885,12 +9885,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9942,12 +9942,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9962,12 +9962,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -9999,12 +9999,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10019,12 +10019,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10076,12 +10076,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10113,12 +10113,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10150,12 +10150,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10207,12 +10207,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10227,12 +10227,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10284,12 +10284,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10321,12 +10321,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10341,12 +10341,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Alcohols, Phenols & Ethers, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Alcohols, Phenols & Ethers, the fundamental principle states that Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10378,12 +10378,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10435,12 +10435,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10455,12 +10455,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10492,12 +10492,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10549,12 +10549,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10569,12 +10569,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -10609,12 +10609,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10646,12 +10646,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10666,12 +10666,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10703,12 +10703,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10760,12 +10760,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Vectors & 3D Geometry, what is the exact analytical value or condition governed by a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Vectors & 3D Geometry, the fundamental identity a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10780,12 +10780,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10817,12 +10817,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10874,12 +10874,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10894,12 +10894,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10951,12 +10951,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -10988,12 +10988,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -11008,12 +11008,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -11045,12 +11045,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -11085,12 +11085,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11105,12 +11105,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11125,12 +11125,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11165,12 +11165,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11185,12 +11185,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11225,12 +11225,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11245,12 +11245,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11265,12 +11265,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11285,12 +11285,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11325,12 +11325,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11345,12 +11345,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11365,12 +11365,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11405,12 +11405,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11425,12 +11425,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11465,12 +11465,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11485,12 +11485,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11505,12 +11505,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11525,12 +11525,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -11582,12 +11582,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11602,12 +11602,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11639,12 +11639,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11696,12 +11696,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11716,12 +11716,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11773,12 +11773,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11810,12 +11810,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11830,12 +11830,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Semiconductor Electronics & Logic Gates, if the key governing relation is I_E = I_B + I_C, β = I_C / I_B, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Semiconductor Electronics & Logic Gates and relation I_E = I_B + I_C, β = I_C / I_B, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11867,12 +11867,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11924,12 +11924,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11944,12 +11944,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -11981,12 +11981,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12038,12 +12038,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12075,12 +12075,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12132,12 +12132,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12152,12 +12152,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12189,12 +12189,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12209,12 +12209,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12266,12 +12266,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Alcohols, Phenols & Ethers, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Alcohols, Phenols & Ethers, the fundamental principle states that Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12303,12 +12303,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12323,12 +12323,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12380,12 +12380,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12417,12 +12417,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12474,12 +12474,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12494,12 +12494,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -12514,12 +12514,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12534,12 +12534,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12591,12 +12591,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12628,12 +12628,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12648,12 +12648,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12705,12 +12705,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12742,12 +12742,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12799,12 +12799,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12819,12 +12819,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12856,12 +12856,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12876,12 +12876,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12933,12 +12933,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12970,12 +12970,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -12990,12 +12990,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13030,12 +13030,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13050,12 +13050,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13090,12 +13090,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13110,12 +13110,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13130,12 +13130,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13150,12 +13150,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13190,12 +13190,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13210,12 +13210,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13230,12 +13230,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13270,12 +13270,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13290,12 +13290,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13330,12 +13330,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13350,12 +13350,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13370,12 +13370,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13390,12 +13390,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13430,12 +13430,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13450,12 +13450,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13470,12 +13470,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -13527,12 +13527,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13564,12 +13564,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13621,12 +13621,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13641,12 +13641,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13678,12 +13678,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Ray Optics & Optical Instruments, if the key governing relation is 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Ray Optics & Optical Instruments and relation 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13698,12 +13698,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13755,12 +13755,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Semiconductor Electronics & Logic Gates, if the key governing relation is I_E = I_B + I_C, β = I_C / I_B, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Semiconductor Electronics & Logic Gates and relation I_E = I_B + I_C, β = I_C / I_B, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13792,12 +13792,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13812,12 +13812,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13869,12 +13869,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13906,12 +13906,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -13963,12 +13963,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14000,12 +14000,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14020,12 +14020,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14057,12 +14057,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14114,12 +14114,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14134,12 +14134,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14171,12 +14171,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14228,12 +14228,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14248,12 +14248,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14305,12 +14305,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14342,12 +14342,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14362,12 +14362,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14399,12 +14399,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -14439,12 +14439,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14459,12 +14459,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14496,12 +14496,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14553,12 +14553,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14573,12 +14573,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14630,12 +14630,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14667,12 +14667,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14687,12 +14687,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14724,12 +14724,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14781,12 +14781,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14801,12 +14801,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14838,12 +14838,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14895,12 +14895,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -14915,12 +14915,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -14955,12 +14955,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -14975,12 +14975,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -14995,12 +14995,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15015,12 +15015,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15055,12 +15055,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15075,12 +15075,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15095,12 +15095,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15135,12 +15135,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15155,12 +15155,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15195,12 +15195,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15215,12 +15215,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15235,12 +15235,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15255,12 +15255,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15295,12 +15295,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15315,12 +15315,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15335,12 +15335,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15375,12 +15375,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15395,12 +15395,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -15452,12 +15452,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15489,12 +15489,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15509,12 +15509,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15546,12 +15546,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15603,12 +15603,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Ray Optics & Optical Instruments, if the key governing relation is 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Ray Optics & Optical Instruments and relation 1/f = (μ - 1)(1/R1 - 1/R2), 1/v - 1/u = 1/f, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15623,12 +15623,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15660,12 +15660,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15717,12 +15717,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15737,12 +15737,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15794,12 +15794,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15831,12 +15831,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15851,12 +15851,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15888,12 +15888,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15945,12 +15945,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -15982,12 +15982,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16002,12 +16002,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16059,12 +16059,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16096,12 +16096,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16153,12 +16153,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16173,12 +16173,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16210,12 +16210,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16230,12 +16230,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16287,12 +16287,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16324,12 +16324,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16344,12 +16344,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -16384,12 +16384,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16421,12 +16421,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16478,12 +16478,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16498,12 +16498,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Straight Lines & Circles, what is the exact analytical value or condition governed by d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Straight Lines & Circles, the fundamental identity d = |ax_1 + by_1 + c| / √(a^2 + b^2), (x-h)^2 + (y-k)^2 = r^2 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16535,12 +16535,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Vectors & 3D Geometry, what is the exact analytical value or condition governed by a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Vectors & 3D Geometry, the fundamental identity a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16555,12 +16555,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16612,12 +16612,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16649,12 +16649,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16669,12 +16669,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16726,12 +16726,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16763,12 +16763,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16820,12 +16820,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -16840,12 +16840,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -16860,12 +16860,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -16880,12 +16880,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -16920,12 +16920,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -16940,12 +16940,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -16960,12 +16960,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17000,12 +17000,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17020,12 +17020,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17060,12 +17060,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17080,12 +17080,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Organisms, Populations & Ecosystems, which of the following statements is biologically accurate regarding 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion?",
     "options": [
-      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Organisms, Populations & Ecosystems: 10% law of energy transfer (Lindeman), Logistic growth dN/dt = rN(K-N)/K, Ozone depletion. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17100,12 +17100,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17120,12 +17120,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17160,12 +17160,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17180,12 +17180,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17200,12 +17200,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17240,12 +17240,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17260,12 +17260,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17300,12 +17300,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17320,12 +17320,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -17357,12 +17357,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17377,12 +17377,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17434,12 +17434,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17471,12 +17471,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Current Electricity & Circuits, if the key governing relation is V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Current Electricity & Circuits and relation V = IR, P = I^2 R = V^2/R, Wheatstone bridge R1/R2 = R3/R4, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17491,12 +17491,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17548,12 +17548,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Wave Optics & Interference, if the key governing relation is β = λD / d, I_net = 4 I_0 cos^2(δ/2), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Wave Optics & Interference and relation β = λD / d, I_net = 4 I_0 cos^2(δ/2), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17585,12 +17585,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Nuclear Physics & Radioactivity, if the key governing relation is N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Nuclear Physics & Radioactivity and relation N = N_0 e^(-λt), T_half = ln(2)/λ = 0.693/λ, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17642,12 +17642,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Laws of Motion & Friction, if the key governing relation is f_s <= μ_s N, F_net = dp/dt = m*a, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Laws of Motion & Friction and relation f_s <= μ_s N, F_net = dp/dt = m*a, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17662,12 +17662,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Work, Energy & Power, if the key governing relation is W = ΔK, P = F · v = dW/dt, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
+      "It increases by a factor of 4",
       "It is halved",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Based on standard physical principles in Work, Energy & Power and relation W = ΔK, P = F · v = dW/dt, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17699,12 +17699,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Gravitation & Kepler Laws, if the key governing relation is v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Gravitation & Kepler Laws and relation v_escape = √(2GM/R), T^2 ∝ r^3, g' = g(1 - 2h/R), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17719,12 +17719,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Thermodynamics & Heat Transfer, if the key governing relation is η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
+      "It increases by a factor of 4",
       "It remains invariant and constant"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Based on standard physical principles in Thermodynamics & Heat Transfer and relation η = 1 - T_C/T_H = W/Q_H, ΔU = Q - W, the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17776,12 +17776,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In the context of Magnetic Effects of Current, if the key governing relation is B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), what is the effect on the primary output variable when the governing parameter is doubled?",
     "options": [
-      "It increases by a factor of 4",
       "It doubles linearly",
       "It is halved",
-      "It remains invariant and constant"
+      "It remains invariant and constant",
+      "It increases by a factor of 4"
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Based on standard physical principles in Magnetic Effects of Current and relation B = μ_0 I / (2πr), F = q(v × B), r = mv/(qB), the dependent parameter scales quadratically with the primary variable. Therefore, doubling the parameter scales the output by 2² = 4 times.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17813,12 +17813,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Some Basic Concepts & Mole Concept, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to n = m/M, Molarity M = (n_solute * 1000) / V_mL, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Some Basic Concepts & Mole Concept, the fundamental principle states that n = m/M, Molarity M = (n_solute * 1000) / V_mL. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17850,12 +17850,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17907,12 +17907,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17927,12 +17927,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Electrochemistry & Nernst Equation, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Electrochemistry & Nernst Equation, the fundamental principle states that E_cell = E°_cell - (0.0591/n) log Q, ΔG° = -nFE°_cell. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -17984,12 +17984,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18021,12 +18021,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Haloalkanes & Haloarenes, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to SN1 vs SN2 mechanisms, Walden inversion, carbocation stability, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Haloalkanes & Haloarenes, the fundamental principle states that SN1 vs SN2 mechanisms, Walden inversion, carbocation stability. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18041,12 +18041,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Alcohols, Phenols & Ethers, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Alcohols, Phenols & Ethers, the fundamental principle states that Lucas test, Reimer-Tiemann reaction, Williamson ether synthesis. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18078,12 +18078,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Amines & Biomolecules, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Amines & Biomolecules, the fundamental principle states that Hinsberg test, Carbylamine reaction, peptide bonds, DNA/RNA bases. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18135,12 +18135,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Bonding & VSEPR Theory, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to Bond Order = (N_b - N_a)/2, μ = q * d, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Chemical Bonding & VSEPR Theory, the fundamental principle states that Bond Order = (N_b - N_a)/2, μ = q * d. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18155,12 +18155,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Chemical Thermodynamics, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In Chemical Thermodynamics, the fundamental principle states that ΔG = ΔH - TΔS, ΔG° = -RT ln K_eq. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18192,12 +18192,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Solutions & Colligative Properties, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
-      "Entropy decreases monotonically for all gas phase expansions."
+      "Entropy decreases monotonically for all gas phase expansions.",
+      "The process conforms to ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT, exhibiting maximum stability at equilibrium."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "In Solutions & Colligative Properties, the fundamental principle states that ΔT_b = i K_b m, ΔT_f = i K_f m, Π = iCRT. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18249,12 +18249,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding Coordination Chemistry & Crystal Field, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
+      "The process conforms to CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg, exhibiting maximum stability at equilibrium.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "In Coordination Chemistry & Crystal Field, the fundamental principle states that CFSE for octahedral = -0.4 Δ_o * t2g + 0.6 Δ_o * eg. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18269,12 +18269,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "Regarding d & f-Block Elements, which of the following statements represents the correct thermodynamic and mechanistic behavior?",
     "options": [
-      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The activation energy is completely eliminated by temperature alone.",
+      "The process conforms to μ_spin = √(n(n+2)) BM, Lanthanoid contraction, exhibiting maximum stability at equilibrium.",
       "The standard free energy change ΔG° is always positive for spontaneous reactions.",
       "Entropy decreases monotonically for all gas phase expansions."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "In d & f-Block Elements, the fundamental principle states that μ_spin = √(n(n+2)) BM, Lanthanoid contraction. Spontaneous reactions require ΔG < 0, and equilibrium minimizes chemical potential.",
     "weightage": 4,
     "difficulty": "Medium",
@@ -18309,12 +18309,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18346,12 +18346,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Matrices & Determinants, what is the exact analytical value or condition governed by A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A|?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Matrices & Determinants, the fundamental identity A * adj(A) = |A| I, det(AB) = det(A)*det(B), A^-1 = adj(A)/|A| is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18366,12 +18366,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18403,12 +18403,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Differential Equations, what is the exact analytical value or condition governed by dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Differential Equations, the fundamental identity dy/dx + P(x)y = Q(x), IF = e^(∫ P dx), y * IF = ∫ (Q * IF) dx + C is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18460,12 +18460,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Vectors & 3D Geometry, what is the exact analytical value or condition governed by a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Vectors & 3D Geometry, the fundamental identity a · b = |a||b| cos θ, |a × b| = |a||b| sin θ, cos^2 α + cos^2 β + cos^2 γ = 1 is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18480,12 +18480,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18517,12 +18517,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Sequences, Series & Progression, what is the exact analytical value or condition governed by S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Sequences, Series & Progression, the fundamental identity S_n = (n/2)[2a + (n-1)d], S_inf = a/(1-r) (|r| < 1) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18574,12 +18574,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Limits, Continuity & Differentiability, what is the exact analytical value or condition governed by lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Limits, Continuity & Differentiability, the fundamental identity lim (x->0) (sin x)/x = 1, L'Hopital's rule: lim f(x)/g(x) = f'(x)/g'(x) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18594,12 +18594,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Definite & Indefinite Integrals, what is the exact analytical value or condition governed by ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Definite & Indefinite Integrals, the fundamental identity ∫ x^n dx = (x^(n+1))/(n+1) + C, ∫_0^a f(x)dx = ∫_0^a f(a-x)dx is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18651,12 +18651,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Conic Sections (Parabola, Ellipse, Hyperbola), what is the exact analytical value or condition governed by y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Conic Sections (Parabola, Ellipse, Hyperbola), the fundamental identity y^2 = 4ax, x^2/a^2 + y^2/b^2 = 1, e = √(1 - b^2/a^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18688,12 +18688,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Probability & Bayes Theorem, what is the exact analytical value or condition governed by P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)]?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
+      "The relation holds identically for all real values within the domain.",
       "The limit diverges to infinity for all bounded continuous functions.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "Under standard mathematical theorems for Probability & Bayes Theorem, the fundamental identity P(A|B) = P(A ∩ B) / P(B), P(B_i|A) = [P(B_i)P(A|B_i)] / Σ[P(B_k)P(A|B_k)] is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18708,12 +18708,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Quadratic Equations & Complex Numbers, what is the exact analytical value or condition governed by ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2)?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
-      "The derivative fails to exist at all stationary points."
+      "The derivative fails to exist at all stationary points.",
+      "The relation holds identically for all real values within the domain."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "Under standard mathematical theorems for Quadratic Equations & Complex Numbers, the fundamental identity ax^2 + bx + c = 0, x = (-b ± √(b^2 - 4ac))/(2a), |z| = √(x^2+y^2) is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18745,12 +18745,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "For the concept of Binomial Theorem & Expansions, what is the exact analytical value or condition governed by T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r?",
     "options": [
-      "The relation holds identically for all real values within the domain.",
       "The discriminant must be strictly negative for real roots.",
       "The limit diverges to infinity for all bounded continuous functions.",
+      "The relation holds identically for all real values within the domain.",
       "The derivative fails to exist at all stationary points."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "Under standard mathematical theorems for Binomial Theorem & Expansions, the fundamental identity T_(r+1) = ^nC_r a^(n-r) b^r, (1+x)^n = Σ ^nC_r x^r is valid across its specified natural domain.",
     "weightage": 5,
     "difficulty": "Hard",
@@ -18785,12 +18785,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18805,12 +18805,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18825,12 +18825,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Growth & Phytohormones, which of the following statements is biologically accurate regarding Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)?",
     "options": [
-      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Growth & Phytohormones: Auxin (apical dominance), Gibberellin (bolting), Cytokinin (cell division), ABA (stress). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18865,12 +18865,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18885,12 +18885,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Body Fluids & Circulation, which of the following statements is biologically accurate regarding Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization?",
     "options": [
-      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Body Fluids & Circulation: Cardiac output = Stroke volume * Heart rate, SA node = pacemaker, QRS = ventricular depolarization. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18925,12 +18925,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18945,12 +18945,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18965,12 +18965,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -18985,12 +18985,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biotechnology & Recombinant DNA, which of the following statements is biologically accurate regarding EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension?",
     "options": [
-      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Biotechnology & Recombinant DNA: EcoRI restriction enzyme, pBR322 vector, Taq polymerase in PCR denaturation-annealing-extension. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19025,12 +19025,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Cell Biology & Cell Cycle, which of the following statements is biologically accurate regarding Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene?",
     "options": [
-      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Cell Biology & Cell Cycle: Mitosis vs Meiosis, G1 -> S -> G2 -> M phases, Crossing over in Pachytene. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19045,12 +19045,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Biomolecules & Enzyme Kinetics, which of the following statements is biologically accurate regarding Lock and key hypothesis, Km value, competitive inhibition raises Km?",
     "options": [
-      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Lock and key hypothesis, Km value, competitive inhibition raises Km.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Biomolecules & Enzyme Kinetics: Lock and key hypothesis, Km value, competitive inhibition raises Km. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19065,12 +19065,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Plant Physiology (Photosynthesis & Respiration), which of the following statements is biologically accurate regarding C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38?",
     "options": [
-      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Plant Physiology (Photosynthesis & Respiration): C3 vs C4 cycle, Kranz anatomy, Net ATP yield in aerobic respiration = 36-38. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19105,12 +19105,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Human Digestion & Absorption, which of the following statements is biologically accurate regarding Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption?",
     "options": [
-      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Human Digestion & Absorption: Pepsinogen -> Pepsin, Trypsin, Bile salts emulsify lipids, Villi absorption. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19125,12 +19125,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Breathing & Exchange of Gases, which of the following statements is biologically accurate regarding Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve?",
     "options": [
-      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Breathing & Exchange of Gases: Tidal volume = 500 mL, Vital capacity = TV + IRV + ERV, O2-Hb dissociation curve. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19165,12 +19165,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Excretory Products & Elimination, which of the following statements is biologically accurate regarding Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier?",
     "options": [
-      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Excretory Products & Elimination: Glomerular filtration rate GFR = 125 mL/min, Loop of Henle countercurrent multiplier. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19185,12 +19185,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Neural Control & Chemical Coordination, which of the following statements is biologically accurate regarding Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon?",
     "options": [
-      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
+      "It accurately describes the physiological mechanism: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon.",
       "Cardiac output decreases when sympathetic stimulation increases.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "According to NCERT Biology textbook guidelines for Neural Control & Chemical Coordination: Action potential depolarisation Na+ influx, Resting membrane potential -70mV, Insulin vs Glucagon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19205,12 +19205,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Principles of Inheritance & Genetics, which of the following statements is biologically accurate regarding Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)?",
     "options": [
-      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia).",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
-      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
+      "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans.",
+      "It accurately describes the physiological mechanism: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia)."
     ],
-    "correct_index": 0,
+    "correct_index": 3,
     "explanation": "According to NCERT Biology textbook guidelines for Principles of Inheritance & Genetics: Mendelian 9:3:3:1 ratio, Incomplete dominance 1:2:1, Sex-linked inheritance (Haemophilia). Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
@@ -19225,12 +19225,12 @@ const PYQ_QUESTIONS = [
     "type": "mcq",
     "question": "In NCERT biological curriculum for Molecular Basis of Inheritance, which of the following statements is biologically accurate regarding Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon?",
     "options": [
-      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Crossing over occurs exclusively during Anaphase II of Meiosis.",
       "Cardiac output decreases when sympathetic stimulation increases.",
+      "It accurately describes the physiological mechanism: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon.",
       "Insulin is synthesized and secreted by the alpha cells of the Islets of Langerhans."
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "According to NCERT Biology textbook guidelines for Molecular Basis of Inheritance: Central dogma DNA -> RNA -> Protein, Meselson-Stahl semi-conservative, Lac Operon. Alpha cells secrete glucagon (beta cells secrete insulin), and crossing over occurs in Pachytene of Prophase I.",
     "weightage": 4,
     "difficulty": "Easy",
