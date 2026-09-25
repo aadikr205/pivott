@@ -46,3 +46,17 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Print optimizations for One-Page Study Roadmap */
+@media print {
+  nav, header, button, .no-print, .fixed {
+    display: none !important;
+  }
+  body, #root, .printable-roadmap {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .print-page-break {
+    page-break-inside: avoid;
+  }
+}

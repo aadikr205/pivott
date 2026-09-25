@@ -1,6 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Bell, BellOff, AlertTriangle, Clock, CheckCircle2, X, ChevronRight, Volume2, VolumeX, ShieldAlert, Sparkles, Moon } from 'lucide-react';
+import { 
+  Bell, BellOff, AlertTriangle, Clock, CheckCircle2, X, ChevronRight, 
+  Volume2, VolumeX, ShieldAlert, Sparkles, Moon, Play, Pause, 
+  RotateCcw, Timer, Save, Plus, ChevronDown, ChevronUp, History, BookOpen, Check
+} from 'lucide-react';
 import { api, NotificationAlert, NotificationResponse } from '../api/client';
+
+interface StudySessionLog {
+  id: string;
+  time: string;
+  durationSeconds: number;
+  subject: string;
+}
+
+const STORAGE_KEY_TIMER = 'pivott_study_stopwatch_state';
+const STORAGE_KEY_DAILY_PREFIX = 'pivott_study_daily_';
+const getTodayDateStr = () => new Date().toISOString().split('T')[0];
 
 interface NotificationCenterProps {
   onNavigateToTab?: (tab: any) => void;
@@ -21,6 +36,84 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
   const audioContextRef = useRef<AudioContext | null>(null);
   const lastAlertIdsRef = useRef<Set<string>>(new Set());
+
+  // === Study Stopwatch (Stoptime) & Session Tracker State ===
+  const [todayStudiedSeconds, setTodayStudiedSeconds] = useState<number>(() => {
+    try {
+      const raw = localStorage.getItem(`${STORAGE_KEY_DAILY_PREFIX}${getTodayDateStr()}`);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return Number(parsed.totalSeconds) || 0;
+      }
+    } catch (e) {}
+    return 0;
+  });
+
+  const [todaySessions, setTodaySessions] = useState<StudySessionLog[]>(() => {
+    try {
+      const raw = localStorage.getItem(`${STORAGE_KEY_DAILY_PREFIX}${getTodayDateStr()}`);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed.sessions) ? parsed.sessions : [];
+      }
+    } catch (e) {}
+    return [];
+  });
+
+  const [isStopwatchRunning, setIsStopwatchRunning] = useState<boolean>(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_TIMER);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return Boolean(parsed.isRunning);
+      }
+    } catch (e) {}
+    return false;
+  });
+
+  const [stopwatchSeconds, setStopwatchSeconds] = useState<number>(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_TIMER);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.isRunning && parsed.startTimestamp) {
+          const elapsed = Math.floor((Date.now() - parsed.startTimestamp) / 1000);
+          return (parsed.accumulatedSeconds || 0) + elapsed;
+        }
+        return parsed.accumulatedSeconds || 0;
+      }
+    } catch (e) {}
+    return 0;
+  });
+
+  const [studySubject, setStudySubject] = useState<string>('General Study');
+  const [saveSuccessMsg, setSaveSuccessMsg] = useState<string | null>(null);
+  const [showSessionsHistory, setShowSessionsHistory] = useState<boolean>(false);
+
+  // Tick stopwatch every second when active
+  useEffect(() => {
+    let interval: any = null;
+    if (isStopwatchRunning) {
+      interval = setInterval(() => {
+        setStopwatchSeconds(prev => {
+          const next = prev + 1;
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY_TIMER);
+            const current = raw ? JSON.parse(raw) : {};
+            localStorage.setItem(STORAGE_KEY_TIMER, JSON.stringify({
+              ...current,
+              accumulatedSeconds: next,
+              lastTick: Date.now()
+            }));
+          } catch (e) {}
+          return next;
+        });
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isStopwatchRunning]);
 
   // Determine effective notification state (prop takes precedence, fallback to API response)
   const isEffectiveEnabled = notificationsEnabled !== undefined
@@ -155,15 +248,115 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
     } catch (e) {}
   };
 
+  // === Stopwatch Actions ===
+  const handleStartStopwatch = () => {
+    setIsStopwatchRunning(true);
+    try {
+      localStorage.setItem(STORAGE_KEY_TIMER, JSON.stringify({
+        isRunning: true,
+        startTimestamp: Date.now(),
+        accumulatedSeconds: stopwatchSeconds,
+        subject: studySubject
+      }));
+    } catch (e) {}
+    playAlertChime('medium');
+  };
+
+  const handlePauseStopwatch = () => {
+    setIsStopwatchRunning(false);
+    try {
+      localStorage.setItem(STORAGE_KEY_TIMER, JSON.stringify({
+        isRunning: false,
+        startTimestamp: null,
+        accumulatedSeconds: stopwatchSeconds,
+        subject: studySubject
+      }));
+    } catch (e) {}
+  };
+
+  const handleToggleStudyMode = () => {
+    if (isStopwatchRunning) {
+      handlePauseStopwatch();
+    } else {
+      handleStartStopwatch();
+    }
+  };
+
+  const handleResetStopwatch = () => {
+    setIsStopwatchRunning(false);
+    setStopwatchSeconds(0);
+    try {
+      localStorage.removeItem(STORAGE_KEY_TIMER);
+    } catch (e) {}
+  };
+
+  const handleSaveSession = (overrideSeconds?: number) => {
+    const durationToAdd = overrideSeconds !== undefined ? overrideSeconds : stopwatchSeconds;
+    if (durationToAdd < 10) {
+      alert('Pehle thodi der study karein (at least 10 seconds), tabhi session save hoga.');
+      return;
+    }
+
+    const newTotal = todayStudiedSeconds + durationToAdd;
+    const newSession: StudySessionLog = {
+      id: `sess_${Date.now()}`,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      durationSeconds: durationToAdd,
+      subject: studySubject
+    };
+    const updatedSessions = [newSession, ...todaySessions];
+
+    setTodayStudiedSeconds(newTotal);
+    setTodaySessions(updatedSessions);
+
+    // Save to daily storage
+    try {
+      localStorage.setItem(`${STORAGE_KEY_DAILY_PREFIX}${getTodayDateStr()}`, JSON.stringify({
+        totalSeconds: newTotal,
+        sessions: updatedSessions
+      }));
+    } catch (e) {}
+
+    // If saving the active stopwatch, reset it
+    if (overrideSeconds === undefined) {
+      setIsStopwatchRunning(false);
+      setStopwatchSeconds(0);
+      try {
+        localStorage.removeItem(STORAGE_KEY_TIMER);
+      } catch (e) {}
+    }
+
+    const mins = Math.max(1, Math.round(durationToAdd / 60));
+    setSaveSuccessMsg(`🎉 +${mins} min study session recorded in your daily tracker!`);
+    setTimeout(() => setSaveSuccessMsg(null), 4500);
+    playAlertChime('medium');
+  };
+
+  const formatStopwatch = (totalSec: number) => {
+    const hrs = Math.floor(totalSec / 3600);
+    const mins = Math.floor((totalSec % 3600) / 60);
+    const secs = totalSec % 60;
+    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  const formatDurationHM = (totalSec: number) => {
+    const hrs = Math.floor(totalSec / 3600);
+    const mins = Math.floor((totalSec % 3600) / 60);
+    if (hrs === 0) return `${mins}m`;
+    return `${hrs}h ${mins}m`;
+  };
+
   return (
     <div className="relative">
-      {/* Bell Icon Trigger with Pulse Badge */}
+      {/* Bell Icon Trigger with Pulse Badge & Live Stopwatch Indicator */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isEffectiveEnabled ? 'Open Study Notifications' : 'Study Do Not Disturb Active'}
         className={`relative p-2 sm:p-2.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-center ${
-          !isEffectiveEnabled
+          isStopwatchRunning
+            ? 'bg-slate-900 text-emerald-400 border-emerald-500/60 shadow-lg ring-2 ring-emerald-500/30'
+            : !isEffectiveEnabled
             ? 'bg-slate-800/60 text-slate-400 border-slate-700/60 hover:text-white'
             : 'bg-slate-800/80 hover:bg-slate-700/90 text-slate-300 hover:text-white border border-slate-700/80'
         }`}
@@ -171,10 +364,20 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
         {!isEffectiveEnabled ? (
           <BellOff className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
         ) : (
-          <Bell className="w-4 h-4 sm:w-5 sm:h-5" />
+          <Bell className={`w-4 h-4 sm:w-5 sm:h-5 ${isStopwatchRunning ? 'text-emerald-400' : ''}`} />
         )}
         
-        {totalCount > 0 && isEffectiveEnabled && (
+        {/* Live Stopwatch Badge on Bell Icon */}
+        {isStopwatchRunning && (
+          <span
+            title="Study Stopwatch Running!"
+            className="absolute -top-1 -right-1 flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] font-black rounded-full bg-emerald-500 text-white shadow-lg ring-2 ring-emerald-300 animate-pulse"
+          >
+            ⏱️ {Math.floor(stopwatchSeconds / 60)}m
+          </span>
+        )}
+
+        {totalCount > 0 && isEffectiveEnabled && !isStopwatchRunning && (
           <span
             className={`absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[10px] font-black rounded-full text-white shadow-lg ${
               criticalCount > 0
@@ -186,7 +389,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           </span>
         )}
 
-        {!isEffectiveEnabled && (
+        {!isEffectiveEnabled && !isStopwatchRunning && (
           <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 ring-2 ring-slate-900" />
         )}
       </button>
@@ -204,16 +407,28 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
             <div className="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/80">
               <div className="flex items-center space-x-2">
                 <div className={`w-8 h-8 rounded-xl border flex items-center justify-center ${
-                  !isEffectiveEnabled 
+                  isStopwatchRunning
+                    ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
+                    : !isEffectiveEnabled 
                     ? 'bg-amber-500/20 border-amber-500/30 text-amber-400' 
                     : 'bg-teal-500/20 border-teal-500/30 text-teal-400'
                 }`}>
-                  {!isEffectiveEnabled ? <BellOff className="w-4 h-4" /> : <Bell className="w-4 h-4" />}
+                  {isStopwatchRunning ? (
+                    <Timer className="w-4 h-4 text-emerald-400 animate-spin" />
+                  ) : !isEffectiveEnabled ? (
+                    <BellOff className="w-4 h-4" />
+                  ) : (
+                    <Bell className="w-4 h-4" />
+                  )}
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">Study Reminders & Alerts</h4>
                   <p className="text-[11px] text-slate-400">
-                    {!isEffectiveEnabled ? 'Do Not Disturb Active' : 'Live Deadlines & Delay Alerts'}
+                    {isStopwatchRunning
+                      ? '⏱️ Study Session Live'
+                      : !isEffectiveEnabled
+                      ? 'Do Not Disturb Active'
+                      : 'Live Deadlines & Delay Alerts'}
                   </p>
                 </div>
               </div>
@@ -239,6 +454,194 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                   <X className="w-4 h-4" />
                 </button>
               </div>
+            </div>
+
+            {/* ⏱️ LIVE STUDY STOPWATCH & SESSION TRACKER (स्टडी टाइमर - Requirement 2) */}
+            <div className="p-4 sm:p-5 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800">
+              <div className="flex items-center justify-between gap-2 pb-2.5">
+                <div className="flex items-center space-x-2">
+                  <div className={`p-1.5 rounded-xl border ${
+                    isStopwatchRunning 
+                      ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400' 
+                      : 'bg-indigo-500/20 border-indigo-500/30 text-indigo-400'
+                  }`}>
+                    <Timer className={`w-4 h-4 ${isStopwatchRunning ? 'animate-spin' : ''}`} />
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-bold text-white flex items-center gap-1.5">
+                      <span>Study Stopwatch</span>
+                      <span className="text-[10px] font-normal text-slate-400">(स्टडी टाइमर)</span>
+                    </h5>
+                    <p className="text-[10px] text-slate-400">Track kitna time study kiya hai</p>
+                  </div>
+                </div>
+
+                {/* ON / OFF Switch */}
+                <button
+                  type="button"
+                  onClick={handleToggleStudyMode}
+                  className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 border shadow-sm ${
+                    isStopwatchRunning
+                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-400 ring-2 ring-emerald-500/30'
+                      : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${isStopwatchRunning ? 'bg-white animate-ping' : 'bg-slate-500'}`} />
+                  <span>{isStopwatchRunning ? 'Study ON' : 'Study OFF'}</span>
+                </button>
+              </div>
+
+              {/* Digital Clock Display & Subject Selector */}
+              <div className={`p-3.5 rounded-2xl border transition-all ${
+                isStopwatchRunning 
+                  ? 'bg-emerald-950/20 border-emerald-500/30 shadow-inner ring-1 ring-emerald-500/20' 
+                  : 'bg-slate-950/70 border-slate-800'
+              }`}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 block">
+                      {isStopwatchRunning ? '🟢 Active Session Time (चालू)' : 'Session Stopwatch'}
+                    </span>
+                    <div className={`text-2xl sm:text-3xl font-mono font-black tracking-wider ${
+                      isStopwatchRunning ? 'text-emerald-400' : 'text-slate-200'
+                    }`}>
+                      {formatStopwatch(stopwatchSeconds)}
+                    </div>
+                  </div>
+
+                  {/* Subject Tag Selector */}
+                  <div className="text-right">
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
+                      Subject
+                    </span>
+                    <select
+                      value={studySubject}
+                      onChange={(e) => setStudySubject(e.target.value)}
+                      className="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-xl px-2.5 py-1.5 focus:outline-none focus:border-teal-400 cursor-pointer"
+                    >
+                      <option value="General Study">General Focus</option>
+                      <option value="Physics">Physics</option>
+                      <option value="Chemistry">Chemistry</option>
+                      <option value="Mathematics">Mathematics</option>
+                      <option value="Biology">Biology</option>
+                      <option value="Revision & Notes">Revision</option>
+                      <option value="Mock Test / PYQ">PYQ / Test</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Primary Action Buttons */}
+                <div className="mt-3 flex items-center gap-2 flex-wrap">
+                  {!isStopwatchRunning ? (
+                    <button
+                      type="button"
+                      onClick={handleStartStopwatch}
+                      className="flex-1 py-1.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer active:scale-95"
+                    >
+                      <Play className="w-3.5 h-3.5 fill-white" />
+                      <span>Start Study (शुरू करें)</span>
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={handlePauseStopwatch}
+                      className="flex-1 py-1.5 px-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer active:scale-95"
+                    >
+                      <Pause className="w-3.5 h-3.5 fill-white" />
+                      <span>Pause (रोकें)</span>
+                    </button>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => handleSaveSession()}
+                    disabled={stopwatchSeconds < 10}
+                    title={stopwatchSeconds < 10 ? 'Pehle study karein tabhi add hoga' : 'Add to today\'s study total'}
+                    className={`py-1.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer border ${
+                      stopwatchSeconds >= 10
+                        ? 'bg-teal-600 hover:bg-teal-500 text-white border-teal-500 shadow-md active:scale-95'
+                        : 'bg-slate-800 text-slate-500 border-slate-700/60 cursor-not-allowed'
+                    }`}
+                  >
+                    <Save className="w-3.5 h-3.5" />
+                    <span>Save Session (जोड़ें)</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleResetStopwatch}
+                    disabled={stopwatchSeconds === 0}
+                    title="Reset stopwatch"
+                    className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white border border-slate-700 transition-colors cursor-pointer disabled:opacity-40"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Success Notification Toast */}
+              {saveSuccessMsg && (
+                <div className="mt-2.5 p-2.5 rounded-xl bg-teal-500/15 border border-teal-500/40 text-teal-200 text-xs flex items-center gap-2 animate-fadeIn">
+                  <Check className="w-4 h-4 text-teal-400 shrink-0" />
+                  <span className="font-semibold">{saveSuccessMsg}</span>
+                </div>
+              )}
+
+              {/* Today's Study Progress Summary & Quick Manual Adds */}
+              <div className="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                <div>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-wider block">
+                    Today's Total Studied (आज की कुल पढ़ाई)
+                  </span>
+                  <span className="font-bold text-white font-mono text-sm">
+                    🎯 {formatDurationHM(todayStudiedSeconds)}
+                  </span>
+                  <span className="text-[10px] text-slate-400 ml-1.5">
+                    ({todaySessions.length} session{todaySessions.length === 1 ? '' : 's'})
+                  </span>
+                </div>
+
+                {todaySessions.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setShowSessionsHistory(!showSessionsHistory)}
+                    className="text-[11px] text-teal-400 hover:text-teal-300 font-semibold flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>{showSessionsHistory ? 'Hide Log' : 'View Log'}</span>
+                    {showSessionsHistory ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                  </button>
+                )}
+              </div>
+
+              {/* Quick Offline Study Add Pills */}
+              <div className="mt-2 flex items-center gap-1.5 flex-wrap">
+                <span className="text-[10px] text-slate-400">Quick Add:</span>
+                {[15, 30, 45, 60].map(mins => (
+                  <button
+                    key={mins}
+                    type="button"
+                    onClick={() => handleSaveSession(mins * 60)}
+                    className="px-2 py-0.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-bold transition-colors cursor-pointer"
+                  >
+                    +{mins}m
+                  </button>
+                ))}
+              </div>
+
+              {/* Collapsible Session History Log */}
+              {showSessionsHistory && todaySessions.length > 0 && (
+                <div className="mt-2.5 max-h-32 overflow-y-auto space-y-1.5 bg-slate-950/80 p-2.5 rounded-xl border border-slate-800">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                    Today's Recorded Sessions:
+                  </span>
+                  {todaySessions.map((s, idx) => (
+                    <div key={s.id || idx} className="flex items-center justify-between text-[11px] text-slate-300 py-0.5 border-b border-slate-800/60 last:border-0">
+                      <span className="font-mono text-slate-400">{s.time} • <strong className="text-white">{s.subject}</strong></span>
+                      <span className="font-mono font-bold text-teal-300">{formatDurationHM(s.durationSeconds)}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Study DND Status Ribbon if muted */}
