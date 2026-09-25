@@ -76,7 +76,7 @@ router.get('/alerts', (req, res) => {
         urgency: 'critical',
         icon: '⚠️',
         title: 'Study Delay & Backlog Alert',
-        message: `Aapke ${deferredSelfItems.length} self-study topics backlog/delay me hain. Schedule ko track par rakhne ke liye Re-plan karein ya abhi complete karein!`,
+        message: `You have ${deferredSelfItems.length} self-study topics in backlog or delayed. Keep your schedule on track by replanning or completing them today!`,
         action_label: 'View Backlog',
         action_tab: deferredSelfItems.length > 0 ? 'self-timetable' : 'schedule',
         created_at: now.toISOString()
@@ -94,8 +94,8 @@ router.get('/alerts', (req, res) => {
           type: 'urgent_deadline',
           urgency: 'critical',
           icon: '⏰',
-          title: `Sirf ${remainingHoursToday} Ghante Bache Hain!`,
-          message: `Aaj ke study tasks me ${totalPendingToday} topics pending hain. Daily streak bachane aur score drop se bachne ke liye jaldi complete karein!`,
+          title: `Only ${remainingHoursToday} Hours Remaining Today!`,
+          message: `You have ${totalPendingToday} study topics pending today. Finish them now to protect your daily streak and syllabus score!`,
           action_label: 'Complete Now',
           action_tab: pendingMainItems.length > 0 ? 'today' : 'self-timetable',
           created_at: now.toISOString()
@@ -108,7 +108,7 @@ router.get('/alerts', (req, res) => {
           urgency: 'high',
           icon: '🌆',
           title: 'Evening Study Reminder',
-          message: `Sham ho chuki hai aur aaj ke ${totalPendingToday} study topics pending hain. Apne timetable ke anusaar session start karein.`,
+          message: `Evening is here with ${totalPendingToday} study topics pending for today. Start your session to stay on schedule.`,
           action_label: 'Start Study Session',
           action_tab: pendingMainItems.length > 0 ? 'today' : 'self-timetable',
           created_at: now.toISOString()
@@ -121,7 +121,7 @@ router.get('/alerts', (req, res) => {
           urgency: 'medium',
           icon: '📖',
           title: 'Daily Study Goals Active',
-          message: `Aaj ke plan me ${totalPendingToday} high-yield topics scheduled hain. Focus mode on karein!`,
+          message: `Today's plan has ${totalPendingToday} high-yield topics scheduled. Turn on focus mode and get started!`,
           action_label: 'Open Plan',
           action_tab: 'today',
           created_at: now.toISOString()
@@ -134,8 +134,8 @@ router.get('/alerts', (req, res) => {
         type: 'celebration',
         urgency: 'low',
         icon: '🎉',
-        title: 'Shabash! Aaj Ka Target Complete!',
-        message: 'Aapne aaj ke sabhi planned study topics successfully complete kar liye hain. Revision ya PYQs practice karein.',
+        title: "Great Job! Today's Target Completed!",
+        message: 'You have successfully completed all your planned study topics for today. Take a quick break, revise, or practice PYQs.',
         action_label: 'Practice PYQs',
         action_tab: 'pyq',
         created_at: now.toISOString()

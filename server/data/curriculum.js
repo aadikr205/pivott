@@ -76,11 +76,11 @@ const CURRICULUM_CATALOG = {
       'Rhymes and Short Stories'
     ],
     'Hindi': [
-      'स्वर और व्यंजन (Varnamala)',
-      'दो और तीन अक्षर वाले शब्द',
-      'आ, इ, ई की मात्राएं',
-      'हमारे मददगार और परिवार',
-      'बाल कविताएं और कहानियां'
+      'Hindi Alphabet Fundamentals (Vowels & Consonants)',
+      'Two and Three Letter Words',
+      'Foundational Vowel Signs & Sounds',
+      'Family, Helpers & Everyday Words',
+      'Rhymes, Stories & Simple Vocabulary'
     ],
     'Additional Subject': [
       'Creative Expression & Foundational Concepts',
@@ -136,11 +136,11 @@ const CURRICULUM_CATALOG = {
       'Reading Comprehension Stories'
     ],
     'Hindi': [
-      'मात्राओं का सही प्रयोग (उ, ऊ, ऋ, ए, ऐ)',
-      'संज्ञा (नाम वाले शब्द)',
-      'वचन (एक-अनेक)',
-      'विलोम शब्द और पर्यायवाची',
-      'सरल वाक्य रचना और चित्र वर्णन'
+      'Vowel Signs & Accurate Pronunciation',
+      'Nouns (Naming Words)',
+      'Singular & Plural Forms',
+      'Antonyms and Synonyms',
+      'Sentence Formation & Picture Description'
     ],
     'Additional Subject': [
       'Creative Expression & Foundational Concepts',
@@ -200,11 +200,11 @@ const CURRICULUM_CATALOG = {
       'Comprehension Passages'
     ],
     'Hindi': [
-      'सर्वनाम और विशेषण',
-      'क्रिया और काल (भूत, वर्तमान, भविष्य)',
-      'मुहावरे और लोकोक्तियाँ',
-      'अनुच्छेद लेखन और पत्र लेखन',
-      'साहित्यिक कहानियां और कविताएं'
+      'Pronouns and Adjectives',
+      'Verbs and Tenses (Past, Present, Future)',
+      'Idioms and Proverbs',
+      'Paragraph and Letter Writing',
+      'Literary Stories and Poetry'
     ],
     'Additional Subject': [
       'Creative Expression & Foundational Concepts',
@@ -277,11 +277,11 @@ const CURRICULUM_CATALOG = {
       'Reading Comprehension'
     ],
     'Hindi': [
-      'संज्ञा, सर्वनाम और उनके भेद',
-      'विशेषण और प्रविशेषण',
-      'क्रिया और वाच्य',
-      'विराम चिह्न (Punctuation in Hindi)',
-      'पत्र लेखन (अनौपचारिक) और निबंध'
+      'Nouns, Pronouns and Their Types',
+      'Adjectives and Modifiers',
+      'Verbs and Voice (Active and Passive)',
+      'Punctuation Marks in Language',
+      'Informal Letters and Essay Writing'
     ],
     'Additional Subject': [
       'Creative Expression & Foundational Concepts',
@@ -362,11 +362,11 @@ const CURRICULUM_CATALOG = {
       'Advanced Reading Comprehension'
     ],
     'Hindi': [
-      'संधि और समास का परिचय',
-      'कारक और विभक्ति चिह्न',
-      'उपसर्ग और प्रत्यय',
-      'शुद्ध-अशुद्ध वर्तनी',
-      'संवाद लेखन और औपचारिक पत्र'
+      'Introduction to Sandhi and Samas',
+      'Case Markers and Prepositions',
+      'Prefixes and Suffixes',
+      'Spelling Correction and Word Accuracy',
+      'Dialogue Writing and Formal Letters'
     ],
     'Additional Subject': [
       'Creative Expression & Foundational Concepts',
@@ -454,11 +454,11 @@ const CURRICULUM_CATALOG = {
       'Prose and Poetry Comprehension'
     ],
     'Hindi': [
-      'संज्ञा, सर्वनाम, विशेषण और क्रिया के भेद',
-      'कारक और परसर्ग',
-      'संधि (स्वर संधि)',
-      'पर्यायवाची, विलोम, अनेकार्थी शब्द',
-      'अपठित गद्यांश और निबंध लेखन'
+      'Classification of Nouns, Pronouns, Adjectives and Verbs',
+      'Case Endings and Postpositions',
+      'Vowel Sandhi Fundamentals',
+      'Synonyms, Antonyms and Homonyms',
+      'Unseen Passages and Essay Writing'
     ],
     'Additional Subject': [
       'Unit 1: Fundamentals & Essential Concepts',
@@ -546,11 +546,11 @@ const CURRICULUM_CATALOG = {
       'Reading Comprehension Passages'
     ],
     'Hindi': [
-      'वर्ण-विचार और वर्तनी शुद्धि',
-      'शब्द-रचना: संधि, उपसर्ग, प्रत्यय, समास',
-      'संज्ञा, सर्वनाम, विशेषण, क्रिया और उनके रूपांतरण',
-      'अव्यय / अविकारी शब्द',
-      'पत्र लेखन, निबंध, और संवाद लेखन'
+      'Phonetics, Orthography and Spelling Rules',
+      'Word Formation: Sandhi, Prefixes, Suffixes & Compounds',
+      'Grammatical Inflexion of Major Word Classes',
+      'Indeclinables (Avyay) & Invariable Words',
+      'Letter Writing, Essays and Dialogue Writing'
     ],
     'Additional Subject': [
       'Unit 1: Fundamentals & Essential Concepts',
@@ -648,11 +648,11 @@ const CURRICULUM_CATALOG = {
       'Analytical Reading Comprehension'
     ],
     'Hindi': [
-      'संधि, समास, उपसर्ग और प्रत्यय का विस्तृत अध्ययन',
-      'शब्द विचार: तत्सम, तद्भव, देशज, विदेशी',
-      'वाक्य विचार: रचना की दृष्टि से वाक्य भेद (सरल, संयुक्त, मिश्र)',
-      'अलंकार: अनुप्रास, यमक, उपमा, रूपक',
-      'निबंध, पत्र (औपचारिक/अनौपचारिक), और विज्ञापन लेखन'
+      'Advanced Study of Sandhi, Samas, Prefixes and Suffixes',
+      'Etymology: Native, Borrowed and Foreign Words',
+      'Sentence Analysis: Simple, Compound and Complex Sentences',
+      'Figures of Speech: Alliteration, Metaphor, Simile & Hyperbole',
+      'Essays, Formal/Informal Letters and Advertisements'
     ],
     'Additional Subject': [
       'Unit 1: Fundamentals & Essential Concepts',
@@ -753,11 +753,11 @@ const CURRICULUM_CATALOG = {
       'Analytical Prose and Poetry'
     ],
     'Hindi': [
-      'उपसर्ग, प्रत्यय और समास',
-      'अर्थ की दृष्टि से वाक्य भेद (विधानवाचक, निषेधवाचक, प्रश्नवाचक आदि)',
-      'अलंकार: अनुप्रास, यमक, श्लेष, उपमा, रूपक, उत्प्रेक्षा, अतिशयोक्ति',
-      'लघुकथा लेखन, संदेश लेखन, ईमेल लेखन',
-      'गद्य और पद्य साहित्य का विस्तृत अध्ययन'
+      'Prefixes, Suffixes and Compound Words',
+      'Sentence Classification by Meaning (Declarative, Negative, Interrogative)',
+      'Literary Figures of Speech: Metaphor, Simile, Personification',
+      'Short Story Writing, Message and Email Writing',
+      'Comprehensive Literature Study: Prose and Poetry'
     ],
     'Additional Subject': [
       'Unit 1: Fundamentals & Essential Concepts',
@@ -861,11 +861,11 @@ const CURRICULUM_CATALOG = {
       'Prose and Poetry Critical Analysis (First Flight & Footprints without Feet)'
     ],
     'Hindi': [
-      'पदबंध (संज्ञा, सर्वनाम, विशेषण, क्रिया, क्रियाविशेषण)',
-      'रचना के आधार पर वाक्य रूपांतरण',
-      'समास (अव्ययीभाव, तत्पुरुष, कर्मधारय, द्विगु, द्वंद्व, बहुव्रीहि)',
-      'मुहावरे (पाठ्यपुस्तक पर आधारित)',
-      'अनुच्छेद लेखन, पत्र लेखन, सूचना लेखन, विज्ञापन लेखन, ई-मेल लेखन'
+      'Phrase Clauses (Noun, Pronoun, Adjective, Verb, Adverb)',
+      'Sentence Transformation Based on Structure',
+      'Samas (Compound Formations) in Detail',
+      'Idiomatic Expressions & Common Phrases',
+      'Paragraphs, Formal Letters, Notices, Ads & Emails'
     ],
     'Additional Subject': [
       'Unit 1: Fundamentals & Essential Concepts',
@@ -966,10 +966,10 @@ const CURRICULUM_CATALOG = {
       'Creative Writing Skills: Classified Advertisements, Posters, Speech and Debate Writing'
     ],
     'Hindi': [
-      'आरोह भाग 1: काव्य खंड (कबीर के पद, मीरा के पद, घर की याद, चंपा काले काले अच्छर, गजल)',
-      'आरोह भाग 1: गद्य खंड (नमक का दारोगा, मियाँ नसीरुद्दीन, अपू के साथ ढाई साल, विदाई-संभाषण, गलता लोहा, रजनी, जामुन का पेड़)',
-      'वितान भाग 1: भारतीय गायिकाओं में बेजोड़: लता मंगेशकर, राजस्थान की रजत बूंदें, आलो-आँधारि',
-      'अभिव्यक्ति और माध्यम: जनसंचार माध्यम, पत्रकारिता के विविध आयाम, डायरी लिखने की कला, कथा-पटकथा'
+      'Aroh Part 1: Poetry Collection (Classical & Modern Anthologies)',
+      'Aroh Part 1: Prose Collection (Classic Literary Stories & Essays)',
+      'Vitan Part 1: Supplementary Reader (Biographies & Narratives)',
+      'Creative Writing & Mass Media: Journalism, Diary Writing & Scripts'
     ],
     'Additional Subject': [
       'Unit 1: Fundamentals, Core Principles & Theories',
@@ -1064,10 +1064,10 @@ const CURRICULUM_CATALOG = {
       'Creative Writing Skills: Notice, Invitations & Replies, Letters to Editor, Job Applications with Bio-data, Article & Report Writing'
     ],
     'Hindi': [
-      'आरोह भाग 2: काव्य खंड (आत्मपरिचय, दिन जल्दी-जल्दी ढलता है, पतंग, कविता के बहाने, बात सीधी थी पर, कैमरे में बंद अपाहिज, उषा, बादल राग, कवितावली, लक्ष्मण-मूर्छा और राम का विलाप, रुबाइयाँ)',
-      'आरोह भाग 2: गद्य खंड (भक्तिन, बाज़ार दर्शन, काले मेघा पानी दे, पहलवान की ढोलक, चार्ली चैप्लिन यानी हम सब, नमक, शिरीष के फूल, श्रम विभाजन और जाति-प्रथा)',
-      'वितान भाग 2: सिल्वर वैडिंग (मनोहर श्याम जोशी), जूझ (आनंद यादव), अतीत में दबे पाँव (ओम थानवी), डायरी के पन्ने (ऐन फ्रैंक)',
-      'अभिव्यक्ति और माध्यम: विभिन्न माध्यमों के लिए लेखन, पत्रकारीय लेखन के विभिन्न रूप, विशेष लेखन, कैसे बनती है कविता, नाटक लिखने का व्याकरण'
+      'Aroh Part 2: Poetry Section (Modern & Classical Anthologies)',
+      'Aroh Part 2: Prose Section (Critical Essays & Literary Stories)',
+      'Vitan Part 2: Supplementary Reader (Contemporary Literature)',
+      'Creative Writing & Mass Media: Print & Digital Journalism'
     ],
     'Additional Subject': [
       'Unit 1: Foundational Frameworks & Theoretical Principles',

@@ -197,10 +197,10 @@ const SYLLABUS_PRESETS = {
       {
         name: 'Hindi Core / Elective',
         topics: [
-          { name: 'अपठित बोध (गद्यांश एवं काव्यांश)', weightage: 4, estimated_minutes: 80 },
-          { name: 'आरोह भाग 2: काव्य खंड एवं गद्य खंड', weightage: 5, estimated_minutes: 120 },
-          { name: 'वितान भाग 2: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
-          { name: 'अभिव्यक्ति और माध्यम: रचनात्मक लेखन, पत्र व जनसंचार', weightage: 4, estimated_minutes: 90 }
+          { name: 'Reading Comprehension (Unseen Prose & Poetry)', weightage: 4, estimated_minutes: 80 },
+          { name: 'Aroh Literature: Core Prose & Poetry Chapters', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vitan Supplementary Reader: Literature Analysis', weightage: 4, estimated_minutes: 90 },
+          { name: 'Creative Expression: Official Letters & Mass Media Writing', weightage: 4, estimated_minutes: 90 }
         ]
       },
       {
@@ -260,10 +260,10 @@ const SYLLABUS_PRESETS = {
       {
         name: 'Hindi Core / Elective',
         topics: [
-          { name: 'अपठित बोध (गद्यांश एवं काव्यांश)', weightage: 4, estimated_minutes: 80 },
-          { name: 'आरोह भाग 2: काव्य खंड एवं गद्य खंड', weightage: 5, estimated_minutes: 120 },
-          { name: 'वितान भाग 2: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
-          { name: 'अभिव्यक्ति और माध्यम: रचनात्मक लेखन, पत्र व जनसंचार', weightage: 4, estimated_minutes: 90 }
+          { name: 'Reading Comprehension (Unseen Prose & Poetry)', weightage: 4, estimated_minutes: 80 },
+          { name: 'Aroh Literature: Core Prose & Poetry Chapters', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vitan Supplementary Reader: Literature Analysis', weightage: 4, estimated_minutes: 90 },
+          { name: 'Creative Expression: Official Letters & Mass Media Writing', weightage: 4, estimated_minutes: 90 }
         ]
       },
       {
@@ -328,10 +328,10 @@ const SYLLABUS_PRESETS = {
       {
         name: 'Hindi Core / Elective',
         topics: [
-          { name: 'अपठित बोध (गद्यांश एवं काव्यांश)', weightage: 4, estimated_minutes: 80 },
-          { name: 'आरोह भाग 2: काव्य खंड एवं गद्य खंड', weightage: 5, estimated_minutes: 120 },
-          { name: 'वितान भाग 2: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
-          { name: 'अभिव्यक्ति और माध्यम: रचनात्मक लेखन, पत्र व जनसंचार', weightage: 4, estimated_minutes: 90 }
+          { name: 'Reading Comprehension (Unseen Prose & Poetry)', weightage: 4, estimated_minutes: 80 },
+          { name: 'Aroh Literature: Core Prose & Poetry Chapters', weightage: 5, estimated_minutes: 120 },
+          { name: 'Vitan Supplementary Reader: Literature Analysis', weightage: 4, estimated_minutes: 90 },
+          { name: 'Creative Expression: Official Letters & Mass Media Writing', weightage: 4, estimated_minutes: 90 }
         ]
       },
       {
@@ -392,13 +392,13 @@ const SYLLABUS_PRESETS = {
         ]
       },
       {
-        name: 'Hindi (हिंदी)',
+        name: 'Hindi (Language & Literature)',
         topics: [
-          { name: 'अपठित गद्यांश व काव्यांश बोध', weightage: 4, estimated_minutes: 80 },
-          { name: 'क्षितिज / स्पर्श: गद्य एवं काव्य खंड', weightage: 5, estimated_minutes: 120 },
-          { name: 'कृतिका / संचयन: पूरक पाठ्यपुस्तक', weightage: 4, estimated_minutes: 90 },
-          { name: 'व्याकरण: पदबंध, वाच्य, समास, वाक्य रूपांतरण व मुहावरे', weightage: 5, estimated_minutes: 100 },
-          { name: 'रचनात्मक लेखन: अनुच्छेद, पत्र, संदेश व विज्ञापन लेखन', weightage: 4, estimated_minutes: 80 }
+          { name: 'Reading Comprehension: Unseen Prose & Poetry', weightage: 4, estimated_minutes: 80 },
+          { name: 'Literature Reader: Selected Prose & Poetry Chapters', weightage: 5, estimated_minutes: 120 },
+          { name: 'Supplementary Reader: Extended Study', weightage: 4, estimated_minutes: 90 },
+          { name: 'Grammar: Sentence Structure, Compounds & Idioms', weightage: 5, estimated_minutes: 100 },
+          { name: 'Creative Writing: Essays, Letters, Notices & Advertisements', weightage: 4, estimated_minutes: 80 }
         ]
       },
       {
@@ -480,9 +480,9 @@ const SYLLABUS_PRESETS = {
       {
         name: 'Hindi (Second Language)',
         topics: [
-          { name: 'हिंदी व्याकरण, अपठित गद्यांश, निबंध व पत्र लेखन', weightage: 5, estimated_minutes: 100 },
-          { name: 'साहित्य सागर: संक्षिप्त कहानियाँ', weightage: 4, estimated_minutes: 100 },
-          { name: 'साहित्य सागर: पद्य भाग (कविताएँ)', weightage: 4, estimated_minutes: 90 }
+          { name: 'Language Skills: Grammar, Unseen Passage, Essay & Letter Writing', weightage: 5, estimated_minutes: 100 },
+          { name: 'Sahitya Sagar: Selected Short Stories Collection', weightage: 4, estimated_minutes: 100 },
+          { name: 'Sahitya Sagar: Selected Poetry Collection', weightage: 4, estimated_minutes: 90 }
         ]
       },
       {
@@ -540,9 +540,9 @@ const SYLLABUS_PRESETS = {
       {
         name: 'Hindi',
         topics: [
-          { name: 'अपठित बोध, व्यावहारिक व्याकरण व निबंध/रचनात्मक लेखन', weightage: 5, estimated_minutes: 100 },
-          { name: 'गद्य संकलन: प्रमुख निबंध एवं कहानियाँ', weightage: 4, estimated_minutes: 110 },
-          { name: 'काव्य मंजरी: प्रमुख कवियों की कविताएँ', weightage: 4, estimated_minutes: 100 }
+          { name: 'Reading Comprehension, Applied Grammar & Creative Writing', weightage: 5, estimated_minutes: 100 },
+          { name: 'Gadya Sankalan: Prose & Essay Collection', weightage: 4, estimated_minutes: 110 },
+          { name: 'Kavya Manjari: Classical & Contemporary Poetry', weightage: 4, estimated_minutes: 100 }
         ]
       },
       {
@@ -562,40 +562,40 @@ const SYLLABUS_PRESETS = {
     name: 'Bihar Board 12th (BSEB Inter Science)',
     subjects: [
       {
-        name: 'Physics (भौतिकी)',
+        name: 'Physics',
         topics: [
-          { name: 'स्थिर वैद्युतिकी एवं विद्युत धारा', weightage: 5, estimated_minutes: 120 },
-          { name: 'धारा का चुंबकीय प्रभाव एवं प्रत्यावर्ती धारा', weightage: 4, estimated_minutes: 110 },
-          { name: 'किरण एवं तरंग प्रकाशिकी (Optics)', weightage: 5, estimated_minutes: 130 },
-          { name: 'परमाणु, नाभिक एवं अर्धचालक युक्तियाँ', weightage: 4, estimated_minutes: 100 },
-          { name: 'संचार व्यवस्था (Communication Systems)', weightage: 3, estimated_minutes: 70 }
+          { name: 'Electrostatics & Current Electricity', weightage: 5, estimated_minutes: 120 },
+          { name: 'Magnetic Effects of Current & Alternating Current', weightage: 4, estimated_minutes: 110 },
+          { name: 'Ray & Wave Optics', weightage: 5, estimated_minutes: 130 },
+          { name: 'Atoms, Nuclei & Semiconductor Devices', weightage: 4, estimated_minutes: 100 },
+          { name: 'Communication Systems', weightage: 3, estimated_minutes: 70 }
         ]
       },
       {
-        name: 'Chemistry (रसायन शास्त्र)',
+        name: 'Chemistry',
         topics: [
-          { name: 'विलयन, वैद्युत रसायन एवं रासायनिक बलगतिकी', weightage: 5, estimated_minutes: 130 },
-          { name: 'p-ब्लॉक एवं d, f-ब्लॉक के तत्व', weightage: 4, estimated_minutes: 110 },
-          { name: 'उपसहसंयोजन यौगिक (Coordination Compounds)', weightage: 4, estimated_minutes: 90 },
-          { name: 'हैलोएल्केन, एल्कोहॉल, एल्डिहाइड एवं कीटोन', weightage: 5, estimated_minutes: 140 },
-          { name: 'जैव-अणु एवं बहुलक (Biomolecules & Polymers)', weightage: 3, estimated_minutes: 80 }
+          { name: 'Solutions, Electrochemistry & Chemical Kinetics', weightage: 5, estimated_minutes: 130 },
+          { name: 'p-Block and d, f-Block Elements', weightage: 4, estimated_minutes: 110 },
+          { name: 'Coordination Compounds', weightage: 4, estimated_minutes: 90 },
+          { name: 'Haloalkanes, Alcohols, Aldehydes & Ketones', weightage: 5, estimated_minutes: 140 },
+          { name: 'Biomolecules and Polymers', weightage: 3, estimated_minutes: 80 }
         ]
       },
       {
-        name: 'Biology / Math (जीव विज्ञान / गणित)',
+        name: 'Biology / Math',
         topics: [
-          { name: 'आनुवंशिकी तथा वंशागति का आणविक आधार / कलन (Calculus)', weightage: 5, estimated_minutes: 150 },
-          { name: 'जनन तथा जनन स्वास्थ्य / सदिश एवं त्रिविमीय ज्यामिति', weightage: 5, estimated_minutes: 130 },
-          { name: 'जैव प्रौद्योगिकी एवं मानव कल्याण / आव्यूह एवं सारणिक', weightage: 4, estimated_minutes: 110 },
-          { name: 'पारिस्थितिकी एवं पर्यावरण / रैखिक प्रोग्रामन एवं प्रायिकता', weightage: 4, estimated_minutes: 90 }
+          { name: 'Genetics & Molecular Basis of Inheritance / Calculus', weightage: 5, estimated_minutes: 150 },
+          { name: 'Reproduction & Reproductive Health / Vectors & 3D Geometry', weightage: 5, estimated_minutes: 130 },
+          { name: 'Biotechnology & Human Welfare / Matrices & Determinants', weightage: 4, estimated_minutes: 110 },
+          { name: 'Ecology & Environment / Linear Programming & Probability', weightage: 4, estimated_minutes: 90 }
         ]
       },
       {
-        name: 'Hindi (100 अंक हिंदी - अनिवार्य)',
+        name: 'Hindi (100 Marks Compulsory)',
         topics: [
-          { name: 'गद्य खंड: बातचीत, उसने कहा था, संपूर्ण क्रांति, अर्धनारीश्वर', weightage: 4, estimated_minutes: 90 },
-          { name: 'पद्य खंड: कड़बक, पद (सूरदास/तुलसीदास), उषा, जन-जन का चेहरा एक', weightage: 4, estimated_minutes: 90 },
-          { name: 'हिंदी व्याकरण: संधि, समास, मुहावरे, पर्यायवाची, निबंध एवं पत्र लेखन', weightage: 5, estimated_minutes: 100 }
+          { name: 'Prose Section: Key Essays, Stories & Speeches', weightage: 4, estimated_minutes: 90 },
+          { name: 'Poetry Section: Classical & Modern Anthologies', weightage: 4, estimated_minutes: 90 },
+          { name: 'Grammar: Compounds, Sandhi, Idioms, Essay & Letter Writing', weightage: 5, estimated_minutes: 100 }
         ]
       },
       {
@@ -607,14 +607,14 @@ const SYLLABUS_PRESETS = {
         ]
       },
       {
-        name: 'Additional Subject (अतिरिक्त / ऐच्छिक विषय)',
+        name: 'Additional Subject',
         is_additional: true,
         custom_subject_name: '',
         topics: [
-          { name: 'Unit 1: सैद्धांतिक अवधारणाएँ एवं मूल सिद्धांत', weightage: 4, estimated_minutes: 90 },
-          { name: 'Unit 2: मुख्य विषयवस्तु एवं विश्लेषणात्मक प्रश्न', weightage: 5, estimated_minutes: 110 },
-          { name: 'Unit 3: प्रायोगिक कार्य, प्रोजेक्ट एवं आंकिक प्रश्न', weightage: 4, estimated_minutes: 90 },
-          { name: 'Unit 4: बिहार बोर्ड मॉडल पेपर एवं रिवीजन', weightage: 4, estimated_minutes: 90 }
+          { name: 'Unit 1: Theoretical Concepts & Core Principles', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 2: Main Syllabus & Analytical Questions', weightage: 5, estimated_minutes: 110 },
+          { name: 'Unit 3: Practical Experiments, Projects & Numerical Work', weightage: 4, estimated_minutes: 90 },
+          { name: 'Unit 4: Model Papers & Revision', weightage: 4, estimated_minutes: 90 }
         ]
       }
     ]
@@ -623,46 +623,46 @@ const SYLLABUS_PRESETS = {
     name: 'Bihar Board 10th (BSEB Matric)',
     subjects: [
       {
-        name: 'Science (विज्ञान - भौतिकी, रसायन, जीवविज्ञान)',
+        name: 'Science (Physics, Chemistry, Biology)',
         topics: [
-          { name: 'रासायनिक अभिक्रियाएँ, अम्ल-क्षार एवं लवण', weightage: 4, estimated_minutes: 90 },
-          { name: 'धातु-अधातु एवं कार्बन तथा उसके यौगिक', weightage: 5, estimated_minutes: 120 },
-          { name: 'जैव प्रक्रम (पोषण, श्वसन, परिवहन, उत्सर्जन)', weightage: 5, estimated_minutes: 130 },
-          { name: 'नियंत्रण एवं समन्वय तथा जनन', weightage: 4, estimated_minutes: 100 },
-          { name: 'प्रकाश का परावर्तन-अपवर्तन एवं मानव नेत्र', weightage: 5, estimated_minutes: 130 },
-          { name: 'विद्युत धारा तथा इसका चुंबकीय प्रभाव', weightage: 5, estimated_minutes: 120 }
+          { name: 'Chemical Reactions, Acids, Bases & Salts', weightage: 4, estimated_minutes: 90 },
+          { name: 'Metals, Non-metals & Carbon Compounds', weightage: 5, estimated_minutes: 120 },
+          { name: 'Life Processes (Nutrition, Respiration, Transportation, Excretion)', weightage: 5, estimated_minutes: 130 },
+          { name: 'Control, Coordination & Reproduction', weightage: 4, estimated_minutes: 100 },
+          { name: 'Light: Reflection, Refraction & Human Eye', weightage: 5, estimated_minutes: 130 },
+          { name: 'Electric Current & Magnetic Effects', weightage: 5, estimated_minutes: 120 }
         ]
       },
       {
-        name: 'Mathematics (गणित)',
+        name: 'Mathematics',
         topics: [
-          { name: 'वास्तविक संख्याएँ, बहुपद एवं रैखिक समीकरण', weightage: 4, estimated_minutes: 90 },
-          { name: 'द्विघात समीकरण एवं समानांतर श्रेढ़ी (AP)', weightage: 4, estimated_minutes: 100 },
-          { name: 'त्रिभुज, वृत्त एवं ज्यामितीय रचनाएँ', weightage: 5, estimated_minutes: 130 },
-          { name: 'त्रिकोणमिति का परिचय एवं ऊंचाई और दूरी', weightage: 5, estimated_minutes: 140 },
-          { name: 'निर्देशांक ज्यामिति, पृष्ठीय क्षेत्रफल, सांख्यिकी एवं प्रायिकता', weightage: 4, estimated_minutes: 110 }
+          { name: 'Real Numbers, Polynomials & Linear Equations', weightage: 4, estimated_minutes: 90 },
+          { name: 'Quadratic Equations & Arithmetic Progressions (AP)', weightage: 4, estimated_minutes: 100 },
+          { name: 'Triangles, Circles & Geometric Constructions', weightage: 5, estimated_minutes: 130 },
+          { name: 'Introduction to Trigonometry & Heights and Distances', weightage: 5, estimated_minutes: 140 },
+          { name: 'Coordinate Geometry, Surface Areas, Statistics & Probability', weightage: 4, estimated_minutes: 110 }
         ]
       },
       {
-        name: 'Social Science (सामाजिक विज्ञान)',
+        name: 'Social Science',
         topics: [
-          { name: 'इतिहास: यूरोप और भारत में राष्ट्रवाद, अर्थव्यवस्था', weightage: 5, estimated_minutes: 100 },
-          { name: 'भूगोल: भारत संसाधन एवं उपयोग, कृषि, जल संसाधन', weightage: 4, estimated_minutes: 90 },
-          { name: 'राजनीति विज्ञान: लोकतंत्र में सत्ता की साझेदारी', weightage: 4, estimated_minutes: 90 },
-          { name: 'अर्थशास्त्र: हमारी अर्थव्यवस्था, मुद्रा और साख', weightage: 4, estimated_minutes: 80 },
-          { name: 'आपदा प्रबंधन: प्राकृतिक एवं मानव जनित आपदाएँ', weightage: 3, estimated_minutes: 60 }
+          { name: 'History: Nationalism in Europe & India, Economy', weightage: 5, estimated_minutes: 100 },
+          { name: 'Geography: Resources, Agriculture & Water Resources', weightage: 4, estimated_minutes: 90 },
+          { name: 'Political Science: Democracy & Power Sharing', weightage: 4, estimated_minutes: 90 },
+          { name: 'Economics: Money, Credit & Economic Development', weightage: 4, estimated_minutes: 80 },
+          { name: 'Disaster Management: Natural & Man-made Disasters', weightage: 3, estimated_minutes: 60 }
         ]
       },
       {
-        name: 'Hindi (मातृभाषा हिंदी)',
+        name: 'Hindi (Mother Tongue)',
         topics: [
-          { name: 'गोधूलि भाग 2 गद्य: श्रम विभाजन, विष के दांत, बहादुर', weightage: 4, estimated_minutes: 80 },
-          { name: 'गोधूलि पद्य: राम नाम बिनु बिरथे जगि जनमा, स्वदेशी', weightage: 4, estimated_minutes: 80 },
-          { name: 'वर्णिका भाग 2 & व्याकरण (संधि, समास, कारक, निबंध)', weightage: 5, estimated_minutes: 90 }
+          { name: 'Prose Literature: Key Stories & Essays', weightage: 4, estimated_minutes: 80 },
+          { name: 'Poetry Literature: Classical Verses & Modern Poems', weightage: 4, estimated_minutes: 80 },
+          { name: 'Supplementary Reader & Grammar (Compounds, Cases, Essay)', weightage: 5, estimated_minutes: 90 }
         ]
       },
       {
-        name: 'English (अंग्रेजी - 100 Marks Compulsory)',
+        name: 'English (100 Marks Compulsory)',
         topics: [
           { name: 'Panorama Part 2 Prose: The Pace for Living, Me and the Ecology Bit, Gillu', weightage: 4, estimated_minutes: 90 },
           { name: 'Panorama Poetry: God Made the Country, Ode on Solitude, Polythene Bag', weightage: 4, estimated_minutes: 80 },
@@ -670,21 +670,21 @@ const SYLLABUS_PRESETS = {
         ]
       },
       {
-        name: 'Sanskrit / Non-Hindi (संस्कृत / अहिन्दी)',
+        name: 'Sanskrit / Second Language',
         topics: [
-          { name: 'पियूषम्: मंगलम्, पाटलिपुत्रवैभवम्, आलसकथा', weightage: 4, estimated_minutes: 80 },
-          { name: 'संस्कृत व्याकरण: संधि, कारक विभक्ति, प्रत्यय, अनुवाद एवं पत्र लेखन', weightage: 5, estimated_minutes: 90 }
+          { name: 'Classical Literature: Selected Moral Stories & Verses', weightage: 4, estimated_minutes: 80 },
+          { name: 'Grammar: Declensions, Conjugations, Suffixes & Translation', weightage: 5, estimated_minutes: 90 }
         ]
       },
       {
-        name: 'Additional Subject (अतिरिक्त / ऐच्छिक विषय)',
+        name: 'Additional Subject',
         is_additional: true,
         custom_subject_name: '',
         topics: [
-          { name: 'Unit 1: मूलभूत संकल्पनाएँ एवं सिद्धांत', weightage: 4, estimated_minutes: 80 },
-          { name: 'Unit 2: अनुप्रयोग एवं विश्लेषणात्मक प्रश्न', weightage: 5, estimated_minutes: 100 },
-          { name: 'Unit 3: प्रायोगिक एवं प्रोजेक्ट कार्य', weightage: 4, estimated_minutes: 80 },
-          { name: 'Unit 4: मैट्रिक बोर्ड मॉडल पेपर एवं रिवीजन', weightage: 4, estimated_minutes: 90 }
+          { name: 'Unit 1: Foundational Concepts & Core Principles', weightage: 4, estimated_minutes: 80 },
+          { name: 'Unit 2: Applied Concepts & Analytical Questions', weightage: 5, estimated_minutes: 100 },
+          { name: 'Unit 3: Practical Experiments & Project Work', weightage: 4, estimated_minutes: 80 },
+          { name: 'Unit 4: Model Papers & Revision', weightage: 4, estimated_minutes: 90 }
         ]
       }
     ]
