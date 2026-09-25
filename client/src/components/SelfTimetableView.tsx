@@ -612,7 +612,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
 
       {viewMode === 'roadmap' ? (
         <StudyRoadmapView
-          title="Self Timetable Study Roadmap (रोडमैप)"
+          title="Self Timetable Study Roadmap"
           subtitle="Sequential daily learning progression with exact dates, time slots, and 4-step milestone guides."
           items={filteredEntries.map((e, idx) => ({
             id: e.id,
@@ -623,7 +623,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
             time_slot: (e as any).time_slot || `${e.daily_minutes} mins`,
             allocated_minutes: e.daily_minutes,
             status: e.status,
-            explanation_tip: `Class ${e.class_level} ${e.subject} chapter. Pehle notes padhein, fir concept video dekhein aur aakhir me 10 questions ka quiz solve karein.`,
+            explanation_tip: `Class ${e.class_level} ${e.subject} chapter. Read notes first, watch the concept video, and solve the 10-question quiz to ensure mastery.`,
             onOpenNotes: () => setViewingNotesEntry(e),
             onOpenVideo: () => setActiveVideoEntry(e),
             onOpenQuiz: () => {
@@ -653,7 +653,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
       ) : viewMode === 'game' ? (
         <GameLevelView
           title="🎮 Self Timetable Quest Trail"
-          subtitle="Har chapter ek level hai! Complete karein, ⭐⭐⭐ star payein aur XP badhayein."
+          subtitle="Every chapter is a quest level! Complete topics, earn ⭐⭐⭐ stars, and level up your preparation score."
           items={filteredEntries.map(e => ({
             id: e.id,
             topic_name: e.chapter_topic_name,

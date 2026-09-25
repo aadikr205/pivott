@@ -209,7 +209,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
         setPermission(res);
         if (res === 'granted') {
           new Notification('Pivott Notifications Enabled! 🚀', {
-            body: 'Aapko study reminders aur deadline alerts time par milte rahenge.',
+            body: 'You will receive timely study reminders and deadline alerts.',
             icon: '/vite.svg'
           });
           playAlertChime('medium');
@@ -293,7 +293,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
   const handleSaveSession = (overrideSeconds?: number) => {
     const durationToAdd = overrideSeconds !== undefined ? overrideSeconds : stopwatchSeconds;
     if (durationToAdd < 10) {
-      alert('Pehle thodi der study karein (at least 10 seconds), tabhi session save hoga.');
+      alert('Please study for at least 10 seconds before saving a session.');
       return;
     }
 
@@ -456,7 +456,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               </div>
             </div>
 
-            {/* ⏱️ LIVE STUDY STOPWATCH & SESSION TRACKER (स्टडी टाइमर - Requirement 2) */}
+            {/* ⏱️ LIVE STUDY STOPWATCH & SESSION TRACKER */}
             <div className="p-4 sm:p-5 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800">
               <div className="flex items-center justify-between gap-2 pb-2.5">
                 <div className="flex items-center space-x-2">
@@ -470,9 +470,9 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                   <div>
                     <h5 className="text-xs font-bold text-white flex items-center gap-1.5">
                       <span>Study Stopwatch</span>
-                      <span className="text-[10px] font-normal text-slate-400">(स्टडी टाइमर)</span>
+                      <span className="text-[10px] font-normal text-slate-400">(Session Tracker)</span>
                     </h5>
-                    <p className="text-[10px] text-slate-400">Track kitna time study kiya hai</p>
+                    <p className="text-[10px] text-slate-400">Track your daily study hours</p>
                   </div>
                 </div>
 
@@ -500,7 +500,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 block">
-                      {isStopwatchRunning ? '🟢 Active Session Time (चालू)' : 'Session Stopwatch'}
+                      {isStopwatchRunning ? '🟢 Active Session Time' : 'Session Stopwatch'}
                     </span>
                     <div className={`text-2xl sm:text-3xl font-mono font-black tracking-wider ${
                       isStopwatchRunning ? 'text-emerald-400' : 'text-slate-200'
@@ -539,7 +539,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                       className="flex-1 py-1.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer active:scale-95"
                     >
                       <Play className="w-3.5 h-3.5 fill-white" />
-                      <span>Start Study (शुरू करें)</span>
+                      <span>Start Study</span>
                     </button>
                   ) : (
                     <button
@@ -548,7 +548,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                       className="flex-1 py-1.5 px-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer active:scale-95"
                     >
                       <Pause className="w-3.5 h-3.5 fill-white" />
-                      <span>Pause (रोकें)</span>
+                      <span>Pause</span>
                     </button>
                   )}
 
@@ -556,7 +556,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                     type="button"
                     onClick={() => handleSaveSession()}
                     disabled={stopwatchSeconds < 10}
-                    title={stopwatchSeconds < 10 ? 'Pehle study karein tabhi add hoga' : 'Add to today\'s study total'}
+                    title={stopwatchSeconds < 10 ? 'Study for at least 10 seconds to record' : 'Add to today\'s study total'}
                     className={`py-1.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer border ${
                       stopwatchSeconds >= 10
                         ? 'bg-teal-600 hover:bg-teal-500 text-white border-teal-500 shadow-md active:scale-95'
@@ -564,7 +564,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                     }`}
                   >
                     <Save className="w-3.5 h-3.5" />
-                    <span>Save Session (जोड़ें)</span>
+                    <span>Save Session</span>
                   </button>
 
                   <button
@@ -591,7 +591,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               <div className="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
                 <div>
                   <span className="text-[10px] text-slate-400 uppercase tracking-wider block">
-                    Today's Total Studied (आज की कुल पढ़ाई)
+                    Today's Total Studied
                   </span>
                   <span className="font-bold text-white font-mono text-sm">
                     🎯 {formatDurationHM(todayStudiedSeconds)}

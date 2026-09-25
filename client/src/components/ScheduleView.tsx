@@ -207,7 +207,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
       {/* RENDER VIEWS */}
       {viewMode === 'roadmap' ? (
         <StudyRoadmapView
-          title="Adaptive Timetable Study Roadmap (रोडमैप)"
+          title="Adaptive Timetable Study Roadmap"
           subtitle="Sequential syllabus completion roadmap with exact dates, time slots, and learning milestones."
           items={allPlannedItems.map((item) => ({
             id: item.topic_id,
@@ -229,8 +229,8 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
         />
       ) : viewMode === 'onepage' ? (
         <StudyRoadmapView
-          title="Adaptive Timetable One-Page Quick Roadmap (एक पेज रोडमैप)"
-          subtitle="Complete single-page view: Kab kab kya padhna hai date aur time ke saath. Instant print & scan."
+          title="Adaptive Timetable One-Page Quick Roadmap"
+          subtitle="Complete single-page view: Study schedule organized with exact dates and time slots. Ready to print or scan."
           items={allPlannedItems.map((item) => ({
             id: item.topic_id,
             topic_name: item.topic_name,
@@ -318,7 +318,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                   className="px-3 py-1 rounded-xl bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-200 text-xs font-bold transition-all cursor-pointer flex items-center gap-1 ml-auto sm:ml-2"
                 >
                   <EyeOff className="w-3.5 h-3.5" />
-                  <span>Hide Day Plan (प्लान छुपाएं)</span>
+                  <span>Hide Day Plan</span>
                 </button>
               )}
             </div>
@@ -342,7 +342,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
               <div className="flex items-center gap-2">
                 <span className="text-base">👇</span>
                 <span className="font-medium">
-                  <strong>Day-by-Day Plan Hidden:</strong> Kisi bhi din ka topic plan dekhne ke liye niche us din ke card par <strong>tap karein</strong>. Tap karne par hi plan open hoga.
+                  <strong>Day-by-Day Plan Hidden:</strong> Tap any day card below to view its study topics. Tap again to collapse and hide it.
                 </span>
               </div>
               <span className="text-[11px] font-bold text-indigo-600 shrink-0 hidden sm:inline">
@@ -352,7 +352,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
           )}
 
           {/* ========================================================================= */}
-          {/* COMPACT SCHEDULE DAYS GRID ("chhota sa form, dekhne me accha lage")       */}
+          {/* COMPACT SCHEDULE DAYS GRID                                                */}
           {/* ========================================================================= */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5">
             {filteredDays.length === 0 ? (
@@ -522,7 +522,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                     className="px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
                   >
                     <EyeOff className="w-3.5 h-3.5 text-slate-400" />
-                    <span>Hide Plan (छुपाएं)</span>
+                    <span>Hide Plan</span>
                   </button>
                 </div>
               </div>
@@ -614,7 +614,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                   className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
                 >
                   <ChevronUp className="w-3.5 h-3.5" />
-                  <span>Hide Day Plan (प्लान बंद करें)</span>
+                  <span>Hide Day Plan</span>
                 </button>
               </div>
             </div>

@@ -33,8 +33,8 @@ const RANK_TITLES = [
 ];
 
 export const GameLevelView: React.FC<GameLevelViewProps> = ({
-  title = '🎮 Daily Study Quest (गेम लेवल मोड)',
-  subtitle = 'Har topic ek level hai! Level complete karo, XP kamao aur exam boss ko harao.',
+  title = '🎮 Daily Study Quest',
+  subtitle = 'Every syllabus topic is a quest level! Complete topics, earn XP, and master your exam.',
   items,
   onOpenQuiz,
   onOpenVideo,

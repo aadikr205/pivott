@@ -33,7 +33,7 @@ interface StudyRoadmapViewProps {
 }
 
 export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
-  title = 'Visual Study Roadmap (रोडमैप)',
+  title = 'Visual Study Roadmap',
   subtitle = 'Day-by-day sequential learning path with exact dates, time slots, and easy milestone steps.',
   items,
   defaultMode = 'visual',
@@ -178,7 +178,7 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
             }`}
           >
             <Compass className="w-3.5 h-3.5" />
-            <span>🗺️ Visual Step Roadmap (विजुअल रोडमैप)</span>
+            <span>🗺️ Visual Step Roadmap</span>
           </button>
 
           <button
@@ -191,7 +191,7 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
-            <span>📄 One-Page Quick Roadmap (एक पेज रोडमैप)</span>
+            <span>📄 One-Page Quick Roadmap</span>
           </button>
         </div>
 
@@ -243,7 +243,7 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
             </h2>
             <p className="text-slate-300 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
               {roadmapMode === 'onepage' 
-                ? 'Quick single-page cheat-sheet: Kab kab kya kya padhna hai date aur time ke saath. Instant scan & printable.' 
+                ? 'Quick single-page schedule: What to study and when with exact dates and time slots. Instant scan & printable.' 
                 : subtitle}
             </p>
           </div>
@@ -315,7 +315,7 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
       </div>
 
       {/* ========================================================================= */}
-      {/* MODE 1: ONE-PAGE QUICK ROADMAP (एक पेज क्विक रोडमैप - Requirement 3)     */}
+      {/* MODE 1: ONE-PAGE QUICK ROADMAP                                             */}
       {/* ========================================================================= */}
       {roadmapMode === 'onepage' ? (
         <div className="space-y-4">
@@ -591,7 +591,7 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
                       <HelpCircle className="w-4 h-4 shrink-0 text-indigo-400" />
                       <span>
                         {item.explanation_tip ||
-                          `Pehle 15-20 min notes padhein, fir concept video dekhein, aur session ke end me 10 questions ka quiz dekar mastery pakki karein.`}
+                          `Read notes for 15–20 minutes, watch the concept video, and take the 10-question quiz at the end to master this topic.`}
                       </span>
                     </div>
 
