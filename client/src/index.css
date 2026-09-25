@@ -49,14 +49,35 @@
 
 /* Print optimizations for One-Page Study Roadmap */
 @media print {
-  nav, header, button, .no-print, .fixed {
+  @page {
+    size: A4 portrait;
+    margin: 6mm;
+  }
+  nav, header, button, .no-print, .fixed, footer, aside {
     display: none !important;
   }
-  body, #root, .printable-roadmap {
+  html, body, #root {
     background: #ffffff !important;
     color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+  .printable-onepage-roadmap {
+    display: block !important;
+    width: 100% !important;
+    max-height: 284mm !important;
+    overflow: hidden !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    padding: 0 !important;
   }
   .print-page-break {
     page-break-inside: avoid;
   }
 }
+
