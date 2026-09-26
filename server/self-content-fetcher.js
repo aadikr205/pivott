@@ -547,8 +547,19 @@ function generateSelfTimetableReplan(entries, targetDays = 14, dailyBudgetMinute
   const completed = entries.filter(e => e.status === 'done');
   const pending = entries.filter(e => e.status !== 'done');
 
-  // Total daily budget capacity over targetDays
-  const totalCapacityMinutes = targetDays * dailyBudgetMinutes;
+  // 1-WEEK PRIOR COMPLETION RULE:
+  // Core syllabus chapters MUST complete at least 1 week (7 days) before the target end date.
+  // The final 7 days immediately before the target date are reserved for the "1-Week Final Revision & 10-Question Mastery Quiz Practice Sprint".
+  let bufferDays = 0;
+  if (targetDays >= 8) {
+    bufferDays = 7; // Exactly 1 full week reserved for deep revision & quiz practice
+  } else if (targetDays >= 4) {
+    bufferDays = Math.max(1, Math.floor(targetDays * 0.4)); // Reserve 40% for short cycles
+  }
+  const studyDays = Math.max(1, targetDays - bufferDays);
+
+  // Total daily budget capacity for core learning over studyDays (finishes 1 week early)
+  const totalCapacityMinutes = studyDays * dailyBudgetMinutes;
 
   let currentLoadMinutes = 0;
   const keptEntries = [];
@@ -572,15 +583,18 @@ function generateSelfTimetableReplan(entries, targetDays = 14, dailyBudgetMinute
   const keptCount = keptEntries.length;
   const deferredCount = deferredEntries.length;
 
-  let summary = `Re-balanced your Self Timetable across the next ${targetDays} days with a comfortable daily target of ≤ ${dailyBudgetMinutes} mins/day. `;
+  let summary = `Your Self Timetable is scheduled to complete all core chapters 1 week early (within ${studyDays} days at ≤ ${dailyBudgetMinutes} mins/day). The final ${bufferDays} days (Day ${studyDays + 1} to Day ${targetDays}) are strictly reserved for your 1-Week Final Revision & 10-Question Mastery Quiz Practice Sprint so every concept is permanently mastered! `;
   if (deferredCount > 0) {
-    summary += `${keptCount} chapter${keptCount > 1 ? 's are' : ' is'} scheduled for immediate focus, and ${deferredCount} chapter${deferredCount > 1 ? 's were' : ' was'} deferred to the next study sprint to prevent overload.`;
+    summary += `${keptCount} chapter${keptCount > 1 ? 's are' : ' is'} scheduled for immediate completion 1 week early, and ${deferredCount} chapter${deferredCount > 1 ? 's were' : ' was'} deferred to prevent overload.`;
   } else {
-    summary += `All ${keptCount} pending chapter${keptCount > 1 ? 's have' : ' has'} been realistically redistributed across your schedule. No cramming required!`;
+    summary += `All ${keptCount} pending chapter${keptCount > 1 ? 's have' : ' has'} been scheduled to finish 1 week before your deadline with zero cramming!`;
   }
 
   return {
     summary_text: summary,
+    study_days: studyDays,
+    buffer_days: bufferDays,
+    target_days: targetDays,
     deferred_entries: deferredEntries,
     updated_entries: keptEntries
   };

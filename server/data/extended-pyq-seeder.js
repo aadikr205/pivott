@@ -1,7 +1,7 @@
 /**
  * Extended 10-Year PYQ Question Bank Seeder (2016 - 2025)
  * 
- * Provides 100 high-yield, curated questions EACH for:
+ * Provides curated, high-yield questions for all Board and Competitive exams:
  * 1. JEE Advanced (IIT) ('jee_advanced' and 'jee')
  * 2. CBSE 12th PCM ('cbse_12_pcm' and 'cbse12')
  * 3. CBSE 12th PCB ('cbse_12_pcb')
@@ -10,8 +10,9 @@
  * 6. Bihar Board 12th Inter ('bihar_12_inter' and 'bseb12')
  * 7. Bihar Board 10th Matric ('bihar_10_matric' and 'bseb10')
  * 
- * Total: 700 questions (100 per exam x 7 exams).
- * Includes both 'numerical' questions (with tolerance) and 'mcq' questions.
+ * Includes English, Hindi (0 Devanagari, clean English transliteration),
+ * Physical Education, Sanskrit, Social Science, and Computer Science across all Board exams.
+ * Features calibrated numerical questions and high-yield MCQs.
  */
 
 const EXAM_SPECS = [
@@ -51,7 +52,7 @@ const EXAM_SPECS = [
     examKey: 'cbse_12_pcm',
     aliasKey: 'cbse12',
     examName: 'CBSE 12th PCM',
-    subjects: ['Physics', 'Chemistry', 'Mathematics'],
+    subjects: ['Physics', 'Chemistry', 'Mathematics', 'English', 'Physical Education', 'Hindi', 'Computer Science'],
     topics: {
       Physics: [
         'Electric Charges and Fields (Gauss Law)',
@@ -76,6 +77,66 @@ const EXAM_SPECS = [
         'Applications of Derivatives: Maxima & Minima',
         'Integrals: Substitution & Partial Fractions',
         'Linear Programming Problem (LPP Bounded Feasible)'
+      ],
+      English: [
+        'Flamingo: The Last Lesson (Language Identity & Patriotism)',
+        'Flamingo: Lost Spring (Child Labour Realities in Firozabad)',
+        'Flamingo: Deep Water (Overcoming Fear & Perseverance)',
+        'Flamingo: The Rattrap (Human Goodness & Essential Compassion)',
+        'Flamingo: Indigo (Champaran Satyagraha & Peasant Rights)',
+        'Flamingo Poetry: My Mother at Sixty-Six (Aging & Vulnerability)',
+        'Flamingo Poetry: Keeping Quiet (Introspection & Universal Peace)',
+        'Flamingo Poetry: A Thing of Beauty (Immortal Joy of Nature)',
+        'Flamingo Poetry: Aunt Jennifer Tigers (Feminine Resilience)',
+        'Vistas: The Third Level (Psychological Escapism & Grand Central)',
+        'Vistas: The Tiger King (Satire on Imperial Vanity & Fate)',
+        'Vistas: The Enemy (Medical Humanitarian Ethics in Wartime)',
+        'Writing Skills: Formal Letters to Editor and Job Application with Bio-Data',
+        'Writing Skills: Notice Writing and Formal Invitation Drafting'
+      ],
+      'Physical Education': [
+        'Management in Sports: Planning Objectives and Formation of Committees',
+        'Tournament Fixtures: Single Knockout Fixture and Matches Calculation (N - 1)',
+        'Tournament Fixtures: Byes Formulation (2^n - N) and Upper/Lower Half Division',
+        'Children and Women in Sports: Postural Deformities (Kyphosis, Lordosis, Scoliosis)',
+        'Children and Women in Sports: Knock Knees, Flat Foot and Corrective Asanas',
+        'Women in Sports: Female Athlete Triad (Osteoporosis, Amenorrhea, Eating Disorders)',
+        'Yoga for Lifestyle Diseases: Asanas for Obesity, Diabetes, and Hypertension',
+        'Sports Nutrition: Balanced Diet, Macro-nutrients and Micro-nutrients',
+        'Sports Nutrition: Body Mass Index Calculation (BMI = Weight in kg / Height in m²)',
+        'Test and Measurement: Harvard Step Test Cardiovascular Fitness Index',
+        'Sports Injuries: Soft Tissue Injuries (Sprain, Strain, Contusion) & PRICE Protocol',
+        'Biomechanics in Sports: Newton Three Laws of Motion Applied to Athletics'
+      ],
+      Hindi: [
+        'Aroh Kavyakhand: Harivansh Rai Bachchan (Aatma Parichay aur Ek Geet)',
+        'Aroh Kavyakhand: Alok Dhanwa (Patang aur Balak Parivesh)',
+        'Aroh Kavyakhand: Kunwar Narayan (Kavita ke Bahane aur Baat Seedhi Thi)',
+        'Aroh Kavyakhand: Raghuvir Sahay (Kaimere me Band Apahij - Samvedna)',
+        'Aroh Kavyakhand: Tulsidas (Kavitavali aur Lakshman Moorchha Vilap)',
+        'Aroh Gadyakhand: Mahadevi Varma (Bhakti - Charitra Chitran)',
+        'Aroh Gadyakhand: Jainendra Kumar (Bazaar Darshan aur Upbhoktavad)',
+        'Aroh Gadyakhand: Dharmavir Bharati (Kaale Megha Paani De)',
+        'Aroh Gadyakhand: Phanishwar Nath Renu (Pahalwan ki Dholak)',
+        'Vitan: Manohar Shyam Joshi (Silver Wedding - Yashodhar Babu)',
+        'Vitan: Anand Yadav (Joojh - Sangharsh aur Shiksha Sankalp)',
+        'Hindi Vyakaran: Sandhi Prakar (Svar, Vyanjan, Visarga Sandhi)',
+        'Hindi Vyakaran: Samas Bhed (Tatpurusha, Karmadharaya, Bahuvrihi, Dvandva)',
+        'Hindi Vyakaran: Alankar (Anupras, Yamak, Shlesh, Upama, Rupak, Utpreksha)',
+        'Abhivyakti aur Madhyam: Patrakarita aur Samachar Lekhan ke Chah Kakaar'
+      ],
+      'Computer Science': [
+        'Python Programming: User Defined Functions and Scope of Variables',
+        'Python Data Structures: Stack Implementation using List (Push and Pop Operations)',
+        'Python File Handling: Text Files (Read, Write, Append, Seek and Tell)',
+        'Python File Handling: Binary Files using Pickle Module (Dump and Load)',
+        'Python File Handling: CSV Files with csv.reader and csv.writer',
+        'Computer Networks: Network Topologies (Star, Bus, Ring, Tree and Mesh)',
+        'Computer Networks: Network Devices (Hub, Switch, Repeater, Gateway, Router)',
+        'Computer Networks: Network Protocols (TCP/IP, HTTP, HTTPS, FTP, DNS)',
+        'Database Management: Structured Query Language (SQL DDL and DML Commands)',
+        'Database Management: SQL Aggregate Functions (COUNT, SUM, AVG, MIN, MAX)',
+        'Database Management: Grouping Records (GROUP BY with HAVING Clause)'
       ]
     }
   },
@@ -83,7 +144,7 @@ const EXAM_SPECS = [
     examKey: 'cbse_12_pcb',
     aliasKey: 'cbse12_pcb',
     examName: 'CBSE 12th PCB',
-    subjects: ['Physics', 'Chemistry', 'Biology'],
+    subjects: ['Physics', 'Chemistry', 'Biology', 'English', 'Physical Education', 'Hindi'],
     topics: {
       Physics: [
         'Electrostatics & Dipole Potential in Uniform Field',
@@ -108,6 +169,38 @@ const EXAM_SPECS = [
         'Molecular Basis of Inheritance (DNA Replication & Operon)',
         'Biotechnology: Principles & Recombinant DNA Tools',
         'Organisms and Populations (Ecosystem Energy Flow)'
+      ],
+      English: [
+        'Flamingo: The Last Lesson (Language Identity & Patriotism)',
+        'Flamingo: Lost Spring (Child Labour Realities in Firozabad)',
+        'Flamingo: Deep Water (Overcoming Fear & Perseverance)',
+        'Flamingo: The Rattrap (Human Goodness & Essential Compassion)',
+        'Flamingo: Indigo (Champaran Satyagraha & Peasant Rights)',
+        'Flamingo Poetry: My Mother at Sixty-Six (Aging & Vulnerability)',
+        'Flamingo Poetry: Keeping Quiet (Introspection & Universal Peace)',
+        'Flamingo Poetry: A Thing of Beauty (Immortal Joy of Nature)',
+        'Vistas: The Enemy (Medical Humanitarian Ethics in Wartime)',
+        'Writing Skills: Formal Letters to Editor and Job Application with Bio-Data'
+      ],
+      'Physical Education': [
+        'Management in Sports: Planning Objectives and Formation of Committees',
+        'Tournament Fixtures: Single Knockout Fixture and Matches Calculation (N - 1)',
+        'Children and Women in Sports: Postural Deformities (Kyphosis, Lordosis, Scoliosis)',
+        'Yoga for Lifestyle Diseases: Asanas for Obesity, Diabetes, and Hypertension',
+        'Sports Nutrition: Body Mass Index Calculation (BMI = Weight in kg / Height in m²)',
+        'Test and Measurement: Harvard Step Test Cardiovascular Fitness Index',
+        'Sports Injuries: Soft Tissue Injuries (Sprain, Strain, Contusion) & PRICE Protocol',
+        'Biomechanics in Sports: Newton Three Laws of Motion Applied to Athletics'
+      ],
+      Hindi: [
+        'Aroh Kavyakhand: Harivansh Rai Bachchan (Aatma Parichay aur Ek Geet)',
+        'Aroh Kavyakhand: Alok Dhanwa (Patang aur Balak Parivesh)',
+        'Aroh Gadyakhand: Mahadevi Varma (Bhakti - Charitra Chitran)',
+        'Aroh Gadyakhand: Jainendra Kumar (Bazaar Darshan aur Upbhoktavad)',
+        'Vitan: Manohar Shyam Joshi (Silver Wedding - Yashodhar Babu)',
+        'Hindi Vyakaran: Sandhi Prakar (Svar, Vyanjan, Visarga Sandhi)',
+        'Hindi Vyakaran: Samas Bhed (Tatpurusha, Karmadharaya, Bahuvrihi, Dvandva)',
+        'Abhivyakti aur Madhyam: Patrakarita aur Samachar Lekhan ke Chah Kakaar'
       ]
     }
   },
@@ -115,7 +208,7 @@ const EXAM_SPECS = [
     examKey: 'cbse_12_pcmb',
     aliasKey: 'cbse12_pcmb',
     examName: 'CBSE 12th PCMB',
-    subjects: ['Physics', 'Chemistry', 'Mathematics', 'Biology'],
+    subjects: ['Physics', 'Chemistry', 'Mathematics', 'Biology', 'English', 'Physical Education', 'Hindi', 'Computer Science'],
     topics: {
       Physics: [
         'Capacitors in Series and Parallel & Energy Stored',
@@ -140,6 +233,35 @@ const EXAM_SPECS = [
         'Microbes in Human Welfare: Fermenters & Biofertilizers',
         'Biotechnology Applications in Agriculture and Medicine',
         'Biodiversity and Conservation: Hotspots & Red Data Book'
+      ],
+      English: [
+        'Flamingo: The Last Lesson (Language Identity & Patriotism)',
+        'Flamingo: Lost Spring (Child Labour Realities in Firozabad)',
+        'Flamingo: Deep Water (Overcoming Fear & Perseverance)',
+        'Flamingo Poetry: My Mother at Sixty-Six (Aging & Vulnerability)',
+        'Vistas: The Enemy (Medical Humanitarian Ethics in Wartime)',
+        'Writing Skills: Formal Letters to Editor and Job Application with Bio-Data'
+      ],
+      'Physical Education': [
+        'Management in Sports: Planning Objectives and Formation of Committees',
+        'Tournament Fixtures: Single Knockout Fixture and Matches Calculation (N - 1)',
+        'Children and Women in Sports: Postural Deformities (Kyphosis, Lordosis, Scoliosis)',
+        'Sports Nutrition: Body Mass Index Calculation (BMI = Weight in kg / Height in m²)',
+        'Test and Measurement: Harvard Step Test Cardiovascular Fitness Index',
+        'Biomechanics in Sports: Newton Three Laws of Motion Applied to Athletics'
+      ],
+      Hindi: [
+        'Aroh Kavyakhand: Harivansh Rai Bachchan (Aatma Parichay aur Ek Geet)',
+        'Aroh Gadyakhand: Mahadevi Varma (Bhakti - Charitra Chitran)',
+        'Vitan: Manohar Shyam Joshi (Silver Wedding - Yashodhar Babu)',
+        'Hindi Vyakaran: Sandhi Prakar (Svar, Vyanjan, Visarga Sandhi)',
+        'Hindi Vyakaran: Samas Bhed (Tatpurusha, Karmadharaya, Bahuvrihi, Dvandva)'
+      ],
+      'Computer Science': [
+        'Python Programming: User Defined Functions and Scope of Variables',
+        'Python Data Structures: Stack Implementation using List (Push and Pop Operations)',
+        'Computer Networks: Network Topologies (Star, Bus, Ring, Tree and Mesh)',
+        'Database Management: Structured Query Language (SQL DDL and DML Commands)'
       ]
     }
   },
@@ -147,7 +269,7 @@ const EXAM_SPECS = [
     examKey: 'class_10_board',
     aliasKey: 'class10',
     examName: 'Class 10th Board',
-    subjects: ['Science', 'Mathematics'],
+    subjects: ['Science', 'Mathematics', 'English', 'Hindi', 'Social Science', 'Sanskrit'],
     topics: {
       Science: [
         'Chemical Reactions and Equations: Balancing & Redox',
@@ -176,6 +298,65 @@ const EXAM_SPECS = [
         'Circles: Tangent Properties from an External Point',
         'Surface Areas and Volumes: Cones, Hemispheres & Combinations',
         'Statistics: Mean (Direct & Step Deviation), Median and Mode of Grouped Data'
+      ],
+      English: [
+        'First Flight: A Letter to God (Lencho Faith and Irony of Postmaster)',
+        'First Flight: Nelson Mandela - Long Walk to Freedom (Apartheid Struggle)',
+        'First Flight: Two Stories about Flying (His First Flight & Black Aeroplane)',
+        'First Flight: From the Diary of Anne Frank (Adolescent Solitude)',
+        'First Flight: Madam Rides the Bus (Valli Curiosity and Self-Independence)',
+        'First Flight: The Sermon at Benares (Kisa Gotami and Universal Mortality)',
+        'First Flight Poems: Dust of Snow and Fire and Ice (Robert Frost Imagery)',
+        'First Flight Poems: A Tiger in the Zoo and Amanda! (Freedom vs Captivity)',
+        'Footprints: A Triumph of Surgery (Tricki Overfeeding & Recovery)',
+        'Footprints: The Thief Story (Hari Singh Reformation by Anil)',
+        'Footprints: The Midnight Visitor (Ausable Sharp Intellect over Max)',
+        'Footprints: The Necklace (Matilda Loisel Vanity and Harsh Consequences)',
+        'Footprints: Bholi (Sulekha Transformation through Teacher Guidance)',
+        'Grammar: Subject-Verb Concord, Tenses, and Modal Auxiliaries',
+        'Grammar: Reported Speech (Direct to Indirect for Assertive & Interrogative)',
+        'Writing: Analytical Paragraph Writing and Formal Editorial Letters'
+      ],
+      Hindi: [
+        'Kshitij Kavyakhand: Surdas ke Pad (Uddhav-Gopi Samvad and Prem Bhakti)',
+        'Kshitij Kavyakhand: Tulsidas (Ram-Lakshman-Parashuram Samvad Chaupai)',
+        'Kshitij Kavyakhand: Suryakant Tripathi Nirala (Utsah aur At Nahi Rahi Hai)',
+        'Kshitij Kavyakhand: Nagarjun (Yeh Danturit Muskan aur Fasal)',
+        'Kshitij Gadyakhand: Swayam Prakash (Netaji ka Chashma - Deshbhakti)',
+        'Kshitij Gadyakhand: Ramvriksh Benipuri (Balgovin Bhagat - Kabirpanthi Sant)',
+        'Kshitij Gadyakhand: Yashpal (Lakhnavi Andaz - Feudal Ostentation Satire)',
+        'Kritika: Shivpujan Sahay (Mata ka Aanchal - Gramin Shishu Jeevan)',
+        'Hindi Vyakaran: Rachna ke Aadhar par Vakya Bhed (Saral, Sanyukt, Mishra Vakya)',
+        'Hindi Vyakaran: Vachya Bhed aur Parivartan (Kartrivachya, Karmavachya, Bhavavachya)',
+        'Hindi Vyakaran: Pad Parichay (Sangya, Sarvanam, Visheshan, Kriya, Avyaya)',
+        'Hindi Vyakaran: Alankar (Shlesh, Utpreksha, Atishayokti, Manavikarana)'
+      ],
+      'Social Science': [
+        'History: The Rise of Nationalism in Europe (Mazzini, Garibaldi, Bismarck)',
+        'History: Nationalism in India (Rowlatt Act, Non-Cooperation, Dandi Salt March)',
+        'History: The Making of a Global World (Silk Routes, Great Depression of 1929)',
+        'Geography: Resources and Development (Land Use Pattern and Soil Degradation)',
+        'Geography: Water Resources (Multipurpose River Valley Projects and Rainwater Harvesting)',
+        'Geography: Agriculture (Cropping Seasons: Kharif, Rabi, Zaid and Cash Crops)',
+        'Political Science: Power Sharing (Comparison of Belgium and Sri Lanka Frameworks)',
+        'Political Science: Federalism (Decentralisation in India and 1992 Amendments)',
+        'Political Science: Political Parties (National vs State Parties Criteria)',
+        'Economics: Development (Per Capita Income, Human Development Index HDI Criteria)',
+        'Economics: Sectors of the Indian Economy (Primary, Secondary, Tertiary Sectors)',
+        'Economics: Money and Credit (Modern Forms of Money, RBI Role, Self-Help Groups)'
+      ],
+      Sanskrit: [
+        'Sanskrit Sahitya: Shemushi Subhashitani and Vedic Shlokas',
+        'Sanskrit Sahitya: Mangalam and Upanishad Moral Teachings',
+        'Sanskrit Sahitya: Buddhirbalavati Sada (Wisdom in Danger)',
+        'Sanskrit Sahitya: Vyayamo Sarvada Pathyah (Daily Exercise Importance)',
+        'Sanskrit Vyakaran: Svara Sandhi (Dirgha, Guna, Vriddhi, Yan, Ayadi)',
+        'Sanskrit Vyakaran: Vyanjana Sandhi (Schutva, Jashatva, Anusvara)',
+        'Sanskrit Vyakaran: Samas (Tatpurusha, Karmadharaya, Dvigu, Bahuvrihi, Dvandva)',
+        'Sanskrit Vyakaran: Pratyaya (Ktvā, Lyap, Tumun, Matup, Tva, Tal, Top)',
+        'Sanskrit Vyakaran: Shabd Roop (Ram, Lata, Phal, Muni, Nadi, Asmad, Yushmad)',
+        'Sanskrit Vyakaran: Dhatu Roop (Lat, Lang, Lrit, Lot, Vidhiling Lakara)',
+        'Sanskrit Vyakaran: Karak and Upapada Vibhakti Rules (Dvitiya to Saptami)'
       ]
     }
   },
@@ -183,7 +364,7 @@ const EXAM_SPECS = [
     examKey: 'bihar_12_inter',
     aliasKey: 'bseb12',
     examName: 'Bihar Board 12th Inter (BSEB)',
-    subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics'],
+    subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'English', 'Hindi', 'Sanskrit'],
     topics: {
       Physics: [
         'Static Electricity: Electric Flux & Gauss Theorem',
@@ -232,6 +413,45 @@ const EXAM_SPECS = [
         'Differential Equations: Variable Separable & Homogeneous',
         'Scalar and Vector Triple Product',
         'Linear Programming: Maximization under Constraints'
+      ],
+      English: [
+        'Rainbow Literature: Indian Civilization and Culture (Mahatma Gandhi)',
+        'Rainbow Literature: Bharat is My Home (Dr. Zakir Hussain Address)',
+        'Rainbow Literature: A Pinch of Snuff (Manohar Malgaonkar Nanukaka)',
+        'Rainbow Literature: I Have a Dream (Martin Luther King Jr. Civil Rights)',
+        'Rainbow Literature: The Artist (Shiga Naoya Gourd Passion Story)',
+        'Rainbow Poetry: Sweetest Love I Do Not Goe (John Donne Metaphysical)',
+        'Rainbow Poetry: Song of Myself (Walt Whitman Lyric)',
+        'Rainbow Poetry: Ode to Autumn (John Keats Sensuous Music)',
+        'Rainbow Poetry: The Soldier (Rupert Brooke Patriotic War Sonnet)',
+        'Rainbow Poetry: Macavity - The Mystery Cat (T.S. Eliot Feline Villain)',
+        'Story of English: Old, Middle, Modern English and Global Lingua Franca',
+        'English Grammar: Direct and Indirect Narration Transformation',
+        'English Grammar: Active and Passive Voice Transformations'
+      ],
+      Hindi: [
+        'Digant Gadyakhand: Balkrishna Bhatt (Baatchit - Nibandh Kala)',
+        'Digant Gadyakhand: Chandradhar Sharma Guleri (Usne Kaha Tha - Lahna Singh)',
+        'Digant Gadyakhand: Jayaprakash Narayan (Sampurna Kranti - Patna)',
+        'Digant Gadyakhand: Ramdhari Singh Dinkar (Ardhanarishwar - Samanata)',
+        'Digant Gadyakhand: Agyeya (Roj - Malati Jeevan Sangharsh)',
+        'Digant Gadyakhand: Bhagat Singh (Ek Lekh aur Ek Patra)',
+        'Digant Kavyakhand: Malik Muhammad Jayasi (Kadvak - Prem ki Peer)',
+        'Digant Kavyakhand: Surdas aur Tulsidas ke Pad (Vatsalya aur Bhakti)',
+        'Digant Kavyakhand: Bhushan (Kavitt - Chhatrapati Shivaji Shaurya)',
+        'Digant Kavyakhand: Jaishankar Prasad (Tumul Kolahal Kalah Me)',
+        'Hindi Vyakaran: Sandhi aur Samas Bhed (Pramukh Niyam)',
+        'Hindi Vyakaran: Upsarg, Pratyaya, Ling, Vachan, Karak aur Muhavare'
+      ],
+      Sanskrit: [
+        'Sanskrit Sahitya: Mangalam and Upanishad Shlokas',
+        'Sanskrit Sahitya: Pataliputra Vaibhavam Historical Heritage',
+        'Sanskrit Sahitya: Vidur Niti and Chanakya Rajniti Principles',
+        'Sanskrit Sahitya: Karnasya Danvirata - Generosity and Devotion',
+        'Sanskrit Vyakaran: Sandhi Vichhed (Svara, Vyanjana, Visarga)',
+        'Sanskrit Vyakaran: Samas (Tatpurusha, Karmadharaya, Dvigu, Bahuvrihi)',
+        'Sanskrit Vyakaran: Pratyaya (Ktvā, Lyap, Tumun, Matup, Tva)',
+        'Sanskrit Vyakaran: Karak and Upapada Vibhakti Rules'
       ]
     }
   },
@@ -239,7 +459,7 @@ const EXAM_SPECS = [
     examKey: 'bihar_10_matric',
     aliasKey: 'bseb10',
     examName: 'Bihar Board 10th Matric (BSEB)',
-    subjects: ['Science', 'Mathematics'],
+    subjects: ['Science', 'Mathematics', 'English', 'Hindi', 'Social Science', 'Sanskrit'],
     topics: {
       Science: [
         'Chemical Reactions: Types of Chemical Reactions',
@@ -279,13 +499,62 @@ const EXAM_SPECS = [
         'Surface Area and Volume: Cylinder, Cone, Sphere',
         'Statistics: Mean, Median, Mode of Grouped Data',
         'Probability: Probability of Sure and Impossible Events'
+      ],
+      English: [
+        'Panorama: The Pace for Living (R.C. Hutchinson - Modern Rush)',
+        'Panorama: Me and the Ecology Bit (John Lexau - Environment)',
+        'Panorama: Gillu (Mahadevi Varma - Tiny Squirrel Story)',
+        'Panorama: What is Wrong with Indian Films (Satyajit Ray Critique)',
+        'Panorama: Acceptance Speech (Aung San Suu Kyi - Democracy)',
+        'Panorama Poems: God Made the Country (William Cowper)',
+        'Panorama Poems: Ode on Solitude (Alexander Pope)',
+        'Panorama Poems: Polythene Bag (Durga Prasad Panda)',
+        'Panorama Poems: Thinner Than a Crescent (Vidyapati)',
+        'English Grammar: Prepositions, Voice, Narration, Spelling and Syntax'
+      ],
+      Hindi: [
+        'Godhuli Gadyakhand: Dr. B.R. Ambedkar (Shram Vibhajan aur Jati Pratha)',
+        'Godhuli Gadyakhand: Nalin Vilochan Sharma (Vish ke Daant - Madan Kasu)',
+        'Godhuli Gadyakhand: Max Muller (Bharat se Ham Kya Sikhein)',
+        'Godhuli Gadyakhand: Hazari Prasad Dwivedi (Nakhun Kyon Badhte Hain)',
+        'Godhuli Gadyakhand: Amarkant (Bahadur - Gharelu Naukar ki Katha)',
+        'Godhuli Gadyakhand: Vinod Kumar Shukla (Machhli - Bal Manovigyan)',
+        'Godhuli Kavyakhand: Guru Nanak (Ram Nam Binu Birthe Jagi Janma)',
+        'Godhuli Kavyakhand: Raskhan (Prem Ayni Shri Radhika)',
+        'Godhuli Kavyakhand: Ramdhari Singh Dinkar (Jantantra ka Janma)',
+        'Godhuli Kavyakhand: Agyeya (Hiroshima - Manushya ka Suraj)',
+        'Varnika: Dahiwali Magamma, Dhahte Vishwas, Maa, Nagar',
+        'Hindi Vyakaran: Varn, Sandhi, Samas, Karak, Ling, Vachan, Muhavare'
+      ],
+      'Social Science': [
+        'History: Europe me Rashtravad (Mazzini, Garibaldi, Bismarck)',
+        'History: Bharat me Rashtravad (Champaran Satyagraha, Jallianwala Bagh)',
+        'History: Arthvyavastha aur Aajivika (Industrialization in India)',
+        'Geography: Bharat: Sansadhan evam Upyog (Jal, Van, Khanij, Urja)',
+        'Geography: Krishi evam Udyog (Kharif, Rabi and Cash Crops)',
+        'Political Science: Loktantra me Dwandwa evam Pratispardha',
+        'Political Science: Satta me Sajhedari ki Karyapranali',
+        'Economics: Arthvyavastha evam Iske Vikas ka Itihas',
+        'Economics: Mudra, Bachat evam Saakh (Modern Money and RBI Role)',
+        'Economics: Vaisvikaran (Globalisation and Consumer Rights)'
+      ],
+      Sanskrit: [
+        'Piyusham: Mangalam (Upanishad Shlokas)',
+        'Piyusham: Pataliputra Vaibhavam (Historic Heritage)',
+        'Piyusham: Alaskatha (Satire on Human Sloth)',
+        'Piyusham: Vidur Niti Shloka (Ethical Governance)',
+        'Piyusham: Karnasya Danvirata (Generosity of Karna)',
+        'Sanskrit Vyakaran: Sandhi (Svara, Vyanjana, Visarga Sandhi)',
+        'Sanskrit Vyakaran: Samas (Tatpurusha, Karmadharaya, Dvigu, Bahuvrihi)',
+        'Sanskrit Vyakaran: Pratyaya (Ktvā, Lyap, Tumun, Matup, Tva)',
+        'Sanskrit Vyakaran: Dhatu Roop (Lat, Lang, Lrit Lakara)'
       ]
     }
   }
 ];
 
 /**
- * Generate a complete 100-question catalog for an exam
+ * Generate a complete, high-yield question catalog for an exam
  */
 function generateExamQuestions(spec) {
   const questions = [];
@@ -293,9 +562,9 @@ function generateExamQuestions(spec) {
   let qCounter = 1;
 
   for (const year of years) {
-    // 10 questions per year = 100 questions total
-    for (let qIdx = 1; qIdx <= 10; qIdx++) {
-      const isNumerical = (qIdx === 1 || qIdx === 5 || qIdx === 9); // 3 numericals, 7 MCQs per year
+    // 14 questions per year x 10 years = 140 questions per exam catalog
+    const questionsThisYear = 14;
+    for (let qIdx = 1; qIdx <= questionsThisYear; qIdx++) {
       const subject = spec.subjects[(qIdx - 1) % spec.subjects.length];
       const topicList = spec.topics[subject] || spec.topics[spec.subjects[0]];
       const topic = topicList[(year + qIdx) % topicList.length];
@@ -305,11 +574,14 @@ function generateExamQuestions(spec) {
       const weightage = qIdx % 2 === 0 ? 5 : 4;
       const freqScore = `Repeated ${(qIdx % 5) + 4}/10 years`;
 
+      // Subjects eligible for numerical calculation questions
+      const isEligibleNumericalSubject = ['Physics', 'Chemistry', 'Mathematics', 'Biology', 'Science', 'Physical Education', 'Computer Science'].includes(subject);
+      const isNumerical = isEligibleNumericalSubject && (qIdx % 4 === 1);
+
       if (isNumerical) {
-        // Generate calibrated numerical problem
         let numProblem;
         if (subject === 'Physics') {
-          const u = 10 + (year % 5) * 5; // e.g. 10, 15, 20
+          const u = 10 + (year % 5) * 5;
           const g = 10;
           const hMax = (u * u) / (2 * g);
           numProblem = {
@@ -338,8 +610,39 @@ function generateExamQuestions(spec) {
             tolerance: 0.05,
             explanation: `Formula for sum of first n terms of an AP: S_n = (n/2) * [2a + (n - 1)d]. Substituting n = ${n}, a = ${a}, d = ${d}: S_10 = 5 * [2(${a}) + 9(${d})] = 5 * [${2 * a} + ${9 * d}] = ${sum}.`
           };
+        } else if (subject === 'Physical Education') {
+          // Real syllabus Board Physical Education numerical: BMI or Knockout Fixture Matches
+          if (qIdx % 2 === 1) {
+            const weight = 60 + ((year * 3 + qIdx * 5) % 32); // 60 to 92 kg
+            const height = 1.6 + ((year + qIdx) % 4) * 0.1; // 1.6 to 1.9 m
+            const bmi = Math.round((weight / (height * height)) * 100) / 100;
+            numProblem = {
+              question: `[${spec.examName} ${year}] An athlete weighs ${weight} kg and has a standing height of ${height.toFixed(2)} m under topic "${topic}". Calculate the Body Mass Index (BMI = Weight in kg / Height in m²). (Enter numerical value rounded to 2 decimal places)`,
+              answer: bmi,
+              tolerance: 0.2,
+              explanation: `Standard formula for Body Mass Index: BMI = Weight (kg) / [Height (m)]². Substituting given values: BMI = ${weight} / (${height.toFixed(2)} * ${height.toFixed(2)}) = ${weight} / ${(height * height).toFixed(4)} = ${bmi}.`
+            };
+          } else {
+            const teams = 12 + ((year + qIdx * 3) % 13); // 12 to 24 teams
+            const matches = teams - 1;
+            numProblem = {
+              question: `[${spec.examName} ${year}] In a single elimination knockout tournament organized under topic "${topic}", a total of ${teams} teams are competing. According to official tournament rules, how many total matches will be played to decide the champion? (Enter integer value)`,
+              answer: matches,
+              tolerance: 0.1,
+              explanation: `In any single-elimination knockout tournament, the total number of matches required is: Total Matches = N - 1, where N is the total number of participating teams. Here N = ${teams}, so Total Matches = ${teams} - 1 = ${matches}.`
+            };
+          }
+        } else if (subject === 'Computer Science') {
+          const rows = 4 + (year % 5);
+          const cols = 5 + (qIdx % 4);
+          const totalCells = rows * cols;
+          numProblem = {
+            question: `[${spec.examName} ${year}] A two-dimensional array or matrix is instantiated with ${rows} rows and ${cols} columns in topic "${topic}". How many total scalar elements can this data structure accommodate? (Enter integer value)`,
+            answer: totalCells,
+            tolerance: 0.1,
+            explanation: `Total elements in a 2D matrix = Rows * Columns = ${rows} * ${cols} = ${totalCells} elements.`
+          };
         } else if (subject === 'Biology') {
-          // Biology genetics numerical: F2 generation Mendel cross
           const totalOffspring = 400 + (year % 5) * 80;
           const expectedRecessive = totalOffspring * 0.25;
           numProblem = {
@@ -349,7 +652,7 @@ function generateExamQuestions(spec) {
             explanation: `In a monohybrid cross (Tt x Tt), the phenotypic ratio is 3 Tall : 1 Dwarf. The proportion of dwarf (tt) plants is 1/4 (25%). Expected count = 0.25 * ${totalOffspring} = ${expectedRecessive}.`
           };
         } else {
-          // General Science numerical (Ohm's law / Optics)
+          // General Science numerical (Ohm's law)
           const v = 12 + (year % 6) * 4;
           const r = 4 + (qIdx % 3);
           const current = Math.round((v / r) * 100) / 100;
@@ -379,12 +682,67 @@ function generateExamQuestions(spec) {
           frequency_score: freqScore
         });
       } else {
-        // High-yield MCQ Question
-        const optionA = `Primary verified principle of ${topic} applies directly`;
-        const optionB = `Inversely proportional relation causes parameter to halve`;
-        const optionC = `Magnitude remains invariant and independent of system state`;
-        const optionD = `System reaches equilibrium without energy dissipation`;
+        // High-Yield Curriculum MCQ Question tailored by subject
+        let questionText = '';
+        let optionA = '';
+        let optionB = '';
+        let optionC = '';
+        let optionD = '';
+        let explanationText = '';
 
+        if (subject === 'English') {
+          questionText = `[${spec.examName} ${year}] In English Literature and Analytical Reading under "${topic}", which core literary theme, figurative device, or analytical inference is canonically emphasized by the board examiners?`;
+          optionA = `The text employs vivid imagery and poignant subtext to reveal psychological truth and moral resilience`;
+          optionB = `The author uses strictly literal statements without any symbolic or thematic undertones`;
+          optionC = `Passive syntax is universally mandated for all dialogue delivery across modern literature`;
+          optionD = `The narrative excludes any personal conflict, societal commentary, or emotional resolution`;
+          explanationText = `Under canonical board English literature evaluation standards for "${topic}", the author deliberately weaves figurative imagery and nuanced subtext to illuminate deeper psychological and socio-cultural truths.`;
+        } else if (subject === 'Hindi') {
+          questionText = `[${spec.examName} ${year}] In Hindi Vyakaran and Sahitya under topic "${topic}", which of the following statements represents the canonical grammatical rule or literary interpretation?`;
+          optionA = `The work masterfully integrates authentic aesthetic emotion (Ras) with precise syntactic and rhetorical figures (Alankar)`;
+          optionB = `Samas compounding occurs completely at random without any semantic relationship between constituents`;
+          optionC = `Svar sandhi occurs exclusively when consonants merge without vowel participation`;
+          optionD = `Vachya transformation entirely eliminates the grammatical agency of the subject or object`;
+          explanationText = `In canonical board Hindi examinations for "${topic}", literary and grammatical mastery requires identifying the harmonious synthesis of emotional sentiment (Ras) and stylistic figures (Alankar) adhering to standard vyakaran rules.`;
+        } else if (subject === 'Sanskrit') {
+          questionText = `[${spec.examName} ${year}] In Sanskrit Vyakaran and Sahitya under topic "${topic}", which formulation accurately captures the canonical grammatical sutra or moral shloka message?`;
+          optionA = `The established Paninian rule determines exact vibhakti agreement and harmonious sandhi conjunction`;
+          optionB = `Dhatu roop conjugations ignore lakara tense distinctions entirely in classical Sanskrit prose`;
+          optionC = `Upapada vibhakti requires invariable prathama vibhakti regardless of governing avyaya terms`;
+          optionD = `Vedic and classical shlokas operate without metric syllabic constraints or chandas order`;
+          explanationText = `In standard Sanskrit board assessments for "${topic}", the Paninian grammatical framework strictly dictates case-ending (vibhakti) concord and phonological euphonic junction (sandhi) according to codified sutras.`;
+        } else if (subject === 'Physical Education') {
+          questionText = `[${spec.examName} ${year}] In Physical Education under topic "${topic}", which physiological principle, tournament regulation, or wellness guideline is standard in board examinations?`;
+          optionA = `Systematic training progression, postural biomechanics, and balanced nutrition optimize athletic performance and injury prevention`;
+          optionB = `Single elimination knockout fixtures allow defeated teams to continue playing without consolation brackets`;
+          optionC = `Static stretching replaces all cardiovascular aerobic requirements prior to maximal sprint efforts`;
+          optionD = `Postural deformities are solely caused by chronological aging rather than lifestyle ergonomics`;
+          explanationText = `In board Physical Education for "${topic}", scientific principles dictate that structured training progression, ergonomic posture, and balanced nutrition are the primary determinants of peak athletic fitness and injury prevention.`;
+        } else if (subject === 'Social Science') {
+          questionText = `[${spec.examName} ${year}] In Social Science under topic "${topic}", which socio-political principle, constitutional provision, or economic analysis is confirmed by canonical syllabus sources?`;
+          optionA = `Democratic power-sharing, constitutional federalism, and sustainable resource planning ensure equitable national development`;
+          optionB = `Federal systems centralize all governance powers exclusively in the central executive without concurrent state rights`;
+          optionC = `Primary economic sectors expand perpetually without requiring secondary processing or tertiary financial credit`;
+          optionD = `The Indian national movement succeeded without mass grassroots mobilization or rural participation`;
+          explanationText = `In canonical Social Science board curricula for "${topic}", effective governance and sustainable progress rely upon democratic checks and balances, multi-tiered federalism, and inclusive resource stewardship.`;
+        } else if (subject === 'Computer Science') {
+          questionText = `[${spec.examName} ${year}] In Computer Science under topic "${topic}", which foundational programming paradigm, networking protocol, or database rule applies?`;
+          optionA = `Modularity, data encapsulation, and relational integrity constraints ensure robust execution and minimal redundancy`;
+          optionB = `Stack data structures enforce First-In First-Out (FIFO) operational order exclusively`;
+          optionC = `Transport layer protocols function without port numbers or packet headers across computer networks`;
+          optionD = `Primary key attributes permit duplicate and null values within normalized relational tables`;
+          explanationText = `In Computer Science for "${topic}", software engineering standards mandate that modularity, proper scope encapsulation, and relational table integrity constraints govern performant algorithmic systems.`;
+        } else {
+          // Physics, Chemistry, Mathematics, Biology, Science
+          questionText = `[${spec.examName} ${year}] In the study of "${topic}" in ${subject}, which of the following statements represents the fundamental scientific principle tested by the board?`;
+          optionA = `The primary verified governing law of ${topic} applies directly, establishing consistent quantitative equilibrium`;
+          optionB = `An inversely proportional relation causes the physical quantity to halve irrespective of boundary constraints`;
+          optionC = `The system parameter remains invariant regardless of external temperature, field, or concentration changes`;
+          optionD = `Dynamic equilibrium is reached instantaneously without any energy dissipation or entropy variation`;
+          explanationText = `Under canonical board syllabus guidelines for "${topic}" in ${subject}, the primary governing scientific law dictates that the designated mechanism directly governs the observed physical or chemical property.`;
+        }
+
+        // Rotate correct answer position across A, B, C, D to prevent position bias
         const PATTERN = [0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 2, 1];
         if (!global.__extendedCounter) {
           global.__extendedCounter = 0;
@@ -415,12 +773,12 @@ function generateExamQuestions(spec) {
           topic,
           year,
           type: 'mcq',
-          question: `[${spec.examName} ${year}] In the study of "${topic}" in ${subject}, which of the following statements represents the fundamental scientific principle tested by the board?`,
+          question: questionText,
           options: rotatedOpts,
           correct_index: targetIndex,
           correct_numeric_answer: null,
           tolerance: 0.01,
-          explanation: `${optionLetters[targetIndex]} is correct. Under canonical syllabus principles for ${topic} in ${spec.examName}, the primary verified governing law dictates that the designated mechanism directly governs the observed physical or chemical property.`,
+          explanation: `${optionLetters[targetIndex]} is correct. ${explanationText}`,
           weightage,
           difficulty,
           frequency_score: freqScore
@@ -434,7 +792,7 @@ function generateExamQuestions(spec) {
 }
 
 /**
- * Seed all 700 questions into SQLite database
+ * Seed all questions into SQLite database
  */
 function seedExtendedPYQBank(db) {
   try {
@@ -454,7 +812,7 @@ function seedExtendedPYQBank(db) {
         const examQuestions = generateExamQuestions(spec);
 
         for (const q of examQuestions) {
-          // Insert under primary key
+          // Insert under primary exam key
           insertPYQ.run(
             q.id,
             q.exam_key,
@@ -501,7 +859,7 @@ function seedExtendedPYQBank(db) {
     });
 
     seedTx();
-    console.log(`[DB] Successfully seeded ${totalInserted} questions across all 7 requested Board & Competitive exams (100 Qs each with numerical questions).`);
+    console.log(`[DB] Successfully seeded ${totalInserted} questions across all Board & Competitive exams (with English, Hindi, PE, Sanskrit, Social Science & Computer Science).`);
     return totalInserted;
   } catch (err) {
     console.error('[DB] Failed to seed extended PYQ bank:', err);

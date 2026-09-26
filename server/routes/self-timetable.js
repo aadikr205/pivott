@@ -421,7 +421,10 @@ router.post('/replan', (req, res) => {
       success: true,
       summary_text: replanResult.summary_text,
       deferred_count: replanResult.deferred_entries.length,
-      kept_count: replanResult.updated_entries.length
+      kept_count: replanResult.updated_entries.length,
+      study_days: replanResult.study_days,
+      buffer_days: replanResult.buffer_days,
+      target_days: replanResult.target_days
     });
   } catch (err) {
     console.error('Error executing self timetable replan:', err);

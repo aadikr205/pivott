@@ -30,8 +30,24 @@ const EXAM_OPTIONS = [
 
 const YEARS = ['All', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016'];
 
+const SUBJECT_OPTIONS = [
+  { key: 'all', label: 'All Subjects' },
+  { key: 'Physics', label: 'Physics' },
+  { key: 'Chemistry', label: 'Chemistry' },
+  { key: 'Mathematics', label: 'Mathematics' },
+  { key: 'Biology', label: 'Biology' },
+  { key: 'Science', label: 'Science' },
+  { key: 'English', label: 'English' },
+  { key: 'Hindi', label: 'Hindi' },
+  { key: 'Physical Education', label: 'Physical Education' },
+  { key: 'Sanskrit', label: 'Sanskrit' },
+  { key: 'Social Science', label: 'Social Science' },
+  { key: 'Computer Science', label: 'Computer Science' }
+];
+
 export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpenDoubtBot }) => {
   const [selectedExam, setSelectedExam] = useState<string>(initialExamKey || 'all');
+  const [selectedSubject, setSelectedSubject] = useState<string>('all');
   const [selectedYear, setSelectedYear] = useState<string>('All');
   const [selectedType, setSelectedType] = useState<'all' | 'mcq' | 'numerical'>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -67,6 +83,7 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
     setLoading(true);
     api.getPYQs({
       exam_key: selectedExam === 'all' ? undefined : selectedExam,
+      subject: selectedSubject === 'all' ? undefined : selectedSubject,
       year: selectedYear === 'All' ? undefined : Number(selectedYear),
       search: searchQuery.trim() || undefined,
       limit: 60
@@ -87,7 +104,7 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
 
   useEffect(() => {
     fetchQuestions();
-  }, [selectedExam, selectedYear, selectedType]);
+  }, [selectedExam, selectedSubject, selectedYear, selectedType]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -215,6 +232,19 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
               {EXAM_OPTIONS.map(opt => (
                 <option key={opt.key} value={opt.key}>
                   {opt.icon} {opt.label}
+                </option>
+              ))}
+            </select>
+
+            {/* Subject Select */}
+            <select
+              value={selectedSubject}
+              onChange={e => setSelectedSubject(e.target.value)}
+              className="px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 bg-white outline-none focus:ring-2 focus:ring-teal-500"
+            >
+              {SUBJECT_OPTIONS.map(opt => (
+                <option key={opt.key} value={opt.key}>
+                  {opt.label}
                 </option>
               ))}
             </select>

@@ -76,10 +76,14 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     };
   }
 
-  // Reserve buffer days at the end for final revision if we have enough days
+  // 1-WEEK PRIOR COMPLETION RULE:
+  // Core syllabus MUST complete at least 1 week (7 days) before the exam date.
+  // The final 7 days immediately before the exam are reserved for the "1-Week Final Revision & 10-Yr PYQ Practice Sprint".
   let bufferDayCount = 0;
-  if (totalAvailableDays >= 5) {
-    bufferDayCount = Math.max(1, Math.floor(totalAvailableDays * bufferPercent));
+  if (totalAvailableDays >= 8) {
+    bufferDayCount = 7; // Exactly 1 full week reserved for comprehensive revision & questions
+  } else if (totalAvailableDays >= 4) {
+    bufferDayCount = Math.max(1, Math.floor(totalAvailableDays * 0.4)); // Reserve 40% for short schedules
   }
   const studyDates = allAvailableDates.slice(0, totalAvailableDays - bufferDayCount);
   const bufferDates = allAvailableDates.slice(totalAvailableDays - bufferDayCount);
@@ -235,14 +239,15 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
         const revMinutes = Math.min(day.capacityRemaining, 60);
         day.planned_items.push({
           topic_id: revTopic.id,
-          topic_name: revTopic.name,
+          topic_name: `${revTopic.name} (Revision & PYQs)`,
           subject_id: revTopic.subject_id,
+          subject_name: revTopic.subject_name || 'Subject',
           weightage: revTopic.weightage,
           mastery_score: revTopic.mastery_score,
           allocated_minutes: revMinutes,
           status: 'revision',
           is_revision: true,
-          revision_note: `High-Yield Revision & 10-Yr PYQs (${revTopic.weightage}/5 Focus, Mastery: ${revTopic.mastery_score || 0}%)`
+          revision_note: `1-Week Final Sprint: Concept Revision, Formula Review & 10-Yr Board PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
         });
         day.capacityRemaining -= revMinutes;
       }
@@ -293,21 +298,22 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
   for (const bDate of bufferDates) {
     const bufferItems = [];
     let bufCap = maxDailyMinutes;
-    // Allocate 2 high-yield revision slots per buffer day
-    while (bufCap >= 60 && revisionPool.length > 0 && bufferItems.length < 3) {
+    // Allocate high-yield revision slots per buffer day (up to full daily budget)
+    while (bufCap >= 45 && revisionPool.length > 0 && bufferItems.length < 4) {
       const revTopic = pickRevisionTopic();
       if (!revTopic) break;
       const revMinutes = Math.min(bufCap, 60);
       bufferItems.push({
         topic_id: revTopic.id,
-        topic_name: revTopic.name,
+        topic_name: `${revTopic.name} (Revision & PYQs)`,
         subject_id: revTopic.subject_id,
+        subject_name: revTopic.subject_name || 'Subject',
         weightage: revTopic.weightage,
         mastery_score: revTopic.mastery_score,
         allocated_minutes: revMinutes,
         status: 'revision',
         is_revision: true,
-        revision_note: `Buffer Day Revision & 10-Yr PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
+        revision_note: `1-Week Final Sprint: Concept Revision, Formula Review & 10-Yr Board PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
       });
       bufCap -= revMinutes;
     }
@@ -318,11 +324,11 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     finalScheduleDays.push({
       date: bDate,
       day_name: bDayName,
-      planned_items: attachTimeSlots(bufferItems, 10),
+      planned_items: attachTimeSlots(bufferItems, 9),
       is_buffer: true,
       is_revision: true,
       total_allocated_minutes: maxDailyMinutes - bufCap,
-      note: 'Buffer & High-Yield Comprehensive Revision Day'
+      note: '1-Week Final Revision & 10-Yr PYQ Practice Sprint'
     });
   }
 
@@ -337,7 +343,9 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     deferredCount: deferred.length,
     maxDailyHours,
     isDeficit: totalWorkloadMinutes > remainingCapacityMinutes,
-    hasRevisionDays: bufferDates.length > 0 || dayBuckets.some(d => d.is_early_completion_revision)
+    hasRevisionDays: bufferDates.length > 0 || dayBuckets.some(d => d.is_early_completion_revision),
+    has1WeekRevisionSprint: bufferDates.length >= 7 || bufferDates.length > 0,
+    completionPriorDays: bufferDates.length
   };
 
   return {

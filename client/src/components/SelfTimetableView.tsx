@@ -229,6 +229,64 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
     ? entries
     : entries.filter(e => e.subject === activeFilterSubject);
 
+  // Roadmap items: Core syllabus chapters complete first, followed by 1-Week Final Revision Sprint
+  const roadmapItems = React.useMemo(() => {
+    const base: RoadmapItem[] = filteredEntries.map((e, idx) => ({
+      id: e.id,
+      topic_name: e.chapter_topic_name,
+      subject_name: e.subject,
+      date_str: (e as any).scheduled_date || `Day ${idx + 1}`,
+      day_name: (e as any).day_name || '',
+      time_slot: (e as any).time_slot || `${e.daily_minutes} mins`,
+      allocated_minutes: e.daily_minutes,
+      status: e.status,
+      explanation_tip: `Class ${e.class_level} ${e.subject} chapter. Read notes first, watch the concept video, and solve the 10-question quiz to ensure mastery.`,
+      onOpenNotes: () => setViewingNotesEntry(e),
+      onOpenVideo: () => setActiveVideoEntry(e),
+      onOpenQuiz: () => {
+        setActiveQuizEntry(e);
+        setQuizUserAnswers({});
+        setQuizSubmitted(false);
+        setQuizScore(0);
+      }
+    }));
+
+    if (filteredEntries.length > 0) {
+      const today = new Date();
+      const coreCount = filteredEntries.length;
+      for (let rDay = 1; rDay <= 7; rDay++) {
+        const revTarget = filteredEntries[(rDay - 1) % filteredEntries.length];
+        const revDateObj = new Date(today);
+        revDateObj.setDate(today.getDate() + coreCount + rDay - 1);
+        const revDateStr = revDateObj.toISOString().split('T')[0];
+        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = dayNames[revDateObj.getDay()];
+
+        base.push({
+          id: `rev-sprint-${rDay}-${revTarget.id}`,
+          topic_name: `${revTarget.chapter_topic_name} (1-Week Revision & Quiz Practice)`,
+          subject_name: revTarget.subject,
+          date_str: revDateStr,
+          day_name: dayName,
+          time_slot: '06:00 PM - 07:00 PM',
+          allocated_minutes: 60,
+          status: 'revision',
+          explanation_tip: `1-Week Final Sprint Day ${rDay}: Complete concept revision, video recap & 10-Q mastery quiz practice for ${revTarget.chapter_topic_name}.`,
+          onOpenNotes: () => setViewingNotesEntry(revTarget),
+          onOpenVideo: () => setActiveVideoEntry(revTarget),
+          onOpenQuiz: () => {
+            setActiveQuizEntry(revTarget);
+            setQuizUserAnswers({});
+            setQuizSubmitted(false);
+            setQuizScore(0);
+          }
+        });
+      }
+    }
+
+    return base;
+  }, [filteredEntries]);
+
   return (
     <div className="space-y-8 pb-20 max-w-6xl mx-auto">
       
@@ -297,6 +355,24 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
             </div>
           </div>
         )}
+      </div>
+
+      {/* 1-Week Prior Completion & Revision Sprint Guarantee Banner */}
+      <div className="bg-gradient-to-r from-teal-900/60 via-slate-900 to-indigo-950/60 border border-teal-500/30 rounded-2xl p-3.5 sm:px-5 flex items-center justify-between gap-3 text-xs shadow-md">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-300 shrink-0">
+            <ShieldCheck className="w-4 h-4" />
+          </div>
+          <div>
+            <span className="font-bold text-white block sm:inline">1-Week Prior Completion Active: </span>
+            <span className="text-slate-300">
+              Your self-study timetable schedules all core syllabus chapters to finish 1 week before your deadline. The final 7 days are dedicated to complete chapter revision, video recaps, and 10-Q mastery quiz practice!
+            </span>
+          </div>
+        </div>
+        <span className="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-[10px] font-bold shrink-0">
+          7-Day Revision Sprint
+        </span>
       </div>
 
       {/* Chapter Addition Box */}
@@ -614,25 +690,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
         <StudyRoadmapView
           title="Self Timetable Study Roadmap"
           subtitle="Sequential daily learning progression with exact dates, time slots, and 4-step milestone guides."
-          items={filteredEntries.map((e, idx) => ({
-            id: e.id,
-            topic_name: e.chapter_topic_name,
-            subject_name: e.subject,
-            date_str: (e as any).scheduled_date || `Day ${idx + 1}`,
-            day_name: (e as any).day_name || '',
-            time_slot: (e as any).time_slot || `${e.daily_minutes} mins`,
-            allocated_minutes: e.daily_minutes,
-            status: e.status,
-            explanation_tip: `Class ${e.class_level} ${e.subject} chapter. Read notes first, watch the concept video, and solve the 10-question quiz to ensure mastery.`,
-            onOpenNotes: () => setViewingNotesEntry(e),
-            onOpenVideo: () => setActiveVideoEntry(e),
-            onOpenQuiz: () => {
-              setActiveQuizEntry(e);
-              setQuizUserAnswers({});
-              setQuizSubmitted(false);
-              setQuizScore(0);
-            }
-          }))}
+          items={roadmapItems}
           onOpenQuiz={(id) => {
             const entry = entries.find(e => e.id === id);
             if (entry) {

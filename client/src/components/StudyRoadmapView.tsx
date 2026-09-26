@@ -350,6 +350,10 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
             doc.setTextColor(16, 185, 129);
             doc.setFont('helvetica', 'bold');
             doc.text('[✓] DONE', x, textY);
+          } else if (item.status === 'revision') {
+            doc.setTextColor(147, 51, 234);
+            doc.setFont('helvetica', 'bold');
+            doc.text('REVISION', x, textY);
           } else {
             doc.setTextColor(217, 119, 6);
             doc.setFont('helvetica', 'normal');
@@ -770,6 +774,10 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-[10px] font-bold">
                                 Active ⚡
                               </span>
+                            ) : item.status === 'revision' ? (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40 text-[10px] font-bold">
+                                Revision 🔄
+                              </span>
                             ) : (
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700 text-[10px] font-bold">
                                 Scheduled ⏳
@@ -891,12 +899,14 @@ export const StudyRoadmapView: React.FC<StudyRoadmapViewProps> = ({
                               ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
                               : isInProgress
                               ? 'bg-teal-500/20 text-teal-300 border-teal-500/30'
+                              : item.status === 'revision'
+                              ? 'bg-purple-500/20 text-purple-300 border-purple-500/30'
                               : isDeferred
                               ? 'bg-amber-500/20 text-amber-300 border-amber-500/30'
                               : 'bg-slate-800 text-slate-400 border-slate-700'
                           }`}
                         >
-                          {isDone ? 'Completed' : isInProgress ? 'In Progress' : isDeferred ? 'Deferred' : 'Scheduled'}
+                          {isDone ? 'Completed' : isInProgress ? 'In Progress' : item.status === 'revision' ? '1-Wk Revision' : isDeferred ? 'Deferred' : 'Scheduled'}
                         </span>
                       </div>
                     </div>

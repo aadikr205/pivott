@@ -139,7 +139,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
 
         <div className="flex items-center space-x-2 text-xs font-medium text-emerald-800 bg-emerald-50 px-3.5 py-2 rounded-2xl border border-emerald-200/60">
           <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-          <span>Buffer Revision Days Auto-Reserved</span>
+          <span>1-Week Prior Completion • 7-Day Revision & PYQs Sprint</span>
         </div>
       </div>
 
@@ -217,8 +217,8 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
             day_name: item.day_name,
             time_slot: item.time_slot,
             allocated_minutes: item.allocated_minutes,
-            status: item.overall_status === 'done' ? 'done' : 'not_started',
-            explanation_tip: `Exam syllabus topic. Focus weightage: ${item.weightage}/5. Study key concepts, solve practice numericals, and test with quiz.`,
+            status: item.is_revision ? 'revision' : (item.overall_status === 'done' ? 'done' : 'not_started'),
+            explanation_tip: item.revision_note || `Exam syllabus topic. Focus weightage: ${item.weightage}/5. Study key concepts, solve practice numericals, and test with quiz.`,
             onOpenQuiz: () => onOpenQuiz(item.topic_id, item.topic_name, item.subject_name)
           }))}
           defaultMode="visual"
@@ -239,8 +239,8 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
             day_name: item.day_name,
             time_slot: item.time_slot,
             allocated_minutes: item.allocated_minutes,
-            status: item.overall_status === 'done' ? 'done' : 'not_started',
-            explanation_tip: `Exam syllabus topic. Focus weightage: ${item.weightage}/5. Study key concepts, solve practice numericals, and test with quiz.`,
+            status: item.is_revision ? 'revision' : (item.overall_status === 'done' ? 'done' : 'not_started'),
+            explanation_tip: item.revision_note || `Exam syllabus topic. Focus weightage: ${item.weightage}/5. Study key concepts, solve practice numericals, and test with quiz.`,
             onOpenQuiz: () => onOpenQuiz(item.topic_id, item.topic_name, item.subject_name)
           }))}
           defaultMode="onepage"
@@ -396,11 +396,11 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                           <span className="px-1.5 py-0.2 rounded-md bg-teal-600 text-white text-[9px] font-bold">
                             Today
                           </span>
-                        ) : isBuffer ? (
+                        ) : (isBuffer || day.is_revision) ? (
                           <span className={`px-1.5 py-0.2 rounded-md text-[9px] font-bold ${
-                            isExpanded ? 'bg-indigo-700 text-indigo-100' : 'bg-emerald-100 text-emerald-800'
+                            isExpanded ? 'bg-indigo-700 text-indigo-100' : 'bg-purple-100 text-purple-800'
                           }`}>
-                            Buffer
+                            1-Wk Revision
                           </span>
                         ) : day.is_backlog_day ? (
                           <span className="px-1.5 py-0.2 rounded-md bg-amber-100 text-amber-800 text-[9px] font-bold">
