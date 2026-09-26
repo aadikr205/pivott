@@ -186,7 +186,7 @@ async function streamDoubtSolverResponse({ targetExam, messages, onChunk, onDone
   if (geminiKey) {
     try {
       console.log(`[DoubtSolver] Calling Gemini streaming API fallback (Model: ${geminiModel})...`);
-      const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:streamGenerateContent?alt=sse&key=${geminiKey}`;
+      const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:streamGenerateContent?alt=sse`;
 
       // Prepare contents for Gemini API:
       // - Must start with 'user' role
@@ -218,7 +218,10 @@ async function streamDoubtSolverResponse({ targetExam, messages, onChunk, onDone
 
       const response = await fetch(geminiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': geminiKey
+        },
         body: JSON.stringify(requestPayload)
       });
 
@@ -245,6 +248,8 @@ async function streamDoubtSolverResponse({ targetExam, messages, onChunk, onDone
         // Actionable hints based on status
         if (response.status === 400 && errorText.includes('API_KEY_INVALID')) {
           console.error('[DoubtSolver] 💡 Diagnosis: The provided GEMINI_API_KEY is invalid or malformed. Verify your key in Google AI Studio.');
+        } else if (response.status === 401) {
+          console.error('[DoubtSolver] 💡 Diagnosis: Unauthorized (401). If using new AQ. format keys, ensure authentication header x-goog-api-key is present and key is active.');
         } else if (response.status === 403) {
           console.error('[DoubtSolver] 💡 Diagnosis: Permission denied (403). Ensure Generative Language API is enabled for this API key in Google Cloud Console.');
         } else if (response.status === 404) {
