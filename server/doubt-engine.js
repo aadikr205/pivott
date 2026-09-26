@@ -824,8 +824,8 @@ async function solveStudentDoubtSmart({ doubt, examName = '', subjectName = '', 
   const resolvedSubject = subjectName || groundingChapter?.subject || 'Science & Math';
 
   // Step 4: Check External Cloud AI (Gemini or Claude) if API Key is configured
-  const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
-  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  const geminiKey = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.env.GEMINI_KEY || '').trim().replace(/^["']|["']$/g, '');
+  const anthropicKey = (process.env.ANTHROPIC_API_KEY || '').trim().replace(/^["']|["']$/g, '');
 
   if (geminiKey) {
     try {
@@ -908,9 +908,12 @@ ${searchRes.combinedContext || 'Standard NCERT & Competitive Exam Syllabus'}`;
             follow_up_suggestions: followUps
           };
         }
+      } else {
+        const errText = await response.text().catch(() => '');
+        console.error('[DoubtEngine] Gemini API call failed:', response.status, response.statusText, errText);
       }
     } catch (err) {
-      console.warn('Gemini API error, falling back to local search engine grounding:', err.message);
+      console.error('[DoubtEngine] Gemini API error, falling back to local synthesis:', err.message);
     }
   }
 

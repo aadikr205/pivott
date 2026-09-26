@@ -84,14 +84,35 @@ function generateSessionTitle(query) {
 }
 
 /**
+ * Safely read environment variables with case-insensitive fallback and quote/whitespace cleanup
+ */
+function getEnvVar(...names) {
+  for (const name of names) {
+    if (process.env[name] && typeof process.env[name] === 'string' && process.env[name].trim()) {
+      return process.env[name].trim().replace(/^["']|["']$/g, '');
+    }
+    // Case-insensitive match for Linux/Render environments
+    const lower = name.toLowerCase();
+    const matchedKey = Object.keys(process.env).find(k => k.toLowerCase() === lower);
+    if (matchedKey && process.env[matchedKey] && typeof process.env[matchedKey] === 'string' && process.env[matchedKey].trim()) {
+      return process.env[matchedKey].trim().replace(/^["']|["']$/g, '');
+    }
+  }
+  return '';
+}
+
+/**
  * Main streaming orchestrator
  */
 async function streamDoubtSolverResponse({ targetExam, messages, onChunk, onDone, onError }) {
-  const anthropicKey = process.env.ANTHROPIC_API_KEY;
-  const geminiKey = process.env.GEMINI_API_KEY;
+  const anthropicKey = getEnvVar('ANTHROPIC_API_KEY');
+  const geminiKey = getEnvVar('GEMINI_API_KEY', 'GOOGLE_API_KEY', 'GEMINI_KEY');
+  const geminiModel = getEnvVar('GEMINI_MODEL') || 'gemini-1.5-flash';
 
   const systemPrompt = buildSystemPrompt(targetExam);
   const activeMessages = condenseHistory(messages);
+
+  console.log(`[DoubtSolver] Stream request (Exam: ${targetExam || 'General'}). Keys -> Anthropic: ${anthropicKey ? 'Configured' : 'None'}, Gemini: ${geminiKey ? `Configured (prefix: ${geminiKey.slice(0, 6)}..., len: ${geminiKey.length})` : 'NOT FOUND'}`);
 
   // 1. Try Anthropic Claude Messages API
   if (anthropicKey) {
@@ -164,25 +185,74 @@ async function streamDoubtSolverResponse({ targetExam, messages, onChunk, onDone
   // 2. Try Gemini Streaming API fallback
   if (geminiKey) {
     try {
-      console.log('[DoubtSolver] Calling Gemini streaming API fallback...');
-      const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key=${geminiKey}`;
+      console.log(`[DoubtSolver] Calling Gemini streaming API fallback (Model: ${geminiModel})...`);
+      const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:streamGenerateContent?alt=sse&key=${geminiKey}`;
 
-      const contents = activeMessages.map(m => ({
+      // Prepare contents for Gemini API:
+      // - Must start with 'user' role
+      // - Consecutive messages with same role must be merged
+      // - Text parts cannot be empty
+      const rawContents = activeMessages.map(m => ({
         role: m.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: m.content }]
-      }));
+        parts: [{ text: (m.content || '').trim() }]
+      })).filter(m => m.parts[0].text.length > 0);
+
+      const contents = [];
+      for (const item of rawContents) {
+        if (contents.length > 0 && contents[contents.length - 1].role === item.role) {
+          contents[contents.length - 1].parts[0].text += '\n\n' + item.parts[0].text;
+        } else {
+          contents.push({ role: item.role, parts: [{ text: item.parts[0].text }] });
+        }
+      }
+
+      if (contents.length > 0 && contents[0].role !== 'user') {
+        contents.unshift({ role: 'user', parts: [{ text: 'Hello' }] });
+      }
+
+      const requestPayload = {
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        contents: contents.length > 0 ? contents : [{ role: 'user', parts: [{ text: 'Please explain the concept.' }] }],
+        generationConfig: { temperature: 0.3, maxOutputTokens: 2500 }
+      };
 
       const response = await fetch(geminiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: systemPrompt }] },
-          contents,
-          generationConfig: { temperature: 0.3, maxOutputTokens: 2500 }
-        })
+        body: JSON.stringify(requestPayload)
       });
 
-      if (response.ok && response.body) {
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => '<unable to read response text>');
+        let errorObj = null;
+        try {
+          errorObj = JSON.parse(errorText);
+        } catch (_) {}
+
+        console.error(`[DoubtSolver] ❌ Gemini API call FAILED!`);
+        console.error(`[DoubtSolver] HTTP Status: ${response.status} ${response.statusText}`);
+        if (errorObj?.error) {
+          console.error('[DoubtSolver] Error Code:', errorObj.error.code);
+          console.error('[DoubtSolver] Error Status:', errorObj.error.status);
+          console.error('[DoubtSolver] Error Message:', errorObj.error.message);
+          if (errorObj.error.details) {
+            console.error('[DoubtSolver] Error Details:', JSON.stringify(errorObj.error.details, null, 2));
+          }
+        } else {
+          console.error('[DoubtSolver] Raw Response Body:', errorText);
+        }
+
+        // Actionable hints based on status
+        if (response.status === 400 && errorText.includes('API_KEY_INVALID')) {
+          console.error('[DoubtSolver] 💡 Diagnosis: The provided GEMINI_API_KEY is invalid or malformed. Verify your key in Google AI Studio.');
+        } else if (response.status === 403) {
+          console.error('[DoubtSolver] 💡 Diagnosis: Permission denied (403). Ensure Generative Language API is enabled for this API key in Google Cloud Console.');
+        } else if (response.status === 404) {
+          console.error(`[DoubtSolver] 💡 Diagnosis: Model "${geminiModel}" was not found (404). Check if the model name is valid.`);
+        } else if (response.status === 429) {
+          console.error('[DoubtSolver] 💡 Diagnosis: Quota limit exceeded (429 RESOURCE_EXHAUSTED). Check your Google AI Studio plan/rate limits.');
+        }
+      } else if (response.body) {
         let fullText = '';
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
@@ -200,26 +270,46 @@ async function streamDoubtSolverResponse({ targetExam, messages, onChunk, onDone
             const trimmed = line.trim();
             if (!trimmed.startsWith('data:')) continue;
             const dataStr = trimmed.slice(5).trim();
+            if (!dataStr || dataStr === '[DONE]') continue;
 
             try {
               const parsed = JSON.parse(dataStr);
-              const textChunk = parsed.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (parsed.error) {
+                console.error('[DoubtSolver] Gemini SSE error chunk:', JSON.stringify(parsed.error));
+              }
+              const candidate = parsed.candidates?.[0];
+              if (candidate?.finishReason && candidate.finishReason !== 'STOP') {
+                console.warn('[DoubtSolver] Gemini candidate finishReason:', candidate.finishReason, candidate.safetyRatings || '');
+              }
+              const textChunk = candidate?.content?.parts?.[0]?.text;
               if (textChunk) {
                 fullText += textChunk;
                 onChunk(textChunk);
               }
-            } catch (e) {}
+            } catch (e) {
+              console.warn('[DoubtSolver] Failed to parse Gemini SSE line:', dataStr.slice(0, 100), e.message);
+            }
           }
         }
 
         if (fullText.length > 0) {
+          console.log(`[DoubtSolver] ✅ Gemini streaming succeeded (${fullText.length} characters).`);
           onDone(fullText);
           return;
+        } else {
+          console.warn('[DoubtSolver] ⚠️ Gemini stream completed with 0 output characters (likely filtered or empty).');
         }
+      } else {
+        console.warn('[DoubtSolver] ⚠️ Gemini returned HTTP 200 but response body was null.');
       }
     } catch (err) {
-      console.warn('[DoubtSolver] Gemini streaming error:', err.message);
+      console.error('[DoubtSolver] ❌ Exception during Gemini streaming fetch/processing:', err.message);
+      if (err.stack) {
+        console.error('[DoubtSolver] Stack trace:', err.stack);
+      }
     }
+  } else {
+    console.warn('[DoubtSolver] Skipping Gemini API: GEMINI_API_KEY / GOOGLE_API_KEY is not set.');
   }
 
   // 3. Fallback: Intelligent Local ChatGPT-Grade Knowledge Streaming Engine
