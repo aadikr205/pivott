@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Calendar, Clock, CheckCircle2, AlertCircle, ChevronLeft, ChevronRight, 
   BookOpen, ShieldCheck, Layers, Compass, Zap, FileText, ChevronDown, 
-  ChevronUp, Eye, EyeOff, Search, ArrowRight, ArrowLeft
+  ChevronUp, Eye, EyeOff, Search, ArrowRight, ArrowLeft, RotateCcw
 } from 'lucide-react';
 import { api } from '../api/client';
 import { RevisionSuggestionBanner } from './RevisionSuggestionBanner';
@@ -27,7 +27,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
   // Requirement 1: Day-by-day plan is HIDDEN by default (expandedDate is null).
   // Only opens when student taps on a day!
   const [expandedDate, setExpandedDate] = useState<string | null>(null);
-  const [dayFilter, setDayFilter] = useState<'all' | 'upcoming' | 'buffer'>('all');
+  const [dayFilter, setDayFilter] = useState<'all' | 'upcoming' | 'revision' | 'buffer'>('all');
   const [searchDateQuery, setSearchDateQuery] = useState('');
   const [viewMode, setViewMode] = useState<'list' | 'roadmap' | 'onepage' | 'game'>('list');
 
@@ -61,11 +61,15 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
   // Filtered days list for compact browser
   const filteredDays = useMemo(() => {
     return days.filter((d, idx) => {
+      const isRev = Boolean(d.is_revision || d.planned_items?.some((i: any) => i.is_revision || i.status === 'revision'));
+      const isBuf = ((d.total_minutes === 0) || (d.planned_items?.length === 0)) && !isRev;
+
       if (dayFilter === 'upcoming') {
         if (d.date < todayStr) return false;
+      } else if (dayFilter === 'revision') {
+        if (!isRev) return false;
       } else if (dayFilter === 'buffer') {
-        const isBuffer = (d.total_minutes === 0) || (d.planned_items?.length === 0);
-        if (!isBuffer) return false;
+        if (!isBuf) return false;
       }
 
       if (searchDateQuery.trim()) {
@@ -301,6 +305,18 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
 
               <button
                 type="button"
+                onClick={() => setDayFilter('revision')}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                  dayFilter === 'revision'
+                    ? 'bg-purple-600 text-white shadow-sm'
+                    : 'bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200/60'
+                }`}
+              >
+                <span>🔄 Revision Days ({days.filter(d => Boolean(d.is_revision || d.planned_items?.some((i: any) => i.is_revision || i.status === 'revision'))).length})</span>
+              </button>
+
+              <button
+                type="button"
                 onClick={() => setDayFilter('buffer')}
                 className={`px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   dayFilter === 'buffer'
@@ -364,7 +380,9 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                 const dayIndex = days.findIndex(d => d.date === day.date);
                 const isExpanded = day.date === expandedDate;
                 const isToday = day.date === todayStr;
-                const isBuffer = (day.total_minutes === 0) || (day.planned_items?.length === 0);
+                const isRevision = Boolean(day.is_revision || day.planned_items?.some((i: any) => i.is_revision || i.status === 'revision'));
+                const revisionType = day.revision_type || day.planned_items?.find((i: any) => i.revision_type)?.revision_type || (isRevision ? 'weekly_revision' : null);
+                const isBuffer = ((day.total_minutes === 0) || (day.planned_items?.length === 0)) && !isRevision;
                 const dayHours = (day.total_minutes / 60).toFixed(1);
                 const dayName = day.day_name || new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' });
 
@@ -378,6 +396,8 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                         ? 'bg-indigo-600 text-white border-indigo-600 shadow-md ring-2 ring-indigo-400/40 scale-[1.02]'
                         : isToday
                         ? 'bg-teal-50 border-teal-300 text-slate-800 hover:bg-teal-100/60 shadow-xs'
+                        : isRevision
+                        ? 'bg-purple-50/50 border-purple-200/90 text-slate-800 hover:bg-purple-100/60 shadow-xs'
                         : isBuffer
                         ? 'bg-emerald-50/50 border-emerald-200/80 text-slate-800 hover:bg-emerald-50'
                         : 'bg-white border-slate-200/80 text-slate-700 hover:bg-slate-50 hover:border-slate-300 shadow-xs'
@@ -387,7 +407,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                       {/* Top Row: Day Number & Badge */}
                       <div className="flex items-center justify-between gap-1">
                         <span className={`text-[11px] font-black font-mono ${
-                          isExpanded ? 'text-indigo-200' : 'text-slate-500'
+                          isExpanded ? 'text-indigo-200' : isRevision ? 'text-purple-700' : 'text-slate-500'
                         }`}>
                           Day {dayIndex + 1}
                         </span>
@@ -396,11 +416,21 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                           <span className="px-1.5 py-0.2 rounded-md bg-teal-600 text-white text-[9px] font-bold">
                             Today
                           </span>
-                        ) : (isBuffer || day.is_revision) ? (
-                          <span className={`px-1.5 py-0.2 rounded-md text-[9px] font-bold ${
-                            isExpanded ? 'bg-indigo-700 text-indigo-100' : 'bg-purple-100 text-purple-800'
+                        ) : isRevision ? (
+                          <span className={`px-1.5 py-0.5 rounded-md text-[9px] font-bold ${
+                            isExpanded 
+                              ? 'bg-purple-700 text-purple-100' 
+                              : revisionType === 'weekly_revision'
+                              ? 'bg-purple-100 text-purple-800 border border-purple-200'
+                              : 'bg-indigo-100 text-indigo-800 border border-indigo-200'
                           }`}>
-                            1-Wk Revision
+                            {revisionType === 'weekly_revision' ? 'Weekly Rev 🔄' : 'Final Sprint 🎯'}
+                          </span>
+                        ) : isBuffer ? (
+                          <span className={`px-1.5 py-0.2 rounded-md text-[9px] font-bold ${
+                            isExpanded ? 'bg-indigo-700 text-indigo-100' : 'bg-emerald-100 text-emerald-800'
+                          }`}>
+                            Buffer Day
                           </span>
                         ) : day.is_backlog_day ? (
                           <span className="px-1.5 py-0.2 rounded-md bg-amber-100 text-amber-800 text-[9px] font-bold">
@@ -418,9 +448,9 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                           <span>{day.date}</span>
                         </div>
                         <span className={`text-[10px] block ${
-                          isExpanded ? 'text-indigo-200' : 'text-slate-400'
+                          isExpanded ? 'text-indigo-200' : isRevision ? 'text-purple-600 font-medium' : 'text-slate-400'
                         }`}>
-                          {dayName}
+                          {dayName} {isRevision ? '• Revision' : ''}
                         </span>
                       </div>
                     </div>
@@ -429,12 +459,12 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                     <div className="mt-2.5 pt-2 border-t border-dashed flex items-center justify-between text-[10px] font-medium"
                       style={{ borderColor: isExpanded ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.06)' }}
                     >
-                      <span className={isExpanded ? 'text-indigo-100' : 'text-slate-500'}>
-                        {isBuffer ? 'Revision' : `${day.planned_items?.length || 0} topics`}
+                      <span className={isExpanded ? 'text-indigo-100' : isRevision ? 'text-purple-700 font-semibold' : 'text-slate-500'}>
+                        {isRevision ? `${day.planned_items?.length || 0} Revision Topics` : isBuffer ? 'Revision' : `${day.planned_items?.length || 0} topics`}
                       </span>
 
                       <span className={`font-mono font-bold flex items-center gap-0.5 ${
-                        isExpanded ? 'text-white' : 'text-indigo-600'
+                        isExpanded ? 'text-white' : isRevision ? 'text-purple-700' : 'text-indigo-600'
                       }`}>
                         {isExpanded ? (
                           <>
@@ -527,6 +557,32 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                 </div>
               </div>
 
+              {/* Revision Banner if this day is a dedicated revision or consolidation day */}
+              {(activeDay.is_revision_day || (activeDay.planned_items && activeDay.planned_items.some((p: any) => p.is_revision))) && (
+                <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-purple-50 via-indigo-50 to-pink-50 border border-purple-200/90 flex items-start gap-3 shadow-sm">
+                  <div className="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow">
+                    <RotateCcw className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h4 className="text-sm font-bold text-purple-950">
+                        {activeDay.revision_type === 'final_sprint'
+                          ? '🎯 Final 1-Week Comprehensive Revision & 10-Yr PYQ Sprint'
+                          : '🔄 Periodic Chapter Revision & Active Recall Day'}
+                      </h4>
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-200 text-purple-800 uppercase tracking-wide">
+                        Revision Focus
+                      </span>
+                    </div>
+                    <p className="text-xs text-purple-800/90 mt-1 leading-relaxed">
+                      {activeDay.revision_type === 'final_sprint'
+                        ? 'Exam se pehle deep active recall, speed test, formula sheets aur past 10 years ke high-frequency questions solve karne ka dedicated time.'
+                        : 'Pichle padhe hue chapters ke key concepts, formulas revise karo aur weak spots clear karo taaki exam tak retention strong rahe.'}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Items List inside Opened Day */}
               <div className="mt-5 space-y-3">
                 {(!activeDay.planned_items || activeDay.planned_items.length === 0) ? (
@@ -555,6 +611,8 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                         className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
                           isDone
                             ? 'bg-emerald-50/30 border-emerald-200'
+                            : item.is_revision
+                            ? 'bg-purple-50/40 border-purple-200 hover:bg-purple-50/60'
                             : 'bg-slate-50/70 border-slate-200/80 hover:bg-slate-50'
                         }`}
                       >
@@ -566,6 +624,12 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                             <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">
                               Focus: {item.weightage}/5
                             </span>
+                            {item.is_revision && (
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200 flex items-center gap-1">
+                                <RotateCcw className="w-2.5 h-2.5" />
+                                {item.revision_type === 'final_sprint' ? '10-Yr PYQ Sprint' : 'Revision & PYQ'}
+                              </span>
+                            )}
                             {isSkim && (
                               <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
                                 Skim-Only
@@ -583,6 +647,13 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
                           }`}>
                             {item.topic_name}
                           </h4>
+
+                          {item.revision_note && (
+                            <p className="text-xs text-purple-700 font-medium mt-1 flex items-center gap-1">
+                              <span>💡</span>
+                              <span>{item.revision_note}</span>
+                            </p>
+                          )}
 
                           <div className="flex items-center space-x-2 text-xs text-slate-500 mt-1 font-mono">
                             <Clock className="w-3.5 h-3.5 text-slate-400" />

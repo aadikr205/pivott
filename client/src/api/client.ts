@@ -173,6 +173,9 @@ export interface TopicItem {
   status: string; // 'in_progress', 'skim_only', 'done', 'missed'
   current_status?: string;
   minutes_done?: number;
+  is_revision?: boolean;
+  revision_type?: 'weekly_revision' | 'final_sprint' | null;
+  revision_note?: string;
 }
 
 export interface TodayScheduleResponse {
@@ -186,6 +189,8 @@ export interface TodayScheduleResponse {
   backlog_count: number;
   backlog_items: Array<{ topic_id: string; topic_name?: string; allocated_minutes: number; missed_date: string }>;
   micro_copy: string;
+  is_revision_day?: boolean;
+  revision_type?: 'weekly_revision' | 'final_sprint' | null;
 }
 
 export interface ReplanResponse {

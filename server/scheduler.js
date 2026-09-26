@@ -90,7 +90,22 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
 
   // If study dates is empty (e.g. only 1-2 days left), use all available dates
   const effectiveDates = studyDates.length > 0 ? studyDates : allAvailableDates;
-  const remainingDays = effectiveDates.length;
+
+  // Identify periodic weekly revision days among study dates (every 6th study day)
+  // Ensures students consolidate past chapters every week via spaced repetition
+  const isWeeklyRevisionDay = (idx) => {
+    return effectiveDates.length >= 6 && (idx + 1) % 6 === 0;
+  };
+
+  const dayBuckets = effectiveDates.map((date, idx) => ({
+    date,
+    capacityRemaining: maxDailyMinutes,
+    planned_items: [],
+    is_weekly_revision: isWeeklyRevisionDay(idx)
+  }));
+
+  const regularStudyDays = dayBuckets.filter(b => !b.is_weekly_revision);
+  const remainingDays = regularStudyDays.length;
   const remainingCapacityMinutes = remainingDays * maxDailyMinutes;
 
   // 2. Incomplete topics
@@ -163,31 +178,24 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     }
   }
 
-  // 5. Distribute planned topics across effectiveDates
+  // 5. Distribute planned core topics across regular study days (non-revision days)
   // Rule: Never exceed maxDailyMinutes on any single day!
-  const dayBuckets = effectiveDates.map(date => ({
-    date,
-    capacityRemaining: maxDailyMinutes,
-    planned_items: []
-  }));
-
-  // Helper to pack items evenly across days
-  let currentDayIdx = 0;
+  let currentRegularIdx = 0;
   for (const item of plannedTopics) {
     let itemRemainingMinutes = item.planned_minutes;
 
     while (itemRemainingMinutes > 0) {
-      if (currentDayIdx >= dayBuckets.length) {
-        // Fallback: if all days reached max capacity, defer whatever couldn't fit
+      if (currentRegularIdx >= regularStudyDays.length) {
+        // Fallback: if all regular days reached max capacity, defer whatever couldn't fit
         if (!deferred.find(d => d.id === item.id)) {
           deferred.push({ ...item, status: 'deferred' });
         }
         break;
       }
 
-      const day = dayBuckets[currentDayIdx];
+      const day = regularStudyDays[currentRegularIdx];
       if (day.capacityRemaining <= 0) {
-        currentDayIdx++;
+        currentRegularIdx++;
         continue;
       }
 
@@ -206,12 +214,12 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
       itemRemainingMinutes -= minutesToAllocate;
 
       if (day.capacityRemaining === 0) {
-        currentDayIdx++;
+        currentRegularIdx++;
       }
     }
   }
 
-  // 6. Smart High-Weightage Buffer & Early-Completion Revision Engine
+  // 6. Smart High-Weightage Buffer & Spaced-Repetition Revision Engine
   // Sort high-yield topics (weightage >= 4 or top weightage): lowest mastery score first (weakest needs boost), then highest weightage
   const revisionPool = [...topics].sort((a, b) => {
     // Priority 1: Lowest mastery score first
@@ -229,13 +237,86 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     return item;
   };
 
-  // Populate days where syllabus completed early (leaving whole empty days before exam)
+  // 7. Populate Periodic Weekly Revision Days with chapters studied in the preceding cycle
+  let recentTopicsPool = [];
+  for (let i = 0; i < dayBuckets.length; i++) {
+    const bucket = dayBuckets[i];
+    if (!bucket.is_weekly_revision) {
+      // Accumulate unique topics learned during this study block
+      for (const p of bucket.planned_items) {
+        if (!recentTopicsPool.some(r => r.topic_id === p.topic_id)) {
+          recentTopicsPool.push(p);
+        }
+      }
+    } else {
+      // This is a dedicated Weekly Revision & Consolidation Day!
+      bucket.is_revision = true;
+      bucket.revision_type = 'weekly_revision';
+      bucket.day_title = 'Weekly Revision & Chapter Practice';
+      bucket.note = 'Dedicated revision day to consolidate previous chapters, review formula sheets, and practice exam PYQs.';
+
+      // First, allocate chapters studied in the preceding block (active recall)
+      const toRevise = [...recentTopicsPool];
+      recentTopicsPool = []; // Reset accumulator for next block
+
+      for (const topicToRevise of toRevise) {
+        if (bucket.capacityRemaining < 30) break;
+        const revMinutes = Math.min(bucket.capacityRemaining, 60);
+        bucket.planned_items.push({
+          topic_id: topicToRevise.topic_id,
+          topic_name: `${topicToRevise.topic_name.replace(/\s*\(Revision & PYQs\)/g, '')} (Revision & PYQs)`,
+          subject_id: topicToRevise.subject_id,
+          subject_name: topicToRevise.subject_name || 'Subject',
+          weightage: topicToRevise.weightage,
+          mastery_score: topicToRevise.mastery_score,
+          allocated_minutes: revMinutes,
+          status: 'revision',
+          is_revision: true,
+          revision_type: 'weekly_revision',
+          revision_note: `Weekly Consolidation: Review formulas, key concepts & practice 10-Yr PYQs for ${topicToRevise.topic_name.replace(/\s*\(Revision & PYQs\)/g, '')}`
+        });
+        bucket.capacityRemaining -= revMinutes;
+      }
+
+      // If capacity remains on the revision day, pull from global revisionPool (weakest mastery first)
+      while (bucket.capacityRemaining >= 45 && revisionPool.length > 0 && bucket.planned_items.length < 4) {
+        const revTopic = pickRevisionTopic();
+        if (!revTopic) break;
+        if (bucket.planned_items.some(p => p.topic_id === revTopic.id)) continue;
+
+        const revMinutes = Math.min(bucket.capacityRemaining, 60);
+        bucket.planned_items.push({
+          topic_id: revTopic.id,
+          topic_name: `${revTopic.name} (Revision & PYQs)`,
+          subject_id: revTopic.subject_id,
+          subject_name: revTopic.subject_name || 'Subject',
+          weightage: revTopic.weightage,
+          mastery_score: revTopic.mastery_score,
+          allocated_minutes: revMinutes,
+          status: 'revision',
+          is_revision: true,
+          revision_type: 'weekly_revision',
+          revision_note: `Weekly Practice: Concept review & 10-Yr Board PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
+        });
+        bucket.capacityRemaining -= revMinutes;
+      }
+    }
+  }
+
+  // 8. Populate days where syllabus completed early (leaving whole empty days before exam)
   for (const day of dayBuckets) {
-    if (day.planned_items.length === 0 && day.capacityRemaining >= 45) {
+    if (!day.is_weekly_revision && day.planned_items.length === 0 && day.capacityRemaining >= 45) {
       day.is_early_completion_revision = true;
+      day.is_revision = true;
+      day.revision_type = 'early_completion';
+      day.day_title = 'Comprehensive Revision & PYQ Day';
+      day.note = 'Syllabus finished early! Extra revision day for deep concept review and mock questions.';
+
       while (day.capacityRemaining >= 45 && revisionPool.length > 0 && day.planned_items.length < 3) {
         const revTopic = pickRevisionTopic();
         if (!revTopic) break;
+        if (day.planned_items.some(p => p.topic_id === revTopic.id)) continue;
+
         const revMinutes = Math.min(day.capacityRemaining, 60);
         day.planned_items.push({
           topic_id: revTopic.id,
@@ -247,7 +328,8 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
           allocated_minutes: revMinutes,
           status: 'revision',
           is_revision: true,
-          revision_note: `1-Week Final Sprint: Concept Revision, Formula Review & 10-Yr Board PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
+          revision_type: 'early_completion',
+          revision_note: `Early Completion Sprint: Concept Revision, Formula Review & 10-Yr Board PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
         });
         day.capacityRemaining -= revMinutes;
       }
@@ -285,12 +367,16 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
   const finalScheduleDays = dayBuckets.map(b => {
     const dObj = new Date(b.date);
     const dayName = isNaN(dObj.getTime()) ? '' : dayNames[dObj.getDay()];
+    const isRev = Boolean(b.is_revision || b.is_weekly_revision || b.is_early_completion_revision);
     return {
       date: b.date,
       day_name: dayName,
       planned_items: attachTimeSlots(b.planned_items, 9),
       is_buffer: false,
-      is_revision: b.is_early_completion_revision || false,
+      is_revision: isRev,
+      revision_type: b.revision_type || (isRev ? 'weekly_revision' : null),
+      day_title: b.day_title || (isRev ? 'Weekly Revision Day' : null),
+      note: b.note || null,
       total_allocated_minutes: maxDailyMinutes - b.capacityRemaining
     };
   });
@@ -313,6 +399,7 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
         allocated_minutes: revMinutes,
         status: 'revision',
         is_revision: true,
+        revision_type: 'final_sprint',
         revision_note: `1-Week Final Sprint: Concept Revision, Formula Review & 10-Yr Board PYQs (Focus: ${revTopic.weightage}/5, Mastery: ${revTopic.mastery_score || 0}%)`
       });
       bufCap -= revMinutes;
@@ -327,6 +414,8 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
       planned_items: attachTimeSlots(bufferItems, 9),
       is_buffer: true,
       is_revision: true,
+      revision_type: 'final_sprint',
+      day_title: '1-Week Final Revision Sprint',
       total_allocated_minutes: maxDailyMinutes - bufCap,
       note: '1-Week Final Revision & 10-Yr PYQ Practice Sprint'
     });
@@ -334,8 +423,11 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
 
   const diffSummary = {
     totalAvailableDays,
-    studyDays: effectiveDates.length,
+    studyDays: regularStudyDays.length,
     bufferDays: bufferDates.length,
+    revisionDaysCount: finalScheduleDays.filter(d => d.is_revision).length,
+    weeklyRevisionDaysCount: finalScheduleDays.filter(d => d.revision_type === 'weekly_revision').length,
+    finalSprintDaysCount: bufferDates.length,
     remainingCapacityMinutes,
     totalWorkloadMinutes,
     keptCount: plannedTopics.length - compressed.length,
@@ -343,7 +435,7 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     deferredCount: deferred.length,
     maxDailyHours,
     isDeficit: totalWorkloadMinutes > remainingCapacityMinutes,
-    hasRevisionDays: bufferDates.length > 0 || dayBuckets.some(d => d.is_early_completion_revision),
+    hasRevisionDays: finalScheduleDays.some(d => d.is_revision),
     has1WeekRevisionSprint: bufferDates.length >= 7 || bufferDates.length > 0,
     completionPriorDays: bufferDates.length
   };

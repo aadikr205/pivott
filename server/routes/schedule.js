@@ -71,20 +71,28 @@ router.get('/today', authMiddleware, async (req, res) => {
       `).get(p.topic_id);
 
       const actualItem = actual.find(a => a.topic_id === p.topic_id);
+      const isRev = Boolean(p.is_revision || p.status === 'revision' || (p.topic_name && p.topic_name.includes('Revision')));
 
       return {
         ...p,
-        topic_name: topic ? topic.name : p.topic_name || 'Topic',
-        subject_name: topic ? topic.subject_name : 'Subject',
-        weightage: topic ? topic.weightage : p.weightage || 3,
-        mastery_score: topic ? topic.mastery_score : p.mastery_score || 0,
-        current_status: actualItem ? actualItem.status : (topic ? topic.status : 'not_started'),
-        minutes_done: actualItem ? actualItem.minutes_done : 0
+        topic_name: p.topic_name || (topic ? topic.name : 'Topic'),
+        subject_name: topic ? topic.subject_name : (p.subject_name || 'Subject'),
+        weightage: topic ? topic.weightage : (p.weightage || 3),
+        mastery_score: topic ? topic.mastery_score : (p.mastery_score || 0),
+        current_status: actualItem ? actualItem.status : (isRev ? 'revision' : (topic ? topic.status : 'not_started')),
+        minutes_done: actualItem ? actualItem.minutes_done : 0,
+        is_revision: isRev,
+        status: isRev ? 'revision' : (p.status || (topic ? topic.status : 'not_started')),
+        revision_type: p.revision_type || (isRev ? 'weekly_revision' : null),
+        revision_note: p.revision_note || (isRev ? 'Exam revision & PYQ practice session' : null)
       };
     });
 
     // Check backlog from past days
     const backlogInfo = checkUserBacklog(userId, todayStr);
+
+    const isTodayRevision = enrichedPlanned.some(p => p.is_revision || p.status === 'revision');
+    const todayRevisionType = enrichedPlanned.find(p => p.revision_type)?.revision_type || (isTodayRevision ? 'weekly_revision' : null);
 
     const totalAllocatedMinutes = enrichedPlanned.reduce((sum, item) => sum + (item.allocated_minutes || 0), 0);
     const microCopy = await generateMicroCopy();
@@ -99,6 +107,8 @@ router.get('/today', authMiddleware, async (req, res) => {
       backlog_minutes: backlogInfo.backlogMinutes,
       backlog_count: backlogInfo.backlogTopicsCount,
       backlog_items: backlogInfo.backlogItems,
+      is_revision_day: isTodayRevision,
+      revision_type: todayRevisionType,
       micro_copy: microCopy
     });
   } catch (err) {
@@ -126,20 +136,32 @@ router.get('/all', authMiddleware, (req, res) => {
           WHERE t.id = ?
         `).get(p.topic_id);
 
+        const isRev = Boolean(p.is_revision || p.status === 'revision' || (p.topic_name && p.topic_name.includes('Revision')));
+
         return {
           ...p,
-          topic_name: topic ? topic.name : 'Topic',
-          subject_name: topic ? topic.subject_name : 'Subject',
-          weightage: topic ? topic.weightage : 3,
-          overall_status: topic ? topic.status : 'not_started'
+          topic_name: p.topic_name || (topic ? topic.name : 'Topic'),
+          subject_name: topic ? topic.subject_name : (p.subject_name || 'Subject'),
+          weightage: topic ? topic.weightage : (p.weightage || 3),
+          overall_status: topic ? topic.status : 'not_started',
+          is_revision: isRev,
+          status: isRev ? 'revision' : (p.status || (topic ? topic.status : 'not_started')),
+          revision_type: p.revision_type || (isRev ? 'weekly_revision' : null),
+          revision_note: p.revision_note || (isRev ? 'Exam revision & PYQ practice session' : null)
         };
       });
+
+      const isRevision = detailedPlanned.length > 0 && detailedPlanned.some(p => p.is_revision || p.status === 'revision');
+      const revisionType = detailedPlanned.find(p => p.revision_type)?.revision_type 
+        || (isRevision ? 'weekly_revision' : null);
 
       return {
         id: day.id,
         date: day.date,
         total_minutes: totalMinutes,
         is_backlog_day: Boolean(day.is_backlog_day),
+        is_revision: isRevision,
+        revision_type: revisionType,
         planned_items: detailedPlanned,
         actual_completed: actual
       };

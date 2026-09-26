@@ -103,6 +103,46 @@ export const TodayView: React.FC<TodayViewProps> = ({
         />
       )}
 
+      {/* Dedicated Revision Day Banner */}
+      {(todayData.is_revision_day || plannedItems.some(p => p.is_revision)) && (
+        <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-3xl p-5 sm:p-6 text-white shadow-lg relative overflow-hidden">
+          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-start space-x-3.5">
+              <div className="w-10 h-10 rounded-2xl bg-purple-500/30 border border-purple-400/40 flex items-center justify-center shrink-0 mt-0.5">
+                <RotateCcw className="w-5 h-5 text-purple-200" />
+              </div>
+              <div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-400/30 text-purple-200 border border-purple-400/40 uppercase tracking-wider">
+                    {todayData.revision_type === 'final_sprint' ? '10-Yr PYQ Sprint' : 'Periodic Revision Day'}
+                  </span>
+                  <span className="text-xs text-purple-200/70">Consolidation Mode</span>
+                </div>
+                <h2 className="text-lg font-bold text-white mt-1">
+                  {todayData.revision_type === 'final_sprint'
+                    ? 'Exam Readiness: 10-Yr PYQs & Formula Revision'
+                    : 'Active Recall & Chapter Revision Day'}
+                </h2>
+                <p className="text-xs text-purple-200/90 mt-1 max-w-xl leading-relaxed">
+                  Pichle padhe gaye chapters ke formulas revise karo aur previous 10 years ke questions practice karo taaki exam tak retention strong rahe.
+                </p>
+              </div>
+            </div>
+
+            {onNavigateToPYQ && (
+              <button
+                type="button"
+                onClick={onNavigateToPYQ}
+                className="px-4 py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-white text-xs font-semibold shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+              >
+                <span>Solve PYQs</span>
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Today's Mission Card */}
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-sm relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -161,6 +201,8 @@ export const TodayView: React.FC<TodayViewProps> = ({
                       ? 'bg-emerald-50/40 border-emerald-200/80 shadow-none'
                       : isMissed
                       ? 'bg-amber-50/30 border-amber-200'
+                      : item.is_revision
+                      ? 'bg-purple-50/30 border-purple-200 hover:border-purple-300 shadow-sm'
                       : 'bg-white border-slate-200/80 hover:border-teal-200 shadow-sm'
                   }`}
                 >
@@ -190,6 +232,14 @@ export const TodayView: React.FC<TodayViewProps> = ({
                             Focus Level: {item.weightage}/5
                           </span>
 
+                          {/* Revision indicator */}
+                          {item.is_revision && (
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200 flex items-center space-x-1">
+                              <RotateCcw className="w-3 h-3" />
+                              <span>{item.revision_type === 'final_sprint' ? '10-Yr PYQ Sprint' : 'Chapter Revision'}</span>
+                            </span>
+                          )}
+
                           {/* Skim only indicator */}
                           {isSkim && (
                             <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 flex items-center space-x-1">
@@ -211,6 +261,13 @@ export const TodayView: React.FC<TodayViewProps> = ({
                         }`}>
                           {item.topic_name}
                         </h3>
+
+                        {item.revision_note && (
+                          <p className="text-xs text-purple-700 font-medium mt-1 flex items-center gap-1">
+                            <span>💡</span>
+                            <span>{item.revision_note}</span>
+                          </p>
+                        )}
 
                         <div className="flex items-center space-x-3 text-xs text-slate-500 mt-1">
                           <span className="flex items-center space-x-1 font-mono">
