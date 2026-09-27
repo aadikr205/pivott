@@ -243,6 +243,22 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   </button>
                 )}
+                {user && (
+                  <button
+                    type="button"
+                    onClick={() => setIsProfileOpen(prev => !prev)}
+                    className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all cursor-pointer ${
+                      isProfileOpen
+                        ? 'bg-indigo-50 text-indigo-900 font-bold border border-indigo-200/70 shadow-xs'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    }`}
+                    aria-label="User Account Menu"
+                    title="User Account"
+                  >
+                    {renderUserAvatar('w-5 h-5', 'text-[10px]')}
+                    <span>Account</span>
+                  </button>
+                )}
               </div>
 
               {/* Install App Button (When not already standalone) */}
@@ -265,29 +281,20 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onToggleNotifications={onToggleNotifications}
               />
 
-              {/* Profile / Account Toggle Button (100% Clickable on Mobile & Desktop) */}
-              {user && (
-                <button
-                  type="button"
-                  onClick={() => setIsProfileOpen(prev => !prev)}
-                  className={`flex items-center space-x-1.5 p-1.5 sm:px-3 sm:py-1.5 rounded-xl border transition-all cursor-pointer active:scale-95 ${
-                    isProfileOpen 
-                      ? 'bg-indigo-50 border-indigo-400 ring-2 ring-indigo-400/20 shadow-xs' 
-                      : 'border-slate-200 hover:bg-slate-100 bg-white text-slate-700'
-                  }`}
-                  aria-label="User Account Menu"
-                >
-                  {renderUserAvatar('w-7 h-7', 'text-xs')}
-                  <div className="hidden sm:flex flex-col text-left">
-                    <span className="text-xs font-bold text-slate-800 leading-none max-w-[80px] truncate">
-                      {user.name || 'Account'}
-                    </span>
-                    <span className="text-[10px] text-teal-600 font-semibold leading-tight">
-                      Account ▾
-                    </span>
-                  </div>
-                </button>
-              )}
+              {/* Self Timetable Quick-Access Button (Icon Only - Replaces Account next to Notification) */}
+              <button
+                type="button"
+                onClick={() => setActiveTab('self-timetable')}
+                className={`p-2 rounded-xl border transition-all cursor-pointer active:scale-95 flex items-center justify-center ${
+                  activeTab === 'self-timetable'
+                    ? 'bg-teal-50 border-teal-500 text-teal-700 ring-2 ring-teal-500/20 shadow-xs'
+                    : 'border-slate-200 hover:bg-slate-100 bg-white text-slate-700 hover:text-teal-700'
+                }`}
+                title="Self Timetable"
+                aria-label="Self Timetable"
+              >
+                <Layers className={`w-4 h-4 sm:w-5 sm:h-5 ${activeTab === 'self-timetable' ? 'text-teal-600' : 'text-slate-600'}`} />
+              </button>
             </nav>
           </div>
         </div>
