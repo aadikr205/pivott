@@ -83,16 +83,257 @@ export const TodayView: React.FC<TodayViewProps> = ({
   const completedCount = plannedItems.filter(p => p.current_status === 'done').length;
   const totalCount = plannedItems.length;
   const allocatedHours = (todayData.total_allocated_minutes / 60).toFixed(1);
+  const completionPercent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+
+  // Next recommended task: active timing topic OR first uncompleted topic
+  const nextTask = (activeTimerTopicId 
+    ? plannedItems.find(p => p.topic_id === activeTimerTopicId) 
+    : null) || plannedItems.find(p => p.current_status !== 'done');
+
+  // Remaining uncompleted tasks (excluding nextTask)
+  const remainingTasks = plannedItems.filter(p => p.current_status !== 'done' && p.topic_id !== nextTask?.topic_id);
+
+  // Completed tasks
+  const completedTasks = plannedItems.filter(p => p.current_status === 'done' && p.topic_id !== nextTask?.topic_id);
+
+  // Render a compact, scannable study card
+  const renderTopicCard = (item: TopicItem, isHero = false) => {
+    const isDone = item.current_status === 'done';
+    const isMissed = item.current_status === 'missed';
+    const isSkim = item.status === 'skim_only';
+    const isTiming = activeTimerTopicId === item.topic_id;
+
+    return (
+      <div
+        key={item.topic_id}
+        className={`rounded-2xl border transition-all ${
+          isHero
+            ? isTiming && isTimerRunning
+              ? 'p-4 sm:p-5 bg-gradient-to-br from-teal-500/15 via-indigo-500/10 to-white border-2 border-teal-500 shadow-md ring-2 ring-teal-400/20'
+              : 'p-4 sm:p-5 bg-gradient-to-br from-teal-50/80 via-white to-indigo-50/60 border-2 border-teal-400/60 shadow-xs'
+            : isDone
+            ? 'p-3.5 sm:p-4 bg-emerald-50/40 border-emerald-200/70 shadow-none'
+            : isMissed
+            ? 'p-3.5 sm:p-4 bg-amber-50/30 border-amber-200/80 shadow-2xs'
+            : item.is_revision
+            ? 'p-3.5 sm:p-4 bg-purple-50/30 border-purple-200 hover:border-purple-300 shadow-2xs'
+            : 'p-3.5 sm:p-4 bg-white border-slate-200/80 hover:border-teal-200/80 shadow-2xs'
+        }`}
+      >
+        {/* Next Task Highlight Header */}
+        {isHero && (
+          <div className="flex items-center justify-between gap-2 pb-2.5 mb-2.5 border-b border-teal-200/50">
+            <div className="flex items-center space-x-1.5">
+              <span className={`w-2 h-2 rounded-full ${isTiming && isTimerRunning ? 'bg-rose-500 animate-ping' : 'bg-teal-600'}`} />
+              <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-teal-800">
+                {isTiming && isTimerRunning ? 'Now Studying' : 'Next Recommended Task'}
+              </span>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 border border-teal-200">
+              Focus {item.weightage}/5
+            </span>
+          </div>
+        )}
+
+        {/* Top Meta Line: Subject first, weightage, badges, and planned time */}
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-start space-x-2.5 min-w-0">
+            {/* Mark Done Checkbox Button */}
+            <button
+              type="button"
+              onClick={() => onMarkProgress(item.topic_id, isDone ? 'in_progress' : 'done', item.allocated_minutes)}
+              className={`mt-0.5 w-6 h-6 rounded-lg border flex items-center justify-center transition-all cursor-pointer shrink-0 active:scale-95 ${
+                isDone
+                  ? 'bg-emerald-600 border-emerald-600 text-white shadow-2xs'
+                  : 'border-slate-300 hover:border-teal-500 bg-white text-transparent'
+              }`}
+              title={isDone ? 'Mark as in-progress' : 'Mark as completed'}
+              aria-label={isDone ? `Mark ${item.topic_name} in-progress` : `Mark ${item.topic_name} done`}
+            >
+              <Check className="w-3.5 h-3.5 stroke-[3]" />
+            </button>
+
+            {/* Subject Pill & Topic Title */}
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-800">
+                  {item.subject_name || 'Subject'}
+                </span>
+
+                {!isHero && (
+                  <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-100">
+                    Focus {item.weightage}/5
+                  </span>
+                )}
+
+                {item.is_revision && (
+                  <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-purple-100 text-purple-800 flex items-center space-x-1">
+                    <RotateCcw className="w-2.5 h-2.5 shrink-0" />
+                    <span>Revision</span>
+                  </span>
+                )}
+
+                {isSkim && (
+                  <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-blue-50 text-blue-700 flex items-center space-x-1">
+                    <Eye className="w-2.5 h-2.5 shrink-0" />
+                    <span>Skim</span>
+                  </span>
+                )}
+
+                {item.mastery_score >= 70 && (
+                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-200/60">
+                    ✓ {item.mastery_score}%
+                  </span>
+                )}
+              </div>
+
+              {/* Topic Name */}
+              <h3 className={`font-bold mt-1 text-slate-900 leading-snug ${
+                isHero ? 'text-sm sm:text-base' : 'text-xs sm:text-sm'
+              } ${isDone ? 'text-slate-400 line-through' : ''}`}>
+                {item.topic_name}
+              </h3>
+
+              {item.revision_note && (
+                <p className="text-[11px] text-purple-700 font-medium mt-0.5 line-clamp-1">
+                  💡 {item.revision_note}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Time planned & status badge */}
+          <div className="text-right shrink-0">
+            <span className="inline-flex items-center space-x-1 text-[11px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-md">
+              <Clock className="w-3 h-3 text-slate-400" />
+              <span>{item.allocated_minutes}m</span>
+            </span>
+            {item.minutes_done && item.minutes_done > 0 && (
+              <span className="block text-[10px] text-teal-700 font-semibold mt-0.5">
+                {item.minutes_done}m logged
+              </span>
+            )}
+            {isDone && (
+              <span className="block text-[10px] text-emerald-600 font-bold mt-0.5">
+                Completed
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Action Controls Toolbar - wraps neatly on all screen sizes */}
+        <div className="mt-2.5 pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-1.5">
+          {/* Main Action Group: Timer & Quiz */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            {/* Stopwatch Timer */}
+            <div className="inline-flex items-center space-x-1">
+              <button
+                type="button"
+                onClick={() => toggleTimer(item.topic_id)}
+                className={`inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer active:scale-95 ${
+                  isTiming && isTimerRunning
+                    ? 'bg-rose-50 text-rose-700 border border-rose-200 animate-pulse'
+                    : isHero
+                    ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-2xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                }`}
+                title={isTiming && isTimerRunning ? 'Pause Study Timer' : 'Start Study Timer'}
+              >
+                {isTiming && isTimerRunning ? (
+                  <>
+                    <Pause className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                    <span>{formatTimer(timerSeconds)}</span>
+                  </>
+                ) : (
+                  <>
+                    <Play className={`w-3.5 h-3.5 ${isHero ? 'text-white' : 'text-teal-600'} shrink-0`} />
+                    <span>{isTiming ? 'Resume' : 'Timer'}</span>
+                  </>
+                )}
+              </button>
+
+              {isTiming && (
+                <button
+                  type="button"
+                  onClick={() => stopAndSaveTimer(item.topic_id)}
+                  className="text-xs font-bold px-2 py-1.5 rounded-xl bg-teal-50 text-teal-700 border border-teal-200 cursor-pointer active:scale-95"
+                  title="Save studied minutes"
+                >
+                  Save
+                </button>
+              )}
+            </div>
+
+            {/* Take Quiz Button */}
+            <button
+              type="button"
+              onClick={() => onOpenQuiz(item.topic_id, item.topic_name, item.subject_name)}
+              className="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200/70 transition-colors cursor-pointer active:scale-95"
+            >
+              <Award className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+              <span>Quiz</span>
+            </button>
+
+            {/* Concept Notes Shortcut */}
+            {onNavigateToNotes && (
+              <button
+                type="button"
+                onClick={() => onNavigateToNotes(item.topic_name, item.subject_name)}
+                className="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200/70 transition-colors cursor-pointer active:scale-95"
+                title="Read Chapter Notes"
+              >
+                <BookOpen className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span className="hidden min-[380px]:inline">Notes</span>
+              </button>
+            )}
+
+            {/* Concept Video Shortcut */}
+            {onOpenConceptVideo && (
+              <button
+                type="button"
+                onClick={() => onOpenConceptVideo(item.topic_id, item.topic_name, item.subject_name)}
+                className="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200/70 transition-colors cursor-pointer active:scale-95"
+                title="Watch Concept Video"
+              >
+                <Tv className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <span className="hidden min-[380px]:inline">Video</span>
+              </button>
+            )}
+          </div>
+
+          {/* Secondary Status Options: Partial & Missed */}
+          <div className="flex items-center space-x-1 shrink-0">
+            <button
+              type="button"
+              onClick={() => {
+                setPartialModalTopic(item);
+                setPartialMinutesInput(String(Math.round(item.allocated_minutes / 2)));
+              }}
+              className="px-2 py-1 rounded-lg text-[11px] font-medium text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
+            >
+              Partial...
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onMarkProgress(item.topic_id, 'missed', 0)}
+              className={`px-2 py-1 rounded-lg text-[11px] font-medium transition-colors cursor-pointer ${
+                isMissed
+                  ? 'bg-amber-100 text-amber-900 font-semibold'
+                  : 'text-slate-400 hover:text-amber-700 hover:bg-amber-50'
+              }`}
+            >
+              Missed
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Smart Buffer & Early Completion Revision Suggestion Banner */}
-      <RevisionSuggestionBanner
-        onNavigateToPYQ={onNavigateToPYQ}
-        onOpenDoubtBot={onOpenDoubtBot}
-      />
-
-      {/* Backlog Banner if incomplete work exists */}
+    <div className="space-y-3.5 sm:space-y-5 animate-fade-in">
+      {/* 1. Backlog Alert if pending overdue work exists */}
       {todayData.has_backlog && (
         <BacklogBanner
           backlogCount={todayData.backlog_count}
@@ -103,30 +344,25 @@ export const TodayView: React.FC<TodayViewProps> = ({
         />
       )}
 
-      {/* Dedicated Revision Day Banner */}
+      {/* 2. Revision Day Banner (if scheduled) */}
       {(todayData.is_revision_day || plannedItems.some(p => p.is_revision)) && (
-        <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-3xl p-5 sm:p-6 text-white shadow-lg relative overflow-hidden">
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-start space-x-3.5">
-              <div className="w-10 h-10 rounded-2xl bg-purple-500/30 border border-purple-400/40 flex items-center justify-center shrink-0 mt-0.5">
-                <RotateCcw className="w-5 h-5 text-purple-200" />
+        <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-2xl p-3.5 sm:p-4 text-white shadow-sm relative overflow-hidden">
+          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-start space-x-2.5">
+              <div className="w-8 h-8 rounded-lg bg-purple-500/30 border border-purple-400/40 flex items-center justify-center shrink-0 mt-0.5">
+                <RotateCcw className="w-4 h-4 text-purple-200" />
               </div>
               <div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-400/30 text-purple-200 border border-purple-400/40 uppercase tracking-wider">
-                    {todayData.revision_type === 'final_sprint' ? '10-Yr PYQ Sprint' : 'Periodic Revision Day'}
+                <div className="flex items-center space-x-1.5">
+                  <span className="text-[10px] font-bold px-2 py-0.2 rounded-full bg-purple-400/30 text-purple-200 border border-purple-400/40 uppercase tracking-wider">
+                    {todayData.revision_type === 'final_sprint' ? '10-Yr PYQ Sprint' : 'Periodic Revision'}
                   </span>
-                  <span className="text-xs text-purple-200/70">Consolidation Mode</span>
                 </div>
-                <h2 className="text-lg font-bold text-white mt-1">
+                <h2 className="text-sm sm:text-base font-bold text-white mt-0.5">
                   {todayData.revision_type === 'final_sprint'
-                    ? 'Exam Readiness: 10-Yr PYQs & Formula Revision'
+                    ? 'Exam Readiness: PYQs & Formula Revision'
                     : 'Active Recall & Chapter Revision Day'}
                 </h2>
-                <p className="text-xs text-purple-200/90 mt-1 max-w-xl leading-relaxed">
-                  Pichle padhe gaye chapters ke formulas revise karo aur previous 10 years ke questions practice karo taaki exam tak retention strong rahe.
-                </p>
               </div>
             </div>
 
@@ -134,7 +370,7 @@ export const TodayView: React.FC<TodayViewProps> = ({
               <button
                 type="button"
                 onClick={onNavigateToPYQ}
-                className="px-4 py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-white text-xs font-semibold shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+                className="px-3 py-1.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-white text-xs font-semibold shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1 shrink-0 self-start sm:self-center"
               >
                 <span>Solve PYQs</span>
               </button>
@@ -143,299 +379,150 @@ export const TodayView: React.FC<TodayViewProps> = ({
         </div>
       )}
 
-      {/* Today's Mission Card */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-sm relative overflow-hidden">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100">
-          <div>
-            <div className="flex items-center space-x-2">
-              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200/60">
-                Today's Focus
-              </span>
-              <span className="text-xs text-slate-400 font-mono">{todayData.date}</span>
-            </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+      {/* 3. Today's Progress & Time Budget Hub (Compact, High-Scannability Header) */}
+      <div className="bg-white rounded-2xl p-3.5 sm:p-5 border border-slate-200/80 shadow-2xs">
+        <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-100">
+          <div className="flex items-center space-x-2 min-w-0">
+            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200/60 shrink-0">
+              Today's Focus
+            </span>
+            <h1 className="text-sm sm:text-base font-bold text-slate-900 truncate">
               Daily Study Targets
             </h1>
-            <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-              {todayData.micro_copy || "Planned to protect your high-priority topics without burning you out."}
-            </p>
+          </div>
+          <span className="text-xs font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-md font-mono shrink-0">
+            {todayData.date}
+          </span>
+        </div>
+
+        {/* Progress & Time Budget Meters */}
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-2.5">
+          {/* Completion Progress */}
+          <div className="p-2.5 sm:p-3 rounded-xl bg-teal-50/60 border border-teal-200/60">
+            <div className="flex items-center justify-between text-xs text-teal-800 font-bold mb-1">
+              <span>Progress</span>
+              <span>{completedCount} / {totalCount}</span>
+            </div>
+            <div className="w-full bg-teal-200/60 h-2 rounded-full overflow-hidden">
+              <div 
+                className="bg-teal-600 h-full rounded-full transition-all duration-500" 
+                style={{ width: `${completionPercent}%` }}
+              />
+            </div>
+            <div className="text-[10px] text-teal-700/90 font-medium mt-1 text-right">
+              {completionPercent}% completed
+            </div>
           </div>
 
-          <div className="flex items-center space-x-3 shrink-0">
-            <div className="px-4 py-2 rounded-2xl bg-slate-50 border border-slate-200 text-center">
-              <div className="text-xs text-slate-500">Scheduled Time</div>
-              <div className="text-base font-bold text-slate-900">
-                {allocatedHours}h <span className="text-xs font-normal text-slate-500">/ {todayData.max_daily_hours}h cap</span>
-              </div>
+          {/* Time Budget */}
+          <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+            <div className="flex items-center justify-between text-xs text-slate-700 font-bold mb-1">
+              <span>Time Budget</span>
+              <span>{allocatedHours}h <span className="font-normal text-slate-500">/ {todayData.max_daily_hours}h</span></span>
             </div>
-
-            <div className="px-4 py-2 rounded-2xl bg-teal-50 border border-teal-200/60 text-center">
-              <div className="text-xs text-teal-600">Completion</div>
-              <div className="text-base font-bold text-teal-800">
-                {completedCount} / {totalCount}
-              </div>
+            <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+              <div 
+                className={`h-full rounded-full transition-all duration-500 ${Number(allocatedHours) > todayData.max_daily_hours ? 'bg-amber-500' : 'bg-indigo-600'}`} 
+                style={{ width: `${Math.min(100, Math.round((Number(allocatedHours) / (todayData.max_daily_hours || 6)) * 100))}%` }}
+              />
+            </div>
+            <div className="text-[10px] text-slate-500 font-medium mt-1 text-right">
+              {Number(allocatedHours) > todayData.max_daily_hours ? 'Cap exceeded' : 'Realistic load'}
             </div>
           </div>
         </div>
 
-        {/* List of Today's Planned Topics */}
-        <div className="mt-6 space-y-3.5">
-          {plannedItems.length === 0 ? (
-            <div className="py-12 text-center rounded-2xl bg-slate-50 border border-dashed border-slate-200">
-              <BookOpen className="w-10 h-10 text-slate-300 mx-auto mb-2" />
-              <p className="text-sm font-medium text-slate-700">No study topics scheduled for today.</p>
-              <p className="text-xs text-slate-400 mt-1">Enjoy your off-day or buffer revision time!</p>
-            </div>
-          ) : (
-            plannedItems.map((item, idx) => {
-              const isDone = item.current_status === 'done';
-              const isMissed = item.current_status === 'missed';
-              const isSkim = item.status === 'skim_only';
-              const isTiming = activeTimerTopicId === item.topic_id;
-
-              return (
-                <div
-                  key={item.topic_id || idx}
-                  className={`p-4 sm:p-5 rounded-2xl border transition-all ${
-                    isDone
-                      ? 'bg-emerald-50/40 border-emerald-200/80 shadow-none'
-                      : isMissed
-                      ? 'bg-amber-50/30 border-amber-200'
-                      : item.is_revision
-                      ? 'bg-purple-50/30 border-purple-200 hover:border-purple-300 shadow-sm'
-                      : 'bg-white border-slate-200/80 hover:border-teal-200 shadow-sm'
-                  }`}
-                >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    {/* Left details */}
-                    <div className="flex items-start space-x-3.5">
-                      <button
-                        onClick={() => onMarkProgress(item.topic_id, isDone ? 'in_progress' : 'done', item.allocated_minutes)}
-                        className={`mt-0.5 w-6 h-6 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
-                          isDone
-                            ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm'
-                            : 'border-slate-300 hover:border-teal-500 bg-white text-transparent'
-                        }`}
-                        title={isDone ? 'Mark in-progress' : 'Mark as done'}
-                      >
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </button>
-
-                      <div>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
-                            {item.subject_name || 'Subject'}
-                          </span>
-
-                          {/* Focus level / weightage badge */}
-                          <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">
-                            Focus Level: {item.weightage}/5
-                          </span>
-
-                          {/* Revision indicator */}
-                          {item.is_revision && (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200 flex items-center space-x-1">
-                              <RotateCcw className="w-3 h-3" />
-                              <span>{item.revision_type === 'final_sprint' ? '10-Yr PYQ Sprint' : 'Chapter Revision'}</span>
-                            </span>
-                          )}
-
-                          {/* Skim only indicator */}
-                          {isSkim && (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 flex items-center space-x-1">
-                              <Eye className="w-3 h-3" />
-                              <span>Quick Skim (30% time)</span>
-                            </span>
-                          )}
-
-                          {/* Mastery indicator if tested */}
-                          {item.mastery_score > 0 && (
-                            <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
-                              Mastery: {item.mastery_score}%
-                            </span>
-                          )}
-                        </div>
-
-                        <h3 className={`text-base font-semibold mt-1.5 ${
-                          isDone ? 'text-slate-400 line-through' : 'text-slate-900'
-                        }`}>
-                          {item.topic_name}
-                        </h3>
-
-                        {item.revision_note && (
-                          <p className="text-xs text-purple-700 font-medium mt-1 flex items-center gap-1">
-                            <span>💡</span>
-                            <span>{item.revision_note}</span>
-                          </p>
-                        )}
-
-                        <div className="flex items-center space-x-3 text-xs text-slate-500 mt-1">
-                          <span className="flex items-center space-x-1 font-mono">
-                            <Clock className="w-3.5 h-3.5 text-slate-400" />
-                            <span>{item.allocated_minutes} mins planned</span>
-                          </span>
-                          {item.minutes_done && item.minutes_done > 0 && (
-                            <span className="text-teal-600 font-medium font-mono">
-                              ({item.minutes_done} mins logged)
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right actions */}
-                    <div className="flex flex-wrap items-center gap-2 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
-                      {/* Active Stopwatch */}
-                      <div className="flex items-center space-x-1.5 mr-1">
-                        <button
-                          onClick={() => toggleTimer(item.topic_id)}
-                          className={`inline-flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
-                            isTiming && isTimerRunning
-                              ? 'bg-rose-50 text-rose-700 border border-rose-200 animate-pulse'
-                              : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                          }`}
-                        >
-                          {isTiming && isTimerRunning ? (
-                            <>
-                              <Pause className="w-3.5 h-3.5 text-rose-600" />
-                              <span>{formatTimer(timerSeconds)}</span>
-                            </>
-                          ) : (
-                            <>
-                              <Play className="w-3.5 h-3.5 text-teal-600" />
-                              <span>{isTiming ? 'Resume' : 'Timer'}</span>
-                            </>
-                          )}
-                        </button>
-
-                        {isTiming && (
-                          <button
-                            onClick={() => stopAndSaveTimer(item.topic_id)}
-                            className="text-[11px] font-medium px-2 py-1.5 rounded-lg bg-teal-50 text-teal-700 border border-teal-200"
-                            title="Save studied time"
-                          >
-                            Save
-                          </button>
-                        )}
-                      </div>
-
-                      {/* Take Quiz Button */}
-                      <button
-                        onClick={() => onOpenQuiz(item.topic_id, item.topic_name, item.subject_name)}
-                        className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-medium bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200/60 transition-colors"
-                      >
-                        <Award className="w-3.5 h-3.5 text-indigo-600" />
-                        <span>Take Quiz</span>
-                      </button>
-
-                      {/* Partial progress button */}
-                      <button
-                        onClick={() => {
-                          setPartialModalTopic(item);
-                          setPartialMinutesInput(String(Math.round(item.allocated_minutes / 2)));
-                        }}
-                        className="px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-                      >
-                        Partial...
-                      </button>
-
-                      {/* Missed button */}
-                      <button
-                        onClick={() => onMarkProgress(item.topic_id, 'missed', 0)}
-                        className={`px-2.5 py-1.5 rounded-xl text-xs font-medium transition-colors ${
-                          isMissed
-                            ? 'bg-amber-100 text-amber-900 font-semibold'
-                            : 'text-slate-400 hover:text-amber-700 hover:bg-amber-50'
-                        }`}
-                      >
-                        Missed
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* 3-Step Topic Learning Sequence (Feature 8) */}
-                  <div className="mt-3.5 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1">
-                        3-Step Track:
-                      </span>
-
-                      {/* Step 1: Concept Notes */}
-                      <button
-                        onClick={() => {
-                          if (onNavigateToNotes) onNavigateToNotes(item.topic_name, item.subject_name);
-                        }}
-                        className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 transition-all cursor-pointer"
-                        title="Step 1: Read Chapter Notes & Visual Diagram"
-                      >
-                        <BookOpen className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>1. Concept Notes</span>
-                      </button>
-
-                      {/* Step 2: Interactive Concept Video */}
-                      <button
-                        onClick={() => {
-                          if (onOpenConceptVideo) onOpenConceptVideo(item.topic_id, item.topic_name, item.subject_name);
-                        }}
-                        className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-teal-50 hover:bg-teal-100 text-teal-700 border border-teal-200/80 transition-all cursor-pointer shadow-xs"
-                        title="Step 2: Watch Narrated Concept Video Slideshow"
-                      >
-                        <Tv className="w-3.5 h-3.5 text-teal-600" />
-                        <span>2. Concept Video</span>
-                      </button>
-
-                      {/* Step 3: 10-Question Post-Video Quiz */}
-                      <button
-                        onClick={() => onOpenQuiz(item.topic_id, item.topic_name, item.subject_name)}
-                        className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200/80 transition-all cursor-pointer"
-                        title="Step 3: Immediate 10-Question Retention Quiz"
-                      >
-                        <Award className="w-3.5 h-3.5 text-indigo-600" />
-                        <span>3. Post-Video Quiz</span>
-                      </button>
-                    </div>
-
-                    {item.mastery_score >= 70 && (
-                      <span className="text-[11px] font-bold text-emerald-600 flex items-center space-x-1 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                        <Check className="w-3 h-3 stroke-[3]" />
-                        <span>Mastery Confirmed ({item.mastery_score}%)</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-              );
-            })
-          )}
-        </div>
-
-        {/* End of day prompt banner */}
-        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
-            End of day? Marking topics helps Pivott spot any backlog and re-plan instantly.
+        {todayData.micro_copy && (
+          <p className="text-[11px] text-slate-500 mt-2 truncate">
+            {todayData.micro_copy}
           </p>
+        )}
+      </div>
 
-          <button
-            onClick={onReplan}
-            disabled={isReplanning}
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-sm disabled:opacity-50"
-          >
-            <Sparkles className="w-4 h-4 text-teal-400" />
-            <span>{isReplanning ? 'Recalculating...' : 'Re-Check & Re-Balance'}</span>
-          </button>
+      {/* 4. Next Recommended Study Task (Highlighted Hero Card) */}
+      {plannedItems.length === 0 ? (
+        <div className="py-10 text-center rounded-2xl bg-white border border-dashed border-slate-200 p-6">
+          <BookOpen className="w-8 h-8 text-slate-300 mx-auto mb-2" />
+          <p className="text-sm font-semibold text-slate-700">No study topics scheduled for today.</p>
+          <p className="text-xs text-slate-400 mt-0.5">Enjoy your off-day or buffer revision time!</p>
         </div>
+      ) : nextTask ? (
+        <div className="space-y-1.5">
+          {renderTopicCard(nextTask, true)}
+        </div>
+      ) : (
+        <div className="rounded-2xl p-4 bg-emerald-50 border border-emerald-200 text-center">
+          <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto mb-1.5" />
+          <h3 className="text-sm font-bold text-emerald-950">All Planned Topics Completed! 🎉</h3>
+          <p className="text-xs text-emerald-700 mt-0.5">
+            You've finished today's targets on time. Solve PYQs or practice high-yield topics below.
+          </p>
+        </div>
+      )}
+
+      {/* 5. Remaining Tasks List (Compact & Scannable) */}
+      {remainingTasks.length > 0 && (
+        <div className="space-y-2.5">
+          <div className="flex items-center justify-between px-1">
+            <h2 className="text-xs sm:text-sm font-bold text-slate-800">
+              Remaining Tasks ({remainingTasks.length})
+            </h2>
+            <span className="text-[11px] text-slate-500">
+              {remainingTasks.reduce((acc, t) => acc + t.allocated_minutes, 0)}m remaining
+            </span>
+          </div>
+
+          <div className="space-y-2">
+            {remainingTasks.map(item => renderTopicCard(item, false))}
+          </div>
+        </div>
+      )}
+
+      {/* 6. Completed Tasks Section (if any) */}
+      {completedTasks.length > 0 && (
+        <div className="space-y-2 pt-1">
+          <h2 className="text-xs sm:text-sm font-bold text-slate-500 px-1">
+            Completed Today ({completedTasks.length})
+          </h2>
+          <div className="space-y-2">
+            {completedTasks.map(item => renderTopicCard(item, false))}
+          </div>
+        </div>
+      )}
+
+      {/* 7. High-Yield Revision Buffer & Recommendations (Collapsible, never pushes tasks off-screen) */}
+      <RevisionSuggestionBanner
+        onNavigateToPYQ={onNavigateToPYQ}
+        onOpenDoubtBot={onOpenDoubtBot}
+      />
+
+      {/* 8. End of Day Re-Balance Bar */}
+      <div className="bg-slate-100/80 rounded-2xl p-3 sm:p-4 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p className="text-xs text-slate-600 text-center sm:text-left">
+          End of day? Re-check to spot any backlog and rebalance instantly.
+        </p>
+        <button
+          type="button"
+          onClick={onReplan}
+          disabled={isReplanning}
+          className="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all cursor-pointer shadow-xs disabled:opacity-50 active:scale-95"
+        >
+          <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+          <span>{isReplanning ? 'Recalculating...' : 'Re-Check & Re-Balance'}</span>
+        </button>
       </div>
 
       {/* Partial Progress Modal */}
       {partialModalTopic && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-100">
-            <h3 className="text-base font-bold text-slate-900">Log Partial Study</h3>
-            <p className="text-xs text-slate-500 mt-1 mb-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs animate-fade-in">
+          <div className="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-100">
+            <h3 className="text-sm font-bold text-slate-900">Log Partial Study</h3>
+            <p className="text-xs text-slate-500 mt-1 mb-3">
               How many minutes did you spend on <strong>{partialModalTopic.topic_name}</strong>?
             </p>
 
-            <div className="mb-4">
-              <label className="block text-xs font-medium text-slate-700 mb-1">Minutes Studied:</label>
+            <div className="mb-3">
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Minutes Studied:</label>
               <input
                 type="number"
                 min="5"
@@ -448,18 +535,20 @@ export const TodayView: React.FC<TodayViewProps> = ({
 
             <div className="flex justify-end space-x-2">
               <button
+                type="button"
                 onClick={() => setPartialModalTopic(null)}
-                className="px-4 py-2 rounded-xl text-xs font-medium text-slate-600 hover:bg-slate-100"
+                className="px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 hover:bg-slate-100 cursor-pointer"
               >
                 Cancel
               </button>
               <button
+                type="button"
                 onClick={async () => {
                   const mins = Number(partialMinutesInput) || 30;
                   await onMarkProgress(partialModalTopic.topic_id, 'in_progress', mins);
                   setPartialModalTopic(null);
                 }}
-                className="px-4 py-2 rounded-xl text-xs font-medium bg-teal-600 hover:bg-teal-700 text-white shadow-sm"
+                className="px-4 py-1.5 rounded-xl text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white shadow-2xs cursor-pointer"
               >
                 Save Progress
               </button>

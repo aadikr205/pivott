@@ -438,7 +438,7 @@ export function App() {
       />
 
       {/* Main Content Area Protected by Section ErrorBoundary */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-24 sm:pb-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3.5 sm:px-6 lg:px-8 pt-3 sm:pt-6 pb-28 sm:pb-8">
         <ErrorBoundary level="section" onReset={() => setActiveTab('today')}>
           {isOnboarding ? (
             <div className="relative">

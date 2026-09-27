@@ -121,46 +121,46 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-4 sm:space-y-6 animate-fade-in">
       {/* Header Banner */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white rounded-2xl p-3.5 sm:p-6 border border-slate-200/80 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/60">
+            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/60">
               Adaptive Timetable
             </span>
-            <span className="text-xs text-slate-500 font-medium">
+            <span className="text-[11px] text-slate-500 font-medium">
               {days.length} Total Days Scheduled
             </span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+          <h2 className="text-base sm:text-2xl font-bold text-slate-900 mt-1">
             Day-by-Day Study Plan
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Every day is strictly capped at ≤ {maxDailyHours} hours. High-weightage topics are scheduled earliest.
+          <p className="text-[11px] sm:text-sm text-slate-500 mt-0.5 leading-snug">
+            Capped at ≤ {maxDailyHours} hours/day. High-weightage topics scheduled earliest.
           </p>
         </div>
 
-        <div className="flex items-center space-x-2 text-xs font-medium text-emerald-800 bg-emerald-50 px-3.5 py-2 rounded-2xl border border-emerald-200/60">
+        <div className="flex items-center space-x-2 text-[11px] sm:text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200/60 self-start sm:self-auto">
           <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-          <span>1-Week Prior Completion • 7-Day Revision & PYQs Sprint</span>
+          <span>1-Wk Prior Completion • 7-Day Sprint</span>
         </div>
       </div>
 
       {/* View Switcher: Day-by-Day, Visual Roadmap, One-Page Roadmap, Game Level */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900 border border-slate-800 p-2.5 rounded-2xl">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-slate-900 border border-slate-800 p-2 rounded-2xl">
         <div className="flex items-center gap-1.5 flex-wrap">
           <button
             type="button"
             onClick={() => setViewMode('list')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
               viewMode === 'list'
-                ? 'bg-indigo-600 text-white shadow-md'
+                ? 'bg-indigo-600 text-white shadow-xs'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span>Day-by-Day Plan ({days.length} Days)</span>
+            <span>Day-by-Day ({days.length}d)</span>
           </button>
 
           <button

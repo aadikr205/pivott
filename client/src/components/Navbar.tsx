@@ -93,26 +93,25 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 safe-area-pt">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-13 sm:h-16">
             {/* Logo & Tagline */}
             <div 
-              className="flex items-center space-x-2.5 cursor-pointer active:scale-98 transition-transform" 
+              className="flex items-center space-x-2 cursor-pointer active:scale-98 transition-transform" 
               onClick={() => setActiveTab('today')}
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-indigo-600 flex items-center justify-center text-white shadow-sm shadow-teal-500/20 shrink-0">
-                <Compass className="w-5 h-5 animate-pulse" />
-
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-teal-500 to-indigo-600 flex items-center justify-center text-white shadow-sm shadow-teal-500/20 shrink-0">
+                <Compass className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="flex items-center space-x-1.5">
-                  <span className="text-xl font-black tracking-tight text-slate-900">Pivott</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-semibold border border-teal-200/60">
+                  <span className="text-lg sm:text-xl font-black tracking-tight text-slate-900 leading-none">Pivott</span>
+                  <span className="hidden min-[360px]:inline-flex text-[9px] sm:text-[10px] px-1.5 py-0.2 sm:px-2 sm:py-0.5 rounded-full bg-teal-50 text-teal-700 font-bold border border-teal-200/60 leading-tight">
                     Adaptive AI
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-500 hidden sm:block">
+                <p className="text-[11px] text-slate-500 hidden sm:block truncate mt-0.5">
                   Your syllabus, re-balanced daily — never overwhelmed
                 </p>
               </div>
@@ -436,6 +435,34 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <ChevronRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-0.5 transition-transform" />
               </button>
 
+              {/* Self Timetable (Feature in Account Menu) */}
+              <button
+                type="button"
+                onClick={() => {
+                  setIsProfileOpen(false);
+                  setActiveTab('self-timetable');
+                }}
+                className={`w-full flex items-center justify-between p-3 rounded-2xl border transition-all cursor-pointer text-left active:scale-98 group shadow-xs ${
+                  activeTab === 'self-timetable'
+                    ? 'bg-teal-100/90 text-teal-950 border-teal-300 ring-2 ring-teal-400/20'
+                    : 'bg-teal-50/70 hover:bg-teal-100/80 text-teal-950 border-teal-200'
+                }`}
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Layers className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="flex items-center space-x-1.5">
+                      <p className="text-xs font-black text-teal-950">Self Timetable</p>
+                      <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-teal-600 text-white font-black">Custom</span>
+                    </div>
+                    <p className="text-[11px] text-teal-700">Custom hourly schedule & self-study slots</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-teal-600 group-hover:translate-x-0.5 transition-transform" />
+              </button>
+
               <button
                 type="button"
                 onClick={() => {
@@ -580,90 +607,94 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
       )}
 
-      {/* Mobile Bottom Navigation Bar */}
+      {/* Mobile Bottom Navigation Bar (5 Proportional Destinations with safe area & 48px tap targets) */}
       <nav 
         aria-label="Mobile Navigation"
-        className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 md:hidden flex items-center justify-around px-1 py-1.5 shadow-lg shadow-slate-900/5 safe-area-pb"
+        className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 md:hidden flex items-stretch justify-around px-1 py-1 shadow-lg shadow-slate-900/5 safe-area-pb"
       >
         <button
           type="button"
-          onClick={() => setActiveTab('today')}
-          className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-            activeTab === 'today'
-              ? 'text-teal-700 font-bold bg-teal-50/90'
+          onClick={() => {
+            setIsProfileOpen(false);
+            setActiveTab('today');
+          }}
+          className={`flex flex-col items-center justify-center flex-1 py-1.5 px-0.5 rounded-xl min-h-[48px] touch-manipulation transition-all cursor-pointer active:scale-95 ${
+            activeTab === 'today' && !isProfileOpen
+              ? 'text-teal-700 font-bold bg-teal-50/90 border border-teal-200/60 shadow-2xs'
               : 'text-slate-500 hover:text-slate-800'
           }`}
         >
-          <CheckCircle2 className="w-4 h-4 mb-0.5" />
-          <span className="text-[9px] sm:text-[10px]">Today</span>
+          <CheckCircle2 className="w-4.5 h-4.5 mb-0.5 shrink-0" />
+          <span className="text-[10px] font-semibold tracking-tight leading-tight">Today</span>
         </button>
 
         <button
           type="button"
-          onClick={() => setActiveTab('schedule')}
-          className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-            activeTab === 'schedule'
-              ? 'text-indigo-700 font-bold bg-indigo-50/90'
+          onClick={() => {
+            setIsProfileOpen(false);
+            setActiveTab('schedule');
+          }}
+          className={`flex flex-col items-center justify-center flex-1 py-1.5 px-0.5 rounded-xl min-h-[48px] touch-manipulation transition-all cursor-pointer active:scale-95 ${
+            activeTab === 'schedule' && !isProfileOpen
+              ? 'text-indigo-700 font-bold bg-indigo-50/90 border border-indigo-200/60 shadow-2xs'
               : 'text-slate-500 hover:text-slate-800'
           }`}
         >
-          <Calendar className="w-4 h-4 mb-0.5" />
-          <span className="text-[9px] sm:text-[10px]">Timetable</span>
+          <Calendar className="w-4.5 h-4.5 mb-0.5 shrink-0" />
+          <span className="text-[10px] font-semibold tracking-tight leading-tight">Timetable</span>
         </button>
 
         <button
           type="button"
-          onClick={() => setActiveTab('notes')}
-          className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-            activeTab === 'notes'
-              ? 'text-blue-700 font-bold bg-blue-50/90'
+          onClick={() => {
+            setIsProfileOpen(false);
+            setActiveTab('notes');
+          }}
+          className={`flex flex-col items-center justify-center flex-1 py-1.5 px-0.5 rounded-xl min-h-[48px] touch-manipulation transition-all cursor-pointer active:scale-95 ${
+            activeTab === 'notes' && !isProfileOpen
+              ? 'text-blue-700 font-bold bg-blue-50/90 border border-blue-200/60 shadow-2xs'
               : 'text-slate-500 hover:text-slate-800'
           }`}
         >
-          <FileText className="w-4 h-4 mb-0.5" />
-          <span className="text-[9px] sm:text-[10px]">Notes</span>
+          <FileText className="w-4.5 h-4.5 mb-0.5 shrink-0" />
+          <span className="text-[10px] font-semibold tracking-tight leading-tight">Notes</span>
         </button>
 
         <button
           type="button"
-          onClick={() => setActiveTab('pyq')}
-          className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-            activeTab === 'pyq'
-              ? 'text-purple-700 font-bold bg-purple-50/90'
+          onClick={() => {
+            setIsProfileOpen(false);
+            setActiveTab('pyq');
+          }}
+          className={`flex flex-col items-center justify-center flex-1 py-1.5 px-0.5 rounded-xl min-h-[48px] touch-manipulation transition-all cursor-pointer active:scale-95 ${
+            activeTab === 'pyq' && !isProfileOpen
+              ? 'text-purple-700 font-bold bg-purple-50/90 border border-purple-200/60 shadow-2xs'
               : 'text-slate-500 hover:text-slate-800'
           }`}
         >
-          <BookOpen className="w-4 h-4 mb-0.5" />
-          <span className="text-[9px] sm:text-[10px]">10Y-PYQ</span>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab('self-timetable')}
-          className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-            activeTab === 'self-timetable'
-              ? 'text-teal-700 font-bold bg-teal-50/90'
-              : 'text-slate-500 hover:text-slate-800'
-          }`}
-        >
-          <Layers className="w-4 h-4 mb-0.5" />
-          <span className="text-[9px] sm:text-[10px]">Self Timetable</span>
+          <BookOpen className="w-4.5 h-4.5 mb-0.5 shrink-0" />
+          <span className="text-[10px] font-semibold tracking-tight leading-tight">PYQs</span>
         </button>
 
         {user && (
           <button
             type="button"
             onClick={() => setIsProfileOpen(prev => !prev)}
-            className={`flex flex-col items-center justify-center flex-1 py-1 px-0.5 rounded-xl transition-all cursor-pointer active:scale-95 ${
-              isProfileOpen
-                ? 'text-indigo-700 font-bold bg-indigo-50/90'
+            className={`flex flex-col items-center justify-center flex-1 py-1.5 px-0.5 rounded-xl min-h-[48px] touch-manipulation transition-all cursor-pointer active:scale-95 relative ${
+              isProfileOpen || ['self-timetable', 'dashboard', 'deferred', 'history', 'activity'].includes(activeTab)
+                ? 'text-indigo-700 font-bold bg-indigo-50/90 border border-indigo-200/60 shadow-2xs'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <div className="mb-0.5">
-              {renderUserAvatar('w-4 h-4', 'text-[8px]')}
+            <div className="mb-0.5 relative">
+              {renderUserAvatar('w-4.5 h-4.5', 'text-[8px]')}
+              {['self-timetable', 'dashboard', 'deferred', 'history', 'activity'].includes(activeTab) && !isProfileOpen && (
+                <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-teal-500 ring-1 ring-white" />
+              )}
             </div>
-            <span className="text-[9px] sm:text-[10px]">Account</span>
+            <span className="text-[10px] font-semibold tracking-tight leading-tight">
+              {isProfileOpen ? 'Close' : 'Account'}
+            </span>
           </button>
         )}
       </nav>

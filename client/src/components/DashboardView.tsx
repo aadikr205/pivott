@@ -49,37 +49,37 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onBackToToday }) =
   const { summary, charts } = data;
 
   return (
-    <div className="space-y-7 animate-fade-in pb-12">
+    <div className="space-y-4 sm:space-y-6 animate-fade-in pb-12">
       {/* Top Header Banner */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white rounded-2xl p-3.5 sm:p-6 border border-slate-200/80 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
               Live Analytics
             </span>
             <span className="text-xs text-slate-500 font-mono">{summary.exam_name}</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+          <h2 className="text-base sm:text-2xl font-bold text-slate-900 mt-1">
             Progress & Performance Dashboard
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+          <p className="text-[11px] sm:text-sm text-slate-500 mt-0.5 leading-snug">
             Real-time tracking of completion velocity, backlog reduction, and topic mastery.
           </p>
         </div>
 
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2.5 self-start sm:self-auto">
           {onBackToToday && (
             <button
               type="button"
               onClick={onBackToToday}
-              className="px-3.5 py-2 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-xs active:scale-95"
+              className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-xs active:scale-95"
             >
-              ← Back to Today
+              ← Today
             </button>
           )}
-          <div className="px-4 py-2 rounded-2xl bg-indigo-50 border border-indigo-100 text-center">
-            <div className="text-[11px] text-indigo-600 font-medium">Exam Date</div>
-            <div className="text-sm font-bold text-indigo-900">{summary.exam_date}</div>
+          <div className="px-3 py-1.5 rounded-xl bg-indigo-50 border border-indigo-100 text-center">
+            <div className="text-[10px] text-indigo-600 font-medium">Exam Date</div>
+            <div className="text-xs sm:text-sm font-bold text-indigo-900">{summary.exam_date}</div>
           </div>
         </div>
       </div>
