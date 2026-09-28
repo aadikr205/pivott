@@ -305,6 +305,14 @@ try {
   console.warn('Extended PYQ seeding warning:', e.message);
 }
 
+// Seed High-Yield CBSE 12th Important Revision Questions
+try {
+  const { seedCBSE12ImportantRevision } = require('./data/cbse12-important-revision');
+  seedCBSE12ImportantRevision(db);
+} catch (e) {
+  console.warn('CBSE 12th Important Revision PYQ seeding warning:', e.message);
+}
+
 // Ensure default student account exists so default login credentials work out-of-the-box
 try {
   const bcrypt = require('bcryptjs');

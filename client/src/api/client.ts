@@ -406,7 +406,7 @@ export const api = {
   getQuizHistory: () => request<{ history: any[] }>('/quiz/history'),
 
   // PYQ Bank (10 Years Important Questions)
-  getPYQs: (params: { exam_key?: string; subject?: string; topic?: string; year?: number; difficulty?: string; search?: string; limit?: number } = {}) => {
+  getPYQs: (params: { exam_key?: string; subject?: string; topic?: string; year?: number; difficulty?: string; search?: string; is_important?: boolean; limit?: number } = {}) => {
     const queryParts: string[] = [];
     if (params.exam_key) queryParts.push(`exam_key=${encodeURIComponent(params.exam_key)}`);
     if (params.subject) queryParts.push(`subject=${encodeURIComponent(params.subject)}`);
@@ -414,6 +414,7 @@ export const api = {
     if (params.year) queryParts.push(`year=${encodeURIComponent(params.year)}`);
     if (params.difficulty) queryParts.push(`difficulty=${encodeURIComponent(params.difficulty)}`);
     if (params.search) queryParts.push(`search=${encodeURIComponent(params.search)}`);
+    if (params.is_important) queryParts.push(`is_important=true`);
     if (params.limit) queryParts.push(`limit=${encodeURIComponent(params.limit)}`);
     const qs = queryParts.length ? `?${queryParts.join('&')}` : '';
     return request<{ count: number; questions: PYQQuestion[] }>(`/pyq/questions${qs}`);

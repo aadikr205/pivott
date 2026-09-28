@@ -5,22 +5,112 @@ const { authMiddleware } = require('../middleware/auth');
 const { shuffleQuestionOptions } = require('../ai');
 const { logActivity } = require('../activity-logger');
 
+// Resolver to map any user or course exam key variant to all matching database exam keys
+function resolveExamKeys(examKey) {
+  if (!examKey || examKey === 'all') return null;
+
+  const raw = String(examKey).toLowerCase().trim();
+
+  // Unified CBSE 12th (All streams combined: PCM, PCB, PCMB, English, Hindi, PE, CS)
+  if (
+    raw === 'cbse12_all' ||
+    raw === 'cbse_12_all' ||
+    raw === 'cbse12' ||
+    raw === 'cbse_12' ||
+    raw === 'cbse 12' ||
+    raw === 'cbse 12th' ||
+    raw === 'cbse12th' ||
+    raw === 'cbse 12th board' ||
+    raw === 'cbse 12th board exam'
+  ) {
+    return ['cbse12', 'cbse_12', 'cbse_12_pcm', 'cbse12_pcm', 'cbse_12_pcb', 'cbse12_pcb', 'cbse_12_pcmb', 'cbse12_pcmb'];
+  }
+
+  // CBSE 12th PCM
+  if (raw.includes('pcm') && !raw.includes('pcmb') && (raw.includes('12') || raw.includes('cbse'))) {
+    return ['cbse12', 'cbse_12_pcm', 'cbse12_pcm', 'cbse_12_pcmb', 'cbse12_pcmb'];
+  }
+
+  // CBSE 12th PCB
+  if (raw.includes('pcb') && !raw.includes('pcmb') && (raw.includes('12') || raw.includes('cbse'))) {
+    return ['cbse12_pcb', 'cbse_12_pcb', 'cbse_12_pcmb', 'cbse12_pcmb'];
+  }
+
+  // CBSE 12th PCMB
+  if (raw.includes('pcmb') && (raw.includes('12') || raw.includes('cbse'))) {
+    return ['cbse12_pcmb', 'cbse_12_pcmb', 'cbse12', 'cbse_12_pcm', 'cbse12_pcb', 'cbse_12_pcb'];
+  }
+
+  // Generic onboarding exam_name with CBSE 12
+  if (raw.includes('cbse') && raw.includes('12')) {
+    if (raw.includes('pcb')) {
+      return ['cbse12_pcb', 'cbse_12_pcb', 'cbse_12_pcmb', 'cbse12_pcmb'];
+    }
+    if (raw.includes('pcmb')) {
+      return ['cbse12_pcmb', 'cbse_12_pcmb', 'cbse12', 'cbse_12_pcm', 'cbse12_pcb', 'cbse_12_pcb'];
+    }
+    return ['cbse12', 'cbse_12_pcm', 'cbse_12_pcmb', 'cbse12_pcmb'];
+  }
+
+  // Class 10th Board
+  if (raw.includes('10') && (raw.includes('class') || raw.includes('cbse') || raw.includes('board'))) {
+    return ['class10', 'class_10_board'];
+  }
+
+  // Bihar Board 12th
+  if (raw.includes('bseb12') || (raw.includes('bihar') && raw.includes('12'))) {
+    return ['bseb12', 'bihar_12_inter'];
+  }
+
+  // Bihar Board 10th
+  if (raw.includes('bseb10') || (raw.includes('bihar') && raw.includes('10'))) {
+    return ['bseb10', 'bihar_10_matric'];
+  }
+
+  // JEE Main
+  if (raw.includes('jee_main') || raw.includes('jee main')) {
+    return ['jee_main'];
+  }
+
+  // JEE Advanced
+  if (raw === 'jee' || raw.includes('jee_advanced') || raw.includes('advanced')) {
+    return ['jee', 'jee_advanced'];
+  }
+
+  // NEET
+  if (raw.includes('neet')) {
+    return ['neet'];
+  }
+
+  return [examKey];
+}
+
 // GET /api/pyq/questions
 // Filter previous 10 years questions by exam, subject, topic, year, difficulty
 router.get('/questions', (req, res) => {
   try {
-    const { exam_key, subject, topic, year, difficulty, search, limit = 50 } = req.query;
+    const { exam_key, subject, topic, year, difficulty, search, is_important, limit = 60 } = req.query;
 
     let query = 'SELECT * FROM pyq_questions WHERE 1=1';
     const params = [];
 
-    if (exam_key) {
-      query += ' AND exam_key = ?';
-      params.push(exam_key);
+    if (exam_key && exam_key !== 'all') {
+      const keys = resolveExamKeys(exam_key);
+      if (keys && keys.length === 1) {
+        query += ' AND exam_key = ?';
+        params.push(keys[0]);
+      } else if (keys && keys.length > 1) {
+        query += ` AND exam_key IN (${keys.map(() => '?').join(', ')})`;
+        params.push(...keys);
+      }
     }
-    if (subject) {
-      query += ' AND subject = ?';
-      params.push(subject);
+    if (subject && subject !== 'all') {
+      if (subject.toLowerCase() === 'mathematics' || subject.toLowerCase() === 'maths') {
+        query += " AND (subject = 'Mathematics' OR subject = 'Maths')";
+      } else {
+        query += ' AND subject = ?';
+        params.push(subject);
+      }
     }
     if (topic) {
       query += ' AND topic LIKE ?';
@@ -34,13 +124,16 @@ router.get('/questions', (req, res) => {
       query += ' AND difficulty = ?';
       params.push(difficulty);
     }
+    if (is_important === 'true' || is_important === true || is_important === '1') {
+      query += " AND (weightage >= 4 OR frequency_score LIKE '%Important%' OR frequency_score LIKE '%Repeated%' OR frequency_score LIKE '%High%')";
+    }
     if (search) {
       query += ' AND (question LIKE ? OR explanation LIKE ? OR topic LIKE ?)';
       params.push(`%${search}%`, `%${search}%`, `%${search}%`);
     }
 
-    query += ' ORDER BY year DESC, weightage DESC LIMIT ?';
-    params.push(Math.min(1000, Math.max(1, Number(limit) || 50)));
+    query += ' ORDER BY (CASE WHEN frequency_score LIKE "%Important%" OR frequency_score LIKE "%Repeated%" THEN 1 ELSE 2 END) ASC, year DESC, weightage DESC LIMIT ?';
+    params.push(Math.min(1000, Math.max(1, Number(limit) || 60)));
 
     const rows = db.prepare(query).all(...params);
 
@@ -150,9 +243,15 @@ router.get('/high-yield-topic', (req, res) => {
     let query = 'SELECT * FROM pyq_questions WHERE topic LIKE ?';
     const params = [`%${topic}%`];
 
-    if (exam_key) {
-      query += ' AND exam_key = ?';
-      params.push(exam_key);
+    if (exam_key && exam_key !== 'all') {
+      const keys = resolveExamKeys(exam_key);
+      if (keys && keys.length === 1) {
+        query += ' AND exam_key = ?';
+        params.push(keys[0]);
+      } else if (keys && keys.length > 1) {
+        query += ` AND exam_key IN (${keys.map(() => '?').join(', ')})`;
+        params.push(...keys);
+      }
     }
 
     query += ' ORDER BY weightage DESC, year DESC LIMIT 10';
