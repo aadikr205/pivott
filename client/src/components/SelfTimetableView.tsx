@@ -82,8 +82,9 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
   const [activeFilterSubject, setActiveFilterSubject] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<'all' | 'not_started' | 'in_progress' | 'done' | 'deferred'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [showStudentGuide, setShowStudentGuide] = useState<boolean>(true);
-  const [showRevisionSection, setShowRevisionSection] = useState<boolean>(true);
+  const [showStudentGuide, setShowStudentGuide] = useState<boolean>(false);
+  const [showRevisionSection, setShowRevisionSection] = useState<boolean>(false);
+  const [isAddFormOpen, setIsAddFormOpen] = useState<boolean>(false);
 
   // Form states
   const [selectedClass, setSelectedClass] = useState<number>(8);
@@ -131,6 +132,9 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
       ]);
       setEntries(fetchedEntries);
       setAnalytics(fetchedAnalytics);
+      if (fetchedEntries.length === 0) {
+        setIsAddFormOpen(true);
+      }
     } catch (err) {
       console.error('Failed to load self timetable data:', err);
     } finally {
@@ -171,6 +175,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
       setEntries(prev => [newEntry, ...prev]);
       setChapterNameInput('');
       setIsCustomChapterMode(false);
+      setIsAddFormOpen(false);
       if (isAddingCustomSubject) {
         setIsAddingCustomSubject(false);
         setCustomSubjectInput('');
@@ -371,475 +376,444 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
   const masteryPercentage = entries.length > 0 ? Math.round((completedCount / entries.length) * 100) : 0;
 
   return (
-    <div className="space-y-8 pb-24 max-w-6xl mx-auto px-2 sm:px-4 text-slate-100">
+    <div className="space-y-4 sm:space-y-5 pb-20 max-w-5xl mx-auto px-2 sm:px-3 text-slate-100">
       
-      {/* 1. PROFESSIONAL COMMAND COCKPIT HERO */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950/70 border border-slate-800 shadow-2xl p-6 sm:p-8">
-        {/* Glow ambient shapes */}
-        <div className="absolute -right-20 -top-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-40 -bottom-16 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* 1. COMPACT COMMAND COCKPIT HERO */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950/60 border border-slate-800 shadow-xl p-3.5 sm:p-5">
+        <div className="absolute -right-16 -top-16 w-48 h-48 bg-teal-500/10 rounded-full blur-2xl pointer-events-none" />
 
-        <div className="relative z-10 space-y-6">
+        <div className="relative z-10 space-y-3">
           
           {/* Header Top Bar */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-                <span>AI-Powered School Curriculum Studio</span>
-              </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center gap-3">
-                <span>Self Timetable</span>
-                <span className="text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">
-                  Class 1–12
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="space-y-0.5">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                  <span>Self Timetable</span>
+                  <span className="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300">
+                    Class 1–12
+                  </span>
+                </h1>
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300">
+                  <ShieldCheck className="w-3 h-3 text-indigo-400" />
+                  1-Wk Early Sprint
                 </span>
-              </h1>
-              <p className="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-                Build your independent personal study schedule. Auto-fetch official NCERT notes, animated concept videos, and verify your understanding with 10-question mastery quizzes.
+              </div>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Personal syllabus planner with NCERT visual notes, animated videos & 10-Q mastery quizzes.
               </p>
             </div>
 
-            {/* Top Action CTAs */}
-            <div className="flex items-center gap-2.5 flex-wrap">
+            {/* Top Action CTAs - Compact & Clean */}
+            <div className="flex items-center gap-1.5 shrink-0 flex-wrap">
               <button
                 onClick={() => {
                   setReplanResultText(null);
                   setIsReplanModalOpen(true);
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-teal-900/30 transition-all cursor-pointer hover:scale-[1.02]"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-md shadow-teal-950/30 transition-all cursor-pointer"
+                title="Re-balance study schedule"
               >
-                <RefreshCw className="w-4 h-4" />
-                <span>Re-plan Backlog</span>
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>Re-plan</span>
               </button>
 
               <button
                 onClick={() => setShowStudentGuide(!showStudentGuide)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition-colors cursor-pointer"
+                className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-colors cursor-pointer ${
+                  showStudentGuide 
+                    ? 'bg-teal-500/20 border-teal-500/40 text-teal-300' 
+                    : 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-300'
+                }`}
+                title="How it works"
               >
-                <HelpCircle className="w-4 h-4 text-teal-400" />
+                <HelpCircle className="w-3.5 h-3.5 text-teal-400" />
                 <span>{showStudentGuide ? 'Hide Guide' : 'How It Works'}</span>
               </button>
 
               {onBackToAccount && (
                 <button
                   onClick={onBackToAccount}
-                  className="px-4 py-2.5 rounded-2xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs sm:text-sm font-semibold border border-slate-700 transition-colors cursor-pointer"
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition-colors cursor-pointer"
                 >
-                  Back to Account
+                  Back
                 </button>
               )}
             </div>
           </div>
 
-          {/* Quick Metrics Cockpit Card */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 pt-2">
-            
-            {/* 1. Mastery Rate Ring */}
-            <div className="col-span-2 sm:col-span-1 bg-slate-950/70 border border-teal-500/30 rounded-2xl p-4 flex items-center justify-between shadow-inner">
-              <div className="space-y-0.5">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-teal-400">Mastery Rate</span>
-                <div className="text-2xl font-black text-white">{masteryPercentage}%</div>
-                <span className="text-[10px] text-slate-400">Score ≥ 70%</span>
-              </div>
-              <div className="w-12 h-12 rounded-full border-4 border-slate-800 border-t-teal-400 flex items-center justify-center font-bold text-xs text-teal-300">
-                <Award className="w-5 h-5 text-teal-400" />
-              </div>
+          {/* Quick Metrics Bar - 4 Sleek Compact Tiles in 1 Row (Zero Waste of Space!) */}
+          <div className="grid grid-cols-4 gap-2 pt-0.5">
+            {/* 1. Total Topics */}
+            <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-2 sm:p-2.5 shadow-inner">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 truncate">Topics</div>
+              <div className="text-base sm:text-xl font-black text-white mt-0.5">{entries.length}</div>
+              <div className="text-[9px] text-slate-500 truncate">{totalMinutes}m planned</div>
             </div>
 
-            {/* 2. Total Chapters */}
-            <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-4 shadow-inner">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Topics</span>
-              <div className="text-2xl font-black text-white mt-0.5">{entries.length}</div>
-              <span className="text-[10px] text-slate-400 font-mono">{totalMinutes} mins planned</span>
+            {/* 2. In Progress */}
+            <div className="bg-slate-950/70 border border-blue-500/30 rounded-xl p-2 sm:p-2.5 shadow-inner">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-blue-400 truncate">Studying</div>
+              <div className="text-base sm:text-xl font-black text-blue-300 mt-0.5">{inProgressCount}</div>
+              <div className="text-[9px] text-blue-400/70 truncate">In progress</div>
             </div>
 
             {/* 3. Completed Topics */}
-            <div className="bg-slate-950/70 border border-emerald-500/30 rounded-2xl p-4 shadow-inner">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Completed ✓</span>
-              <div className="text-2xl font-black text-emerald-300 mt-0.5">{completedCount}</div>
-              <span className="text-[10px] text-emerald-500/80">Quizzes Passed</span>
+            <div className="bg-slate-950/70 border border-emerald-500/30 rounded-xl p-2 sm:p-2.5 shadow-inner">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 truncate">Completed</div>
+              <div className="text-base sm:text-xl font-black text-emerald-300 mt-0.5">{completedCount}</div>
+              <div className="text-[9px] text-emerald-500/70 truncate">Quizzes passed</div>
             </div>
 
-            {/* 4. In Progress */}
-            <div className="bg-slate-950/70 border border-blue-500/30 rounded-2xl p-4 shadow-inner">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400">In Progress</span>
-              <div className="text-2xl font-black text-blue-300 mt-0.5">{inProgressCount}</div>
-              <span className="text-[10px] text-blue-400/80">Currently Studying</span>
-            </div>
-
-            {/* 5. 1-Week Early Guarantee Status */}
-            <div className="col-span-2 sm:col-span-4 lg:col-span-1 bg-gradient-to-br from-teal-950/40 to-indigo-950/40 border border-teal-500/40 rounded-2xl p-4 shadow-inner flex flex-col justify-between">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-teal-300">Revision Sprint</span>
-                <ShieldCheck className="w-4 h-4 text-teal-400" />
-              </div>
-              <div className="text-lg font-black text-white mt-1">7 Days Reserved</div>
-              <span className="text-[10px] text-slate-300">All topics finish 1 wk early</span>
+            {/* 4. Mastery Rate */}
+            <div className="bg-slate-950/70 border border-teal-500/30 rounded-xl p-2 sm:p-2.5 shadow-inner">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-teal-400 truncate">Mastery</div>
+              <div className="text-base sm:text-xl font-black text-teal-300 mt-0.5">{masteryPercentage}%</div>
+              <div className="text-[9px] text-teal-400/80 truncate">Score ≥ 70%</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. STUDENT CLARITY GUIDE: 3 SIMPLE STEPS TO MASTER ANY CHAPTER */}
+      {/* 2. STUDENT CLARITY GUIDE: 3 SIMPLE STEPS (COMPACT & COLLAPSIBLE) */}
       {showStudentGuide && (
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-950/30 to-slate-900 border border-indigo-500/25 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
-                <GraduationCap className="w-4 h-4" />
-              </div>
-              <div>
-                <h3 className="text-sm sm:text-base font-bold text-white">
-                  How Pivott Self Timetable Works for Students
-                </h3>
-                <p className="text-xs text-slate-400">
-                  Follow these 3 simple steps to master every chapter with ease and complete your syllabus on time.
-                </p>
-              </div>
+        <div className="bg-slate-900/95 border border-indigo-500/25 rounded-2xl p-3.5 sm:p-4 shadow-lg space-y-3 animate-fadeIn">
+          <div className="flex items-center justify-between pb-1 border-b border-slate-800">
+            <div className="flex items-center gap-2">
+              <GraduationCap className="w-4 h-4 text-indigo-400" />
+              <span className="text-xs font-bold text-white">How Self Timetable Works in 3 Easy Steps</span>
             </div>
             <button
               onClick={() => setShowStudentGuide(false)}
-              className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
+              className="text-[11px] text-slate-400 hover:text-white cursor-pointer"
             >
-              Dismiss
+              Close ✕
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
             {/* Step 1 */}
-            <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 space-y-2 relative overflow-hidden group hover:border-teal-500/40 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="w-6 h-6 rounded-lg bg-teal-500/20 border border-teal-500/40 text-teal-300 font-bold text-xs flex items-center justify-center">
-                  1
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-teal-400">Step 1: Pick Topic</span>
+            <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3 space-y-1">
+              <div className="text-[10px] font-bold text-teal-400 flex items-center gap-1.5">
+                <span className="w-4 h-4 rounded-full bg-teal-500/20 text-teal-300 flex items-center justify-center text-[9px]">1</span>
+                <span>Pick Any Topic</span>
               </div>
-              <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                <BookOpen className="w-4 h-4 text-teal-400" />
-                <span>Select Your Chapter</span>
-              </h4>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Choose your Class (1–12) and subject. Tap any official NCERT syllabus chapter or type your custom homework topic.
+                Choose Grade (1–12), pick your subject & tap any NCERT syllabus chapter or custom homework.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 space-y-2 relative overflow-hidden group hover:border-indigo-500/40 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="w-6 h-6 rounded-lg bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 font-bold text-xs flex items-center justify-center">
-                  2
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-indigo-400">Step 2: Learn Visuals</span>
-              </div>
-              <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                <Play className="w-4 h-4 text-indigo-400 fill-current" />
+            <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3 space-y-1">
+              <div className="text-[10px] font-bold text-indigo-400 flex items-center gap-1.5">
+                <span className="w-4 h-4 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center text-[9px]">2</span>
                 <span>Read Notes & Watch Video</span>
-              </h4>
+              </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Review verified bullet summaries and Mermaid concept maps. Class 1–5 gets colorful Cartoon Videos; Class 6–12 gets structured slides.
+                Review verified bullet summaries & Mermaid diagrams. Class 1–5 gets Cartoon Videos; Class 6–12 gets Slide Decks.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 space-y-2 relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="w-6 h-6 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex items-center justify-center">
-                  3
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-400">Step 3: Test Mastery</span>
+            <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3 space-y-1">
+              <div className="text-[10px] font-bold text-emerald-400 flex items-center gap-1.5">
+                <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[9px]">3</span>
+                <span>Pass 10-Q Quiz</span>
               </div>
-              <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                <Award className="w-4 h-4 text-emerald-400" />
-                <span>Pass the 10-Q Quiz</span>
-              </h4>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Answer the 10-question concept check. Score 70% or more to lock in mastery and mark the chapter Complete ✓ in your timetable.
+                Score ≥ 70% to confirm chapter mastery and mark it Completed ✓ in your timetable.
               </p>
             </div>
           </div>
 
-          {/* Golden Rule Banner */}
-          <div className="p-3.5 rounded-2xl bg-teal-950/40 border border-teal-500/30 flex items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-5 h-5 text-teal-400 shrink-0" />
-              <span className="text-slate-200">
-                <strong className="text-teal-300">1-Week Early Completion Rule:</strong> All your core syllabus chapters finish 7 days before your target date, so you get a full 7-day revision sprint with zero last-minute panic!
-              </span>
-            </div>
-            <span className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-[10px] font-bold shrink-0">
-              Active by Default
-            </span>
+          {/* 1-Week Early Completion Note */}
+          <div className="p-2.5 rounded-xl bg-teal-950/40 border border-teal-500/30 flex items-center gap-2 text-xs text-teal-300">
+            <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
+            <span><strong>1-Week Early Finish:</strong> Core chapters finish 7 days early, giving you a full 7-day revision sprint!</span>
           </div>
         </div>
       )}
 
-      {/* 3. CHAPTER ADDITION STUDIO (ELEGANT WIZARD) */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-7 shadow-2xl space-y-6">
-        
-        {/* Box Title */}
-        <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-slate-800/80">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-teal-600 to-emerald-500 flex items-center justify-center text-white shadow-lg shadow-teal-900/30">
-              <Plus className="w-5 h-5" />
+      {/* 3. CHAPTER ADDITION STUDIO (COMPACT & SLEEK) */}
+      {!isAddFormOpen && entries.length > 0 ? (
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between shadow-md">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold">
+              <Plus className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base sm:text-lg font-black text-white">
-                Add Chapter to Your Timetable
-              </h3>
-              <p className="text-xs text-slate-400">
-                Pivott auto-generates structured notes, visual diagrams, video slides, and 10 test questions instantly.
-              </p>
+              <h3 className="text-xs sm:text-sm font-bold text-white">Add Chapter to Timetable</h3>
+              <p className="text-[11px] text-slate-400">Class 1–12 NCERT curriculum notes, videos & 10-Q quiz</p>
             </div>
           </div>
-
-          <span className="text-xs font-mono px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-teal-400 font-bold">
-            Curriculum Verified
-          </span>
+          <button
+            type="button"
+            onClick={() => setIsAddFormOpen(true)}
+            className="px-3.5 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+          >
+            <Plus className="w-3.5 h-3.5" />
+            <span>+ Add Chapter</span>
+          </button>
         </div>
-
-        {formError && (
-          <div className="p-3.5 rounded-2xl bg-rose-950/50 border border-rose-500/40 text-rose-300 text-xs flex items-center gap-2.5 animate-fadeIn">
-            <AlertTriangle className="w-4 h-4 shrink-0 text-rose-400" />
-            <span>{formError}</span>
-          </div>
-        )}
-
-        <form onSubmit={handleAddChapter} className="space-y-5">
+      ) : (
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl space-y-4">
           
-          {/* Section A: Class & Subject Selector */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
-                <GraduationCap className="w-4 h-4 text-teal-400" />
-                <span>Select Grade & Subject</span>
-              </label>
-              <span className="text-[11px] text-slate-400">
-                {selectedClass <= 5 ? '🎨 Junior Mode (Cartoon Videos)' : '📐 Senior Mode (Animated Slide Decks)'}
+          {/* Header */}
+          <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+            <div className="flex items-center space-x-2.5">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-teal-600 to-emerald-500 flex items-center justify-center text-white shadow-sm">
+                <Plus className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-sm sm:text-base font-bold text-white">
+                  Add Chapter to Your Timetable
+                </h3>
+                <p className="text-[11px] text-slate-400">
+                  Auto-generates verified notes, diagrams, video slides & 10 test questions instantly.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded-lg bg-slate-950 border border-slate-800 text-teal-400 font-bold">
+                Curriculum Verified
               </span>
-            </div>
-
-            {/* Class Level Selector Buttons (Class 1-12) */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
-              {Array.from({ length: 12 }, (_, i) => i + 1).map(c => {
-                const isSelected = selectedClass === c;
-                return (
-                  <button
-                    key={c}
-                    type="button"
-                    onClick={() => setSelectedClass(c)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer shrink-0 flex items-center gap-1 ${
-                      isSelected
-                        ? 'bg-teal-500/25 border-teal-400 text-teal-200 shadow-md scale-105'
-                        : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
-                    }`}
-                  >
-                    <span>Class {c}</span>
-                    {c <= 5 && <span className="text-[10px]">🎨</span>}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Subject Selector Quick Pills */}
-            <div className="space-y-1.5 pt-1">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">
-                  Pick Subject:
-                </span>
+              {entries.length > 0 && (
                 <button
                   type="button"
-                  onClick={() => setIsAddingCustomSubject(!isAddingCustomSubject)}
-                  className="text-[10px] font-bold text-teal-400 hover:text-teal-300 underline cursor-pointer"
+                  onClick={() => setIsAddFormOpen(false)}
+                  className="text-xs text-slate-400 hover:text-white px-2 py-1 rounded-lg hover:bg-slate-800 cursor-pointer"
                 >
-                  {isAddingCustomSubject ? '← Back to Subject Pills' : '+ Custom Other Subject'}
+                  Collapse ▲
                 </button>
-              </div>
-
-              {isAddingCustomSubject ? (
-                <input
-                  type="text"
-                  placeholder="Type any other subject name (e.g. Psychology, Economics, Coding...)"
-                  value={customSubjectInput}
-                  onChange={(e) => setCustomSubjectInput(e.target.value)}
-                  className="w-full bg-slate-950 border border-teal-500/50 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-hidden focus:border-teal-400"
-                  autoFocus
-                />
-              ) : (
-                <div className="flex flex-wrap gap-1.5">
-                  {BASE_SUBJECTS.map(subj => {
-                    const isSelected = selectedSubject === subj;
-                    const config = getSubjectConfig(subj);
-                    return (
-                      <button
-                        key={subj}
-                        type="button"
-                        onClick={() => {
-                          if (subj === 'Additional Subject') {
-                            setIsAddingCustomSubject(true);
-                            setCustomSubjectInput('');
-                          } else {
-                            setSelectedSubject(subj);
-                          }
-                        }}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer flex items-center gap-1.5 ${
-                          isSelected
-                            ? `${config.badge} shadow-md scale-105`
-                            : 'bg-slate-950/80 border-slate-800 text-slate-300 hover:border-slate-700 hover:text-white'
-                        }`}
-                      >
-                        <span>{config.icon}</span>
-                        <span>{subj}</span>
-                        {isSelected && <Check className="w-3 h-3 text-teal-400 shrink-0" />}
-                      </button>
-                    );
-                  })}
-                </div>
               )}
             </div>
           </div>
 
-          {/* Section B: Topic Selection with Live NCERT Syllabus Explorer */}
-          <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-4 sm:p-5 space-y-4">
-            <div className="flex items-center justify-between flex-wrap gap-2">
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-teal-400" />
-                <span className="text-xs font-bold uppercase tracking-wider text-teal-300">
-                  Class {selectedClass} {currentSubject || 'Biology'} Syllabus ({availableChapters.length} Chapters)
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsCustomChapterMode(!isCustomChapterMode)}
-                className="text-[11px] font-bold text-teal-400 hover:text-teal-300 underline cursor-pointer"
-              >
-                {isCustomChapterMode ? '← Pick from NCERT Syllabus' : '+ Type Custom Topic Name'}
-              </button>
+          {formError && (
+            <div className="p-3 rounded-xl bg-rose-950/50 border border-rose-500/40 text-rose-300 text-xs flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 shrink-0 text-rose-400" />
+              <span>{formError}</span>
             </div>
+          )}
 
-            {/* Quick Chapter Selector Chips */}
-            {!isCustomChapterMode && availableChapters.length > 0 && (
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-[10px] text-slate-400">
-                  <span>Click any chapter to auto-fill:</span>
-                  <span className="font-mono">{availableChapters.length} topics available</span>
-                </div>
-                <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
-                  {availableChapters.map((ch, idx) => {
-                    const isSelected = chapterNameInput === ch;
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setChapterNameInput(ch)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-medium border transition-all cursor-pointer text-left flex items-center gap-1.5 ${
-                          isSelected
-                            ? 'bg-teal-500/25 border-teal-400 text-teal-200 font-bold shadow-xs'
-                            : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700 hover:text-white'
-                        }`}
-                      >
-                        <span className="text-[10px] opacity-60 font-mono">#{idx + 1}</span>
-                        <span>{ch}</span>
-                        {isSelected && <Check className="w-3 h-3 text-teal-400 shrink-0" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {/* Input field for selected or custom chapter */}
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                {isCustomChapterMode ? 'Custom Chapter or Topic Name:' : 'Selected Chapter Name (You can customize):'}
-              </label>
-              <input
-                type="text"
-                placeholder={
-                  isCustomChapterMode
-                    ? 'e.g. "Chapter 4: Photosynthesis", "Newton Laws of Motion", etc.'
-                    : 'Click a topic above or type here...'
-                }
-                value={chapterNameInput}
-                onChange={(e) => setChapterNameInput(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-hidden focus:border-teal-400 transition-colors"
-              />
-            </div>
-
-            {/* Section C: Daily Study Duration */}
-            <div className="space-y-2 pt-2 border-t border-slate-800/80">
+          <form onSubmit={handleAddChapter} className="space-y-3.5">
+            
+            {/* Grade & Subject */}
+            <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-[11px] font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Daily Study Time Budget</span>
+                  <GraduationCap className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Grade & Subject</span>
                 </label>
-                <span className="text-xs font-mono font-bold text-teal-300 bg-teal-500/15 px-2.5 py-0.5 rounded-lg border border-teal-500/30">
-                  {dailyMinutesInput >= 60 ? `${(dailyMinutesInput / 60).toFixed(1)} hrs (${dailyMinutesInput} mins)` : `${dailyMinutesInput} mins`}
+                <span className="text-[10px] text-slate-400">
+                  {selectedClass <= 5 ? '🎨 Junior Mode (Cartoon Videos)' : '📐 Senior Mode (Slide Decks)'}
                 </span>
               </div>
 
-              {/* Quick Presets */}
-              <div className="grid grid-cols-4 sm:grid-cols-7 gap-1.5">
-                {[
-                  { mins: 30, label: '30m' },
-                  { mins: 45, label: '45m' },
-                  { mins: 60, label: '1h' },
-                  { mins: 90, label: '1.5h' },
-                  { mins: 120, label: '2h' },
-                  { mins: 180, label: '3h' },
-                  { mins: 240, label: '4h' }
-                ].map(({ mins, label }) => (
-                  <button
-                    key={mins}
-                    type="button"
-                    onClick={() => setDailyMinutesInput(mins)}
-                    className={`py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center ${
-                      dailyMinutesInput === mins
-                        ? 'bg-teal-500/25 border-teal-400 text-teal-200 shadow-xs'
-                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
+              {/* Class Buttons */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
+                {Array.from({ length: 12 }, (_, i) => i + 1).map(c => {
+                  const isSelected = selectedClass === c;
+                  return (
+                    <button
+                      key={c}
+                      type="button"
+                      onClick={() => setSelectedClass(c)}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer shrink-0 flex items-center gap-1 ${
+                        isSelected
+                          ? 'bg-teal-500/25 border-teal-400 text-teal-200 shadow-xs'
+                          : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <span>Class {c}</span>
+                      {c <= 5 && <span className="text-[9px]">🎨</span>}
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* Range Slider */}
-              <div className="pt-1">
+              {/* Subject Selector Pills */}
+              <div className="space-y-1.5 pt-0.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                    Pick Subject:
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setIsAddingCustomSubject(!isAddingCustomSubject)}
+                    className="text-[10px] font-bold text-teal-400 hover:text-teal-300 underline cursor-pointer"
+                  >
+                    {isAddingCustomSubject ? '← Subject Pills' : '+ Other Subject'}
+                  </button>
+                </div>
+
+                {isAddingCustomSubject ? (
+                  <input
+                    type="text"
+                    placeholder="Type subject name (e.g. Psychology, Economics...)"
+                    value={customSubjectInput}
+                    onChange={(e) => setCustomSubjectInput(e.target.value)}
+                    className="w-full bg-slate-950 border border-teal-500/50 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-teal-400"
+                    autoFocus
+                  />
+                ) : (
+                  <div className="flex flex-wrap gap-1.5">
+                    {BASE_SUBJECTS.map(subj => {
+                      const isSelected = selectedSubject === subj;
+                      const config = getSubjectConfig(subj);
+                      return (
+                        <button
+                          key={subj}
+                          type="button"
+                          onClick={() => {
+                            if (subj === 'Additional Subject') {
+                              setIsAddingCustomSubject(true);
+                              setCustomSubjectInput('');
+                            } else {
+                              setSelectedSubject(subj);
+                            }
+                          }}
+                          className={`px-2.5 py-1 rounded-lg text-xs font-semibold border transition-all cursor-pointer flex items-center gap-1.5 ${
+                            isSelected
+                              ? `${config.badge} shadow-xs font-bold`
+                              : 'bg-slate-950/80 border-slate-800 text-slate-300 hover:text-white'
+                          }`}
+                        >
+                          <span>{config.icon}</span>
+                          <span>{subj}</span>
+                          {isSelected && <Check className="w-3 h-3 text-teal-400 shrink-0" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Topic & Syllabus Explorer */}
+            <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3 sm:p-3.5 space-y-3">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-1.5">
+                  <BookOpen className="w-3.5 h-3.5 text-teal-400" />
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-teal-300">
+                    Class {selectedClass} {currentSubject || 'Biology'} Syllabus ({availableChapters.length} Chapters)
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsCustomChapterMode(!isCustomChapterMode)}
+                  className="text-[11px] font-bold text-teal-400 hover:text-teal-300 underline cursor-pointer"
+                >
+                  {isCustomChapterMode ? '← Syllabus List' : '+ Custom Topic'}
+                </button>
+              </div>
+
+              {/* Syllabus Chips */}
+              {!isCustomChapterMode && availableChapters.length > 0 && (
+                <div className="space-y-1.5">
+                  <div className="text-[10px] text-slate-400">
+                    Tap any chapter to auto-fill:
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto pr-1">
+                    {availableChapters.map((ch, idx) => {
+                      const isSelected = chapterNameInput === ch;
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setChapterNameInput(ch)}
+                          className={`px-2.5 py-1 rounded-lg text-xs border transition-all cursor-pointer text-left flex items-center gap-1.5 ${
+                            isSelected
+                              ? 'bg-teal-500/25 border-teal-400 text-teal-200 font-bold shadow-xs'
+                              : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
+                          }`}
+                        >
+                          <span className="text-[10px] opacity-60 font-mono">#{idx + 1}</span>
+                          <span className="truncate max-w-[200px]">{ch}</span>
+                          {isSelected && <Check className="w-3 h-3 text-teal-400 shrink-0" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Input for chapter */}
+              <div className="space-y-1">
                 <input
-                  type="range"
-                  min="15"
-                  max="480"
-                  step="15"
-                  value={dailyMinutesInput}
-                  onChange={(e) => setDailyMinutesInput(parseInt(e.target.value, 10))}
-                  className="w-full accent-teal-500 cursor-pointer h-1.5 bg-slate-800 rounded-lg appearance-none"
+                  type="text"
+                  placeholder={
+                    isCustomChapterMode
+                      ? 'e.g. "Chapter 4: Photosynthesis", "Laws of Motion"...'
+                      : 'Selected chapter name (or type here)...'
+                  }
+                  value={chapterNameInput}
+                  onChange={(e) => setChapterNameInput(e.target.value)}
+                  className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-hidden focus:border-teal-400 transition-colors"
                 />
               </div>
-            </div>
 
-            {/* Submit Action Button */}
-            <div className="pt-2 flex justify-end">
-              <button
-                type="submit"
-                disabled={isSubmitting || !chapterNameInput.trim()}
-                className="w-full sm:w-auto px-7 py-3 rounded-2xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 disabled:opacity-40 disabled:hover:from-teal-600 text-white text-xs sm:text-sm font-bold shadow-xl shadow-teal-950/40 transition-all cursor-pointer flex items-center justify-center space-x-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <RefreshCw className="w-4 h-4 animate-spin" />
-                    <span>Auto-Fetching Verified Notes & Videos...</span>
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-4 h-4" />
-                    <span>Add Chapter & Auto-Fetch Content</span>
-                  </>
-                )}
-              </button>
+              {/* Daily Duration Presets */}
+              <div className="space-y-1.5 pt-1.5 border-t border-slate-800">
+                <div className="flex items-center justify-between">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-teal-400" />
+                    <span>Daily Study Time</span>
+                  </label>
+                  <span className="text-xs font-mono font-bold text-teal-300">
+                    {dailyMinutesInput >= 60 ? `${(dailyMinutesInput / 60).toFixed(1)}h (${dailyMinutesInput}m)` : `${dailyMinutesInput}m`}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-5 gap-1.5">
+                  {[
+                    { mins: 30, label: '30m' },
+                    { mins: 45, label: '45m' },
+                    { mins: 60, label: '1h' },
+                    { mins: 90, label: '1.5h' },
+                    { mins: 120, label: '2h' }
+                  ].map(({ mins, label }) => (
+                    <button
+                      key={mins}
+                      type="button"
+                      onClick={() => setDailyMinutesInput(mins)}
+                      className={`py-1 rounded-lg text-xs font-semibold border transition-all cursor-pointer text-center ${
+                        dailyMinutesInput === mins
+                          ? 'bg-teal-500/25 border-teal-400 text-teal-200 font-bold'
+                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-1 flex justify-end">
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !chapterNameInput.trim()}
+                  className="w-full sm:w-auto px-5 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 disabled:opacity-40 text-white text-xs font-bold shadow-md transition-all cursor-pointer flex items-center justify-center space-x-1.5"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                      <span>Auto-Fetching Verified Notes & Videos...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>+ Add Chapter & Get Content</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+      )}
 
       {/* 4. VIEW SWITCHER & FILTER CONTROLS */}
       <div className="space-y-4">
@@ -1023,45 +997,46 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
         />
       ) : (
         /* 6. CHAPTER CARDS VIEW (CORE SYLLABUS + 7-DAY REVISION SPRINT) */
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-5">
           
-          {/* A. 7-Day Final Revision & 10-Q Quiz Sprint (Dedicated Highlight Card) */}
+          {/* A. 7-Day Final Revision & 10-Q Quiz Sprint (Compact Card) */}
           {entries.length > 0 && (
-            <div className="bg-gradient-to-r from-teal-950/60 via-slate-900 to-indigo-950/60 border border-teal-500/30 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-2xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
-                    <ShieldCheck className="w-5 h-5" />
+            <div className="bg-gradient-to-r from-teal-950/40 via-slate-900 to-indigo-950/40 border border-teal-500/25 rounded-2xl p-3 sm:p-4 shadow-md space-y-3">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400 shrink-0">
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-base sm:text-lg font-black text-white">
-                        7-Day Final Revision & Quiz Practice Sprint
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-xs sm:text-sm font-bold text-white">
+                        7-Day Final Revision & Quiz Sprint
                       </h3>
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40">
-                        1-Week Early Finish
+                        1-Wk Early Finish
                       </span>
                     </div>
-                    <p className="text-xs text-slate-300">
-                      Scheduled for the final week before your deadline: Rapid concept recaps, video revisions, and 10-question practice quizzes for maximum retention.
+                    <p className="text-[11px] text-slate-400">
+                      Last 7 days reserved for quick concept recaps, videos & 10-question practice quizzes.
                     </p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setShowRevisionSection(!showRevisionSection)}
-                  className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer"
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 flex items-center gap-1 cursor-pointer shrink-0"
                 >
-                  {showRevisionSection ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                  <span>{showRevisionSection ? 'Hide Sprint' : 'View 4 Days'}</span>
+                  {showRevisionSection ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                 </button>
               </div>
 
               {showRevisionSection && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-2 border-t border-slate-800">
                   {revisionSprintItems.slice(0, 4).map((item, idx) => (
-                    <div key={idx} className="bg-slate-950/80 border border-teal-500/20 rounded-2xl p-3.5 space-y-2.5 shadow-sm">
+                    <div key={idx} className="bg-slate-950/70 border border-teal-500/20 rounded-xl p-3 space-y-2 shadow-xs">
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-mono font-bold text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded-md border border-teal-500/20">
+                        <span className="text-[10px] font-mono font-bold text-teal-400 bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/20">
                           Sprint Day {item.dayNumber}
                         </span>
                         <span className="text-[10px] text-slate-400">{item.dayName}</span>
@@ -1074,7 +1049,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
                           {item.targetEntry.subject} • {item.timeSlot}
                         </div>
                       </div>
-                      <div className="flex items-center gap-1.5 pt-1 border-t border-slate-800">
+                      <div className="flex items-center gap-1 pt-1 border-t border-slate-800/80">
                         <button
                           onClick={() => setViewingNotesEntry(item.targetEntry)}
                           className="flex-1 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[10px] font-bold text-slate-300 hover:text-white border border-slate-800 transition-colors cursor-pointer"
@@ -1107,38 +1082,38 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
           )}
 
           {/* B. Core Syllabus Study Chapters Grid */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <h2 className="text-lg font-bold text-white">Your Core Study Chapters</h2>
-                <span className="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 text-xs font-mono font-bold">
+                <h2 className="text-base sm:text-lg font-bold text-white">Your Core Study Chapters</h2>
+                <span className="px-2 py-0.5 rounded-full bg-slate-800 text-teal-300 text-xs font-mono font-bold">
                   {filteredEntries.length}
                 </span>
               </div>
-              <span className="text-xs text-slate-400">
-                Sorted by sequence of learning
+              <span className="text-[11px] text-slate-400">
+                Sorted by sequence
               </span>
             </div>
 
             {loading ? (
-              <div className="py-20 text-center space-y-3 bg-slate-900/60 border border-slate-800 rounded-3xl">
-                <RefreshCw className="w-8 h-8 text-teal-400 animate-spin mx-auto" />
-                <p className="text-sm text-slate-300">Loading your Self Timetable chapters...</p>
+              <div className="py-12 text-center space-y-2 bg-slate-900/60 border border-slate-800 rounded-2xl">
+                <RefreshCw className="w-6 h-6 text-teal-400 animate-spin mx-auto" />
+                <p className="text-xs text-slate-300">Loading your Self Timetable chapters...</p>
               </div>
             ) : filteredEntries.length === 0 ? (
-              <div className="py-16 text-center space-y-4 bg-slate-900/40 border border-dashed border-slate-800 rounded-3xl p-6">
-                <div className="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mx-auto">
-                  <BookOpen className="w-6 h-6" />
+              <div className="py-12 text-center space-y-3 bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-5">
+                <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mx-auto">
+                  <BookOpen className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-base font-bold text-white">No chapters match your filters</h4>
+                  <h4 className="text-sm font-bold text-white">No chapters match your filters</h4>
                   <p className="text-xs text-slate-400 max-w-md mx-auto">
                     {searchQuery ? 'Try clearing your search query or subject filters.' : 'Use the box above to add your first chapter. Verified notes, concept videos, and quizzes will be generated immediately!'}
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
                 {filteredEntries.map((entry, idx) => {
                   const isJunior = entry.class_level <= 5 || entry.video_style === 'cartoon';
                   const config = getSubjectConfig(entry.subject);
@@ -1146,7 +1121,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
                   return (
                     <div 
                       key={entry.id}
-                      className={`border rounded-3xl p-5 shadow-lg flex flex-col justify-between space-y-4 transition-all hover:scale-[1.01] hover:border-slate-700 ${
+                      className={`border rounded-2xl p-3.5 sm:p-4 shadow-md flex flex-col justify-between space-y-2.5 transition-all hover:border-slate-700 ${
                         entry.status === 'done' 
                           ? 'bg-emerald-950/20 border-emerald-900/40' 
                           : entry.status === 'deferred'
@@ -1154,24 +1129,24 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
                             : 'bg-slate-900 border-slate-800'
                       }`}
                     >
-                      <div className="space-y-3">
+                      <div className="space-y-2">
                         
                         {/* Top Badges & Status Dropdown */}
-                        <div className="flex items-center justify-between flex-wrap gap-2">
+                        <div className="flex items-center justify-between flex-wrap gap-1.5">
                           <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="px-2.5 py-0.5 rounded-lg bg-teal-500/15 text-teal-300 border border-teal-500/30 text-[10px] font-black uppercase tracking-wider">
+                            <span className="px-2 py-0.5 rounded-md bg-teal-500/15 text-teal-300 border border-teal-500/30 text-[10px] font-black uppercase tracking-wider">
                               Class {entry.class_level}
                             </span>
-                            <span className={`px-2.5 py-0.5 rounded-lg text-[10px] font-bold border flex items-center gap-1 ${config.badge}`}>
+                            <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${config.badge}`}>
                               <span>{config.icon}</span>
                               <span>{entry.subject}</span>
                             </span>
                             {isJunior ? (
-                              <span className="px-2 py-0.5 rounded-lg bg-amber-400/20 text-amber-300 border border-amber-400/40 text-[10px] font-extrabold flex items-center gap-1">
-                                <Smile className="w-3 h-3" /> Cartoon Video
+                              <span className="px-1.5 py-0.5 rounded-md bg-amber-400/20 text-amber-300 border border-amber-400/40 text-[9px] font-extrabold flex items-center gap-1">
+                                <Smile className="w-2.5 h-2.5" /> Cartoon
                               </span>
                             ) : (
-                              <span className="px-2 py-0.5 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-[10px] font-bold">
+                              <span className="px-1.5 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-[9px] font-bold">
                                 Slide Deck
                               </span>
                             )}
@@ -1181,7 +1156,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
                           <select
                             value={entry.status}
                             onChange={(e) => handleStatusChange(entry.id, e.target.value as any)}
-                            className={`text-[10px] font-bold uppercase tracking-wider rounded-xl px-2.5 py-1 border transition-colors cursor-pointer ${
+                            className={`text-[10px] font-bold uppercase tracking-wider rounded-lg px-2 py-0.5 border transition-colors cursor-pointer ${
                               entry.status === 'done'
                                 ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300'
                                 : entry.status === 'in_progress'
@@ -1200,19 +1175,19 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
 
                         {/* Chapter Title & Time */}
                         <div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono text-slate-500 font-bold">#{idx + 1}</span>
-                            <h3 className="text-base font-black text-white leading-snug line-clamp-2">
+                          <div className="flex items-baseline gap-1.5">
+                            <span className="text-[10px] font-mono text-slate-500 font-bold">#{idx + 1}</span>
+                            <h3 className="text-sm sm:text-base font-bold text-white leading-snug line-clamp-2">
                               {entry.chapter_topic_name}
                             </h3>
                           </div>
-                          <div className="flex items-center space-x-3 text-xs text-slate-400 mt-1.5">
+                          <div className="flex items-center space-x-2 text-[11px] text-slate-400 mt-1">
                             <div className="flex items-center space-x-1">
-                              <Clock className="w-3.5 h-3.5 text-slate-400" />
-                              <span>{entry.daily_minutes} mins/day</span>
+                              <Clock className="w-3 h-3 text-slate-400" />
+                              <span>{entry.daily_minutes} mins</span>
                             </div>
                             <span>•</span>
-                            <span className="text-teal-400 font-mono text-[11px]">
+                            <span className="text-teal-400 font-mono text-[10px]">
                               10-Q Quiz Attached
                             </span>
                           </div>
@@ -1220,41 +1195,41 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
 
                         {/* Verification Status Banner */}
                         {entry.is_verified ? (
-                          <div className="p-2.5 rounded-xl bg-emerald-950/30 border border-emerald-900/50 text-[11px] text-emerald-300 flex items-center gap-2">
-                            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                            <span className="line-clamp-1">Verified: {entry.verification_source || 'Accredited NCERT Curriculum'}</span>
+                          <div className="p-2 rounded-lg bg-emerald-950/30 border border-emerald-900/50 text-[10px] text-emerald-300 flex items-center gap-1.5">
+                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                            <span className="truncate">Verified: {entry.verification_source || 'Accredited NCERT Curriculum'}</span>
                           </div>
                         ) : (
-                          <div className="p-2.5 rounded-xl bg-amber-950/30 border border-amber-900/50 text-[11px] text-amber-300 flex items-start gap-2">
-                            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                            <span className="leading-tight">Couldn't verify this topic online — content may be incomplete</span>
+                          <div className="p-2 rounded-lg bg-amber-950/30 border border-amber-900/50 text-[10px] text-amber-300 flex items-start gap-1.5">
+                            <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                            <span className="leading-tight">Unverified topic — auto-generated from curriculum index</span>
                           </div>
                         )}
                       </div>
 
                       {/* 3 Prominent Action Buttons */}
-                      <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                      <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between gap-1.5">
                         <div className="flex items-center gap-1.5 flex-wrap">
                           {/* 1. View Notes */}
                           <button
                             onClick={() => setViewingNotesEntry(entry)}
-                            className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-colors cursor-pointer flex items-center gap-1.5"
+                            className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-colors cursor-pointer flex items-center gap-1"
                           >
                             <FileText className="w-3.5 h-3.5 text-teal-400" />
-                            <span>Visual Notes</span>
+                            <span>Notes</span>
                           </button>
 
                           {/* 2. Watch Concept Video */}
                           <button
                             onClick={() => setActiveVideoEntry(entry)}
-                            className={`px-3 py-1.5 rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1.5 ${
+                            className={`px-2.5 py-1.5 rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1 ${
                               isJunior
                                 ? 'bg-amber-500 hover:bg-amber-400 text-slate-950'
                                 : 'bg-teal-600 hover:bg-teal-500 text-white'
                             }`}
                           >
                             <Play className="w-3.5 h-3.5 fill-current" />
-                            <span>{isJunior ? 'Watch Cartoon' : 'Watch Video'}</span>
+                            <span>{isJunior ? 'Cartoon' : 'Video'}</span>
                           </button>
 
                           {/* 3. Take Quiz */}
@@ -1265,7 +1240,7 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
                               setQuizSubmitted(false);
                               setQuizScore(0);
                             }}
-                            className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-colors cursor-pointer flex items-center gap-1.5"
+                            className="px-2.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-colors cursor-pointer flex items-center gap-1"
                           >
                             <Award className="w-3.5 h-3.5" />
                             <span>10-Q Quiz</span>
@@ -1274,10 +1249,10 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
 
                         <button
                           onClick={() => handleDeleteEntry(entry.id, entry.chapter_topic_name)}
-                          className="p-2 rounded-xl text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
+                          className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
                           title="Delete chapter"
                         >
-                          <Trash2 className="w-4 h-4" />
+                          <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
@@ -1291,51 +1266,51 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
 
       {/* 7. DEDICATED DAILY IMPROVEMENT & QUIZ TREND GRAPH */}
       {analytics && (
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-7 shadow-xl space-y-6">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg space-y-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
-                <TrendingUp className="w-5 h-5" />
+            <div className="flex items-center space-x-2.5">
+              <div className="w-8 h-8 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
+                <TrendingUp className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-black text-white">
-                  Self Timetable Daily Improvement Trajectory
+                <h3 className="text-sm sm:text-base font-bold text-white">
+                  Self Timetable Improvement Trajectory
                 </h3>
-                <p className="text-xs text-slate-400">
-                  Dedicated progress metrics for your independent school curriculum study and quiz accuracy.
+                <p className="text-[11px] text-slate-400">
+                  Daily chapter consistency and quiz accuracy trends.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5">
             {/* 7-Day Activity Trend Bar Chart */}
-            <div className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-4 sm:p-5 space-y-4">
+            <div className="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3 sm:p-4 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
                   Daily Chapter & Quiz Activity (Last 7 Days)
                 </span>
-                <span className="text-[11px] text-teal-400 font-semibold">Active Consistency</span>
+                <span className="text-[10px] text-teal-400 font-semibold">Active Consistency</span>
               </div>
 
-              <div className="h-44 flex items-end justify-between gap-2 pt-4 px-2">
+              <div className="h-36 flex items-end justify-between gap-2 pt-3 px-1">
                 {analytics.dailyTrend.map((d, idx) => {
                   const totalEvents = d.chaptersAdded + d.quizzesTaken;
                   const barHeightPercent = Math.min(100, Math.max(12, totalEvents * 28));
 
                   return (
-                    <div key={idx} className="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
-                      <div className="text-[10px] font-mono text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                      <div className="text-[9px] font-mono text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">
                         {totalEvents}
                       </div>
                       <div 
-                        className="w-full max-w-[28px] rounded-t-lg transition-all duration-300 relative overflow-hidden"
+                        className="w-full max-w-[24px] rounded-t-md transition-all duration-300 relative overflow-hidden"
                         style={{ 
                           height: `${barHeightPercent}%`,
                           background: totalEvents > 0 ? 'linear-gradient(to top, #0d9488, #2dd4bf)' : '#1e293b'
                         }}
                       />
-                      <span className="text-[10px] font-mono font-bold text-slate-400">
+                      <span className="text-[9px] font-mono font-bold text-slate-400">
                         {d.dayName}
                       </span>
                     </div>
@@ -1345,28 +1320,28 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
             </div>
 
             {/* Quiz Score History & Trend Line */}
-            <div className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-4 sm:p-5 space-y-4">
+            <div className="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3 sm:p-4 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
                   10-Question Quiz Mastery Trajectory
                 </span>
-                <span className="text-[11px] text-indigo-400 font-semibold">≥ 70% Target</span>
+                <span className="text-[10px] text-indigo-400 font-semibold">≥ 70% Target</span>
               </div>
 
               {analytics.quizScoreTrend.length === 0 ? (
-                <div className="h-44 flex items-center justify-center text-center p-4 text-xs text-slate-500">
+                <div className="h-36 flex items-center justify-center text-center p-3 text-xs text-slate-500">
                   Complete your first 10-Q concept quiz above to begin populating your score trend line!
                 </div>
               ) : (
-                <div className="space-y-3 max-h-48 overflow-y-auto pr-1">
+                <div className="space-y-2 max-h-36 overflow-y-auto pr-1">
                   {analytics.quizScoreTrend.slice(-6).map((q, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+                    <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800 text-xs">
                       <div className="space-y-0.5">
                         <div className="font-bold text-white line-clamp-1">{q.topic}</div>
-                        <div className="text-[10px] text-slate-400">{q.subject} • {q.date}</div>
+                        <div className="text-[9px] text-slate-400">{q.subject} • {q.date}</div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <span className={`font-mono font-bold text-xs px-2 py-0.5 rounded-md border ${
+                      <div className="flex items-center gap-1.5">
+                        <span className={`font-mono font-bold text-[11px] px-1.5 py-0.5 rounded border ${
                           q.percentage >= 70
                             ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300'
                             : 'bg-amber-500/20 border-amber-500/40 text-amber-300'
