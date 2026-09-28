@@ -493,7 +493,7 @@ export function App() {
 
               {activeTab === 'pyq' && (
                 <PYQBankView
-                  initialExamKey={user.exam_name}
+                  initialExamKey={user.exam_course || user.exam_name}
                   onOpenDoubtBot={(ctx) => handleOpenDoubtBot(ctx)}
                 />
               )}

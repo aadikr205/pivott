@@ -41,10 +41,10 @@ export const normalizeExamKey = (examKey?: string): string => {
     if (raw.includes('pcm')) return 'cbse12';
     return 'cbse12_all';
   }
-  if (raw.includes('10')) return 'class10';
   if (raw.includes('bihar') || raw.includes('bseb')) {
     return raw.includes('12') ? 'bseb12' : 'bseb10';
   }
+  if (raw.includes('10')) return 'class10';
   if (raw.includes('jee') && raw.includes('adv')) return 'jee';
   if (raw.includes('jee')) return 'jee_main';
   if (raw.includes('neet')) return 'neet';

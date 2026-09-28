@@ -52,19 +52,26 @@ function resolveExamKeys(examKey) {
     return ['cbse12', 'cbse_12_pcm', 'cbse_12_pcmb', 'cbse12_pcmb'];
   }
 
-  // Class 10th Board
-  if (raw.includes('10') && (raw.includes('class') || raw.includes('cbse') || raw.includes('board'))) {
-    return ['class10', 'class_10_board'];
-  }
-
-  // Bihar Board 12th
-  if (raw.includes('bseb12') || (raw.includes('bihar') && raw.includes('12'))) {
+  // Bihar Board 12th Inter
+  if (raw.includes('bseb12') || (raw.includes('bihar') && raw.includes('12')) || (raw.includes('bseb') && raw.includes('12'))) {
     return ['bseb12', 'bihar_12_inter'];
   }
 
-  // Bihar Board 10th
-  if (raw.includes('bseb10') || (raw.includes('bihar') && raw.includes('10'))) {
+  // Bihar Board 10th Matric
+  if (raw.includes('bseb10') || (raw.includes('bihar') && (raw.includes('10') || raw.includes('matric'))) || (raw.includes('bseb') && raw.includes('10'))) {
     return ['bseb10', 'bihar_10_matric'];
+  }
+
+  // Class 10th Board / CBSE 10th
+  if (
+    raw === 'class10' ||
+    raw === 'cbse10' ||
+    raw === 'class_10' ||
+    raw === 'cbse_10' ||
+    raw === 'class_10_board' ||
+    (raw.includes('10') && (raw.includes('class') || raw.includes('cbse') || raw.includes('board')))
+  ) {
+    return ['class10', 'class_10_board'];
   }
 
   // JEE Main
@@ -132,7 +139,7 @@ router.get('/questions', (req, res) => {
       params.push(`%${search}%`, `%${search}%`, `%${search}%`);
     }
 
-    query += ' ORDER BY (CASE WHEN frequency_score LIKE "%Important%" OR frequency_score LIKE "%Repeated%" THEN 1 ELSE 2 END) ASC, year DESC, weightage DESC LIMIT ?';
+    query += " ORDER BY (CASE WHEN frequency_score LIKE '%Important%' OR frequency_score LIKE '%Repeated%' THEN 1 ELSE 2 END) ASC, year DESC, weightage DESC LIMIT ?";
     params.push(Math.min(1000, Math.max(1, Number(limit) || 60)));
 
     const rows = db.prepare(query).all(...params);
