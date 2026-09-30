@@ -279,11 +279,9 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
       }
 
       // If capacity remains on the revision day, pull from global revisionPool (weakest mastery first)
-      while (bucket.capacityRemaining >= 45 && revisionPool.length > 0 && bucket.planned_items.length < 4) {
-        const revTopic = pickRevisionTopic();
-        if (!revTopic) break;
-        if (bucket.planned_items.some(p => p.topic_id === revTopic.id)) continue;
-
+      const availableRevisionTopics = revisionPool.filter(r => !bucket.planned_items.some(p => p.topic_id === r.id));
+      for (const revTopic of availableRevisionTopics) {
+        if (bucket.capacityRemaining < 45 || bucket.planned_items.length >= 4) break;
         const revMinutes = Math.min(bucket.capacityRemaining, 60);
         bucket.planned_items.push({
           topic_id: revTopic.id,
@@ -312,11 +310,9 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
       day.day_title = 'Comprehensive Revision & PYQ Day';
       day.note = 'Syllabus finished early! Extra revision day for deep concept review and mock questions.';
 
-      while (day.capacityRemaining >= 45 && revisionPool.length > 0 && day.planned_items.length < 3) {
-        const revTopic = pickRevisionTopic();
-        if (!revTopic) break;
-        if (day.planned_items.some(p => p.topic_id === revTopic.id)) continue;
-
+      const availableForEarlyRev = revisionPool.filter(r => !day.planned_items.some(p => p.topic_id === r.id));
+      for (const revTopic of availableForEarlyRev) {
+        if (day.capacityRemaining < 45 || day.planned_items.length >= 3) break;
         const revMinutes = Math.min(day.capacityRemaining, 60);
         day.planned_items.push({
           topic_id: revTopic.id,
@@ -385,9 +381,10 @@ function replanSchedule(user, topics, todayStr, examDateStr) {
     const bufferItems = [];
     let bufCap = maxDailyMinutes;
     // Allocate high-yield revision slots per buffer day (up to full daily budget)
-    while (bufCap >= 45 && revisionPool.length > 0 && bufferItems.length < 4) {
-      const revTopic = pickRevisionTopic();
-      if (!revTopic) break;
+    const availableForBuffer = revisionPool.filter(r => !bufferItems.some(p => p.topic_id === r.id));
+    const candidateList = availableForBuffer.length > 0 ? availableForBuffer : revisionPool;
+    for (const revTopic of candidateList) {
+      if (bufCap < 45 || bufferItems.length >= 4) break;
       const revMinutes = Math.min(bufCap, 60);
       bufferItems.push({
         topic_id: revTopic.id,

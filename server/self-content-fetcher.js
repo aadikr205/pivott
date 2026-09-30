@@ -583,7 +583,7 @@ function generateSelfTimetableReplan(entries, targetDays = 14, dailyBudgetMinute
   const keptCount = keptEntries.length;
   const deferredCount = deferredEntries.length;
 
-  let summary = `Your Self Timetable is scheduled to complete all core chapters 1 week early (within ${studyDays} days at ≤ ${dailyBudgetMinutes} mins/day). The final ${bufferDays} days (Day ${studyDays + 1} to Day ${targetDays}) are strictly reserved for your 1-Week Final Revision & 10-Question Mastery Quiz Practice Sprint so every concept is permanently mastered! `;
+  let summary = `Re-balanced your Self Timetable to complete all core chapters 1 week early (within ${studyDays} days at ≤ ${dailyBudgetMinutes} mins/day). The final ${bufferDays} days (Day ${studyDays + 1} to Day ${targetDays}) are strictly reserved for your 1-Week Final Revision & 10-Question Mastery Quiz Practice Sprint so every concept is permanently mastered! `;
   if (deferredCount > 0) {
     summary += `${keptCount} chapter${keptCount > 1 ? 's are' : ' is'} scheduled for immediate completion 1 week early, and ${deferredCount} chapter${deferredCount > 1 ? 's were' : ' was'} deferred to prevent overload.`;
   } else {
