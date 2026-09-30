@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   BookOpen, 
   Calendar, 
-  Filter, 
   Sparkles, 
   CheckCircle2, 
   XCircle, 
@@ -16,11 +15,10 @@ import {
   RefreshCw, 
   Calculator, 
   Hash, 
-  Check, 
   Send,
-  ShieldCheck,
-  Zap,
-  Bookmark
+  Target,
+  RotateCcw,
+  X
 } from 'lucide-react';
 import { api, PYQQuestion, PYQStatsResponse } from '../api/client';
 
@@ -52,42 +50,37 @@ export const normalizeExamKey = (examKey?: string): string => {
 };
 
 const EXAM_OPTIONS = [
-  { key: 'all', label: 'All Exams / Courses', icon: '🌐' },
-  { key: 'cbse12_all', label: 'CBSE 12th Board (All Subjects & Streams)', icon: '🏆' },
-  { key: 'cbse12', label: 'CBSE 12th PCM (Physics, Chem, Math, Eng, Hindi, PE, CS)', icon: '📐' },
-  { key: 'cbse12_pcb', label: 'CBSE 12th PCB (Physics, Chem, Bio, Eng, Hindi, PE)', icon: '🧬' },
-  { key: 'cbse12_pcmb', label: 'CBSE 12th PCMB (Physics, Chem, Math, Bio, Eng, Hindi, PE, CS)', icon: '🔬' },
+  { key: 'all', label: 'All Exams & Boards', icon: '🌐' },
+  { key: 'cbse12_all', label: 'CBSE 12th Board (All Streams)', icon: '🏆' },
+  { key: 'cbse12', label: 'CBSE 12th PCM (Physics, Chem, Math, CS, PE)', icon: '📐' },
+  { key: 'cbse12_pcb', label: 'CBSE 12th PCB (Physics, Chem, Bio, PE)', icon: '🧬' },
+  { key: 'cbse12_pcmb', label: 'CBSE 12th PCMB (Physics, Chem, Math, Bio)', icon: '🔬' },
   { key: 'class10', label: 'Class 10th Board Exam', icon: '📚' },
   { key: 'neet', label: 'NEET (Medical Entrance)', icon: '🩺' },
   { key: 'jee_main', label: 'JEE Main (NTA)', icon: '⚡' },
   { key: 'jee', label: 'JEE Advanced (IIT)', icon: '🎯' },
   { key: 'bseb12', label: 'Bihar Board 12th Inter', icon: '🌟' },
   { key: 'bseb10', label: 'Bihar Board 10th Matric', icon: '📖' },
-  { key: 'olympiad_iso', label: 'International Science Olympiad (ISO)', icon: '🔬' },
-  { key: 'olympiad_imo', label: 'International Maths Olympiad (IMO)', icon: '🧮' },
-  { key: 'olympiad_eio', label: 'English International Olympiad (EIO)', icon: '📖' },
-  { key: 'olympiad_gkio', label: 'General Knowledge Olympiad (GKIO)', icon: '🌍' },
-  { key: 'olympiad_ico', label: 'International Computer Olympiad (ICO)', icon: '💻' },
-  { key: 'olympiad_ido', label: 'International Drawing Olympiad (IDO)', icon: '🎨' },
-  { key: 'olympiad_neso', label: 'National Essay Olympiad (NESO)', icon: '✍️' },
-  { key: 'olympiad_nsso', label: 'National Social Studies Olympiad (NSSO)', icon: '🏛️' }
+  { key: 'olympiad_iso', label: 'Science Olympiad (ISO)', icon: '🔬' },
+  { key: 'olympiad_imo', label: 'Maths Olympiad (IMO)', icon: '🧮' },
+  { key: 'olympiad_eio', label: 'English Olympiad (EIO)', icon: '📖' },
+  { key: 'olympiad_ico', label: 'Computer Olympiad (ICO)', icon: '💻' }
 ];
 
 const YEARS = ['All', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016'];
 
 const SUBJECT_OPTIONS = [
-  { key: 'all', label: 'All Subjects' },
-  { key: 'Physics', label: 'Physics' },
-  { key: 'Chemistry', label: 'Chemistry' },
-  { key: 'Mathematics', label: 'Mathematics' },
-  { key: 'Biology', label: 'Biology' },
-  { key: 'Science', label: 'Science' },
-  { key: 'English', label: 'English' },
-  { key: 'Hindi', label: 'Hindi' },
-  { key: 'Physical Education', label: 'Physical Education' },
-  { key: 'Sanskrit', label: 'Sanskrit' },
-  { key: 'Social Science', label: 'Social Science' },
-  { key: 'Computer Science', label: 'Computer Science' }
+  { key: 'all', label: 'All Subjects', icon: '📚' },
+  { key: 'Physics', label: 'Physics', icon: '⚡' },
+  { key: 'Chemistry', label: 'Chemistry', icon: '🧪' },
+  { key: 'Mathematics', label: 'Mathematics', icon: '📐' },
+  { key: 'Biology', label: 'Biology', icon: '🧬' },
+  { key: 'Science', label: 'Science', icon: '🔬' },
+  { key: 'English', label: 'English', icon: '📖' },
+  { key: 'Hindi', label: 'Hindi', icon: '📝' },
+  { key: 'Computer Science', label: 'Computer Science', icon: '💻' },
+  { key: 'Social Science', label: 'Social Science', icon: '🌍' },
+  { key: 'Physical Education', label: 'Physical Education', icon: '🌿' }
 ];
 
 export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpenDoubtBot }) => {
@@ -96,6 +89,7 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
   const [selectedYear, setSelectedYear] = useState<string>('All');
   const [selectedType, setSelectedType] = useState<'all' | 'mcq' | 'numerical'>('all');
   const [importantOnly, setImportantOnly] = useState<boolean>(false);
+  const [unattemptedOnly, setUnattemptedOnly] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [questions, setQuestions] = useState<PYQQuestion[]>([]);
   const [stats, setStats] = useState<PYQStatsResponse | null>(null);
@@ -214,53 +208,134 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
     setRevealedSolutions(prev => ({ ...prev, [questionId]: !prev[questionId] }));
   };
 
+  // Practice scoreboard metrics
+  const scoreboard = useMemo(() => {
+    let attempted = 0;
+    let correct = 0;
+
+    questions.forEach(q => {
+      if (q.type === 'numerical') {
+        const res = numericalResults[q.id];
+        if (res) {
+          attempted++;
+          if (res.is_correct) correct++;
+        }
+      } else {
+        const ans = userAnswers[q.id];
+        if (ans !== undefined) {
+          attempted++;
+          if (ans === q.correct_index) correct++;
+        }
+      }
+    });
+
+    const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+    return { attempted, correct, accuracy };
+  }, [questions, userAnswers, numericalResults]);
+
+  // Reset practice session
+  const resetPracticeSession = () => {
+    if (!window.confirm('Reset your current session practice score and start fresh?')) return;
+    setUserAnswers({});
+    setNumericalInputs({});
+    setNumericalResults({});
+    setRevealedSolutions({});
+  };
+
+  // Filter unattempted questions if toggle active
+  const displayedQuestions = useMemo(() => {
+    if (!unattemptedOnly) return questions;
+    return questions.filter(q => {
+      if (q.type === 'numerical') {
+        return !numericalResults[q.id];
+      }
+      return userAnswers[q.id] === undefined;
+    });
+  }, [questions, unattemptedOnly, userAnswers, numericalResults]);
+
   const isCBSE12 = selectedExam.startsWith('cbse12');
 
   return (
-    <div className="space-y-6 animate-fade-in pb-16 max-w-7xl mx-auto px-2 sm:px-4">
-      {/* Header Banner */}
-      <div className="bg-gradient-to-br from-indigo-950 via-slate-900 to-teal-950 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-2xl border border-indigo-500/30">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 right-40 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div className="space-y-6 animate-fade-in pb-20 max-w-7xl mx-auto px-2 sm:px-4">
+      {/* 1. HERO ARCHIVE BANNER WITH LIVE PRACTICE SCOREBOARD */}
+      <div className="bg-gradient-to-br from-indigo-950 via-slate-900 to-teal-950 rounded-3xl p-5 sm:p-8 text-white relative overflow-hidden shadow-2xl border border-indigo-500/30">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-40 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold border border-teal-400/30 flex items-center space-x-1.5">
               <Flame className="w-3.5 h-3.5 text-amber-400" />
-              <span>Official 10-Year Board & Exam Question Archive (2016 – 2025)</span>
+              <span>Official 10-Year Question Archive (2016 – 2025)</span>
             </span>
             <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300 text-[11px] font-mono">
-              English & Transliterated Hindi • Verified Solutions
+              Verified Solutions • Step-by-Step Derivations
             </span>
           </div>
 
-          <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
-              Previous Years Questions & Revision Vault
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-2 max-w-3xl leading-relaxed">
-              Master the actual repeating questions from the past 10 years calibrated with official weightages, repeat frequency tags, step-by-step formula derivations, and numerical tolerance verification.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
+                10-Year PYQ Practice & Master Vault
+              </h1>
+              <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                Practice actual repeating questions from CBSE, NEET, JEE & State Boards with instant MCQ feedback and numerical tolerance verification.
+              </p>
+            </div>
+
+            {/* Live Student Practice Scoreboard */}
+            <div className="bg-slate-900/90 backdrop-blur border border-teal-500/40 rounded-2xl p-3 sm:p-4 shadow-xl shrink-0 space-y-2 min-w-[240px]">
+              <div className="flex items-center justify-between border-b border-slate-700/80 pb-1.5">
+                <span className="text-[11px] font-bold text-teal-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <Target className="w-3.5 h-3.5 text-teal-400" /> Practice Scoreboard
+                </span>
+                {scoreboard.attempted > 0 && (
+                  <button
+                    type="button"
+                    onClick={resetPracticeSession}
+                    className="text-[10px] text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
+                    title="Reset practice session"
+                  >
+                    <RotateCcw className="w-3 h-3" /> Reset
+                  </button>
+                )}
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <div className="text-lg font-black text-white">{scoreboard.attempted}</div>
+                  <div className="text-[10px] text-slate-400">Attempted</div>
+                </div>
+                <div>
+                  <div className="text-lg font-black text-emerald-400">{scoreboard.correct}</div>
+                  <div className="text-[10px] text-emerald-300">Correct</div>
+                </div>
+                <div>
+                  <div className="text-lg font-black text-amber-300">{scoreboard.accuracy}%</div>
+                  <div className="text-[10px] text-amber-200">Accuracy</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Metrics Bar */}
+          {/* Quick Metrics Bar from DB */}
           {stats && (
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10">
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/10">
-                <span className="text-[11px] text-slate-400 block font-medium">Curated Questions</span>
-                <span className="text-xl font-black text-teal-300">{stats.total_pyqs}+ Questions</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3 border-t border-white/10 text-center sm:text-left">
+              <div className="bg-white/5 rounded-2xl p-2.5 sm:p-3 border border-white/10">
+                <span className="text-[10px] sm:text-[11px] text-slate-400 block font-medium">Archived Questions</span>
+                <span className="text-base sm:text-lg font-black text-teal-300">{stats.total_pyqs}+ Questions</span>
               </div>
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/10">
-                <span className="text-[11px] text-slate-400 block font-medium">Board Coverage</span>
-                <span className="text-xl font-black text-indigo-300">CBSE 12th & 10th</span>
+              <div className="bg-white/5 rounded-2xl p-2.5 sm:p-3 border border-white/10">
+                <span className="text-[10px] sm:text-[11px] text-slate-400 block font-medium">Exams Covered</span>
+                <span className="text-base sm:text-lg font-black text-indigo-300">CBSE, NEET & JEE</span>
               </div>
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/10">
-                <span className="text-[11px] text-slate-400 block font-medium">Archive Span</span>
-                <span className="text-xl font-black text-amber-300">10 Years (2016–25)</span>
+              <div className="bg-white/5 rounded-2xl p-2.5 sm:p-3 border border-white/10">
+                <span className="text-[10px] sm:text-[11px] text-slate-400 block font-medium">Span</span>
+                <span className="text-base sm:text-lg font-black text-amber-300">10 Yrs (2016–25)</span>
               </div>
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/10">
-                <span className="text-[11px] text-slate-400 block font-medium">Practice Modes</span>
-                <span className="text-xl font-black text-emerald-300">MCQ & Numerical</span>
+              <div className="bg-white/5 rounded-2xl p-2.5 sm:p-3 border border-white/10">
+                <span className="text-[10px] sm:text-[11px] text-slate-400 block font-medium">Formats</span>
+                <span className="text-base sm:text-lg font-black text-emerald-300">MCQ + Numerical</span>
               </div>
             </div>
           )}
@@ -269,20 +344,20 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
 
       {/* Special CBSE 12th Student Notice Banner */}
       {isCBSE12 && (
-        <div className="bg-gradient-to-r from-amber-500/10 via-slate-900 to-teal-500/10 border border-amber-500/30 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+        <div className="bg-gradient-to-r from-amber-500/10 via-slate-900 to-teal-500/10 border border-amber-500/30 rounded-3xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-white">CBSE 12th Board Complete Question Bank Active</span>
+                <span className="text-xs sm:text-sm font-black text-white">CBSE 12th Board Complete 8-Subject Vault</span>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                  All 8 Subjects
+                  Physics, Chem, Math, Bio, Eng, Hindi, CS, PE
                 </span>
               </div>
               <p className="text-xs text-slate-300 mt-0.5">
-                Practice high-yield questions for Physics, Chemistry, Mathematics, Biology, English, Hindi, Computer Science, and Physical Education with step-by-step revision solutions.
+                Practice official board questions with step-by-step mark distribution and numerical step answers.
               </p>
             </div>
           </div>
@@ -290,39 +365,49 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
           <button
             type="button"
             onClick={() => setImportantOnly(!importantOnly)}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5 shrink-0 ${
+            className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5 shrink-0 ${
               importantOnly
                 ? 'bg-amber-500 text-slate-950 font-black shadow-md'
                 : 'bg-slate-800 text-amber-300 hover:bg-slate-700 border border-amber-500/30'
             }`}
           >
             <Award className="w-4 h-4" />
-            <span>{importantOnly ? '✓ Showing Important Only' : '⭐ Show Important Questions Only'}</span>
+            <span>{importantOnly ? '✓ Showing High-Priority Only' : '⭐ Show High-Priority Questions'}</span>
           </button>
         </div>
       )}
 
-      {/* Filter Toolbar */}
-      <div className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs space-y-4">
-        <div className="flex flex-col md:flex-row gap-3 items-center justify-between">
+      {/* 2. FILTER TOOLBAR: EXAM, SUBJECT, FORMAT & YEAR */}
+      <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/80 shadow-xs space-y-4">
+        {/* Row 1: Search + Exam Dropdown + Subject Dropdown */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
           {/* Search Bar */}
-          <form onSubmit={handleSearchSubmit} className="relative w-full md:max-w-md">
+          <form onSubmit={handleSearchSubmit} className="relative md:col-span-5 w-full">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
             <input
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search topic, formula, or keyword..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-teal-500 outline-none"
+              placeholder="Search keyword (e.g. friction, optics, capacitor)..."
+              className="w-full pl-10 pr-9 py-2.5 rounded-2xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-teal-500 outline-none"
             />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-2.5 p-0.5 text-slate-400 hover:text-slate-700"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </form>
 
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-            {/* Exam Select */}
+          {/* Exam Selector */}
+          <div className="md:col-span-4 w-full">
             <select
               value={selectedExam}
               onChange={e => setSelectedExam(e.target.value)}
-              className="px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 bg-white outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 text-xs font-bold text-slate-800 bg-white outline-none focus:ring-2 focus:ring-teal-500 cursor-pointer"
             >
               {EXAM_OPTIONS.map(opt => (
                 <option key={opt.key} value={opt.key}>
@@ -330,42 +415,55 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                 </option>
               ))}
             </select>
+          </div>
 
-            {/* Subject Select */}
+          {/* Subject Selector */}
+          <div className="md:col-span-3 w-full">
             <select
               value={selectedSubject}
               onChange={e => setSelectedSubject(e.target.value)}
-              className="px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 bg-white outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 text-xs font-bold text-slate-800 bg-white outline-none focus:ring-2 focus:ring-teal-500 cursor-pointer"
             >
               {SUBJECT_OPTIONS.map(opt => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {opt.icon} {opt.label}
                 </option>
               ))}
             </select>
+          </div>
+        </div>
 
+        {/* Row 2: Format Tabs + Toggles */}
+        <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-slate-100">
+          <div className="flex flex-wrap items-center gap-2">
             {/* Format Mode Filter */}
-            <div className="inline-flex rounded-xl p-1 bg-slate-100 border border-slate-200 text-xs font-bold">
+            <div className="inline-flex rounded-2xl p-1 bg-slate-100 border border-slate-200 text-xs font-bold">
               <button
                 type="button"
                 onClick={() => setSelectedType('all')}
-                className={`px-3 py-1.5 rounded-lg transition-all ${selectedType === 'all' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                className={`px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
+                  selectedType === 'all' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-800'
+                }`}
               >
                 All Formats
               </button>
               <button
                 type="button"
                 onClick={() => setSelectedType('mcq')}
-                className={`px-3 py-1.5 rounded-lg transition-all ${selectedType === 'mcq' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                className={`px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
+                  selectedType === 'mcq' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-800'
+                }`}
               >
-                MCQ
+                MCQ Only
               </button>
               <button
                 type="button"
                 onClick={() => setSelectedType('numerical')}
-                className={`px-3 py-1.5 rounded-lg transition-all ${selectedType === 'numerical' ? 'bg-white text-indigo-700 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                className={`px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
+                  selectedType === 'numerical' ? 'bg-white text-indigo-700 shadow-xs' : 'text-slate-500 hover:text-slate-800'
+                }`}
               >
-                Numerical
+                🔢 Numerical Only
               </button>
             </div>
 
@@ -373,23 +471,37 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
             <button
               type="button"
               onClick={() => setImportantOnly(!importantOnly)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer ${
                 importantOnly
-                  ? 'bg-amber-500 text-slate-950 shadow-md font-black ring-2 ring-amber-400'
+                  ? 'bg-amber-500 text-slate-950 shadow-sm font-black ring-2 ring-amber-400'
                   : 'bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200'
               }`}
             >
               <Award className="w-3.5 h-3.5" />
-              <span>⭐ Important Revision Only</span>
+              <span>{importantOnly ? '✓ Important Only' : '⭐ Important Questions'}</span>
+            </button>
+
+            {/* Unattempted Filter Button */}
+            <button
+              type="button"
+              onClick={() => setUnattemptedOnly(!unattemptedOnly)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer ${
+                unattemptedOnly
+                  ? 'bg-indigo-600 text-white shadow-sm font-black ring-2 ring-indigo-400/30'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
+              }`}
+            >
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>{unattemptedOnly ? '✓ Unattempted Only' : 'Unattempted Only'}</span>
             </button>
           </div>
         </div>
 
-        {/* 10-Year Pills */}
-        <div className="flex items-center space-x-2 overflow-x-auto pb-1 text-xs">
-          <span className="text-slate-400 font-semibold shrink-0 flex items-center space-x-1 mr-1">
+        {/* Row 3: 10-Year Horizontal Scroller */}
+        <div className="flex items-center space-x-2 overflow-x-auto pb-1 text-xs scrollbar-none pt-1">
+          <span className="text-slate-400 font-bold shrink-0 flex items-center space-x-1 mr-1">
             <Calendar className="w-3.5 h-3.5" />
-            <span>Year:</span>
+            <span>Select Year:</span>
           </span>
           {YEARS.map(yr => (
             <button
@@ -408,20 +520,20 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
         </div>
       </div>
 
-      {/* Question List */}
+      {/* 3. QUESTION LIST & INTERACTIVE PRACTICE */}
       {loading ? (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-xs">
           <RefreshCw className="w-8 h-8 text-teal-500 animate-spin mx-auto mb-3" />
-          <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider">Loading PYQ Bank Questions...</p>
+          <p className="text-xs font-bold text-slate-600 uppercase tracking-wider">Loading Question Archive...</p>
         </div>
-      ) : questions.length === 0 ? (
+      ) : displayedQuestions.length === 0 ? (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-xs space-y-3">
           <BookOpen className="w-10 h-10 text-slate-300 mx-auto" />
           <h3 className="text-base font-bold text-slate-800">No questions found matching this filter</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">
-            Try switching the Exam, Subject, or Year filter. For CBSE 12th, select <strong>"CBSE 12th Board (All Subjects & Streams)"</strong> to view all available questions.
+            Try switching the Exam, Subject, or Year filter. For CBSE 12th, select <strong>&ldquo;CBSE 12th Board (All Streams)&rdquo;</strong> to view all available questions.
           </p>
-          <div className="pt-2 flex justify-center gap-2">
+          <div className="pt-2 flex justify-center gap-2 flex-wrap">
             <button
               type="button"
               onClick={() => {
@@ -430,9 +542,10 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                 setSelectedYear('All');
                 setSelectedType('all');
                 setImportantOnly(false);
+                setUnattemptedOnly(false);
                 setSearchQuery('');
               }}
-              className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold cursor-pointer"
+              className="px-4 py-2 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold cursor-pointer"
             >
               View All CBSE 12th Questions
             </button>
@@ -444,9 +557,10 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                 setSelectedYear('All');
                 setSelectedType('all');
                 setImportantOnly(false);
+                setUnattemptedOnly(false);
                 setSearchQuery('');
               }}
-              className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold cursor-pointer"
+              className="px-4 py-2 rounded-2xl bg-slate-900 text-white text-xs font-bold cursor-pointer"
             >
               Reset All Filters
             </button>
@@ -455,13 +569,15 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
       ) : (
         <div className="space-y-4">
           <div className="flex items-center justify-between text-xs text-slate-500 px-1">
-            <span>Showing <strong>{questions.length}</strong> previous year questions</span>
-            <span className="text-[11px] text-teal-700 font-semibold bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
+            <span>
+              Showing <strong>{displayedQuestions.length}</strong> previous year questions
+            </span>
+            <span className="text-[11px] text-teal-800 font-bold bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
               Interactive Practice Mode • Detailed Explanations
             </span>
           </div>
 
-          {questions.map((q, qIdx) => {
+          {displayedQuestions.map((q, qIdx) => {
             const isNumerical = q.type === 'numerical';
             const hasAnsweredMcq = userAnswers[q.id] !== undefined;
             const chosenOption = userAnswers[q.id];
@@ -479,40 +595,40 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                 {/* Meta Badges */}
                 <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="px-2.5 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 text-[11px] font-bold border border-indigo-200/60">
+                    <span className="px-2.5 py-0.5 rounded-xl bg-indigo-50 text-indigo-700 text-[11px] font-bold border border-indigo-200/60">
                       {q.year} Exam Paper
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-xl bg-slate-100 text-slate-700 text-[11px] font-semibold">
                       {q.subject}
                     </span>
-                    <span className="text-xs font-semibold text-slate-900">
+                    <span className="text-xs font-bold text-slate-900">
                       {q.topic}
                     </span>
                     {isNumerical ? (
-                      <span className="px-2.5 py-0.5 rounded-lg bg-violet-50 text-violet-700 text-[11px] font-bold border border-violet-200/60 flex items-center space-x-1">
+                      <span className="px-2.5 py-0.5 rounded-xl bg-violet-50 text-violet-700 text-[11px] font-bold border border-violet-200/60 flex items-center space-x-1">
                         <Calculator className="w-3 h-3 text-violet-600" />
                         <span>Numerical-Type</span>
                       </span>
                     ) : (
-                      <span className="px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-200/60">
+                      <span className="px-2 py-0.5 rounded-xl bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-200/60">
                         MCQ
                       </span>
                     )}
 
                     {isImportantQuestion && (
-                      <span className="px-2.5 py-0.5 rounded-lg bg-amber-500/15 text-amber-800 text-[11px] font-black border border-amber-300 flex items-center space-x-1 shadow-2xs">
+                      <span className="px-2.5 py-0.5 rounded-xl bg-amber-500/15 text-amber-800 text-[11px] font-black border border-amber-300 flex items-center space-x-1 shadow-2xs">
                         <Sparkles className="w-3 h-3 text-amber-600 fill-current" />
-                        <span>Important Revision PYQ</span>
+                        <span>High Repeat Probability</span>
                       </span>
                     )}
                   </div>
 
                   <div className="flex items-center space-x-2 text-[11px]">
-                    <span className="px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 font-medium border border-amber-200/60 flex items-center space-x-1">
+                    <span className="px-2.5 py-0.5 rounded-xl bg-amber-50 text-amber-800 font-bold border border-amber-200/60 flex items-center space-x-1">
                       <Flame className="w-3 h-3 text-amber-500" />
                       <span>{q.frequency_score}</span>
                     </span>
-                    <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 font-bold border border-emerald-200/60">
+                    <span className="px-2.5 py-0.5 rounded-xl bg-emerald-50 text-emerald-800 font-bold border border-emerald-200/60">
                       Weightage {q.weightage}/5
                     </span>
                   </div>
@@ -521,14 +637,21 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                 {/* Question Text */}
                 <div>
                   <h4 className="text-sm sm:text-base font-semibold text-slate-900 leading-relaxed">
-                    <span className="text-slate-400 font-mono mr-2">Q{qIdx + 1}.</span>
+                    <span className="text-slate-400 font-mono mr-2 font-bold">Q{qIdx + 1}.</span>
                     {q.question}
                   </h4>
                 </div>
 
                 {/* NUMERICAL QUESTION ANSWER INPUT */}
                 {isNumerical ? (
-                  <div className="p-4 rounded-2xl bg-violet-50/50 border border-violet-100 space-y-3">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-violet-50/50 border border-violet-100 space-y-3">
+                    <div className="flex items-center justify-between text-xs text-violet-900 font-bold">
+                      <span className="flex items-center gap-1.5">
+                        <Hash className="w-3.5 h-3.5 text-violet-600" /> Enter your calculated answer
+                      </span>
+                      <span className="text-[11px] text-violet-600 font-normal">Tolerated precision: ±{q.tolerance || 0.01}</span>
+                    </div>
+
                     <form onSubmit={e => handleNumericalSubmit(q, e)} className="flex flex-col sm:flex-row gap-2.5 items-center">
                       <div className="relative flex-1 w-full">
                         <Hash className="w-4 h-4 text-violet-400 absolute left-3.5 top-3" />
@@ -538,8 +661,8 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                           disabled={!!numResult}
                           value={numericalInputs[q.id] || ''}
                           onChange={e => setNumericalInputs(prev => ({ ...prev, [q.id]: e.target.value }))}
-                          placeholder="Type numerical answer (e.g. 24.5)..."
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-violet-200 bg-white text-sm font-mono font-bold focus:ring-2 focus:ring-violet-500 outline-none"
+                          placeholder="Type numerical value (e.g. 24.5)..."
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-violet-200 bg-white text-sm font-mono font-bold focus:ring-2 focus:ring-violet-500 outline-none shadow-2xs"
                         />
                       </div>
                       <button
@@ -557,25 +680,25 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                     </form>
 
                     {numResult && (
-                      <div className={`p-3 rounded-xl text-xs font-semibold border flex items-center justify-between ${
+                      <div className={`p-3.5 rounded-2xl text-xs font-bold border flex items-center justify-between shadow-2xs ${
                         numResult.is_correct
-                          ? 'bg-emerald-50 border-emerald-300 text-emerald-900'
-                          : 'bg-rose-50 border-rose-300 text-rose-900'
+                          ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
+                          : 'bg-rose-50 border-rose-300 text-rose-950'
                       }`}>
                         <div className="flex items-center space-x-2">
                           {numResult.is_correct ? (
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
                           ) : (
-                            <XCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                            <XCircle className="w-5 h-5 text-rose-600 shrink-0" />
                           )}
                           <span>
                             {numResult.is_correct
                               ? `Correct! Answer: ${numResult.correct_answer} (within ±${numResult.tolerance} tolerance)`
-                              : `Incorrect. Your answer: ${numericalInputs[q.id]} | Correct: ${numResult.correct_answer} (tolerance ±${numResult.tolerance})`}
+                              : `Incorrect. Your answer: ${numericalInputs[q.id]} | Correct Value: ${numResult.correct_answer} (tolerance ±${numResult.tolerance})`}
                           </span>
                         </div>
                         {numResult.difference !== undefined && (
-                          <span className="text-[11px] opacity-80">Diff: {numResult.difference}</span>
+                          <span className="text-[11px] opacity-80 font-mono">Diff: {numResult.difference}</span>
                         )}
                       </div>
                     )}
@@ -591,9 +714,9 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
 
                       if (hasAnsweredMcq) {
                         if (isCorrect) {
-                          optStyle = 'bg-emerald-50 border-emerald-400 text-emerald-950 font-semibold shadow-xs';
+                          optStyle = 'bg-emerald-50 border-emerald-400 text-emerald-950 font-bold shadow-xs';
                         } else if (isSelected && !isCorrect) {
-                          optStyle = 'bg-rose-50 border-rose-300 text-rose-900 font-medium';
+                          optStyle = 'bg-rose-50 border-rose-300 text-rose-950 font-bold';
                         } else {
                           optStyle = 'bg-slate-50/50 border-slate-200 text-slate-400 opacity-60';
                         }
@@ -605,17 +728,17 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                           type="button"
                           onClick={() => handleSelectOption(q, oIdx)}
                           disabled={hasAnsweredMcq}
-                          className={`w-full text-left p-3 sm:p-3.5 rounded-xl border text-xs sm:text-sm flex items-start space-x-3 transition-all cursor-pointer ${optStyle}`}
+                          className={`w-full text-left p-3 sm:p-3.5 rounded-2xl border text-xs sm:text-sm flex items-start space-x-3 transition-all cursor-pointer ${optStyle}`}
                         >
-                          <span className="w-5 h-5 rounded-full bg-white border border-slate-300 text-slate-700 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">
+                          <span className="w-6 h-6 rounded-full bg-white border border-slate-300 text-slate-700 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">
                             {String.fromCharCode(65 + oIdx)}
                           </span>
-                          <span className="flex-1">{opt}</span>
+                          <span className="flex-1 leading-relaxed">{opt}</span>
                           {hasAnsweredMcq && isCorrect && (
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                           )}
                           {hasAnsweredMcq && isSelected && !isCorrect && (
-                            <XCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                            <XCircle className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
                           )}
                         </button>
                       );
@@ -624,7 +747,7 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                 )}
 
                 {/* Action Toolbar */}
-                <div className="flex items-center justify-between pt-2">
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
                   <button
                     type="button"
                     onClick={() => toggleSolution(q.id)}
@@ -639,7 +762,7 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                     <button
                       type="button"
                       onClick={() => onOpenDoubtBot({
-                        doubt: `Please explain this ${q.year} CBSE Board question on ${q.topic} step-by-step: "${q.question}"`,
+                        doubt: `Please explain this ${q.year} ${q.subject} question on "${q.topic}" step-by-step: "${q.question}"`,
                         topic: q.topic,
                         subject: q.subject,
                         exam: isCBSE12 ? 'CBSE 12th Board' : q.exam_key
@@ -647,15 +770,15 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                       className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-teal-50 to-indigo-50 hover:from-teal-100 hover:to-indigo-100 text-indigo-900 text-xs font-bold border border-indigo-200 transition-all cursor-pointer active:scale-95"
                     >
                       <Bot className="w-3.5 h-3.5 text-indigo-600" />
-                      <span>Ask AI Bot About This Question</span>
+                      <span>Ask AI Doubt Bot About This Question</span>
                     </button>
                   )}
                 </div>
 
                 {/* Explanation Section */}
                 {isSolutionOpen && (
-                  <div className="mt-3 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-800 space-y-2 animate-fade-in">
-                    <div className="flex items-center space-x-1.5 text-teal-800 font-bold">
+                  <div className="mt-3 p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-800 space-y-2.5 animate-fade-in shadow-2xs">
+                    <div className="flex items-center space-x-1.5 text-teal-800 font-black text-xs uppercase tracking-wide">
                       <HelpCircle className="w-4 h-4 text-teal-600" />
                       <span>
                         {isNumerical
@@ -663,7 +786,8 @@ export const PYQBankView: React.FC<PYQBankViewProps> = ({ initialExamKey, onOpen
                           : `Correct Option: (${String.fromCharCode(65 + q.correct_index)}) ${q.options[q.correct_index]}`}
                       </span>
                     </div>
-                    <div className="leading-relaxed text-slate-700 pl-5 whitespace-pre-line font-sans text-xs">
+
+                    <div className="leading-relaxed text-slate-700 pl-5 whitespace-pre-line font-sans text-xs sm:text-sm">
                       {q.explanation}
                     </div>
                   </div>
