@@ -17,6 +17,7 @@ interface NavbarProps {
   onOpenDoubtBot?: () => void;
   onOpenProfilePhoto?: () => void;
   onToggleNotifications?: (enabled: boolean) => void;
+  onToggleSelfTimetable?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -32,7 +33,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenInstallModal,
   onOpenDoubtBot,
   onOpenProfilePhoto,
-  onToggleNotifications
+  onToggleNotifications,
+  onToggleSelfTimetable
 }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const todayHours = (todayMinutes / 60).toFixed(1);
@@ -168,12 +170,20 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                 <button
                   type="button"
-                  onClick={() => setActiveTab('self-timetable')}
+                  onClick={() => {
+                    if (activeTab === 'self-timetable') {
+                      if (onToggleSelfTimetable) onToggleSelfTimetable();
+                      else setActiveTab('today');
+                    } else {
+                      setActiveTab('self-timetable');
+                    }
+                  }}
                   className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all cursor-pointer ${
                     activeTab === 'self-timetable'
                       ? 'bg-teal-50 text-teal-900 font-bold border border-teal-200/70 shadow-xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
+                  title={activeTab === 'self-timetable' ? 'Click to close Self Timetable' : 'Self Timetable'}
                 >
                   <Layers className="w-4 h-4 text-teal-600" />
                   <span>Self Timetable</span>
@@ -284,14 +294,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Self Timetable Quick-Access Button (Icon Only - Replaces Account next to Notification) */}
               <button
                 type="button"
-                onClick={() => setActiveTab('self-timetable')}
+                onClick={() => {
+                  if (activeTab === 'self-timetable') {
+                    if (onToggleSelfTimetable) onToggleSelfTimetable();
+                    else setActiveTab('today');
+                  } else {
+                    setActiveTab('self-timetable');
+                  }
+                }}
                 className={`p-2 rounded-xl border transition-all cursor-pointer active:scale-95 flex items-center justify-center ${
                   activeTab === 'self-timetable'
                     ? 'bg-teal-50 border-teal-500 text-teal-700 ring-2 ring-teal-500/20 shadow-xs'
                     : 'border-slate-200 hover:bg-slate-100 bg-white text-slate-700 hover:text-teal-700'
                 }`}
-                title="Self Timetable"
-                aria-label="Self Timetable"
+                title={activeTab === 'self-timetable' ? 'Close Self Timetable' : 'Self Timetable'}
+                aria-label={activeTab === 'self-timetable' ? 'Close Self Timetable' : 'Self Timetable'}
               >
                 <Layers className={`w-4 h-4 sm:w-5 sm:h-5 ${activeTab === 'self-timetable' ? 'text-teal-600' : 'text-slate-600'}`} />
               </button>
@@ -447,7 +464,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={() => {
                   setIsProfileOpen(false);
-                  setActiveTab('self-timetable');
+                  if (activeTab === 'self-timetable') {
+                    if (onToggleSelfTimetable) onToggleSelfTimetable();
+                    else setActiveTab('today');
+                  } else {
+                    setActiveTab('self-timetable');
+                  }
                 }}
                 className={`w-full flex items-center justify-between p-3 rounded-2xl border transition-all cursor-pointer text-left active:scale-98 group shadow-xs ${
                   activeTab === 'self-timetable'

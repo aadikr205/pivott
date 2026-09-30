@@ -46,6 +46,27 @@ export function App() {
   const [sessionExpiredNotice, setSessionExpiredNotice] = useState<string | null>(null);
 
   const [activeTab, setActiveTab] = useState<'today' | 'schedule' | 'dashboard' | 'notes' | 'pyq' | 'deferred' | 'history' | 'activity' | 'self-timetable'>('today');
+  const [lastActiveMainTab, setLastActiveMainTab] = useState<'today' | 'schedule' | 'dashboard' | 'notes' | 'pyq' | 'deferred' | 'history' | 'activity'>('today');
+
+  const handleToggleSelfTimetable = () => {
+    setActiveTab(prev => {
+      if (prev === 'self-timetable') {
+        return lastActiveMainTab || 'today';
+      } else {
+        setLastActiveMainTab(prev);
+        return 'self-timetable';
+      }
+    });
+  };
+
+  const handleSelectTab = (tab: 'today' | 'schedule' | 'dashboard' | 'notes' | 'pyq' | 'deferred' | 'history' | 'activity' | 'self-timetable') => {
+    if (tab === 'self-timetable') {
+      handleToggleSelfTimetable();
+      return;
+    }
+    setLastActiveMainTab(tab as any);
+    setActiveTab(tab);
+  };
   const [isOnboarding, setIsOnboarding] = useState(false);
   const [todayData, setTodayData] = useState<TodayScheduleResponse | null>(() => safeStorage.getJSON<TodayScheduleResponse>('pivott_cached_today'));
   const [todayLoading, setTodayLoading] = useState(false);
@@ -420,7 +441,8 @@ export function App() {
       <Navbar
         user={user}
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={handleSelectTab}
+        onToggleSelfTimetable={handleToggleSelfTimetable}
         daysToExam={getDaysToExam()}
         todayMinutes={todayData?.total_allocated_minutes || 0}
         maxDailyHours={user.max_daily_hours || 6.0}
@@ -521,7 +543,7 @@ export function App() {
 
               {activeTab === 'self-timetable' && (
                 <SelfTimetableView
-                  onBackToAccount={() => setActiveTab('today')}
+                  onBackToAccount={handleToggleSelfTimetable}
                 />
               )}
             </>

@@ -433,10 +433,14 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
 
               {onBackToAccount && (
                 <button
+                  type="button"
                   onClick={onBackToAccount}
-                  className="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 text-xs font-semibold border border-slate-700 transition-all cursor-pointer shadow-xs"
+                  title="Close Self Timetable (Tap to exit)"
+                  aria-label="Close Self Timetable"
                 >
-                  Back
+                  <X className="w-3.5 h-3.5 text-slate-400" />
+                  <span>Close</span>
                 </button>
               )}
             </div>
