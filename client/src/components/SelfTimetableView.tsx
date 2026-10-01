@@ -42,10 +42,15 @@ import { ConceptVideoModal } from './ConceptVideoModal';
 import { BASE_SUBJECTS, getCurriculumChapters } from '../data/curriculumData';
 import { StudyRoadmapView, RoadmapItem } from './StudyRoadmapView';
 import { GameLevelView, GameLevelItem } from './GameLevelView';
+import { TimeTableCard } from './TimeTableCard';
+import { TimeTableDaySelector } from './TimeTableDaySelector';
+import { TimeTableProgress } from './TimeTableProgress';
 
 interface SelfTimetableViewProps {
   onBackToAccount?: () => void;
 }
+
+const DAYS_OF_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 // Subject styling configuration for clear visual distinction
 const SUBJECT_CONFIG: Record<string, { color: string; border: string; bg: string; badge: string; icon: string }> = {
@@ -78,6 +83,13 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
+  // Day Selector & Accordion state
+  const todayDayName = useMemo(() => {
+    return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()];
+  }, []);
+  const [selectedDay, setSelectedDay] = useState<string>('all');
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
+
   // Filtering & Search
   const [activeFilterSubject, setActiveFilterSubject] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<'all' | 'not_started' | 'in_progress' | 'done' | 'deferred'>('all');
@@ -207,10 +219,18 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
     try {
       await api.selfTimetable.deleteEntry(id);
       setEntries(prev => prev.filter(e => e.id !== id));
+      if (expandedCardId === id) setExpandedCardId(null);
       api.selfTimetable.getAnalytics().then(setAnalytics).catch(() => {});
     } catch (err) {
       console.error('Failed to delete chapter entry:', err);
     }
+  };
+
+  const handleOpenDirectQuiz = (entry: SelfTimetableEntry) => {
+    setActiveQuizEntry(entry);
+    setQuizUserAnswers({});
+    setQuizSubmitted(false);
+    setQuizScore(0);
   };
 
   // Quiz submission handler
@@ -283,6 +303,45 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
       return matchSubject && matchStatus && matchSearch;
     });
   }, [entries, activeFilterSubject, statusFilter, searchQuery]);
+
+  // Counts of entries per day of the week
+  const countsByDay = useMemo(() => {
+    const counts: Record<string, number> = {};
+    DAYS_OF_WEEK.forEach(d => { counts[d] = 0; });
+    entries.forEach(e => {
+      const dName = (e as any).day_name;
+      if (dName && counts[dName] !== undefined) {
+        counts[dName]++;
+      }
+    });
+    return counts;
+  }, [entries]);
+
+  // Entries filtered by selected day (Mon - Sun or 'all')
+  const dayFilteredEntries = useMemo(() => {
+    return filteredEntries.filter(e => {
+      if (selectedDay === 'all') return true;
+      return (e as any).day_name === selectedDay;
+    });
+  }, [filteredEntries, selectedDay]);
+
+  // Determine which entry is NOW and which is NEXT
+  const { nowEntryId, nextEntryId } = useMemo(() => {
+    let nowId: string | null = null;
+    let nextId: string | null = null;
+
+    const inProgress = dayFilteredEntries.find(e => e.status === 'in_progress');
+    if (inProgress) {
+      nowId = inProgress.id;
+      const firstPending = dayFilteredEntries.find(e => e.status === 'not_started' && e.id !== inProgress.id);
+      if (firstPending) nextId = firstPending.id;
+    } else {
+      const firstPending = dayFilteredEntries.find(e => e.status === 'not_started');
+      if (firstPending) nextId = firstPending.id;
+    }
+
+    return { nowEntryId: nowId, nextEntryId: nextId };
+  }, [dayFilteredEntries]);
 
   // 7-Day Final Revision Sprint items (Derived from entries)
   const revisionSprintItems = useMemo(() => {
@@ -1000,82 +1059,92 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
           }}
         />
       ) : (
-        /* 6. CHAPTER CARDS VIEW (CORE SYLLABUS + 7-DAY REVISION SPRINT) */
+        /* 6. TIMELINE & CARDS VIEW (CLEAN, MINIMAL & UNCLUTTERED) */
         <div className="space-y-4 sm:space-y-5">
-          
-          {/* A. 7-Day Final Revision & 10-Q Quiz Sprint (Compact Card) */}
+          {/* Day Selector (Mon - Sun + All Days with Today Highlighted) */}
+          <TimeTableDaySelector
+            days={DAYS_OF_WEEK}
+            selectedDay={selectedDay}
+            onSelectDay={(day) => {
+              setSelectedDay(day);
+              setExpandedCardId(null);
+            }}
+            countsByDay={countsByDay}
+            todayDayName={todayDayName}
+            totalCount={entries.length}
+          />
+
+          {/* Progress Summary at the top with thin progress bar */}
+          <TimeTableProgress
+            totalCount={dayFilteredEntries.length}
+            completedCount={dayFilteredEntries.filter(e => e.status === 'done').length}
+            inProgressCount={dayFilteredEntries.filter(e => e.status === 'in_progress').length}
+            dayLabel={selectedDay === 'all' ? 'All Days' : selectedDay === todayDayName ? 'Today' : selectedDay}
+          />
+
+          {/* Optional 7-Day Final Revision Sprint collapsible */}
           {entries.length > 0 && (
-            <div className="bg-gradient-to-r from-teal-950/40 via-slate-900 to-indigo-950/40 border border-teal-500/25 rounded-2xl p-3 sm:p-4 shadow-md space-y-3">
+            <div className="bg-gradient-to-r from-teal-950/30 via-slate-900 to-indigo-950/30 border border-teal-500/20 rounded-2xl p-3 sm:p-3.5 shadow-sm space-y-2.5">
               <div className="flex items-center justify-between gap-2 flex-wrap">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400 shrink-0">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400 shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-xs sm:text-sm font-bold text-white">
-                        7-Day Final Revision & Quiz Sprint
-                      </h3>
+                      <h4 className="text-xs sm:text-sm font-bold text-white">
+                        7-Day Final Revision Sprint
+                      </h4>
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40">
                         1-Wk Early Finish
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-400">
-                      Last 7 days reserved for quick concept recaps, videos & 10-question practice quizzes.
-                    </p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setShowRevisionSection(!showRevisionSection)}
-                  className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 flex items-center gap-1 cursor-pointer shrink-0"
+                  className="px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 flex items-center gap-1 cursor-pointer shrink-0"
                 >
-                  <span>{showRevisionSection ? 'Hide Sprint' : 'View 4 Days'}</span>
+                  <span>{showRevisionSection ? 'Hide Sprint' : 'View Sprint Days'}</span>
                   {showRevisionSection ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                 </button>
               </div>
 
               {showRevisionSection && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-2 border-t border-slate-800">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 pt-2 border-t border-slate-800">
                   {revisionSprintItems.slice(0, 4).map((item, idx) => (
-                    <div key={idx} className="bg-slate-950/70 border border-teal-500/20 rounded-xl p-3 space-y-2 shadow-xs">
+                    <div key={idx} className="bg-slate-950/70 border border-teal-500/20 rounded-xl p-3 space-y-1.5 shadow-xs">
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] font-mono font-bold text-teal-400 bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/20">
                           Sprint Day {item.dayNumber}
                         </span>
                         <span className="text-[10px] text-slate-400">{item.dayName}</span>
                       </div>
-                      <div>
-                        <div className="text-xs font-bold text-white line-clamp-1">
-                          {item.targetEntry.chapter_topic_name}
-                        </div>
-                        <div className="text-[10px] text-slate-400 mt-0.5">
-                          {item.targetEntry.subject} • {item.timeSlot}
-                        </div>
+                      <div className="text-xs font-bold text-white line-clamp-1">
+                        {item.targetEntry.chapter_topic_name}
+                      </div>
+                      <div className="text-[10px] text-slate-400">
+                        {item.targetEntry.subject} • {item.timeSlot}
                       </div>
                       <div className="flex items-center gap-1 pt-1 border-t border-slate-800/80">
                         <button
                           onClick={() => setViewingNotesEntry(item.targetEntry)}
-                          className="flex-1 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[10px] font-bold text-slate-300 hover:text-white border border-slate-800 transition-colors cursor-pointer"
+                          className="flex-1 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[10px] font-bold text-slate-300 hover:text-white border border-slate-800 cursor-pointer"
                         >
                           Notes
                         </button>
                         <button
                           onClick={() => setActiveVideoEntry(item.targetEntry)}
-                          className="flex-1 py-1 rounded-lg bg-teal-600/30 hover:bg-teal-600/50 text-[10px] font-bold text-teal-300 border border-teal-500/40 transition-colors cursor-pointer"
+                          className="flex-1 py-1 rounded-lg bg-teal-600/30 hover:bg-teal-600/50 text-[10px] font-bold text-teal-300 border border-teal-500/40 cursor-pointer"
                         >
                           Video
                         </button>
                         <button
-                          onClick={() => {
-                            setActiveQuizEntry(item.targetEntry);
-                            setQuizUserAnswers({});
-                            setQuizSubmitted(false);
-                            setQuizScore(0);
-                          }}
-                          className="flex-1 py-1 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-[10px] font-bold text-indigo-300 border border-indigo-500/40 transition-colors cursor-pointer"
+                          onClick={() => handleOpenDirectQuiz(item.targetEntry)}
+                          className="flex-1 py-1 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-[10px] font-bold text-indigo-300 border border-indigo-500/40 cursor-pointer"
                         >
-                          10-Q Quiz
+                          Quiz
                         </button>
                       </div>
                     </div>
@@ -1085,183 +1154,88 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
             </div>
           )}
 
-          {/* B. Core Syllabus Study Chapters Grid */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
+          {/* Vertical Timeline Schedule of Study Slots */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between px-1">
               <div className="flex items-center space-x-2">
-                <h2 className="text-base sm:text-lg font-bold text-white">Your Core Study Chapters</h2>
+                <h3 className="text-sm sm:text-base font-bold text-white">
+                  {selectedDay === 'all' ? 'All Scheduled Study Slots' : `${selectedDay}'s Study Timeline`}
+                </h3>
                 <span className="px-2 py-0.5 rounded-full bg-slate-800 text-teal-300 text-xs font-mono font-bold">
-                  {filteredEntries.length}
+                  {dayFilteredEntries.length}
                 </span>
               </div>
               <span className="text-[11px] text-slate-400">
-                Sorted by sequence
+                Tap card to view details
               </span>
             </div>
 
             {loading ? (
               <div className="py-12 text-center space-y-2 bg-slate-900/60 border border-slate-800 rounded-2xl">
                 <RefreshCw className="w-6 h-6 text-teal-400 animate-spin mx-auto" />
-                <p className="text-xs text-slate-300">Loading your Self Timetable chapters...</p>
+                <p className="text-xs text-slate-300">Loading your Self Timetable schedule...</p>
               </div>
-            ) : filteredEntries.length === 0 ? (
-              <div className="py-12 text-center space-y-3 bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-5">
-                <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mx-auto">
-                  <BookOpen className="w-5 h-5" />
+            ) : dayFilteredEntries.length === 0 ? (
+              <div className="py-12 px-4 text-center space-y-4 bg-slate-900/40 border border-dashed border-slate-800 rounded-3xl">
+                <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mx-auto shadow-sm">
+                  <Calendar className="w-7 h-7" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="text-sm font-bold text-white">No chapters match your filters</h4>
-                  <p className="text-xs text-slate-400 max-w-md mx-auto">
-                    {searchQuery ? 'Try clearing your search query or subject filters.' : 'Use the box above to add your first chapter. Verified notes, concept videos, and quizzes will be generated immediately!'}
+                <div className="space-y-1.5 max-w-md mx-auto">
+                  <h4 className="text-base font-bold text-white">
+                    {selectedDay === 'all' 
+                      ? 'No study slots found matching your filters' 
+                      : `No study slots scheduled for ${selectedDay}`}
+                  </h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    {searchQuery || activeFilterSubject !== 'all' || statusFilter !== 'all'
+                      ? 'Try clearing your search query or subject filters.'
+                      : selectedDay === 'all'
+                        ? 'Add your first chapter or study slot to begin building your personalized NCERT study schedule.'
+                        : `You have a free schedule for ${selectedDay}. Add a chapter to build your daily study habit, or view all scheduled days.`
+                    }
                   </p>
+                </div>
+                <div className="flex items-center justify-center gap-2.5 pt-1 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsAddFormOpen(true);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="min-h-[44px] px-5 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold shadow-md transition-all cursor-pointer flex items-center space-x-1.5"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>+ Add Study Slot</span>
+                  </button>
+                  {selectedDay !== 'all' && entries.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedDay('all')}
+                      className="min-h-[44px] px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700 transition-colors cursor-pointer"
+                    >
+                      View All Days ({entries.length} slots)
+                    </button>
+                  )}
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
-                {filteredEntries.map((entry, idx) => {
-                  const isJunior = entry.class_level <= 5 || entry.video_style === 'cartoon';
-                  const config = getSubjectConfig(entry.subject);
-
-                  return (
-                    <div 
-                      key={entry.id}
-                      className={`border rounded-2xl p-3.5 sm:p-4 shadow-md flex flex-col justify-between space-y-2.5 transition-all hover:border-slate-700 ${
-                        entry.status === 'done' 
-                          ? 'bg-emerald-950/20 border-emerald-900/40' 
-                          : entry.status === 'deferred'
-                            ? 'bg-amber-950/15 border-amber-900/40'
-                            : 'bg-slate-900 border-slate-800'
-                      }`}
-                    >
-                      <div className="space-y-2">
-                        
-                        {/* Top Badges & Status Dropdown */}
-                        <div className="flex items-center justify-between flex-wrap gap-1.5">
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="px-2 py-0.5 rounded-md bg-teal-500/15 text-teal-300 border border-teal-500/30 text-[10px] font-black uppercase tracking-wider">
-                              Class {entry.class_level}
-                            </span>
-                            <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border flex items-center gap-1 ${config.badge}`}>
-                              <span>{config.icon}</span>
-                              <span>{entry.subject}</span>
-                            </span>
-                            {isJunior ? (
-                              <span className="px-1.5 py-0.5 rounded-md bg-amber-400/20 text-amber-300 border border-amber-400/40 text-[9px] font-extrabold flex items-center gap-1">
-                                <Smile className="w-2.5 h-2.5" /> Cartoon
-                              </span>
-                            ) : (
-                              <span className="px-1.5 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-[9px] font-bold">
-                                Slide Deck
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Status Dropdown */}
-                          <select
-                            value={entry.status}
-                            onChange={(e) => handleStatusChange(entry.id, e.target.value as any)}
-                            className={`text-[10px] font-bold uppercase tracking-wider rounded-lg px-2 py-0.5 border transition-colors cursor-pointer ${
-                              entry.status === 'done'
-                                ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300'
-                                : entry.status === 'in_progress'
-                                  ? 'bg-blue-500/20 border-blue-500/40 text-blue-300'
-                                  : entry.status === 'deferred'
-                                    ? 'bg-amber-500/20 border-amber-500/40 text-amber-300'
-                                    : 'bg-slate-800 border-slate-700 text-slate-300'
-                            }`}
-                          >
-                            <option value="not_started">Not Started</option>
-                            <option value="in_progress">In Progress</option>
-                            <option value="done">Completed ✓</option>
-                            <option value="deferred">Deferred ⏸</option>
-                          </select>
-                        </div>
-
-                        {/* Chapter Title & Time */}
-                        <div>
-                          <div className="flex items-baseline gap-1.5">
-                            <span className="text-[10px] font-mono text-slate-500 font-bold">#{idx + 1}</span>
-                            <h3 className="text-sm sm:text-base font-bold text-white leading-snug line-clamp-2">
-                              {entry.chapter_topic_name}
-                            </h3>
-                          </div>
-                          <div className="flex items-center space-x-2 text-[11px] text-slate-400 mt-1">
-                            <div className="flex items-center space-x-1">
-                              <Clock className="w-3 h-3 text-slate-400" />
-                              <span>{entry.daily_minutes} mins</span>
-                            </div>
-                            <span>•</span>
-                            <span className="text-teal-400 font-mono text-[10px]">
-                              10-Q Quiz Attached
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Verification Status Banner */}
-                        {entry.is_verified ? (
-                          <div className="p-2 rounded-lg bg-emerald-950/30 border border-emerald-900/50 text-[10px] text-emerald-300 flex items-center gap-1.5">
-                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                            <span className="truncate">Verified: {entry.verification_source || 'Accredited NCERT Curriculum'}</span>
-                          </div>
-                        ) : (
-                          <div className="p-2 rounded-lg bg-amber-950/30 border border-amber-900/50 text-[10px] text-amber-300 flex items-start gap-1.5">
-                            <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                            <span className="leading-tight">Unverified topic — auto-generated from curriculum index</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* 3 Prominent Action Buttons */}
-                      <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between gap-1.5">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          {/* 1. View Notes */}
-                          <button
-                            onClick={() => setViewingNotesEntry(entry)}
-                            className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-colors cursor-pointer flex items-center gap-1"
-                          >
-                            <FileText className="w-3.5 h-3.5 text-teal-400" />
-                            <span>Notes</span>
-                          </button>
-
-                          {/* 2. Watch Concept Video */}
-                          <button
-                            onClick={() => setActiveVideoEntry(entry)}
-                            className={`px-2.5 py-1.5 rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1 ${
-                              isJunior
-                                ? 'bg-amber-500 hover:bg-amber-400 text-slate-950'
-                                : 'bg-teal-600 hover:bg-teal-500 text-white'
-                            }`}
-                          >
-                            <Play className="w-3.5 h-3.5 fill-current" />
-                            <span>{isJunior ? 'Cartoon' : 'Video'}</span>
-                          </button>
-
-                          {/* 3. Take Quiz */}
-                          <button
-                            onClick={() => {
-                              setActiveQuizEntry(entry);
-                              setQuizUserAnswers({});
-                              setQuizSubmitted(false);
-                              setQuizScore(0);
-                            }}
-                            className="px-2.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-colors cursor-pointer flex items-center gap-1"
-                          >
-                            <Award className="w-3.5 h-3.5" />
-                            <span>10-Q Quiz</span>
-                          </button>
-                        </div>
-
-                        <button
-                          onClick={() => handleDeleteEntry(entry.id, entry.chapter_topic_name)}
-                          className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
-                          title="Delete chapter"
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="pt-2">
+                {dayFilteredEntries.map((entry, idx) => (
+                  <TimeTableCard
+                    key={entry.id}
+                    entry={entry}
+                    isExpanded={expandedCardId === entry.id}
+                    isNow={nowEntryId === entry.id}
+                    isNext={nextEntryId === entry.id}
+                    isLast={idx === dayFilteredEntries.length - 1}
+                    onToggleExpand={() => setExpandedCardId(prev => prev === entry.id ? null : entry.id)}
+                    onStatusChange={handleStatusChange}
+                    onOpenNotes={setViewingNotesEntry}
+                    onOpenVideo={setActiveVideoEntry}
+                    onOpenQuiz={handleOpenDirectQuiz}
+                    onDelete={handleDeleteEntry}
+                  />
+                ))}
               </div>
             )}
           </div>
@@ -1711,6 +1685,19 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
           </div>
         </div>
       )}
+      {/* Floating Add Study Slot FAB */}
+      <button
+        type="button"
+        onClick={() => {
+          setIsAddFormOpen(true);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 w-14 h-14 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white shadow-2xl flex items-center justify-center transition-all transform hover:scale-105 active:scale-95 cursor-pointer ring-4 ring-slate-900/60"
+        title="Add Study Slot"
+        aria-label="Add Study Slot"
+      >
+        <Plus className="w-6 h-6 stroke-[2.5]" />
+      </button>
     </div>
   );
 };
