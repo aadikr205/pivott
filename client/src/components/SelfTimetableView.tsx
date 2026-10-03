@@ -1685,19 +1685,6 @@ export const SelfTimetableView: React.FC<SelfTimetableViewProps> = ({ onBackToAc
           </div>
         </div>
       )}
-      {/* Floating Add Study Slot FAB */}
-      <button
-        type="button"
-        onClick={() => {
-          setIsAddFormOpen(true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 w-14 h-14 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white shadow-2xl flex items-center justify-center transition-all transform hover:scale-105 active:scale-95 cursor-pointer ring-4 ring-slate-900/60"
-        title="Add Study Slot"
-        aria-label="Add Study Slot"
-      >
-        <Plus className="w-6 h-6 stroke-[2.5]" />
-      </button>
     </div>
   );
 };
